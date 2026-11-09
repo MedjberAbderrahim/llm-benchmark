@@ -1,0 +1,22 @@
+{
+  "model": "qwen2.5:14b",
+  "backend": "ollama",
+  "backend_version": "0.33.2",
+  "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+  "quantization": "Q4_K_M",
+  "model_family": "qwen2",
+  "model_parameters": "14.8B",
+  "operating_system": "Linux-7.0.0-42-generic-x86_64-with-glibc2.43",
+  "cpu_model": "AMD Ryzen 5 5625U with Radeon Graphics",
+  "logical_cpu_cores": 12,
+  "physical_cpu_cores": 6,
+  "total_ram_bytes": 32384552960,
+  "total_ram_gib": 30.16,
+  "gpu_devices": [],
+  "gpu_available": false,
+  "gpu_note": "No NVIDIA GPU detected by nvidia-smi; GPU utilization and VRAM sampling are unavailable.",
+  "python_version": "3.14.4",
+  "git_commit": null,
+  "prompt_version": "eval_v1",
+  "dataset_hash": "a1d5f5446bba2ffbf4899027b87c24ef35d8c743f866900ea3dfe934d583a7b8"
+}

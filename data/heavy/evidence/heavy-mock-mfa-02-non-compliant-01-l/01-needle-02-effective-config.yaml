@@ -1,0 +1,3 @@
+scope: administrators
+mfa_required: false
+coverage_percent: 0

@@ -1,0 +1,19 @@
+backend: ollama
+base_url: http://localhost:11434
+model: qwen2.5:7b
+temperature: 0
+seed: 42
+num_ctx: 8192
+max_output_tokens: 512
+keep_alive: 10m
+prompt_version: eval_v1
+query_version: query_v1
+split: dev
+output_language: fr
+repeat: 1
+# limit: 5
+# For a local vLLM or other OpenAI-compatible endpoint:
+# backend: openai
+# base_url: http://localhost:8000/v1
+# model: Qwen/Qwen2.5-14B-Instruct
+# api_key: null

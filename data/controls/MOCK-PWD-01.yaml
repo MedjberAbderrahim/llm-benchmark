@@ -1,0 +1,12 @@
+id: MOCK-PWD-01
+domain: Authentication
+title: Password strength for workforce accounts
+description: Mock control, not authoritative. Workforce passwords should resist guessing
+  and reuse.
+evaluation_criteria:
+- The enforced minimum password length is at least 14 characters.
+- A mix of character types or an equivalent breached-password check is enforced.
+- The effective configuration agrees with the written policy.
+expected_evidence:
+- Approved password standard
+- Identity-provider or operating-system password policy export

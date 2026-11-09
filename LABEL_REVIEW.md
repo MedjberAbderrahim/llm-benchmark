@@ -1,0 +1,14 @@
+# Base label review
+
+## `mock-pwd-01-partial-01` — expected `partial`
+
+**Assessment: defensible, with an ambiguity in what `partial` means.** The control requires at least 14 characters, a character mix or breached-password block, and agreement between policy and effective settings. Evidence shows complexity enforcement (`complexity_required = true`), so one criterion is met. The effective minimum is 8, the written procedure says 12, and the breached-password block is off. Thus `partial` is defensible if it means that at least one required criterion is met while others fail. The current rationale (“some safeguards are present”) is too general; a clearer rationale would say: *“Complexity is enforced, but the active 8-character minimum is below 14 and conflicts with the written 12-character rule; breached-password blocking is disabled.”* No label change is proposed.
+
+## Other base labels needing review
+
+- **`mock-tls-07-partial-01` — expected `partial`: likely wrong.** The evidence establishes that the main portal uses TLS 1.2/1.3, while the historical service is not inventoried. It does not establish that the historical service enables an older protocol. Since the criterion applies to every in-scope public service, the absent deployment fact supports `insufficient_evidence` more directly than `partial`. Proposed change: set this case's expected status to `insufficient_evidence` and update its rationale to state that the available configuration covers only the main portal. Do not apply this change without reviewing the benchmark's label policy; the committed label remains unchanged.
+- **`mock-lock-03-partial-01` — expected `partial`: ambiguous.** The export proves lockout behavior exists, but both observed values miss the mock thresholds (8 failures instead of at most 5; 10 minutes instead of at least 15). `partial` is defensible only if the presence of a weaker safeguard counts as partial compliance; a strict all-criteria interpretation could call it `non_compliant`.
+- **`mock-mfa-02-partial-01` — expected `partial`: ambiguous.** Remote administrators have MFA, but the evidence says local console access is still being migrated and reports 72% coverage. Under the “all interactive privileged accounts” criterion, that is a known scope gap; the label depends on whether `partial` means some protection is operating or every unmet mandatory criterion yields `non_compliant`.
+- **`mock-access-08-partial-01` — expected `partial`: ambiguous.** The policy describes semiannual reviews, below the 90-day interval, and the export has one pending removal. The export has only two rows and does not establish that they represent the full in-scope population. The known frequency/action gaps support `partial`, but population coverage is unclear.
+
+These observations are review proposals only. `data/labels.yaml` and the base dataset hash were not changed.

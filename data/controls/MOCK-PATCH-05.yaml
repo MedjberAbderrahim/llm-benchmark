@@ -1,0 +1,12 @@
+id: MOCK-PATCH-05
+domain: Vulnerability Management
+title: Timely critical security updates
+description: Mock control, not authoritative. Critical fixes should be prioritized
+  and applied on a defined short schedule.
+evaluation_criteria:
+- Critical security updates are deployed within 30 calendar days of release or identification.
+- The deadline applies to in-scope production systems.
+- Records show due dates and completion or tracked exceptions.
+expected_evidence:
+- Patch-management procedure
+- Recent ticket or vulnerability remediation export

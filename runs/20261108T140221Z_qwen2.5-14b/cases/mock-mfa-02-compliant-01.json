@@ -1,0 +1,112 @@
+{
+  "label": {
+    "case_id": "mock-mfa-02-compliant-01",
+    "control_id": "MOCK-MFA-02",
+    "evidence_files": [
+      "procedure_fr.md",
+      "effective-config.yaml"
+    ],
+    "expected_status": "compliant",
+    "split": "dev",
+    "language": "fr",
+    "tags": [],
+    "rationale": "The cited policy and effective export satisfy the stated mock criteria."
+  },
+  "control": {
+    "id": "MOCK-MFA-02",
+    "domain": "Authentication",
+    "title": "Multi-factor authentication for administrators",
+    "description": "Mock control, not authoritative. Privileged human access should require more than one authentication factor.",
+    "evaluation_criteria": [
+      "All interactive privileged accounts require MFA.",
+      "Any emergency account exception is limited, documented, and monitored.",
+      "The active identity configuration agrees with the policy."
+    ],
+    "expected_evidence": [
+      "Privileged-access policy",
+      "Identity-provider MFA configuration or coverage export"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "mock-mfa-02-compliant-01",
+      "control_id": "MOCK-MFA-02",
+      "repetition": 1,
+      "expected_status": "compliant",
+      "status": "compliant",
+      "matches_expected": true,
+      "confidence": 1.0,
+      "justification": "Le contrôle est conforme car tous les comptes privilégiés interactifs exigent une authentification à plusieurs facteurs, et les exceptions d'urgence sont documentées et surveillées.",
+      "criteria_assessment": [
+        {
+          "criterion": "All interactive privileged accounts require MFA.",
+          "met": "yes",
+          "note": "La configuration active indique que tous les comptes administratifs interactifs exigent une authentification à plusieurs facteurs."
+        },
+        {
+          "criterion": "Any emergency account exception is limited, documented, and monitored.",
+          "met": "yes",
+          "note": "La configuration active indique une exception pour un compte d'urgence, qui est documentée et surveillée."
+        },
+        {
+          "criterion": "The active identity configuration agrees with the policy.",
+          "met": "yes",
+          "note": "La configuration active et la procédure interne concordent sur l'exigence d'une authentification à plusieurs facteurs pour les comptes privilégiés interactifs."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "procedure_fr.md",
+          "text": "All interactive privileged users must complete a password and a hardware or app-based second factor. A monitored emergency identity is excluded and reviewed monthly.",
+          "valid": true
+        },
+        {
+          "file": "effective-config.yaml",
+          "text": "scope: all_interactive_admins\nmfa_required: true\nexceptions:\n- vaulted_emergency_account\nemergency_account_monitoring: true",
+          "valid": true
+        }
+      ],
+      "recommendation": "Aucune recommandation n'est nécessaire car le contrôle est conforme.",
+      "raw_output_initial": "{\n  \"status\": \"compliant\",\n  \"justification\": \"Le contrôle est conforme car tous les comptes privilégiés interactifs exigent une authentification à plusieurs facteurs, et les exceptions d'urgence sont documentées et surveillées.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"All interactive privileged accounts require MFA.\",\n      \"met\": \"yes\",\n      \"note\": \"La configuration active indique que tous les comptes administratifs interactifs exigent une authentification à plusieurs facteurs.\"\n    },\n    {\n      \"criterion\": \"Any emergency account exception is limited, documented, and monitored.\",\n      \"met\": \"yes\",\n      \"note\": \"La configuration active indique une exception pour un compte d'urgence, qui est documentée et surveillée.\"\n    },\n    {\n      \"criterion\": \"The active identity configuration agrees with the policy.\",\n      \"met\": \"yes\",\n      \"note\": \"La configuration active et la procédure interne concordent sur l'exigence d'une authentification à plusieurs facteurs pour les comptes privilégiés interactifs.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"procedure_fr.md\",\n      \"text\": \"All interactive privileged users must complete a password and a hardware or app-based second factor. A monitored emergency identity is excluded and reviewed monthly.\"\n    },\n    {\n      \"file\": \"effective-config.yaml\",\n      \"text\": \"scope: all_interactive_admins\\nmfa_required: true\\nexceptions:\\n- vaulted_emergency_account\\nemergency_account_monitoring: true\"\n    }\n  ],\n  \"recommendation\": \"Aucune recommandation n'est nécessaire car le contrôle est conforme.\",\n  \"confidence\": 1.0\n}",
+      "raw_output_final": "{\n  \"status\": \"compliant\",\n  \"justification\": \"Le contrôle est conforme car tous les comptes privilégiés interactifs exigent une authentification à plusieurs facteurs, et les exceptions d'urgence sont documentées et surveillées.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"All interactive privileged accounts require MFA.\",\n      \"met\": \"yes\",\n      \"note\": \"La configuration active indique que tous les comptes administratifs interactifs exigent une authentification à plusieurs facteurs.\"\n    },\n    {\n      \"criterion\": \"Any emergency account exception is limited, documented, and monitored.\",\n      \"met\": \"yes\",\n      \"note\": \"La configuration active indique une exception pour un compte d'urgence, qui est documentée et surveillée.\"\n    },\n    {\n      \"criterion\": \"The active identity configuration agrees with the policy.\",\n      \"met\": \"yes\",\n      \"note\": \"La configuration active et la procédure interne concordent sur l'exigence d'une authentification à plusieurs facteurs pour les comptes privilégiés interactifs.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"procedure_fr.md\",\n      \"text\": \"All interactive privileged users must complete a password and a hardware or app-based second factor. A monitored emergency identity is excluded and reviewed monthly.\"\n    },\n    {\n      \"file\": \"effective-config.yaml\",\n      \"text\": \"scope: all_interactive_admins\\nmfa_required: true\\nexceptions:\\n- vaulted_emergency_account\\nemergency_account_monitoring: true\"\n    }\n  ],\n  \"recommendation\": \"Aucune recommandation n'est nécessaire car le contrôle est conforme.\",\n  \"confidence\": 1.0\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 2,
+        "total": 2,
+        "rate": 1.0
+      },
+      "wall_clock_total_seconds": 214.26534274899996,
+      "wall_clock_elapsed_seconds": 214.26544116500008,
+      "model_reported_total_seconds": 214.263107563,
+      "model_load_seconds": 0.001607552,
+      "prompt_tokens": 1184,
+      "output_tokens": 380,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 87.659419,
+      "prompt_processing_tokens_per_second": 13.506820071440355,
+      "generation_seconds": 126.374946,
+      "generation_tokens_per_second": 3.006925122642585,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 214263107563,
+          "load_duration": 1607552,
+          "prompt_eval_count": 1184,
+          "prompt_eval_duration": 87659419000,
+          "eval_count": 380,
+          "eval_duration": 126374946000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 1272,
+      "likely_truncated": false,
+      "num_ctx": 8192,
+      "prompt_version": "eval_v1",
+      "language": "fr",
+      "tags": []
+    }
+  ]
+}

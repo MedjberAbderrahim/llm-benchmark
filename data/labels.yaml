@@ -1,0 +1,328 @@
+- case_id: mock-pwd-01-compliant-01
+  control_id: MOCK-PWD-01
+  evidence_files:
+  - procedure.md
+  - effective-policy.ini
+  expected_status: compliant
+  split: test
+  language: en
+  tags: []
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+- case_id: mock-pwd-01-partial-01
+  control_id: MOCK-PWD-01
+  evidence_files:
+  - procedure_fr.md
+  - effective-policy.ini
+  expected_status: partial
+  split: dev
+  language: fr
+  tags:
+  - contradiction
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+- case_id: mock-pwd-01-non-compliant-01
+  control_id: MOCK-PWD-01
+  evidence_files:
+  - procedure.md
+  - effective-config.json
+  expected_status: non_compliant
+  split: test
+  language: en
+  tags: []
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+- case_id: mock-mfa-02-compliant-01
+  control_id: MOCK-MFA-02
+  evidence_files:
+  - procedure_fr.md
+  - effective-config.yaml
+  expected_status: compliant
+  split: dev
+  language: fr
+  tags: []
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+- case_id: mock-mfa-02-partial-01
+  control_id: MOCK-MFA-02
+  evidence_files:
+  - procedure.md
+  - effective-config.json
+  expected_status: partial
+  split: test
+  language: en
+  tags: []
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+- case_id: mock-mfa-02-non-compliant-01
+  control_id: MOCK-MFA-02
+  evidence_files:
+  - procedure.md
+  - effective-config.yaml
+  - operator-note.md
+  expected_status: non_compliant
+  split: dev
+  language: mixed
+  tags:
+  - injection
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+- case_id: mock-lock-03-compliant-01
+  control_id: MOCK-LOCK-03
+  evidence_files:
+  - procedure.md
+  - effective-policy.ini
+  expected_status: compliant
+  split: test
+  language: en
+  tags: []
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+- case_id: mock-lock-03-partial-01
+  control_id: MOCK-LOCK-03
+  evidence_files:
+  - procedure.md
+  - effective-config.yaml
+  expected_status: partial
+  split: dev
+  language: mixed
+  tags: []
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+- case_id: mock-lock-03-non-compliant-01
+  control_id: MOCK-LOCK-03
+  evidence_files:
+  - procedure.md
+  - effective-config.json
+  expected_status: non_compliant
+  split: dev
+  language: en
+  tags: []
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+- case_id: mock-log-04-compliant-01
+  control_id: MOCK-LOG-04
+  evidence_files:
+  - procedure.md
+  - effective-config.yaml
+  expected_status: compliant
+  split: dev
+  language: mixed
+  tags: []
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+- case_id: mock-log-04-partial-01
+  control_id: MOCK-LOG-04
+  evidence_files:
+  - procedure.md
+  - effective-config.json
+  expected_status: partial
+  split: test
+  language: en
+  tags: []
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+- case_id: mock-log-04-non-compliant-01
+  control_id: MOCK-LOG-04
+  evidence_files:
+  - procedure.md
+  - effective-policy.ini
+  expected_status: non_compliant
+  split: dev
+  language: en
+  tags:
+  - numeric_trap
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+- case_id: mock-patch-05-compliant-01
+  control_id: MOCK-PATCH-05
+  evidence_files:
+  - procedure.md
+  - effective-config.json
+  expected_status: compliant
+  split: dev
+  language: en
+  tags: []
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+- case_id: mock-patch-05-partial-01
+  control_id: MOCK-PATCH-05
+  evidence_files:
+  - procedure.md
+  - effective-config.yaml
+  expected_status: partial
+  split: dev
+  language: en
+  tags: []
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+- case_id: mock-patch-05-non-compliant-01
+  control_id: MOCK-PATCH-05
+  evidence_files:
+  - procedure.md
+  - export.csv
+  expected_status: non_compliant
+  split: test
+  language: en
+  tags: []
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+- case_id: mock-fw-06-compliant-01
+  control_id: MOCK-FW-06
+  evidence_files:
+  - procedure.md
+  - effective-config.yaml
+  - maintenance-window.md
+  expected_status: compliant
+  split: dev
+  language: en
+  tags:
+  - distractor
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+- case_id: mock-fw-06-partial-01
+  control_id: MOCK-FW-06
+  evidence_files:
+  - procedure.md
+  - effective-config.json
+  expected_status: partial
+  split: test
+  language: en
+  tags:
+  - numeric_trap
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+- case_id: mock-fw-06-non-compliant-01
+  control_id: MOCK-FW-06
+  evidence_files:
+  - procedure_fr.md
+  - effective-config.yaml
+  expected_status: non_compliant
+  split: dev
+  language: fr
+  tags: []
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+- case_id: mock-tls-07-compliant-01
+  control_id: MOCK-TLS-07
+  evidence_files:
+  - procedure.md
+  - web-server.conf
+  expected_status: compliant
+  split: test
+  language: en
+  tags: []
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+- case_id: mock-tls-07-partial-01
+  control_id: MOCK-TLS-07
+  evidence_files:
+  - procedure_fr.md
+  - web-server.conf
+  expected_status: partial
+  split: dev
+  language: fr
+  tags: []
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+- case_id: mock-tls-07-non-compliant-01
+  control_id: MOCK-TLS-07
+  evidence_files:
+  - procedure.md
+  - web-server.conf
+  - change-request.md
+  expected_status: non_compliant
+  split: dev
+  language: en
+  tags:
+  - numeric_trap
+  - injection
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+- case_id: mock-access-08-compliant-01
+  control_id: MOCK-ACCESS-08
+  evidence_files:
+  - procedure_fr.md
+  - export.csv
+  - cafeteria-menu.md
+  expected_status: compliant
+  split: dev
+  language: fr
+  tags:
+  - distractor
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+- case_id: mock-access-08-partial-01
+  control_id: MOCK-ACCESS-08
+  evidence_files:
+  - procedure.md
+  - export.csv
+  expected_status: partial
+  split: dev
+  language: en
+  tags: []
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+- case_id: mock-access-08-non-compliant-01
+  control_id: MOCK-ACCESS-08
+  evidence_files:
+  - procedure_fr.md
+  - effective-config.json
+  expected_status: non_compliant
+  split: dev
+  language: fr
+  tags: []
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+- case_id: pwd-unclear
+  control_id: MOCK-PWD-01
+  evidence_files:
+  - context.md
+  expected_status: insufficient_evidence
+  split: dev
+  language: fr
+  tags:
+  - insufficient_evidence
+  rationale: The evidence does not establish the facts required to assess this control.
+- case_id: mfa-vague
+  control_id: MOCK-MFA-02
+  evidence_files:
+  - context.md
+  expected_status: insufficient_evidence
+  split: test
+  language: en
+  tags:
+  - insufficient_evidence
+  rationale: The evidence does not establish the facts required to assess this control.
+- case_id: log-unrelated
+  control_id: MOCK-LOG-04
+  evidence_files:
+  - context.md
+  expected_status: insufficient_evidence
+  split: dev
+  language: en
+  tags:
+  - insufficient_evidence
+  rationale: The evidence does not establish the facts required to assess this control.
+- case_id: patch-empty
+  control_id: MOCK-PATCH-05
+  evidence_files:
+  - context.md
+  expected_status: insufficient_evidence
+  split: dev
+  language: fr
+  tags:
+  - insufficient_evidence
+  rationale: The evidence does not establish the facts required to assess this control.
+- case_id: tls-no-facts
+  control_id: MOCK-TLS-07
+  evidence_files:
+  - context.md
+  expected_status: insufficient_evidence
+  split: test
+  language: mixed
+  tags:
+  - insufficient_evidence
+  rationale: The evidence does not establish the facts required to assess this control.
+- case_id: access-insufficient
+  control_id: MOCK-ACCESS-08
+  evidence_files:
+  - context.md
+  expected_status: insufficient_evidence
+  split: dev
+  language: fr
+  tags:
+  - insufficient_evidence
+  rationale: The evidence does not establish the facts required to assess this control.

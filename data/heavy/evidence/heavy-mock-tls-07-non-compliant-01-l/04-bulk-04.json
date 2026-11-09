@@ -1,0 +1,480 @@
+{
+  "register": [
+    {
+      "reference": "OPS-04-00000",
+      "owner_group": "continuity-green",
+      "site_code": "annex-02",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0004"
+    },
+    {
+      "reference": "OPS-04-00001",
+      "owner_group": "ops-north",
+      "site_code": "site-c7",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0021"
+    },
+    {
+      "reference": "OPS-04-00002",
+      "owner_group": "records-east",
+      "site_code": "site-a3",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0038"
+    },
+    {
+      "reference": "OPS-04-00003",
+      "owner_group": "facilities-west",
+      "site_code": "hub-04",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0055"
+    },
+    {
+      "reference": "OPS-04-00004",
+      "owner_group": "service-blue",
+      "site_code": "site-b1",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0072"
+    },
+    {
+      "reference": "OPS-04-00005",
+      "owner_group": "continuity-green",
+      "site_code": "annex-02",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0089"
+    },
+    {
+      "reference": "OPS-04-00006",
+      "owner_group": "ops-north",
+      "site_code": "site-c7",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0106"
+    },
+    {
+      "reference": "OPS-04-00007",
+      "owner_group": "records-east",
+      "site_code": "site-a3",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0123"
+    },
+    {
+      "reference": "OPS-04-00008",
+      "owner_group": "facilities-west",
+      "site_code": "hub-04",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0140"
+    },
+    {
+      "reference": "OPS-04-00009",
+      "owner_group": "service-blue",
+      "site_code": "site-b1",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0157"
+    },
+    {
+      "reference": "OPS-04-00010",
+      "owner_group": "continuity-green",
+      "site_code": "annex-02",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0174"
+    },
+    {
+      "reference": "OPS-04-00011",
+      "owner_group": "ops-north",
+      "site_code": "site-c7",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0191"
+    },
+    {
+      "reference": "OPS-04-00012",
+      "owner_group": "records-east",
+      "site_code": "site-a3",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0208"
+    },
+    {
+      "reference": "OPS-04-00013",
+      "owner_group": "facilities-west",
+      "site_code": "hub-04",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0225"
+    },
+    {
+      "reference": "OPS-04-00014",
+      "owner_group": "service-blue",
+      "site_code": "site-b1",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0242"
+    },
+    {
+      "reference": "OPS-04-00015",
+      "owner_group": "continuity-green",
+      "site_code": "annex-02",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0259"
+    },
+    {
+      "reference": "OPS-04-00016",
+      "owner_group": "ops-north",
+      "site_code": "site-c7",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0276"
+    },
+    {
+      "reference": "OPS-04-00017",
+      "owner_group": "records-east",
+      "site_code": "site-a3",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0293"
+    },
+    {
+      "reference": "OPS-04-00018",
+      "owner_group": "facilities-west",
+      "site_code": "hub-04",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0310"
+    },
+    {
+      "reference": "OPS-04-00019",
+      "owner_group": "service-blue",
+      "site_code": "site-b1",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0327"
+    },
+    {
+      "reference": "OPS-04-00020",
+      "owner_group": "continuity-green",
+      "site_code": "annex-02",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0344"
+    },
+    {
+      "reference": "OPS-04-00021",
+      "owner_group": "ops-north",
+      "site_code": "site-c7",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0361"
+    },
+    {
+      "reference": "OPS-04-00022",
+      "owner_group": "records-east",
+      "site_code": "site-a3",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0378"
+    },
+    {
+      "reference": "OPS-04-00023",
+      "owner_group": "facilities-west",
+      "site_code": "hub-04",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0395"
+    },
+    {
+      "reference": "OPS-04-00024",
+      "owner_group": "service-blue",
+      "site_code": "site-b1",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0412"
+    },
+    {
+      "reference": "OPS-04-00025",
+      "owner_group": "continuity-green",
+      "site_code": "annex-02",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0429"
+    },
+    {
+      "reference": "OPS-04-00026",
+      "owner_group": "ops-north",
+      "site_code": "site-c7",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0446"
+    },
+    {
+      "reference": "OPS-04-00027",
+      "owner_group": "records-east",
+      "site_code": "site-a3",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0463"
+    },
+    {
+      "reference": "OPS-04-00028",
+      "owner_group": "facilities-west",
+      "site_code": "hub-04",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0480"
+    },
+    {
+      "reference": "OPS-04-00029",
+      "owner_group": "service-blue",
+      "site_code": "site-b1",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0497"
+    },
+    {
+      "reference": "OPS-04-00030",
+      "owner_group": "continuity-green",
+      "site_code": "annex-02",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0514"
+    },
+    {
+      "reference": "OPS-04-00031",
+      "owner_group": "ops-north",
+      "site_code": "site-c7",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0531"
+    },
+    {
+      "reference": "OPS-04-00032",
+      "owner_group": "records-east",
+      "site_code": "site-a3",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0548"
+    },
+    {
+      "reference": "OPS-04-00033",
+      "owner_group": "facilities-west",
+      "site_code": "hub-04",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0565"
+    },
+    {
+      "reference": "OPS-04-00034",
+      "owner_group": "service-blue",
+      "site_code": "site-b1",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0582"
+    },
+    {
+      "reference": "OPS-04-00035",
+      "owner_group": "continuity-green",
+      "site_code": "annex-02",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0599"
+    },
+    {
+      "reference": "OPS-04-00036",
+      "owner_group": "ops-north",
+      "site_code": "site-c7",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0616"
+    },
+    {
+      "reference": "OPS-04-00037",
+      "owner_group": "records-east",
+      "site_code": "site-a3",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0633"
+    },
+    {
+      "reference": "OPS-04-00038",
+      "owner_group": "facilities-west",
+      "site_code": "hub-04",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0650"
+    },
+    {
+      "reference": "OPS-04-00039",
+      "owner_group": "service-blue",
+      "site_code": "site-b1",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0667"
+    },
+    {
+      "reference": "OPS-04-00040",
+      "owner_group": "continuity-green",
+      "site_code": "annex-02",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0684"
+    },
+    {
+      "reference": "OPS-04-00041",
+      "owner_group": "ops-north",
+      "site_code": "site-c7",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0701"
+    },
+    {
+      "reference": "OPS-04-00042",
+      "owner_group": "records-east",
+      "site_code": "site-a3",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0718"
+    },
+    {
+      "reference": "OPS-04-00043",
+      "owner_group": "facilities-west",
+      "site_code": "hub-04",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0735"
+    },
+    {
+      "reference": "OPS-04-00044",
+      "owner_group": "service-blue",
+      "site_code": "site-b1",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0752"
+    },
+    {
+      "reference": "OPS-04-00045",
+      "owner_group": "continuity-green",
+      "site_code": "annex-02",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0769"
+    },
+    {
+      "reference": "OPS-04-00046",
+      "owner_group": "ops-north",
+      "site_code": "site-c7",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0786"
+    },
+    {
+      "reference": "OPS-04-00047",
+      "owner_group": "records-east",
+      "site_code": "site-a3",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0803"
+    },
+    {
+      "reference": "OPS-04-00048",
+      "owner_group": "facilities-west",
+      "site_code": "hub-04",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0820"
+    },
+    {
+      "reference": "OPS-04-00049",
+      "owner_group": "service-blue",
+      "site_code": "site-b1",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0837"
+    },
+    {
+      "reference": "OPS-04-00050",
+      "owner_group": "continuity-green",
+      "site_code": "annex-02",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0854"
+    },
+    {
+      "reference": "OPS-04-00051",
+      "owner_group": "ops-north",
+      "site_code": "site-c7",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0871"
+    },
+    {
+      "reference": "OPS-04-00052",
+      "owner_group": "records-east",
+      "site_code": "site-a3",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0888"
+    },
+    {
+      "reference": "OPS-04-00053",
+      "owner_group": "facilities-west",
+      "site_code": "hub-04",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0905"
+    },
+    {
+      "reference": "OPS-04-00054",
+      "owner_group": "service-blue",
+      "site_code": "site-b1",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0922"
+    },
+    {
+      "reference": "OPS-04-00055",
+      "owner_group": "continuity-green",
+      "site_code": "annex-02",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0939"
+    },
+    {
+      "reference": "OPS-04-00056",
+      "owner_group": "ops-north",
+      "site_code": "site-c7",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0956"
+    },
+    {
+      "reference": "OPS-04-00057",
+      "owner_group": "records-east",
+      "site_code": "site-a3",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0973"
+    },
+    {
+      "reference": "OPS-04-00058",
+      "owner_group": "facilities-west",
+      "site_code": "hub-04",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0990"
+    },
+    {
+      "reference": "OPS-04-00059",
+      "owner_group": "service-blue",
+      "site_code": "site-b1",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-1007"
+    },
+    {
+      "reference": "OPS-04-00060",
+      "owner_group": "continuity-green",
+      "site_code": "annex-02",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-1024"
+    },
+    {
+      "reference": "OPS-04-00061",
+      "owner_group": "ops-north",
+      "site_code": "site-c7",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-1041"
+    },
+    {
+      "reference": "OPS-04-00062",
+      "owner_group": "records-east",
+      "site_code": "site-a3",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-1058"
+    },
+    {
+      "reference": "OPS-04-00063",
+      "owner_group": "facilities-west",
+      "site_code": "hub-04",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-1075"
+    },
+    {
+      "reference": "OPS-04-00064",
+      "owner_group": "service-blue",
+      "site_code": "site-b1",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-1092"
+    },
+    {
+      "reference": "OPS-04-00065",
+      "owner_group": "continuity-green",
+      "site_code": "annex-02",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-1109"
+    },
+    {
+      "reference": "OPS-04-00066",
+      "owner_group": "ops-north",
+      "site_code": "site-c7",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-1126"
+    },
+    {
+      "reference": "OPS-04-00067",
+      "owner_group": "records-east",
+      "site_code": "site-a3",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-1143"
+    }
+  ]
+}

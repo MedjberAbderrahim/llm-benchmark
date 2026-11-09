@@ -1,0 +1,12 @@
+id: MOCK-TLS-07
+domain: Cryptography
+title: Modern TLS for public web services
+description: Mock control, not authoritative. Public web endpoints should negotiate
+  only currently approved protocol versions.
+evaluation_criteria:
+- Every in-scope public web service disables TLS versions below 1.2.
+- TLS 1.2 or later is enabled.
+- The live service configuration supports the written standard.
+expected_evidence:
+- Web-service cryptography standard
+- Reverse-proxy or web-server configuration export

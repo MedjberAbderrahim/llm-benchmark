@@ -1,0 +1,4 @@
+privileged_access:
+  all_interactive_admins:
+    mfa_required: true
+  emergency_account: vaulted_and_monitored

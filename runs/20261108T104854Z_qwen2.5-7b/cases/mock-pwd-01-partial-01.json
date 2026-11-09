@@ -1,0 +1,116 @@
+{
+  "label": {
+    "case_id": "mock-pwd-01-partial-01",
+    "control_id": "MOCK-PWD-01",
+    "evidence_files": [
+      "procedure_fr.md",
+      "effective-policy.ini"
+    ],
+    "expected_status": "partial",
+    "split": "dev",
+    "language": "fr",
+    "tags": [
+      "contradiction"
+    ],
+    "rationale": "Some safeguards are present, but at least one required scope, threshold, or follow-up condition is missing."
+  },
+  "control": {
+    "id": "MOCK-PWD-01",
+    "domain": "Authentication",
+    "title": "Password strength for workforce accounts",
+    "description": "Mock control, not authoritative. Workforce passwords should resist guessing and reuse.",
+    "evaluation_criteria": [
+      "The enforced minimum password length is at least 14 characters.",
+      "A mix of character types or an equivalent breached-password check is enforced.",
+      "The effective configuration agrees with the written policy."
+    ],
+    "expected_evidence": [
+      "Approved password standard",
+      "Identity-provider or operating-system password policy export"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "mock-pwd-01-partial-01",
+      "control_id": "MOCK-PWD-01",
+      "repetition": 1,
+      "expected_status": "partial",
+      "status": "non_compliant",
+      "matches_expected": false,
+      "confidence": 0.9,
+      "justification": "The minimum password length is set to 8 characters, which is less than the required 14 characters. Additionally, breached password blocking is not enabled, which is a significant security gap.",
+      "criteria_assessment": [
+        {
+          "criterion": "The enforced minimum password length is at least 14 characters.",
+          "met": "no",
+          "note": "The effective policy minimum length is 8 characters, as stated in the 'effective-policy.ini' file."
+        },
+        {
+          "criterion": "A mix of character types or an equivalent breached-password check is enforced.",
+          "met": "unclear",
+          "note": "The 'effective-policy.ini' file does not specify the use of a mix of character types or a breached-password check. The procedure mentions a complexity check, but it is not clear if this is equivalent to a breached-password check."
+        },
+        {
+          "criterion": "The effective configuration agrees with the written policy.",
+          "met": "no",
+          "note": "The minimum password length in the effective policy (8 characters) is less than the required 14 characters, and breached password blocking is not enabled."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "effective-policy.ini",
+          "text": "minimum_length = 8",
+          "valid": true
+        },
+        {
+          "file": "procedure_fr.md",
+          "text": "La norme interne demande 12 caractères. Les administrateurs appliquent un contrôle de complexité.",
+          "valid": true
+        }
+      ],
+      "recommendation": "Implement a minimum password length of at least 14 characters and enable breached password blocking. Ensure that the effective configuration aligns with the written policy.",
+      "raw_output_initial": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"The minimum password length is set to 8 characters, which is less than the required 14 characters. Additionally, breached password blocking is not enabled, which is a significant security gap.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"The enforced minimum password length is at least 14 characters.\",\n      \"met\": \"no\",\n      \"note\": \"The effective policy minimum length is 8 characters, as stated in the 'effective-policy.ini' file.\"\n    },\n    {\n      \"criterion\": \"A mix of character types or an equivalent breached-password check is enforced.\",\n      \"met\": \"unclear\",\n      \"note\": \"The 'effective-policy.ini' file does not specify the use of a mix of character types or a breached-password check. The procedure mentions a complexity check, but it is not clear if this is equivalent to a breached-password check.\"\n    },\n    {\n      \"criterion\": \"The effective configuration agrees with the written policy.\",\n      \"met\": \"no\",\n      \"note\": \"The minimum password length in the effective policy (8 characters) is less than the required 14 characters, and breached password blocking is not enabled.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"effective-policy.ini\",\n      \"text\": \"minimum_length = 8\"\n    },\n    {\n      \"file\": \"procedure_fr.md\",\n      \"text\": \"La norme interne demande 12 caractères. Les administrateurs appliquent un contrôle de complexité.\"\n    }\n  ],\n  \"recommendation\": \"Implement a minimum password length of at least 14 characters and enable breached password blocking. Ensure that the effective configuration aligns with the written policy.\",\n  \"confidence\": 0.9\n}",
+      "raw_output_final": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"The minimum password length is set to 8 characters, which is less than the required 14 characters. Additionally, breached password blocking is not enabled, which is a significant security gap.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"The enforced minimum password length is at least 14 characters.\",\n      \"met\": \"no\",\n      \"note\": \"The effective policy minimum length is 8 characters, as stated in the 'effective-policy.ini' file.\"\n    },\n    {\n      \"criterion\": \"A mix of character types or an equivalent breached-password check is enforced.\",\n      \"met\": \"unclear\",\n      \"note\": \"The 'effective-policy.ini' file does not specify the use of a mix of character types or a breached-password check. The procedure mentions a complexity check, but it is not clear if this is equivalent to a breached-password check.\"\n    },\n    {\n      \"criterion\": \"The effective configuration agrees with the written policy.\",\n      \"met\": \"no\",\n      \"note\": \"The minimum password length in the effective policy (8 characters) is less than the required 14 characters, and breached password blocking is not enabled.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"effective-policy.ini\",\n      \"text\": \"minimum_length = 8\"\n    },\n    {\n      \"file\": \"procedure_fr.md\",\n      \"text\": \"La norme interne demande 12 caractères. Les administrateurs appliquent un contrôle de complexité.\"\n    }\n  ],\n  \"recommendation\": \"Implement a minimum password length of at least 14 characters and enable breached password blocking. Ensure that the effective configuration aligns with the written policy.\",\n  \"confidence\": 0.9\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 2,
+        "total": 2,
+        "rate": 1.0
+      },
+      "wall_clock_total_seconds": 54.347830048000105,
+      "wall_clock_elapsed_seconds": 54.34794374299963,
+      "model_reported_total_seconds": 54.346619942,
+      "model_load_seconds": 0.001372722,
+      "prompt_tokens": 1198,
+      "output_tokens": 383,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 0.15463,
+      "prompt_processing_tokens_per_second": 7747.526353230292,
+      "generation_seconds": 54.180005,
+      "generation_tokens_per_second": 7.069028509687291,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 54346619942,
+          "load_duration": 1372722,
+          "prompt_eval_count": 1198,
+          "prompt_eval_duration": 154630000,
+          "eval_count": 383,
+          "eval_duration": 54180005000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 1276,
+      "likely_truncated": false,
+      "num_ctx": 8192,
+      "prompt_version": "eval_v1",
+      "language": "fr",
+      "tags": [
+        "contradiction"
+      ]
+    }
+  ]
+}

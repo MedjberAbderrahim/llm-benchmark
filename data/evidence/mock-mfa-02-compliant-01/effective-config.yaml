@@ -1,0 +1,5 @@
+scope: all_interactive_admins
+mfa_required: true
+exceptions:
+- vaulted_emergency_account
+emergency_account_monitoring: true

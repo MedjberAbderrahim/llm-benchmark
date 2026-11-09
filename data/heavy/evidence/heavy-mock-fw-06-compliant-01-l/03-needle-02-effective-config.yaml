@@ -1,0 +1,8 @@
+default_inbound: deny
+rules:
+- source: 203.0.113.8/32
+  port: 443
+  action: allow
+- source: 198.51.100.0/24
+  port: 22
+  action: allow

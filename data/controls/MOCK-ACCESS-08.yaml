@@ -1,0 +1,12 @@
+id: MOCK-ACCESS-08
+domain: Access Control
+title: Periodic review of user access
+description: Mock control, not authoritative. Account owners should regularly confirm
+  access remains appropriate.
+evaluation_criteria:
+- Named access owners review active user access at least every 90 days.
+- The review covers the in-scope user population and records decisions.
+- Access removals or changes are tracked to completion.
+expected_evidence:
+- Access-review procedure
+- Dated access-review log with decisions and remediation

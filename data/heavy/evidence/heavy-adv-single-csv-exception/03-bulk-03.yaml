@@ -1,0 +1,68 @@
+# Fictional operations register OPS-0003
+register:
+  entries:
+    - reference: OPS-03-00000
+      owner_group: service-blue
+      site_code: hub-04
+      lifecycle_state: archived
+      delivery_batch: B-0003
+    - reference: OPS-03-00001
+      owner_group: continuity-green
+      site_code: site-b1
+      lifecycle_state: in-transit
+      delivery_batch: B-0020
+    - reference: OPS-03-00002
+      owner_group: ops-north
+      site_code: annex-02
+      lifecycle_state: active
+      delivery_batch: B-0037
+    - reference: OPS-03-00003
+      owner_group: records-east
+      site_code: site-c7
+      lifecycle_state: staged
+      delivery_batch: B-0054
+    - reference: OPS-03-00004
+      owner_group: facilities-west
+      site_code: site-a3
+      lifecycle_state: assigned
+      delivery_batch: B-0071
+    - reference: OPS-03-00005
+      owner_group: service-blue
+      site_code: hub-04
+      lifecycle_state: archived
+      delivery_batch: B-0088
+    - reference: OPS-03-00006
+      owner_group: continuity-green
+      site_code: site-b1
+      lifecycle_state: in-transit
+      delivery_batch: B-0105
+    - reference: OPS-03-00007
+      owner_group: ops-north
+      site_code: annex-02
+      lifecycle_state: active
+      delivery_batch: B-0122
+    - reference: OPS-03-00008
+      owner_group: records-east
+      site_code: site-c7
+      lifecycle_state: staged
+      delivery_batch: B-0139
+    - reference: OPS-03-00009
+      owner_group: facilities-west
+      site_code: site-a3
+      lifecycle_state: assigned
+      delivery_batch: B-0156
+    - reference: OPS-03-00010
+      owner_group: service-blue
+      site_code: hub-04
+      lifecycle_state: archived
+      delivery_batch: B-0173
+    - reference: OPS-03-00011
+      owner_group: continuity-green
+      site_code: site-b1
+      lifecycle_state: in-transit
+      delivery_batch: B-0190
+    - reference: OPS-03-00012
+      owner_group: ops-north
+      site_code: annex-02
+      lifecycle_state: active
+      delivery_batch: B-0207

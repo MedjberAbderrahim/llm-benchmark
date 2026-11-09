@@ -1,0 +1,12 @@
+id: MOCK-MFA-02
+domain: Authentication
+title: Multi-factor authentication for administrators
+description: Mock control, not authoritative. Privileged human access should require
+  more than one authentication factor.
+evaluation_criteria:
+- All interactive privileged accounts require MFA.
+- Any emergency account exception is limited, documented, and monitored.
+- The active identity configuration agrees with the policy.
+expected_evidence:
+- Privileged-access policy
+- Identity-provider MFA configuration or coverage export

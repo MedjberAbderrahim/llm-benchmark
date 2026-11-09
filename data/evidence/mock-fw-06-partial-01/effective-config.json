@@ -1,0 +1,11 @@
+{
+  "default_inbound": "deny",
+  "rules": [
+    {
+      "source": "0.0.0.0/0",
+      "port": 22,
+      "action": "allow",
+      "ticket": "NET-204"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "settings": {
+    "dataset": "base",
+    "model": "lexical-only"
+  },
+  "results": [
+    {
+      "chunk_tokens": 400,
+      "overlap": 60,
+      "top_k": 5,
+      "retriever": "bm25",
+      "cases": 3,
+      "gold_passages": 0,
+      "gold_hits": 0,
+      "recall": null,
+      "mrr": null,
+      "mean_context_tokens": 199.0,
+      "embedding_model": "lexical-only",
+      "cache_hit_rate": 0.0
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "mock-pwd-01-compliant-01",
+      "tier": "S",
+      "language": "en",
+      "control_id": "MOCK-PWD-01",
+      "tags": [],
+      "gold_total": 0,
+      "gold_hits": 0,
+      "mrr": null,
+      "gold_ranks": [],
+      "context_tokens": 289,
+      "retrieval_seconds": 0.0006553059999987454,
+      "embedding_seconds": 0.0,
+      "chunk_tokens": 400,
+      "overlap": 60,
+      "context_tokens_by_k": {
+        "5": 289
+      },
+      "top_k": 5,
+      "retriever": "bm25"
+    },
+    {
+      "case_id": "mock-pwd-01-partial-01",
+      "tier": "S",
+      "language": "fr",
+      "control_id": "MOCK-PWD-01",
+      "tags": [
+        "contradiction"
+      ],
+      "gold_total": 0,
+      "gold_hits": 0,
+      "mrr": null,
+      "gold_ranks": [],
+      "context_tokens": 177,
+      "retrieval_seconds": 0.0003043339997930161,
+      "embedding_seconds": 0.0,
+      "chunk_tokens": 400,
+      "overlap": 60,
+      "context_tokens_by_k": {
+        "5": 177
+      },
+      "top_k": 5,
+      "retriever": "bm25"
+    },
+    {
+      "case_id": "mock-pwd-01-non-compliant-01",
+      "tier": "S",
+      "language": "en",
+      "control_id": "MOCK-PWD-01",
+      "tags": [],
+      "gold_total": 0,
+      "gold_hits": 0,
+      "mrr": null,
+      "gold_ranks": [],
+      "context_tokens": 131,
+      "retrieval_seconds": 0.0003190009999798349,
+      "embedding_seconds": 0.0,
+      "chunk_tokens": 400,
+      "overlap": 60,
+      "context_tokens_by_k": {
+        "5": 131
+      },
+      "top_k": 5,
+      "retriever": "bm25"
+    }
+  ]
+}

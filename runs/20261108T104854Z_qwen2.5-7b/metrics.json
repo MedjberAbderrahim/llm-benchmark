@@ -1,0 +1,2984 @@
+{
+  "selected_case_repetitions": 3,
+  "scored_outputs": 3,
+  "verdict_accuracy": 0.6666666666666666,
+  "confusion_matrix": {
+    "compliant": {
+      "compliant": 1,
+      "partial": 0,
+      "non_compliant": 0,
+      "insufficient_evidence": 0
+    },
+    "partial": {
+      "compliant": 0,
+      "partial": 0,
+      "non_compliant": 1,
+      "insufficient_evidence": 0
+    },
+    "non_compliant": {
+      "compliant": 0,
+      "partial": 0,
+      "non_compliant": 1,
+      "insufficient_evidence": 0
+    },
+    "insufficient_evidence": {
+      "compliant": 0,
+      "partial": 0,
+      "non_compliant": 0,
+      "insufficient_evidence": 0
+    }
+  },
+  "per_class": {
+    "compliant": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1
+    },
+    "partial": {
+      "precision": null,
+      "recall": 0.0,
+      "support": 1
+    },
+    "non_compliant": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "support": 1
+    },
+    "insufficient_evidence": {
+      "precision": null,
+      "recall": null,
+      "support": 0
+    }
+  },
+  "dangerous_false_reassurance_count": 0,
+  "over_strict_error_count": 1,
+  "initial_valid_json_schema_count": 3,
+  "initial_valid_json_rate": 1.0,
+  "final_valid_json_schema_count": 3,
+  "final_valid_json_rate": 1.0,
+  "schema_failure_count_before_retry": 0,
+  "final_invalid_output_count": 0,
+  "repair_retry_count": 0,
+  "quote_validity_rate": 1.0,
+  "valid_quotes": 5,
+  "total_quotes": 5,
+  "prompt_injection_case_count": 1,
+  "prompt_injection_resistance_rate": 1.0,
+  "accuracy_by_tag": {
+    "contradiction": {
+      "cases": 1,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "injection": {
+      "cases": 1,
+      "correct": 1,
+      "accuracy": 1.0
+    }
+  },
+  "accuracy_by_language": {
+    "en": {
+      "cases": 0,
+      "correct": 0,
+      "accuracy": null
+    },
+    "fr": {
+      "cases": 2,
+      "correct": 1,
+      "accuracy": 0.5
+    },
+    "mixed": {
+      "cases": 1,
+      "correct": 1,
+      "accuracy": 1.0
+    }
+  },
+  "mean_confidence_correct": 0.95,
+  "mean_confidence_incorrect": 0.9,
+  "latency_seconds": {
+    "mean": 68.31416562866677,
+    "median": 71.0056749840005,
+    "p95": 78.73066016699977,
+    "min": 54.347830048000105,
+    "max": 79.58899185399969
+  },
+  "mean_prompt_processing_tokens_per_second": 2606.3432864496767,
+  "mean_generation_tokens_per_second": 7.016135051038477,
+  "total_run_seconds": 204.95467904399993,
+  "cases_per_minute": 0.878242940534953,
+  "projected_300_control_minutes": 341.59113173999987,
+  "projected_300_control_hours": 5.693185528999998,
+  "resource_metrics": {
+    "sample_interval_seconds": 1.0,
+    "sample_count": 316,
+    "mean_system_cpu_percent": 59.48,
+    "peak_system_cpu_percent": 80.7,
+    "mean_ram_used_bytes": 18417073930,
+    "peak_ram_used_bytes": 19006177280,
+    "mean_ollama_server_cpu_percent": 0.16,
+    "peak_ollama_server_rss_bytes": 53055488,
+    "mean_gpu_utilization_percent": null,
+    "peak_gpu_utilization_percent": null,
+    "peak_gpu_vram_used_mb": null,
+    "degradation_notes": [
+      "nvidia-smi not installed; GPU metrics unavailable.",
+      "NVIDIA utilization/VRAM samples unavailable."
+    ],
+    "samples": [
+      {
+        "timestamp": 1794134934.3022885,
+        "system_cpu_percent": 0.0,
+        "ram_used_bytes": 13242449920,
+        "ollama_server_rss_bytes": 41598976,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134935.302985,
+        "system_cpu_percent": 0.0,
+        "ram_used_bytes": 13791944704,
+        "ollama_server_rss_bytes": 42278912,
+        "ollama_server_cpu_percent": 3.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134936.3037732,
+        "system_cpu_percent": 18.8,
+        "ram_used_bytes": 14845247488,
+        "ollama_server_rss_bytes": 42319872,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134937.3044083,
+        "system_cpu_percent": 17.6,
+        "ram_used_bytes": 15313121280,
+        "ollama_server_rss_bytes": 42360832,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134938.3050203,
+        "system_cpu_percent": 18.3,
+        "ram_used_bytes": 15822462976,
+        "ollama_server_rss_bytes": 42418176,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134939.3056293,
+        "system_cpu_percent": 19.2,
+        "ram_used_bytes": 16309723136,
+        "ollama_server_rss_bytes": 42450944,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134940.3062227,
+        "system_cpu_percent": 18.3,
+        "ram_used_bytes": 16821567488,
+        "ollama_server_rss_bytes": 42483712,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134941.3068535,
+        "system_cpu_percent": 18.9,
+        "ram_used_bytes": 17327316992,
+        "ollama_server_rss_bytes": 42500096,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134942.307551,
+        "system_cpu_percent": 24.0,
+        "ram_used_bytes": 18104610816,
+        "ollama_server_rss_bytes": 42524672,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134943.3085384,
+        "system_cpu_percent": 65.6,
+        "ram_used_bytes": 18184105984,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 6.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134944.309346,
+        "system_cpu_percent": 64.5,
+        "ram_used_bytes": 18386202624,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134945.3102453,
+        "system_cpu_percent": 62.6,
+        "ram_used_bytes": 18387832832,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134946.311048,
+        "system_cpu_percent": 68.5,
+        "ram_used_bytes": 18410950656,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134947.3118868,
+        "system_cpu_percent": 69.1,
+        "ram_used_bytes": 18412355584,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134948.3128402,
+        "system_cpu_percent": 68.9,
+        "ram_used_bytes": 18390622208,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134949.3135147,
+        "system_cpu_percent": 68.1,
+        "ram_used_bytes": 18389274624,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134950.3143868,
+        "system_cpu_percent": 62.1,
+        "ram_used_bytes": 18388197376,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134951.3152165,
+        "system_cpu_percent": 66.8,
+        "ram_used_bytes": 18387968000,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134952.31601,
+        "system_cpu_percent": 62.4,
+        "ram_used_bytes": 18387648512,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134953.3169572,
+        "system_cpu_percent": 64.6,
+        "ram_used_bytes": 18383052800,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134954.3178446,
+        "system_cpu_percent": 62.4,
+        "ram_used_bytes": 18386046976,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134955.318658,
+        "system_cpu_percent": 64.7,
+        "ram_used_bytes": 18384166912,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134956.3193457,
+        "system_cpu_percent": 64.4,
+        "ram_used_bytes": 18384314368,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134957.320312,
+        "system_cpu_percent": 62.3,
+        "ram_used_bytes": 18388197376,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134958.3212137,
+        "system_cpu_percent": 64.4,
+        "ram_used_bytes": 18388176896,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134959.321996,
+        "system_cpu_percent": 68.6,
+        "ram_used_bytes": 18387947520,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134960.3227007,
+        "system_cpu_percent": 62.3,
+        "ram_used_bytes": 18388000768,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134961.3235312,
+        "system_cpu_percent": 64.3,
+        "ram_used_bytes": 18388656128,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134962.324299,
+        "system_cpu_percent": 63.1,
+        "ram_used_bytes": 18389250048,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134963.3260872,
+        "system_cpu_percent": 75.0,
+        "ram_used_bytes": 18395504640,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134964.326894,
+        "system_cpu_percent": 73.2,
+        "ram_used_bytes": 18394001408,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134965.327715,
+        "system_cpu_percent": 63.0,
+        "ram_used_bytes": 18393825280,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134966.3285556,
+        "system_cpu_percent": 61.2,
+        "ram_used_bytes": 18389921792,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134967.3293238,
+        "system_cpu_percent": 64.5,
+        "ram_used_bytes": 18393997312,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134968.3303154,
+        "system_cpu_percent": 58.5,
+        "ram_used_bytes": 18391293952,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134969.3310838,
+        "system_cpu_percent": 54.7,
+        "ram_used_bytes": 18374967296,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134970.331908,
+        "system_cpu_percent": 57.0,
+        "ram_used_bytes": 18377117696,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134971.3327928,
+        "system_cpu_percent": 63.0,
+        "ram_used_bytes": 18380394496,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134972.333784,
+        "system_cpu_percent": 55.0,
+        "ram_used_bytes": 18315735040,
+        "ollama_server_rss_bytes": 52334592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134973.3346267,
+        "system_cpu_percent": 57.0,
+        "ram_used_bytes": 18305744896,
+        "ollama_server_rss_bytes": 52338688,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134974.335476,
+        "system_cpu_percent": 56.2,
+        "ram_used_bytes": 18319806464,
+        "ollama_server_rss_bytes": 52338688,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134975.3363445,
+        "system_cpu_percent": 55.3,
+        "ram_used_bytes": 18322415616,
+        "ollama_server_rss_bytes": 52338688,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134976.3373525,
+        "system_cpu_percent": 57.0,
+        "ram_used_bytes": 18326724608,
+        "ollama_server_rss_bytes": 52338688,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134977.338193,
+        "system_cpu_percent": 53.2,
+        "ram_used_bytes": 18322366464,
+        "ollama_server_rss_bytes": 52338688,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134978.3390255,
+        "system_cpu_percent": 57.9,
+        "ram_used_bytes": 18322575360,
+        "ollama_server_rss_bytes": 52338688,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134979.3398764,
+        "system_cpu_percent": 54.0,
+        "ram_used_bytes": 18326343680,
+        "ollama_server_rss_bytes": 52338688,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134980.3409047,
+        "system_cpu_percent": 55.0,
+        "ram_used_bytes": 18317828096,
+        "ollama_server_rss_bytes": 52338688,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134981.341745,
+        "system_cpu_percent": 58.6,
+        "ram_used_bytes": 18316623872,
+        "ollama_server_rss_bytes": 52338688,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134982.3425891,
+        "system_cpu_percent": 52.8,
+        "ram_used_bytes": 18314850304,
+        "ollama_server_rss_bytes": 52338688,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134983.3435764,
+        "system_cpu_percent": 57.6,
+        "ram_used_bytes": 18313113600,
+        "ollama_server_rss_bytes": 52338688,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134984.3444424,
+        "system_cpu_percent": 58.3,
+        "ram_used_bytes": 18316255232,
+        "ollama_server_rss_bytes": 52338688,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134985.3452845,
+        "system_cpu_percent": 54.1,
+        "ram_used_bytes": 18313408512,
+        "ollama_server_rss_bytes": 52346880,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134986.3461251,
+        "system_cpu_percent": 53.0,
+        "ram_used_bytes": 18311663616,
+        "ollama_server_rss_bytes": 52346880,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134987.3470945,
+        "system_cpu_percent": 71.4,
+        "ram_used_bytes": 18311823360,
+        "ollama_server_rss_bytes": 52346880,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134988.3479803,
+        "system_cpu_percent": 62.9,
+        "ram_used_bytes": 18316410880,
+        "ollama_server_rss_bytes": 52346880,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134989.348927,
+        "system_cpu_percent": 62.3,
+        "ram_used_bytes": 18316070912,
+        "ollama_server_rss_bytes": 52346880,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134990.3497736,
+        "system_cpu_percent": 61.2,
+        "ram_used_bytes": 18316058624,
+        "ollama_server_rss_bytes": 52346880,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134991.3508577,
+        "system_cpu_percent": 60.0,
+        "ram_used_bytes": 18316017664,
+        "ollama_server_rss_bytes": 52346880,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134992.3517215,
+        "system_cpu_percent": 62.2,
+        "ram_used_bytes": 18332368896,
+        "ollama_server_rss_bytes": 52346880,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134993.352768,
+        "system_cpu_percent": 57.5,
+        "ram_used_bytes": 18332237824,
+        "ollama_server_rss_bytes": 52346880,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134994.3540869,
+        "system_cpu_percent": 56.2,
+        "ram_used_bytes": 18332827648,
+        "ollama_server_rss_bytes": 52346880,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134995.3555157,
+        "system_cpu_percent": 68.8,
+        "ram_used_bytes": 18333499392,
+        "ollama_server_rss_bytes": 52346880,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134996.356888,
+        "system_cpu_percent": 64.2,
+        "ram_used_bytes": 18335477760,
+        "ollama_server_rss_bytes": 52346880,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134997.357822,
+        "system_cpu_percent": 56.7,
+        "ram_used_bytes": 18335154176,
+        "ollama_server_rss_bytes": 52350976,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134998.3590224,
+        "system_cpu_percent": 69.8,
+        "ram_used_bytes": 18335129600,
+        "ollama_server_rss_bytes": 52350976,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794134999.3599873,
+        "system_cpu_percent": 61.6,
+        "ram_used_bytes": 18344484864,
+        "ollama_server_rss_bytes": 52350976,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135000.3614542,
+        "system_cpu_percent": 60.4,
+        "ram_used_bytes": 18339405824,
+        "ollama_server_rss_bytes": 52350976,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135001.3628314,
+        "system_cpu_percent": 59.9,
+        "ram_used_bytes": 18331111424,
+        "ollama_server_rss_bytes": 52355072,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135002.3642588,
+        "system_cpu_percent": 61.1,
+        "ram_used_bytes": 18331078656,
+        "ollama_server_rss_bytes": 52355072,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135003.3658414,
+        "system_cpu_percent": 59.8,
+        "ram_used_bytes": 18336985088,
+        "ollama_server_rss_bytes": 52355072,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135004.3672998,
+        "system_cpu_percent": 58.9,
+        "ram_used_bytes": 18338197504,
+        "ollama_server_rss_bytes": 52363264,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135005.3685074,
+        "system_cpu_percent": 55.6,
+        "ram_used_bytes": 18339663872,
+        "ollama_server_rss_bytes": 52363264,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135006.3695502,
+        "system_cpu_percent": 56.9,
+        "ram_used_bytes": 18350215168,
+        "ollama_server_rss_bytes": 52391936,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135007.3707235,
+        "system_cpu_percent": 56.5,
+        "ram_used_bytes": 18351259648,
+        "ollama_server_rss_bytes": 52391936,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135008.3720946,
+        "system_cpu_percent": 65.7,
+        "ram_used_bytes": 18329227264,
+        "ollama_server_rss_bytes": 52396032,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135009.3731909,
+        "system_cpu_percent": 60.0,
+        "ram_used_bytes": 18327691264,
+        "ollama_server_rss_bytes": 52396032,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135010.3742604,
+        "system_cpu_percent": 61.0,
+        "ram_used_bytes": 18338295808,
+        "ollama_server_rss_bytes": 52400128,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135011.3756907,
+        "system_cpu_percent": 72.7,
+        "ram_used_bytes": 18335260672,
+        "ollama_server_rss_bytes": 52400128,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135012.3772423,
+        "system_cpu_percent": 65.6,
+        "ram_used_bytes": 18346975232,
+        "ollama_server_rss_bytes": 52400128,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135013.3785722,
+        "system_cpu_percent": 64.3,
+        "ram_used_bytes": 18357186560,
+        "ollama_server_rss_bytes": 52408320,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135014.3796651,
+        "system_cpu_percent": 62.7,
+        "ram_used_bytes": 18355163136,
+        "ollama_server_rss_bytes": 52416512,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135015.3815563,
+        "system_cpu_percent": 62.4,
+        "ram_used_bytes": 18369142784,
+        "ollama_server_rss_bytes": 52420608,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135016.3827085,
+        "system_cpu_percent": 66.6,
+        "ram_used_bytes": 18356191232,
+        "ollama_server_rss_bytes": 52453376,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135017.3857846,
+        "system_cpu_percent": 58.0,
+        "ram_used_bytes": 18346278912,
+        "ollama_server_rss_bytes": 52453376,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135018.3872442,
+        "system_cpu_percent": 61.2,
+        "ram_used_bytes": 18333679616,
+        "ollama_server_rss_bytes": 52453376,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135019.389103,
+        "system_cpu_percent": 61.1,
+        "ram_used_bytes": 18323308544,
+        "ollama_server_rss_bytes": 52461568,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135020.3904064,
+        "system_cpu_percent": 60.7,
+        "ram_used_bytes": 18312364032,
+        "ollama_server_rss_bytes": 52465664,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135021.391743,
+        "system_cpu_percent": 62.4,
+        "ram_used_bytes": 18308149248,
+        "ollama_server_rss_bytes": 52473856,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135022.3930984,
+        "system_cpu_percent": 60.5,
+        "ram_used_bytes": 18306269184,
+        "ollama_server_rss_bytes": 52482048,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135023.3971276,
+        "system_cpu_percent": 62.2,
+        "ram_used_bytes": 18293829632,
+        "ollama_server_rss_bytes": 52482048,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135024.398624,
+        "system_cpu_percent": 64.5,
+        "ram_used_bytes": 18292449280,
+        "ollama_server_rss_bytes": 52482048,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135025.3996015,
+        "system_cpu_percent": 68.1,
+        "ram_used_bytes": 18284118016,
+        "ollama_server_rss_bytes": 52486144,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135026.4015334,
+        "system_cpu_percent": 77.1,
+        "ram_used_bytes": 18281295872,
+        "ollama_server_rss_bytes": 52486144,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135027.4027476,
+        "system_cpu_percent": 79.3,
+        "ram_used_bytes": 18273644544,
+        "ollama_server_rss_bytes": 52486144,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135028.403936,
+        "system_cpu_percent": 65.0,
+        "ram_used_bytes": 18271608832,
+        "ollama_server_rss_bytes": 52494336,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135029.4050875,
+        "system_cpu_percent": 57.3,
+        "ram_used_bytes": 18269290496,
+        "ollama_server_rss_bytes": 52502528,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135030.4059646,
+        "system_cpu_percent": 56.1,
+        "ram_used_bytes": 18272641024,
+        "ollama_server_rss_bytes": 52514816,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135031.4070976,
+        "system_cpu_percent": 61.5,
+        "ram_used_bytes": 18272141312,
+        "ollama_server_rss_bytes": 52514816,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135032.408276,
+        "system_cpu_percent": 63.8,
+        "ram_used_bytes": 18272075776,
+        "ollama_server_rss_bytes": 52514816,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135033.4095886,
+        "system_cpu_percent": 61.9,
+        "ram_used_bytes": 18267729920,
+        "ollama_server_rss_bytes": 52514816,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135034.410873,
+        "system_cpu_percent": 57.6,
+        "ram_used_bytes": 18271002624,
+        "ollama_server_rss_bytes": 52523008,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135035.4121509,
+        "system_cpu_percent": 62.1,
+        "ram_used_bytes": 18265178112,
+        "ollama_server_rss_bytes": 52539392,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135036.4135787,
+        "system_cpu_percent": 57.2,
+        "ram_used_bytes": 18267983872,
+        "ollama_server_rss_bytes": 52539392,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135037.4149723,
+        "system_cpu_percent": 58.1,
+        "ram_used_bytes": 18268098560,
+        "ollama_server_rss_bytes": 52547584,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135038.4163983,
+        "system_cpu_percent": 55.9,
+        "ram_used_bytes": 18270396416,
+        "ollama_server_rss_bytes": 52547584,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135039.4177966,
+        "system_cpu_percent": 60.6,
+        "ram_used_bytes": 18270535680,
+        "ollama_server_rss_bytes": 52547584,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135040.4187977,
+        "system_cpu_percent": 55.9,
+        "ram_used_bytes": 18269736960,
+        "ollama_server_rss_bytes": 52551680,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135041.4203548,
+        "system_cpu_percent": 56.5,
+        "ram_used_bytes": 18269724672,
+        "ollama_server_rss_bytes": 52559872,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135042.4215856,
+        "system_cpu_percent": 55.5,
+        "ram_used_bytes": 18270015488,
+        "ollama_server_rss_bytes": 52559872,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135043.4228637,
+        "system_cpu_percent": 59.7,
+        "ram_used_bytes": 18268303360,
+        "ollama_server_rss_bytes": 52568064,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135044.424111,
+        "system_cpu_percent": 56.1,
+        "ram_used_bytes": 18269065216,
+        "ollama_server_rss_bytes": 52797440,
+        "ollama_server_cpu_percent": 2.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135045.4255612,
+        "system_cpu_percent": 56.1,
+        "ram_used_bytes": 18283393024,
+        "ollama_server_rss_bytes": 52797440,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135046.4268937,
+        "system_cpu_percent": 55.1,
+        "ram_used_bytes": 18281304064,
+        "ollama_server_rss_bytes": 52805632,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135047.4278305,
+        "system_cpu_percent": 57.0,
+        "ram_used_bytes": 18284666880,
+        "ollama_server_rss_bytes": 52813824,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135048.4291775,
+        "system_cpu_percent": 55.6,
+        "ram_used_bytes": 18284744704,
+        "ollama_server_rss_bytes": 52826112,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135049.4300914,
+        "system_cpu_percent": 58.0,
+        "ram_used_bytes": 18255831040,
+        "ollama_server_rss_bytes": 52834304,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135050.4315681,
+        "system_cpu_percent": 55.2,
+        "ram_used_bytes": 18257793024,
+        "ollama_server_rss_bytes": 52834304,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135051.4328763,
+        "system_cpu_percent": 55.8,
+        "ram_used_bytes": 18254917632,
+        "ollama_server_rss_bytes": 52834304,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135052.4341056,
+        "system_cpu_percent": 54.5,
+        "ram_used_bytes": 18253778944,
+        "ollama_server_rss_bytes": 52834304,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135053.4354932,
+        "system_cpu_percent": 56.5,
+        "ram_used_bytes": 18251247616,
+        "ollama_server_rss_bytes": 52846592,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135054.4365187,
+        "system_cpu_percent": 56.1,
+        "ram_used_bytes": 18254249984,
+        "ollama_server_rss_bytes": 52854784,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135055.4378946,
+        "system_cpu_percent": 58.4,
+        "ram_used_bytes": 18252673024,
+        "ollama_server_rss_bytes": 52854784,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135056.4393046,
+        "system_cpu_percent": 57.6,
+        "ram_used_bytes": 18252353536,
+        "ollama_server_rss_bytes": 52854784,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135057.4407225,
+        "system_cpu_percent": 55.1,
+        "ram_used_bytes": 18246172672,
+        "ollama_server_rss_bytes": 52858880,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135058.442149,
+        "system_cpu_percent": 55.9,
+        "ram_used_bytes": 18250981376,
+        "ollama_server_rss_bytes": 52858880,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135059.4431162,
+        "system_cpu_percent": 56.2,
+        "ram_used_bytes": 18249748480,
+        "ollama_server_rss_bytes": 52867072,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135060.4441183,
+        "system_cpu_percent": 55.0,
+        "ram_used_bytes": 18249351168,
+        "ollama_server_rss_bytes": 52867072,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135061.445549,
+        "system_cpu_percent": 56.6,
+        "ram_used_bytes": 18248720384,
+        "ollama_server_rss_bytes": 52875264,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135062.446728,
+        "system_cpu_percent": 58.2,
+        "ram_used_bytes": 18253340672,
+        "ollama_server_rss_bytes": 52879360,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135063.4479215,
+        "system_cpu_percent": 56.8,
+        "ram_used_bytes": 18247520256,
+        "ollama_server_rss_bytes": 52973568,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135064.4494457,
+        "system_cpu_percent": 56.5,
+        "ram_used_bytes": 18249117696,
+        "ollama_server_rss_bytes": 52973568,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135065.4508326,
+        "system_cpu_percent": 57.3,
+        "ram_used_bytes": 18249072640,
+        "ollama_server_rss_bytes": 52973568,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135066.4517407,
+        "system_cpu_percent": 56.0,
+        "ram_used_bytes": 18251300864,
+        "ollama_server_rss_bytes": 52977664,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135067.452906,
+        "system_cpu_percent": 57.1,
+        "ram_used_bytes": 18246643712,
+        "ollama_server_rss_bytes": 52985856,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135068.453774,
+        "system_cpu_percent": 57.5,
+        "ram_used_bytes": 18243416064,
+        "ollama_server_rss_bytes": 52985856,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135069.4552772,
+        "system_cpu_percent": 57.9,
+        "ram_used_bytes": 18249101312,
+        "ollama_server_rss_bytes": 52985856,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135070.4566736,
+        "system_cpu_percent": 56.9,
+        "ram_used_bytes": 18233909248,
+        "ollama_server_rss_bytes": 52985856,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135071.4581532,
+        "system_cpu_percent": 58.1,
+        "ram_used_bytes": 18233810944,
+        "ollama_server_rss_bytes": 52989952,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135072.4594235,
+        "system_cpu_percent": 56.1,
+        "ram_used_bytes": 18233434112,
+        "ollama_server_rss_bytes": 52989952,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135073.4608765,
+        "system_cpu_percent": 55.8,
+        "ram_used_bytes": 18227179520,
+        "ollama_server_rss_bytes": 52989952,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135074.4620621,
+        "system_cpu_percent": 56.9,
+        "ram_used_bytes": 18230394880,
+        "ollama_server_rss_bytes": 52989952,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135075.4629605,
+        "system_cpu_percent": 59.3,
+        "ram_used_bytes": 18229997568,
+        "ollama_server_rss_bytes": 52989952,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135076.4643123,
+        "system_cpu_percent": 58.6,
+        "ram_used_bytes": 18237374464,
+        "ollama_server_rss_bytes": 52994048,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135077.4658961,
+        "system_cpu_percent": 61.0,
+        "ram_used_bytes": 18234433536,
+        "ollama_server_rss_bytes": 53006336,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135078.4672022,
+        "system_cpu_percent": 57.0,
+        "ram_used_bytes": 18232254464,
+        "ollama_server_rss_bytes": 53006336,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135079.4684389,
+        "system_cpu_percent": 56.7,
+        "ram_used_bytes": 18232418304,
+        "ollama_server_rss_bytes": 53006336,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135080.4696996,
+        "system_cpu_percent": 55.8,
+        "ram_used_bytes": 18234478592,
+        "ollama_server_rss_bytes": 53010432,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135081.4710145,
+        "system_cpu_percent": 57.4,
+        "ram_used_bytes": 18233446400,
+        "ollama_server_rss_bytes": 53010432,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135082.472161,
+        "system_cpu_percent": 69.9,
+        "ram_used_bytes": 18283991040,
+        "ollama_server_rss_bytes": 53010432,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135083.473073,
+        "system_cpu_percent": 69.8,
+        "ram_used_bytes": 18315747328,
+        "ollama_server_rss_bytes": 53010432,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135084.4741232,
+        "system_cpu_percent": 66.4,
+        "ram_used_bytes": 18301550592,
+        "ollama_server_rss_bytes": 53010432,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135085.4756992,
+        "system_cpu_percent": 66.4,
+        "ram_used_bytes": 18300755968,
+        "ollama_server_rss_bytes": 53010432,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135086.477059,
+        "system_cpu_percent": 56.7,
+        "ram_used_bytes": 18300297216,
+        "ollama_server_rss_bytes": 53010432,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135087.4784915,
+        "system_cpu_percent": 61.3,
+        "ram_used_bytes": 18300424192,
+        "ollama_server_rss_bytes": 53010432,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135088.479753,
+        "system_cpu_percent": 67.0,
+        "ram_used_bytes": 18298015744,
+        "ollama_server_rss_bytes": 53010432,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135089.481115,
+        "system_cpu_percent": 57.6,
+        "ram_used_bytes": 18298019840,
+        "ollama_server_rss_bytes": 53010432,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135090.4823198,
+        "system_cpu_percent": 60.5,
+        "ram_used_bytes": 18307170304,
+        "ollama_server_rss_bytes": 53010432,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135091.4835908,
+        "system_cpu_percent": 61.2,
+        "ram_used_bytes": 18299015168,
+        "ollama_server_rss_bytes": 53010432,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135092.484459,
+        "system_cpu_percent": 60.2,
+        "ram_used_bytes": 18295799808,
+        "ollama_server_rss_bytes": 53010432,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135093.4854395,
+        "system_cpu_percent": 77.6,
+        "ram_used_bytes": 18299375616,
+        "ollama_server_rss_bytes": 53010432,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135094.4863806,
+        "system_cpu_percent": 57.6,
+        "ram_used_bytes": 18290667520,
+        "ollama_server_rss_bytes": 53010432,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135095.487605,
+        "system_cpu_percent": 59.4,
+        "ram_used_bytes": 18292051968,
+        "ollama_server_rss_bytes": 53010432,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135096.48907,
+        "system_cpu_percent": 63.2,
+        "ram_used_bytes": 18289131520,
+        "ollama_server_rss_bytes": 53010432,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135097.490958,
+        "system_cpu_percent": 60.6,
+        "ram_used_bytes": 18291429376,
+        "ollama_server_rss_bytes": 53010432,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135098.4924934,
+        "system_cpu_percent": 59.2,
+        "ram_used_bytes": 18380042240,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 2.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135099.4933736,
+        "system_cpu_percent": 62.2,
+        "ram_used_bytes": 18379608064,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135100.49438,
+        "system_cpu_percent": 58.5,
+        "ram_used_bytes": 18371207168,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135101.4952219,
+        "system_cpu_percent": 63.0,
+        "ram_used_bytes": 18371522560,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135102.4960885,
+        "system_cpu_percent": 63.7,
+        "ram_used_bytes": 18365341696,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135103.49707,
+        "system_cpu_percent": 65.8,
+        "ram_used_bytes": 18375344128,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135104.4979303,
+        "system_cpu_percent": 62.2,
+        "ram_used_bytes": 18374844416,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135105.498681,
+        "system_cpu_percent": 73.8,
+        "ram_used_bytes": 18374766592,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135106.4995167,
+        "system_cpu_percent": 75.3,
+        "ram_used_bytes": 18375008256,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135107.5004203,
+        "system_cpu_percent": 55.7,
+        "ram_used_bytes": 18377154560,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135108.5012648,
+        "system_cpu_percent": 54.4,
+        "ram_used_bytes": 18376978432,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135109.5020852,
+        "system_cpu_percent": 53.9,
+        "ram_used_bytes": 18373410816,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135110.503052,
+        "system_cpu_percent": 62.1,
+        "ram_used_bytes": 18360655872,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135111.504003,
+        "system_cpu_percent": 60.3,
+        "ram_used_bytes": 18364751872,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135112.5048676,
+        "system_cpu_percent": 59.6,
+        "ram_used_bytes": 18364260352,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135113.505717,
+        "system_cpu_percent": 56.3,
+        "ram_used_bytes": 18364260352,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135114.5066862,
+        "system_cpu_percent": 61.0,
+        "ram_used_bytes": 18357661696,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135115.5076613,
+        "system_cpu_percent": 64.9,
+        "ram_used_bytes": 18363629568,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135116.5085473,
+        "system_cpu_percent": 64.0,
+        "ram_used_bytes": 18381533184,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135117.5094137,
+        "system_cpu_percent": 58.8,
+        "ram_used_bytes": 18382270464,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135118.5102682,
+        "system_cpu_percent": 54.4,
+        "ram_used_bytes": 18383278080,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135119.5111997,
+        "system_cpu_percent": 67.3,
+        "ram_used_bytes": 18394505216,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135120.5118358,
+        "system_cpu_percent": 63.8,
+        "ram_used_bytes": 18379239424,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135121.5127683,
+        "system_cpu_percent": 62.7,
+        "ram_used_bytes": 18377076736,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135122.5136511,
+        "system_cpu_percent": 55.8,
+        "ram_used_bytes": 18376646656,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135123.5145946,
+        "system_cpu_percent": 58.0,
+        "ram_used_bytes": 18378403840,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135124.5154407,
+        "system_cpu_percent": 58.2,
+        "ram_used_bytes": 18375585792,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135125.5163035,
+        "system_cpu_percent": 56.5,
+        "ram_used_bytes": 18382778368,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135126.5172677,
+        "system_cpu_percent": 60.2,
+        "ram_used_bytes": 18377486336,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135127.5182097,
+        "system_cpu_percent": 55.3,
+        "ram_used_bytes": 18374582272,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135128.5190487,
+        "system_cpu_percent": 59.8,
+        "ram_used_bytes": 18361217024,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135129.5198781,
+        "system_cpu_percent": 56.3,
+        "ram_used_bytes": 18365685760,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135130.5207262,
+        "system_cpu_percent": 60.3,
+        "ram_used_bytes": 18361098240,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135131.5217068,
+        "system_cpu_percent": 67.9,
+        "ram_used_bytes": 18369339392,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135132.5225835,
+        "system_cpu_percent": 74.3,
+        "ram_used_bytes": 18397024256,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135133.5235412,
+        "system_cpu_percent": 57.0,
+        "ram_used_bytes": 18391257088,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135134.5244873,
+        "system_cpu_percent": 72.0,
+        "ram_used_bytes": 18382839808,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135135.525407,
+        "system_cpu_percent": 68.3,
+        "ram_used_bytes": 18481688576,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135136.5264149,
+        "system_cpu_percent": 57.3,
+        "ram_used_bytes": 18478755840,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135137.5279362,
+        "system_cpu_percent": 66.8,
+        "ram_used_bytes": 18476900352,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135138.5289865,
+        "system_cpu_percent": 73.9,
+        "ram_used_bytes": 18489638912,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135139.5304372,
+        "system_cpu_percent": 64.8,
+        "ram_used_bytes": 18488352768,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135140.5317707,
+        "system_cpu_percent": 58.0,
+        "ram_used_bytes": 18481598464,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135141.5330105,
+        "system_cpu_percent": 60.2,
+        "ram_used_bytes": 18480967680,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135142.534374,
+        "system_cpu_percent": 58.4,
+        "ram_used_bytes": 18504228864,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135143.5358982,
+        "system_cpu_percent": 56.8,
+        "ram_used_bytes": 18503491584,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135144.5372775,
+        "system_cpu_percent": 58.7,
+        "ram_used_bytes": 18518130688,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135145.5387976,
+        "system_cpu_percent": 65.7,
+        "ram_used_bytes": 18535636992,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135146.5398629,
+        "system_cpu_percent": 62.6,
+        "ram_used_bytes": 18540146688,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135147.5412328,
+        "system_cpu_percent": 57.4,
+        "ram_used_bytes": 18534948864,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135148.5427127,
+        "system_cpu_percent": 58.2,
+        "ram_used_bytes": 18532032512,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135149.5436802,
+        "system_cpu_percent": 55.8,
+        "ram_used_bytes": 18529406976,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135150.545135,
+        "system_cpu_percent": 60.6,
+        "ram_used_bytes": 18523557888,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135151.5463128,
+        "system_cpu_percent": 56.1,
+        "ram_used_bytes": 18522923008,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135152.5475051,
+        "system_cpu_percent": 56.5,
+        "ram_used_bytes": 18520088576,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135153.5486834,
+        "system_cpu_percent": 60.9,
+        "ram_used_bytes": 18523439104,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135154.5495565,
+        "system_cpu_percent": 62.3,
+        "ram_used_bytes": 18522214400,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135155.5504856,
+        "system_cpu_percent": 57.0,
+        "ram_used_bytes": 18520797184,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135156.551791,
+        "system_cpu_percent": 60.4,
+        "ram_used_bytes": 18549153792,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135157.5530949,
+        "system_cpu_percent": 56.9,
+        "ram_used_bytes": 18549575680,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135158.554118,
+        "system_cpu_percent": 57.2,
+        "ram_used_bytes": 18523791360,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135159.5554893,
+        "system_cpu_percent": 57.7,
+        "ram_used_bytes": 18524356608,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135160.5566623,
+        "system_cpu_percent": 56.5,
+        "ram_used_bytes": 18520547328,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135161.557714,
+        "system_cpu_percent": 56.9,
+        "ram_used_bytes": 18516492288,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135162.5589044,
+        "system_cpu_percent": 63.2,
+        "ram_used_bytes": 18536431616,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135163.5599873,
+        "system_cpu_percent": 59.0,
+        "ram_used_bytes": 18539167744,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135164.5611136,
+        "system_cpu_percent": 56.7,
+        "ram_used_bytes": 18538893312,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135165.5620084,
+        "system_cpu_percent": 56.4,
+        "ram_used_bytes": 18539184128,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135166.562994,
+        "system_cpu_percent": 55.8,
+        "ram_used_bytes": 18540687360,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135167.5642452,
+        "system_cpu_percent": 55.1,
+        "ram_used_bytes": 18539970560,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135168.5651293,
+        "system_cpu_percent": 69.6,
+        "ram_used_bytes": 18553802752,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135169.5663571,
+        "system_cpu_percent": 58.0,
+        "ram_used_bytes": 18557816832,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135170.5676,
+        "system_cpu_percent": 58.5,
+        "ram_used_bytes": 18551812096,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135171.5686193,
+        "system_cpu_percent": 70.6,
+        "ram_used_bytes": 18626859008,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135172.5699794,
+        "system_cpu_percent": 64.4,
+        "ram_used_bytes": 18733604864,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135173.5712829,
+        "system_cpu_percent": 59.9,
+        "ram_used_bytes": 18735755264,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135174.572406,
+        "system_cpu_percent": 68.3,
+        "ram_used_bytes": 18740342784,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135175.5739238,
+        "system_cpu_percent": 69.0,
+        "ram_used_bytes": 18789822464,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135176.5754447,
+        "system_cpu_percent": 66.8,
+        "ram_used_bytes": 18791985152,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135177.5766442,
+        "system_cpu_percent": 74.1,
+        "ram_used_bytes": 18789441536,
+        "ollama_server_rss_bytes": 53043200,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135178.5776775,
+        "system_cpu_percent": 61.3,
+        "ram_used_bytes": 18872799232,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135179.578646,
+        "system_cpu_percent": 60.7,
+        "ram_used_bytes": 18880532480,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135180.579484,
+        "system_cpu_percent": 55.5,
+        "ram_used_bytes": 18778869760,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135181.5803335,
+        "system_cpu_percent": 56.2,
+        "ram_used_bytes": 18783236096,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135182.5812035,
+        "system_cpu_percent": 53.7,
+        "ram_used_bytes": 18783633408,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135183.5820146,
+        "system_cpu_percent": 63.5,
+        "ram_used_bytes": 18788798464,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135184.5827098,
+        "system_cpu_percent": 74.7,
+        "ram_used_bytes": 18874363904,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135185.5839033,
+        "system_cpu_percent": 80.7,
+        "ram_used_bytes": 19006177280,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135186.5847719,
+        "system_cpu_percent": 67.0,
+        "ram_used_bytes": 18994053120,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135187.5856712,
+        "system_cpu_percent": 56.1,
+        "ram_used_bytes": 18982412288,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135188.5867589,
+        "system_cpu_percent": 54.6,
+        "ram_used_bytes": 18965848064,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135189.5900211,
+        "system_cpu_percent": 56.1,
+        "ram_used_bytes": 18953506816,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135190.590862,
+        "system_cpu_percent": 58.3,
+        "ram_used_bytes": 18958077952,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135191.5917153,
+        "system_cpu_percent": 56.7,
+        "ram_used_bytes": 18936897536,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135192.5929198,
+        "system_cpu_percent": 55.7,
+        "ram_used_bytes": 18937012224,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135193.5950794,
+        "system_cpu_percent": 54.9,
+        "ram_used_bytes": 18937298944,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135194.5959995,
+        "system_cpu_percent": 55.3,
+        "ram_used_bytes": 18936881152,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135195.596837,
+        "system_cpu_percent": 55.9,
+        "ram_used_bytes": 18933854208,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135196.597644,
+        "system_cpu_percent": 54.7,
+        "ram_used_bytes": 18933972992,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135197.5985959,
+        "system_cpu_percent": 55.7,
+        "ram_used_bytes": 18933506048,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135198.5994332,
+        "system_cpu_percent": 54.4,
+        "ram_used_bytes": 18929872896,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135199.600263,
+        "system_cpu_percent": 54.9,
+        "ram_used_bytes": 18927480832,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135200.60122,
+        "system_cpu_percent": 64.4,
+        "ram_used_bytes": 18944495616,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135201.6023278,
+        "system_cpu_percent": 56.7,
+        "ram_used_bytes": 18941853696,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135202.6031954,
+        "system_cpu_percent": 57.8,
+        "ram_used_bytes": 18950754304,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135203.60408,
+        "system_cpu_percent": 57.9,
+        "ram_used_bytes": 18949263360,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135204.6049283,
+        "system_cpu_percent": 55.0,
+        "ram_used_bytes": 18941718528,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135205.6056921,
+        "system_cpu_percent": 55.4,
+        "ram_used_bytes": 18938245120,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135206.6065514,
+        "system_cpu_percent": 54.5,
+        "ram_used_bytes": 18937667584,
+        "ollama_server_rss_bytes": 53055488,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135207.6079159,
+        "system_cpu_percent": 60.8,
+        "ram_used_bytes": 18930335744,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135208.6092627,
+        "system_cpu_percent": 58.1,
+        "ram_used_bytes": 18926256128,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135209.6106007,
+        "system_cpu_percent": 56.8,
+        "ram_used_bytes": 18926424064,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135210.6119459,
+        "system_cpu_percent": 55.9,
+        "ram_used_bytes": 18929094656,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135211.6133823,
+        "system_cpu_percent": 58.5,
+        "ram_used_bytes": 18929213440,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135212.6147282,
+        "system_cpu_percent": 59.4,
+        "ram_used_bytes": 18930360320,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135213.6157916,
+        "system_cpu_percent": 59.5,
+        "ram_used_bytes": 18931855360,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135214.617238,
+        "system_cpu_percent": 57.3,
+        "ram_used_bytes": 18932002816,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135215.618081,
+        "system_cpu_percent": 59.4,
+        "ram_used_bytes": 18928562176,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135216.6193256,
+        "system_cpu_percent": 59.0,
+        "ram_used_bytes": 18923933696,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135217.620573,
+        "system_cpu_percent": 58.7,
+        "ram_used_bytes": 18922942464,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135218.622069,
+        "system_cpu_percent": 57.3,
+        "ram_used_bytes": 18926837760,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135219.623639,
+        "system_cpu_percent": 57.7,
+        "ram_used_bytes": 18919735296,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135220.6250498,
+        "system_cpu_percent": 58.2,
+        "ram_used_bytes": 18920026112,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135221.6262581,
+        "system_cpu_percent": 64.5,
+        "ram_used_bytes": 18919297024,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135222.6283102,
+        "system_cpu_percent": 64.4,
+        "ram_used_bytes": 18914750464,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135223.6297922,
+        "system_cpu_percent": 67.3,
+        "ram_used_bytes": 18923565056,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135224.6311338,
+        "system_cpu_percent": 65.6,
+        "ram_used_bytes": 18964934656,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135225.6323323,
+        "system_cpu_percent": 62.4,
+        "ram_used_bytes": 18980634624,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135226.6334717,
+        "system_cpu_percent": 63.5,
+        "ram_used_bytes": 18962542592,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135227.6343312,
+        "system_cpu_percent": 64.8,
+        "ram_used_bytes": 18965954560,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135228.6355102,
+        "system_cpu_percent": 77.2,
+        "ram_used_bytes": 18967711744,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135229.6378582,
+        "system_cpu_percent": 63.1,
+        "ram_used_bytes": 18959716352,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135230.6391225,
+        "system_cpu_percent": 64.4,
+        "ram_used_bytes": 18961682432,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135231.641121,
+        "system_cpu_percent": 74.3,
+        "ram_used_bytes": 18959679488,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135232.6421127,
+        "system_cpu_percent": 67.8,
+        "ram_used_bytes": 18963124224,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135233.6435516,
+        "system_cpu_percent": 65.9,
+        "ram_used_bytes": 18962915328,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135234.644894,
+        "system_cpu_percent": 65.6,
+        "ram_used_bytes": 18966224896,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135235.6463342,
+        "system_cpu_percent": 65.2,
+        "ram_used_bytes": 18966036480,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135236.6477535,
+        "system_cpu_percent": 68.1,
+        "ram_used_bytes": 18955685888,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135237.649136,
+        "system_cpu_percent": 65.2,
+        "ram_used_bytes": 18926137344,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135238.6501217,
+        "system_cpu_percent": 58.2,
+        "ram_used_bytes": 18887290880,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135239.6512816,
+        "system_cpu_percent": 56.7,
+        "ram_used_bytes": 18880221184,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135240.6526513,
+        "system_cpu_percent": 56.7,
+        "ram_used_bytes": 18880700416,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135241.653916,
+        "system_cpu_percent": 56.6,
+        "ram_used_bytes": 18886004736,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135242.6550229,
+        "system_cpu_percent": 55.8,
+        "ram_used_bytes": 18891128832,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135243.65619,
+        "system_cpu_percent": 57.2,
+        "ram_used_bytes": 18890301440,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135244.6572402,
+        "system_cpu_percent": 63.2,
+        "ram_used_bytes": 18888253440,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135245.6583948,
+        "system_cpu_percent": 64.8,
+        "ram_used_bytes": 18896297984,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135246.6620123,
+        "system_cpu_percent": 67.2,
+        "ram_used_bytes": 18898046976,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135247.6633892,
+        "system_cpu_percent": 58.6,
+        "ram_used_bytes": 18896596992,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 1.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135248.6645544,
+        "system_cpu_percent": 56.9,
+        "ram_used_bytes": 18895544320,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      },
+      {
+        "timestamp": 1794135248.6876552,
+        "system_cpu_percent": 59.7,
+        "ram_used_bytes": 18895544320,
+        "ollama_server_rss_bytes": 43585536,
+        "ollama_server_cpu_percent": 0.0,
+        "gpu_utilization_percent": null,
+        "gpu_vram_used_mb": null
+      }
+    ]
+  },
+  "warmup": {
+    "wall_clock_seconds": 109.42963785400025,
+    "model_reported_total_seconds": 109.428279488,
+    "model_load_seconds": 8.597157889,
+    "prompt_tokens": 1198,
+    "output_tokens": 361,
+    "discarded": true
+  },
+  "dataset_hash": "a1d5f5446bba2ffbf4899027b87c24ef35d8c743f866900ea3dfe934d583a7b8",
+  "prompt_version": "eval_v1"
+}

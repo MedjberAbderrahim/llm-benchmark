@@ -1,0 +1,81 @@
+{
+  "register": [
+    {
+      "reference": "OPS-04-00000",
+      "owner_group": "continuity-green",
+      "site_code": "annex-02",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0004"
+    },
+    {
+      "reference": "OPS-04-00001",
+      "owner_group": "ops-north",
+      "site_code": "site-c7",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0021"
+    },
+    {
+      "reference": "OPS-04-00002",
+      "owner_group": "records-east",
+      "site_code": "site-a3",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0038"
+    },
+    {
+      "reference": "OPS-04-00003",
+      "owner_group": "facilities-west",
+      "site_code": "hub-04",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0055"
+    },
+    {
+      "reference": "OPS-04-00004",
+      "owner_group": "service-blue",
+      "site_code": "site-b1",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0072"
+    },
+    {
+      "reference": "OPS-04-00005",
+      "owner_group": "continuity-green",
+      "site_code": "annex-02",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0089"
+    },
+    {
+      "reference": "OPS-04-00006",
+      "owner_group": "ops-north",
+      "site_code": "site-c7",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0106"
+    },
+    {
+      "reference": "OPS-04-00007",
+      "owner_group": "records-east",
+      "site_code": "site-a3",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0123"
+    },
+    {
+      "reference": "OPS-04-00008",
+      "owner_group": "facilities-west",
+      "site_code": "hub-04",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0140"
+    },
+    {
+      "reference": "OPS-04-00009",
+      "owner_group": "service-blue",
+      "site_code": "site-b1",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0157"
+    },
+    {
+      "reference": "OPS-04-00010",
+      "owner_group": "continuity-green",
+      "site_code": "annex-02",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0174"
+    }
+  ]
+}

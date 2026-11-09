@@ -1,0 +1,128 @@
+{
+  "label": {
+    "case_id": "mock-mfa-02-compliant-01",
+    "control_id": "MOCK-MFA-02",
+    "evidence_files": [
+      "procedure_fr.md",
+      "effective-config.yaml"
+    ],
+    "expected_status": "compliant",
+    "split": "dev",
+    "language": "fr",
+    "tags": [],
+    "rationale": "The cited policy and effective export satisfy the stated mock criteria."
+  },
+  "control": {
+    "id": "MOCK-MFA-02",
+    "domain": "Authentication",
+    "title": "Multi-factor authentication for administrators",
+    "description": "Mock control, not authoritative. Privileged human access should require more than one authentication factor.",
+    "evaluation_criteria": [
+      "All interactive privileged accounts require MFA.",
+      "Any emergency account exception is limited, documented, and monitored.",
+      "The active identity configuration agrees with the policy."
+    ],
+    "expected_evidence": [
+      "Privileged-access policy",
+      "Identity-provider MFA configuration or coverage export"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "mock-mfa-02-compliant-01",
+      "control_id": "MOCK-MFA-02",
+      "repetition": 1,
+      "expected_status": "compliant",
+      "status": "compliant",
+      "matches_expected": true,
+      "confidence": 1.0,
+      "justification": "The evidence shows that all interactive privileged accounts require MFA, and the emergency account exception is limited, documented, and monitored. The active identity configuration agrees with the policy.",
+      "criteria_assessment": [
+        {
+          "criterion": "All interactive privileged accounts require MFA.",
+          "met": "yes",
+          "note": "The `effective-config.yaml` file states `mfa_required: true` for all interactive admins."
+        },
+        {
+          "criterion": "Any emergency account exception is limited, documented, and monitored.",
+          "met": "yes",
+          "note": "The `effective-config.yaml` file lists an exception for `vaulted_emergency_account` and states `emergency_account_monitoring: true`."
+        },
+        {
+          "criterion": "The active identity configuration agrees with the policy.",
+          "met": "yes",
+          "note": "The `effective-config.yaml` file's configuration aligns with the policy requirements."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "effective-config.yaml",
+          "text": "mfa_required: true",
+          "valid": true
+        },
+        {
+          "file": "effective-config.yaml",
+          "text": "emergency_account_monitoring: true",
+          "valid": true
+        }
+      ],
+      "recommendation": "Maintain current MFA configuration and continue monitoring emergency account exceptions.",
+      "raw_output_initial": "{\n  \"status\": \"compliant\",\n  \"justification\": \"The evidence shows that all interactive privileged accounts require MFA, and the emergency account exception is limited, documented, and monitored. The active identity configuration agrees with the policy.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"All interactive privileged accounts require MFA.\",\n      \"met\": \"yes\",\n      \"note\": \"The `effective-config.yaml` file states `mfa_required: true` for all interactive admins.\"\n    },\n    {\n      \"criterion\": \"Any emergency account exception is limited, documented, and monitored.\",\n      \"met\": \"yes\",\n      \"note\": \"The `effective-config.yaml` file lists an exception for `vaulted_emergency_account` and states `emergency_account_monitoring: true`.\"\n    },\n    {\n      \"criterion\": \"The active identity configuration agrees with the policy.\",\n      \"met\": \"yes\",\n      \"note\": \"The `effective-config.yaml` file's configuration aligns with the policy requirements.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"effective-config.yaml\",\n      \"text\": \"mfa_required: true\"\n    },\n    {\n      \"file\": \"effective-config.yaml\",\n      \"text\": \"emergency_account_monitoring: true\"\n    }\n  ],\n  \"recommendation\": \"Maintain current MFA configuration and continue monitoring emergency account exceptions.\",\n  \"confidence\": 1.0\n}",
+      "raw_output_final": "{\n  \"status\": \"compliant\",\n  \"justification\": \"The evidence shows that all interactive privileged accounts require MFA, and the emergency account exception is limited, documented, and monitored. The active identity configuration agrees with the policy.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"All interactive privileged accounts require MFA.\",\n      \"met\": \"yes\",\n      \"note\": \"The `effective-config.yaml` file states `mfa_required: true` for all interactive admins.\"\n    },\n    {\n      \"criterion\": \"Any emergency account exception is limited, documented, and monitored.\",\n      \"met\": \"yes\",\n      \"note\": \"The `effective-config.yaml` file lists an exception for `vaulted_emergency_account` and states `emergency_account_monitoring: true`.\"\n    },\n    {\n      \"criterion\": \"The active identity configuration agrees with the policy.\",\n      \"met\": \"yes\",\n      \"note\": \"The `effective-config.yaml` file's configuration aligns with the policy requirements.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"effective-config.yaml\",\n      \"text\": \"mfa_required: true\"\n    },\n    {\n      \"file\": \"effective-config.yaml\",\n      \"text\": \"emergency_account_monitoring: true\"\n    }\n  ],\n  \"recommendation\": \"Maintain current MFA configuration and continue monitoring emergency account exceptions.\",\n  \"confidence\": 1.0\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 2,
+        "total": 2,
+        "rate": 1.0
+      },
+      "wall_clock_total_seconds": 85.530150951,
+      "wall_clock_elapsed_seconds": 85.53023567100013,
+      "model_reported_total_seconds": 85.528842474,
+      "model_load_seconds": 0.001810884,
+      "prompt_tokens": 1220,
+      "output_tokens": 304,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 44.440555,
+      "prompt_processing_tokens_per_second": 27.45240242836751,
+      "generation_seconds": 41.068924,
+      "generation_tokens_per_second": 7.402190522449528,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 85528842474,
+          "load_duration": 1810884,
+          "prompt_eval_count": 1220,
+          "prompt_eval_duration": 44440555000,
+          "eval_count": 304,
+          "eval_duration": 41068924000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 1287,
+      "prompt_tokens_reported_by_backend": 1220,
+      "prefix_cached": false,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 2.1172463509826505e-05,
+        "prompt_processing": 0.5195893437094468,
+        "generation": 0.4801689643167856
+      },
+      "likely_truncated": false,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 8192,
+      "prompt_version": "eval_v1",
+      "language": "fr",
+      "tags": [],
+      "tier": "S",
+      "paired_with": null,
+      "needle_position": "none",
+      "context_mode": "full",
+      "retrieval": {},
+      "resource_peak_ram_used_bytes": 18389688320,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

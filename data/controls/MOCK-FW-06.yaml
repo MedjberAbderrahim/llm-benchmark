@@ -1,0 +1,12 @@
+id: MOCK-FW-06
+domain: Network Security
+title: Restrictive inbound network rules
+description: Mock control, not authoritative. Inbound network access should be limited
+  to approved sources and services.
+evaluation_criteria:
+- No inbound rule allows every source to reach every port.
+- Publicly reachable ports are specifically approved and documented.
+- A default-deny inbound policy is in effect.
+expected_evidence:
+- Firewall rule review procedure
+- Current inbound ruleset export

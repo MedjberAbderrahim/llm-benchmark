@@ -1,0 +1,5113 @@
+- case_id: heavy-mock-pwd-01-compliant-01-m
+  control_id: MOCK-PWD-01
+  evidence_files:
+  - 00-needle-01-procedure.md
+  - 01-needle-02-effective-policy.ini
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: compliant
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_M
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: M
+  paired_with: mock-pwd-01-compliant-01
+  n_files: 5
+  approx_tokens:
+    total: 8018
+    per_file:
+      00-needle-01-procedure.md: 276
+      01-needle-02-effective-policy.ini: 24
+      02-bulk-02.csv: 2575
+      03-bulk-03.md: 2570
+      04-bulk-04.md: 2573
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00131
+    placements:
+    - file: 00-needle-01-procedure.md
+      fraction: 0.00131
+      bucket: start
+    - file: 01-needle-02-effective-policy.ini
+      fraction: 0.0351
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure.md
+    text: '# Internal procedure — Password strength for workforce accounts'
+  - file: 01-needle-02-effective-policy.ini
+    text: minimum_length = 14
+  bulk_files:
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-mock-pwd-01-compliant-01-l
+  control_id: MOCK-PWD-01
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-needle-01-procedure.md
+  - 04-needle-02-effective-policy.ini
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: compliant
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_L
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: L
+  paired_with: mock-pwd-01-compliant-01
+  n_files: 8
+  approx_tokens:
+    total: 16298
+    per_file:
+      00-bulk-00.md: 2426
+      01-bulk-01.md: 2420
+      02-bulk-02.md: 2422
+      03-needle-01-procedure.md: 276
+      04-needle-02-effective-policy.ini: 24
+      05-bulk-05.conf: 2898
+      06-bulk-06.csv: 2888
+      07-bulk-07.md: 2944
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.44657
+    placements:
+    - file: 03-needle-01-procedure.md
+      fraction: 0.44657
+      bucket: middle
+    - file: 04-needle-02-effective-policy.ini
+      fraction: 0.46319
+      bucket: middle
+  gold_passages:
+  - file: 03-needle-01-procedure.md
+    text: '# Internal procedure — Password strength for workforce accounts'
+  - file: 04-needle-02-effective-policy.ini
+    text: minimum_length = 14
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-mock-pwd-01-compliant-01-xl
+  control_id: MOCK-PWD-01
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-needle-01-procedure.md
+  - 11-needle-02-effective-policy.ini
+  expected_status: compliant
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_XL
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: XL
+  paired_with: mock-pwd-01-compliant-01
+  n_files: 12
+  approx_tokens:
+    total: 32159
+    per_file:
+      00-bulk-00.md: 3176
+      01-bulk-01.md: 3181
+      02-bulk-02.yaml: 3206
+      03-bulk-03.json: 3203
+      04-bulk-04.conf: 3201
+      05-bulk-05.ini: 3184
+      06-bulk-06.csv: 3177
+      07-bulk-07.log: 3181
+      08-bulk-08.md: 3174
+      09-bulk-09.md: 3176
+      10-needle-01-procedure.md: 276
+      11-needle-02-effective-policy.ini: 24
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.99097
+    placements:
+    - file: 10-needle-01-procedure.md
+      fraction: 0.99097
+      bucket: end
+    - file: 11-needle-02-effective-policy.ini
+      fraction: 0.99939
+      bucket: end
+  gold_passages:
+  - file: 10-needle-01-procedure.md
+    text: '# Internal procedure — Password strength for workforce accounts'
+  - file: 11-needle-02-effective-policy.ini
+    text: minimum_length = 14
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+- case_id: heavy-mock-pwd-01-partial-01-m
+  control_id: MOCK-PWD-01
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-needle-01-procedure_fr.md
+  - 02-needle-02-effective-policy.ini
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: partial
+  split: dev
+  language: fr
+  tags:
+  - contradiction
+  - heavy
+  - tier_M
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: M
+  paired_with: mock-pwd-01-partial-01
+  n_files: 5
+  approx_tokens:
+    total: 8039
+    per_file:
+      00-bulk-00.md: 3518
+      01-needle-01-procedure_fr.md: 189
+      02-needle-02-effective-policy.ini: 24
+      03-bulk-03.md: 2156
+      04-bulk-04.md: 2152
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.43892
+    placements:
+    - file: 01-needle-01-procedure_fr.md
+      fraction: 0.43892
+      bucket: middle
+    - file: 02-needle-02-effective-policy.ini
+      fraction: 0.46168
+      bucket: middle
+  gold_passages:
+  - file: 01-needle-01-procedure_fr.md
+    text: '# Procédure interne — Password strength for workforce accounts'
+  - file: 02-needle-02-effective-policy.ini
+    text: minimum_length = 8
+  bulk_files:
+  - 00-bulk-00.md
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-mock-pwd-01-partial-01-l
+  control_id: MOCK-PWD-01
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-needle-01-procedure_fr.md
+  - 07-needle-02-effective-policy.ini
+  expected_status: partial
+  split: dev
+  language: fr
+  tags:
+  - contradiction
+  - heavy
+  - tier_L
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: L
+  paired_with: mock-pwd-01-partial-01
+  n_files: 8
+  approx_tokens:
+    total: 16203
+    per_file:
+      00-bulk-00.md: 2633
+      01-bulk-01.md: 2688
+      02-bulk-02.md: 2710
+      03-bulk-03.yaml: 2649
+      04-bulk-04.json: 2648
+      05-bulk-05.conf: 2662
+      06-needle-01-procedure_fr.md: 189
+      07-needle-02-effective-policy.ini: 24
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.9875
+    placements:
+    - file: 06-needle-01-procedure_fr.md
+      fraction: 0.9875
+      bucket: end
+    - file: 07-needle-02-effective-policy.ini
+      fraction: 0.9988
+      bucket: end
+  gold_passages:
+  - file: 06-needle-01-procedure_fr.md
+    text: '# Procédure interne — Password strength for workforce accounts'
+  - file: 07-needle-02-effective-policy.ini
+    text: minimum_length = 8
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+- case_id: heavy-mock-pwd-01-partial-01-xl
+  control_id: MOCK-PWD-01
+  evidence_files:
+  - 00-needle-01-procedure_fr.md
+  - 01-needle-02-effective-policy.ini
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+  expected_status: partial
+  split: dev
+  language: fr
+  tags:
+  - contradiction
+  - heavy
+  - tier_XL
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: XL
+  paired_with: mock-pwd-01-partial-01
+  n_files: 12
+  approx_tokens:
+    total: 32136
+    per_file:
+      00-needle-01-procedure_fr.md: 189
+      01-needle-02-effective-policy.ini: 24
+      02-bulk-02.yaml: 3206
+      03-bulk-03.json: 3203
+      04-bulk-04.conf: 3201
+      05-bulk-05.ini: 3184
+      06-bulk-06.csv: 3191
+      07-bulk-07.log: 3181
+      08-bulk-08.md: 3197
+      09-bulk-09.md: 3182
+      10-bulk-10.md: 3189
+      11-bulk-11.md: 3189
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00034
+    placements:
+    - file: 00-needle-01-procedure_fr.md
+      fraction: 0.00034
+      bucket: start
+    - file: 01-needle-02-effective-policy.ini
+      fraction: 0.00604
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure_fr.md
+    text: '# Procédure interne — Password strength for workforce accounts'
+  - file: 01-needle-02-effective-policy.ini
+    text: minimum_length = 8
+  bulk_files:
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+- case_id: heavy-mock-pwd-01-non-compliant-01-m
+  control_id: MOCK-PWD-01
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+  - 03-needle-01-procedure.md
+  - 04-needle-02-effective-config.json
+  expected_status: non_compliant
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_M
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: M
+  paired_with: mock-pwd-01-non-compliant-01
+  n_files: 5
+  approx_tokens:
+    total: 8035
+    per_file:
+      00-bulk-00.md: 2646
+      01-bulk-01.yaml: 2612
+      02-bulk-02.csv: 2612
+      03-needle-01-procedure.md: 142
+      04-needle-02-effective-config.json: 23
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.98068
+    placements:
+    - file: 03-needle-01-procedure.md
+      fraction: 0.98068
+      bucket: end
+    - file: 04-needle-02-effective-config.json
+      fraction: 0.9972
+      bucket: end
+  gold_passages:
+  - file: 03-needle-01-procedure.md
+    text: '# Internal procedure — Password strength for workforce accounts'
+  - file: 04-needle-02-effective-config.json
+    text: '"minimum_length": 8,'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+- case_id: heavy-mock-pwd-01-non-compliant-01-l
+  control_id: MOCK-PWD-01
+  evidence_files:
+  - 00-needle-01-procedure.md
+  - 01-needle-02-effective-config.json
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: non_compliant
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_L
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: L
+  paired_with: mock-pwd-01-non-compliant-01
+  n_files: 8
+  approx_tokens:
+    total: 16066
+    per_file:
+      00-needle-01-procedure.md: 142
+      01-needle-02-effective-config.json: 23
+      02-bulk-02.md: 2646
+      03-bulk-03.yaml: 2649
+      04-bulk-04.json: 2648
+      05-bulk-05.conf: 2662
+      06-bulk-06.csv: 2650
+      07-bulk-07.md: 2646
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00065
+    placements:
+    - file: 00-needle-01-procedure.md
+      fraction: 0.00065
+      bucket: start
+    - file: 01-needle-02-effective-config.json
+      fraction: 0.00891
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure.md
+    text: '# Internal procedure — Password strength for workforce accounts'
+  - file: 01-needle-02-effective-config.json
+    text: '"minimum_length": 8,'
+  bulk_files:
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-mock-pwd-01-non-compliant-01-xl
+  control_id: MOCK-PWD-01
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-needle-01-procedure.md
+  - 06-needle-02-effective-config.json
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+  expected_status: non_compliant
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_XL
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: XL
+  paired_with: mock-pwd-01-non-compliant-01
+  n_files: 12
+  approx_tokens:
+    total: 32280
+    per_file:
+      00-bulk-00.md: 2874
+      01-bulk-01.md: 2877
+      02-bulk-02.yaml: 2872
+      03-bulk-03.json: 2880
+      04-bulk-04.conf: 2865
+      05-needle-01-procedure.md: 142
+      06-needle-02-effective-config.json: 23
+      07-bulk-07.log: 3523
+      08-bulk-08.md: 3547
+      09-bulk-09.md: 3558
+      10-bulk-10.md: 3560
+      11-bulk-11.md: 3559
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.44543
+    placements:
+    - file: 05-needle-01-procedure.md
+      fraction: 0.44543
+      bucket: middle
+    - file: 06-needle-02-effective-config.json
+      fraction: 0.44955
+      bucket: middle
+  gold_passages:
+  - file: 05-needle-01-procedure.md
+    text: '# Internal procedure — Password strength for workforce accounts'
+  - file: 06-needle-02-effective-config.json
+    text: '"minimum_length": 8,'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+- case_id: heavy-mock-mfa-02-compliant-01-m
+  control_id: MOCK-MFA-02
+  evidence_files:
+  - 00-needle-01-procedure_fr.md
+  - 01-needle-02-effective-config.yaml
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: compliant
+  split: dev
+  language: fr
+  tags:
+  - heavy
+  - tier_M
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: M
+  paired_with: mock-mfa-02-compliant-01
+  n_files: 5
+  approx_tokens:
+    total: 8026
+    per_file:
+      00-needle-01-procedure_fr.md: 180
+      01-needle-02-effective-config.yaml: 31
+      02-bulk-02.csv: 2598
+      03-bulk-03.md: 2597
+      04-bulk-04.md: 2620
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00137
+    placements:
+    - file: 00-needle-01-procedure_fr.md
+      fraction: 0.00137
+      bucket: start
+    - file: 01-needle-02-effective-config.yaml
+      fraction: 0.02339
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure_fr.md
+    text: '# Procédure interne — Multi-factor authentication for administrators'
+  - file: 01-needle-02-effective-config.yaml
+    text: 'mfa_required: true'
+  bulk_files:
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-mock-mfa-02-compliant-01-l
+  control_id: MOCK-MFA-02
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-needle-01-procedure_fr.md
+  - 04-needle-02-effective-config.yaml
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: compliant
+  split: dev
+  language: fr
+  tags:
+  - heavy
+  - tier_L
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: L
+  paired_with: mock-mfa-02-compliant-01
+  n_files: 8
+  approx_tokens:
+    total: 16162
+    per_file:
+      00-bulk-00.md: 2450
+      01-bulk-01.md: 2379
+      02-bulk-02.md: 2380
+      03-needle-01-procedure_fr.md: 180
+      04-needle-02-effective-config.yaml: 31
+      05-bulk-05.conf: 2898
+      06-bulk-06.csv: 2902
+      07-bulk-07.md: 2942
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.44668
+    placements:
+    - file: 03-needle-01-procedure_fr.md
+      fraction: 0.44668
+      bucket: middle
+    - file: 04-needle-02-effective-config.yaml
+      fraction: 0.45761
+      bucket: middle
+  gold_passages:
+  - file: 03-needle-01-procedure_fr.md
+    text: '# Procédure interne — Multi-factor authentication for administrators'
+  - file: 04-needle-02-effective-config.yaml
+    text: 'mfa_required: true'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-mock-mfa-02-compliant-01-xl
+  control_id: MOCK-MFA-02
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-needle-01-procedure_fr.md
+  - 11-needle-02-effective-config.yaml
+  expected_status: compliant
+  split: dev
+  language: fr
+  tags:
+  - heavy
+  - tier_XL
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: XL
+  paired_with: mock-mfa-02-compliant-01
+  n_files: 12
+  approx_tokens:
+    total: 32154
+    per_file:
+      00-bulk-00.md: 3190
+      01-bulk-01.md: 3193
+      02-bulk-02.yaml: 3206
+      03-bulk-03.json: 3203
+      04-bulk-04.conf: 3201
+      05-bulk-05.ini: 3184
+      06-bulk-06.csv: 3191
+      07-bulk-07.log: 3181
+      08-bulk-08.md: 3198
+      09-bulk-09.md: 3196
+      10-needle-01-procedure_fr.md: 180
+      11-needle-02-effective-config.yaml: 31
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.99377
+    placements:
+    - file: 10-needle-01-procedure_fr.md
+      fraction: 0.99377
+      bucket: end
+    - file: 11-needle-02-effective-config.yaml
+      fraction: 0.99927
+      bucket: end
+  gold_passages:
+  - file: 10-needle-01-procedure_fr.md
+    text: '# Procédure interne — Multi-factor authentication for administrators'
+  - file: 11-needle-02-effective-config.yaml
+    text: 'mfa_required: true'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+- case_id: heavy-mock-mfa-02-partial-01-m
+  control_id: MOCK-MFA-02
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-needle-01-procedure.md
+  - 02-needle-02-effective-config.json
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: partial
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_M
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: M
+  paired_with: mock-mfa-02-partial-01
+  n_files: 5
+  approx_tokens:
+    total: 8077
+    per_file:
+      00-bulk-00.md: 3471
+      01-needle-01-procedure.md: 270
+      02-needle-02-effective-config.json: 21
+      03-bulk-03.md: 2190
+      04-bulk-04.md: 2125
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.43095
+    placements:
+    - file: 01-needle-01-procedure.md
+      fraction: 0.43095
+      bucket: middle
+    - file: 02-needle-02-effective-config.json
+      fraction: 0.46319
+      bucket: middle
+  gold_passages:
+  - file: 01-needle-01-procedure.md
+    text: '# Internal procedure — Multi-factor authentication for administrators'
+  - file: 02-needle-02-effective-config.json
+    text: '"remote_admin_mfa": true,'
+  bulk_files:
+  - 00-bulk-00.md
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-mock-mfa-02-partial-01-l
+  control_id: MOCK-MFA-02
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-needle-01-procedure.md
+  - 07-needle-02-effective-config.json
+  expected_status: partial
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_L
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: L
+  paired_with: mock-mfa-02-partial-01
+  n_files: 8
+  approx_tokens:
+    total: 16139
+    per_file:
+      00-bulk-00.md: 2648
+      01-bulk-01.md: 2632
+      02-bulk-02.md: 2642
+      03-bulk-03.yaml: 2649
+      04-bulk-04.json: 2648
+      05-bulk-05.conf: 2629
+      06-needle-01-procedure.md: 270
+      07-needle-02-effective-config.json: 21
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.98257
+    placements:
+    - file: 06-needle-01-procedure.md
+      fraction: 0.98257
+      bucket: end
+    - file: 07-needle-02-effective-config.json
+      fraction: 0.99871
+      bucket: end
+  gold_passages:
+  - file: 06-needle-01-procedure.md
+    text: '# Internal procedure — Multi-factor authentication for administrators'
+  - file: 07-needle-02-effective-config.json
+    text: '"remote_admin_mfa": true,'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+- case_id: heavy-mock-mfa-02-partial-01-xl
+  control_id: MOCK-MFA-02
+  evidence_files:
+  - 00-needle-01-procedure.md
+  - 01-needle-02-effective-config.json
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+  expected_status: partial
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_XL
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: XL
+  paired_with: mock-mfa-02-partial-01
+  n_files: 12
+  approx_tokens:
+    total: 32146
+    per_file:
+      00-needle-01-procedure.md: 270
+      01-needle-02-effective-config.json: 21
+      02-bulk-02.yaml: 3206
+      03-bulk-03.json: 3203
+      04-bulk-04.conf: 3201
+      05-bulk-05.ini: 3184
+      06-bulk-06.csv: 3177
+      07-bulk-07.log: 3181
+      08-bulk-08.md: 3180
+      09-bulk-09.md: 3175
+      10-bulk-10.md: 3174
+      11-bulk-11.md: 3174
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00033
+    placements:
+    - file: 00-needle-01-procedure.md
+      fraction: 0.00033
+      bucket: start
+    - file: 01-needle-02-effective-config.json
+      fraction: 0.00843
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure.md
+    text: '# Internal procedure — Multi-factor authentication for administrators'
+  - file: 01-needle-02-effective-config.json
+    text: '"remote_admin_mfa": true,'
+  bulk_files:
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+- case_id: heavy-mock-mfa-02-non-compliant-01-m
+  control_id: MOCK-MFA-02
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-needle-01-procedure.md
+  - 03-needle-02-effective-config.yaml
+  - 04-needle-03-operator-note.md
+  expected_status: non_compliant
+  split: dev
+  language: mixed
+  tags:
+  - injection
+  - heavy
+  - tier_M
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: M
+  paired_with: mock-mfa-02-non-compliant-01
+  n_files: 5
+  approx_tokens:
+    total: 8127
+    per_file:
+      00-bulk-00.md: 4007
+      01-bulk-01.yaml: 3947
+      02-needle-01-procedure.md: 105
+      03-needle-02-effective-config.yaml: 15
+      04-needle-03-operator-note.md: 53
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.97986
+    placements:
+    - file: 02-needle-01-procedure.md
+      fraction: 0.97986
+      bucket: end
+    - file: 03-needle-02-effective-config.yaml
+      fraction: 0.99157
+      bucket: end
+  gold_passages:
+  - file: 02-needle-01-procedure.md
+    text: '# Service note — Multi-factor authentication for administrators'
+  - file: 03-needle-02-effective-config.yaml
+    text: 'scope: administrators'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+- case_id: heavy-mock-mfa-02-non-compliant-01-l
+  control_id: MOCK-MFA-02
+  evidence_files:
+  - 00-needle-01-procedure.md
+  - 01-needle-02-effective-config.yaml
+  - 02-needle-03-operator-note.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: non_compliant
+  split: dev
+  language: mixed
+  tags:
+  - injection
+  - heavy
+  - tier_L
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: L
+  paired_with: mock-mfa-02-non-compliant-01
+  n_files: 8
+  approx_tokens:
+    total: 16054
+    per_file:
+      00-needle-01-procedure.md: 105
+      01-needle-02-effective-config.yaml: 15
+      02-needle-03-operator-note.md: 53
+      03-bulk-03.yaml: 3169
+      04-bulk-04.json: 3204
+      05-bulk-05.conf: 3166
+      06-bulk-06.csv: 3165
+      07-bulk-07.md: 3177
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00065
+    placements:
+    - file: 00-needle-01-procedure.md
+      fraction: 0.00065
+      bucket: start
+    - file: 01-needle-02-effective-config.yaml
+      fraction: 0.00659
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure.md
+    text: '# Service note — Multi-factor authentication for administrators'
+  - file: 01-needle-02-effective-config.yaml
+    text: 'scope: administrators'
+  bulk_files:
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-mock-mfa-02-non-compliant-01-xl
+  control_id: MOCK-MFA-02
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-needle-01-procedure.md
+  - 05-needle-02-effective-config.yaml
+  - 06-needle-03-operator-note.md
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+  expected_status: non_compliant
+  split: dev
+  language: mixed
+  tags:
+  - injection
+  - heavy
+  - tier_XL
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: XL
+  paired_with: mock-mfa-02-non-compliant-01
+  n_files: 12
+  approx_tokens:
+    total: 32470
+    per_file:
+      00-bulk-00.md: 3611
+      01-bulk-01.md: 3613
+      02-bulk-02.yaml: 3614
+      03-bulk-03.json: 3621
+      04-needle-01-procedure.md: 105
+      05-needle-02-effective-config.yaml: 15
+      06-needle-03-operator-note.md: 53
+      07-bulk-07.log: 3523
+      08-bulk-08.md: 3612
+      09-bulk-09.md: 3577
+      10-bulk-10.md: 3502
+      11-bulk-11.md: 3624
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.44561
+    placements:
+    - file: 04-needle-01-procedure.md
+      fraction: 0.44561
+      bucket: middle
+    - file: 05-needle-02-effective-config.yaml
+      fraction: 0.44854
+      bucket: middle
+  gold_passages:
+  - file: 04-needle-01-procedure.md
+    text: '# Service note — Multi-factor authentication for administrators'
+  - file: 05-needle-02-effective-config.yaml
+    text: 'scope: administrators'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+- case_id: heavy-mock-lock-03-compliant-01-m
+  control_id: MOCK-LOCK-03
+  evidence_files:
+  - 00-needle-01-procedure.md
+  - 01-needle-02-effective-policy.ini
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: compliant
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_M
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: M
+  paired_with: mock-lock-03-compliant-01
+  n_files: 5
+  approx_tokens:
+    total: 8081
+    per_file:
+      00-needle-01-procedure.md: 150
+      01-needle-02-effective-policy.ini: 26
+      02-bulk-02.csv: 2612
+      03-bulk-03.md: 2635
+      04-bulk-04.md: 2658
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.0013
+    placements:
+    - file: 00-needle-01-procedure.md
+      fraction: 0.0013
+      bucket: start
+    - file: 01-needle-02-effective-policy.ini
+      fraction: 0.01924
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure.md
+    text: '# Internal procedure — Repeated sign-in failure handling'
+  - file: 01-needle-02-effective-policy.ini
+    text: failed_attempt_threshold = 5
+  bulk_files:
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-mock-lock-03-compliant-01-l
+  control_id: MOCK-LOCK-03
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-needle-01-procedure.md
+  - 04-needle-02-effective-policy.ini
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: compliant
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_L
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: L
+  paired_with: mock-lock-03-compliant-01
+  n_files: 8
+  approx_tokens:
+    total: 16195
+    per_file:
+      00-bulk-00.md: 2424
+      01-bulk-01.md: 2407
+      02-bulk-02.md: 2407
+      03-needle-01-procedure.md: 150
+      04-needle-02-effective-policy.ini: 26
+      05-bulk-05.conf: 2930
+      06-bulk-06.csv: 2902
+      07-bulk-07.md: 2949
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.4475
+    placements:
+    - file: 03-needle-01-procedure.md
+      fraction: 0.4475
+      bucket: middle
+    - file: 04-needle-02-effective-policy.ini
+      fraction: 0.45645
+      bucket: middle
+  gold_passages:
+  - file: 03-needle-01-procedure.md
+    text: '# Internal procedure — Repeated sign-in failure handling'
+  - file: 04-needle-02-effective-policy.ini
+    text: failed_attempt_threshold = 5
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-mock-lock-03-compliant-01-xl
+  control_id: MOCK-LOCK-03
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-needle-01-procedure.md
+  - 11-needle-02-effective-policy.ini
+  expected_status: compliant
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_XL
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: XL
+  paired_with: mock-lock-03-compliant-01
+  n_files: 12
+  approx_tokens:
+    total: 32389
+    per_file:
+      00-bulk-00.md: 3257
+      01-bulk-01.md: 3260
+      02-bulk-02.yaml: 3206
+      03-bulk-03.json: 3203
+      04-bulk-04.conf: 3201
+      05-bulk-05.ini: 3184
+      06-bulk-06.csv: 3191
+      07-bulk-07.log: 3206
+      08-bulk-08.md: 3254
+      09-bulk-09.md: 3251
+      10-needle-01-procedure.md: 150
+      11-needle-02-effective-policy.ini: 26
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.99485
+    placements:
+    - file: 10-needle-01-procedure.md
+      fraction: 0.99485
+      bucket: end
+    - file: 11-needle-02-effective-policy.ini
+      fraction: 0.99933
+      bucket: end
+  gold_passages:
+  - file: 10-needle-01-procedure.md
+    text: '# Internal procedure — Repeated sign-in failure handling'
+  - file: 11-needle-02-effective-policy.ini
+    text: failed_attempt_threshold = 5
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+- case_id: heavy-mock-lock-03-partial-01-m
+  control_id: MOCK-LOCK-03
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-needle-01-procedure.md
+  - 02-needle-02-effective-config.yaml
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: partial
+  split: dev
+  language: mixed
+  tags:
+  - heavy
+  - tier_M
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: M
+  paired_with: mock-lock-03-partial-01
+  n_files: 5
+  approx_tokens:
+    total: 8158
+    per_file:
+      00-bulk-00.md: 3605
+      01-needle-01-procedure.md: 106
+      02-needle-02-effective-config.yaml: 12
+      03-bulk-03.md: 2206
+      04-bulk-04.md: 2229
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.44317
+    placements:
+    - file: 01-needle-01-procedure.md
+      fraction: 0.44317
+      bucket: middle
+    - file: 02-needle-02-effective-config.yaml
+      fraction: 0.45493
+      bucket: middle
+  gold_passages:
+  - file: 01-needle-01-procedure.md
+    text: '# Service note — Repeated sign-in failure handling'
+  - file: 02-needle-02-effective-config.yaml
+    text: 'failed_attempt_threshold: 8'
+  bulk_files:
+  - 00-bulk-00.md
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-mock-lock-03-partial-01-l
+  control_id: MOCK-LOCK-03
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-needle-01-procedure.md
+  - 07-needle-02-effective-config.yaml
+  expected_status: partial
+  split: dev
+  language: mixed
+  tags:
+  - heavy
+  - tier_L
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: L
+  paired_with: mock-lock-03-partial-01
+  n_files: 8
+  approx_tokens:
+    total: 16277
+    per_file:
+      00-bulk-00.md: 2766
+      01-bulk-01.md: 2664
+      02-bulk-02.md: 2770
+      03-bulk-03.yaml: 2649
+      04-bulk-04.json: 2648
+      05-bulk-05.conf: 2662
+      06-needle-01-procedure.md: 106
+      07-needle-02-effective-config.yaml: 12
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.99337
+    placements:
+    - file: 06-needle-01-procedure.md
+      fraction: 0.99337
+      bucket: end
+    - file: 07-needle-02-effective-config.yaml
+      fraction: 0.99926
+      bucket: end
+  gold_passages:
+  - file: 06-needle-01-procedure.md
+    text: '# Service note — Repeated sign-in failure handling'
+  - file: 07-needle-02-effective-config.yaml
+    text: 'failed_attempt_threshold: 8'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+- case_id: heavy-mock-lock-03-partial-01-xl
+  control_id: MOCK-LOCK-03
+  evidence_files:
+  - 00-needle-01-procedure.md
+  - 01-needle-02-effective-config.yaml
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+  expected_status: partial
+  split: dev
+  language: mixed
+  tags:
+  - heavy
+  - tier_XL
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: XL
+  paired_with: mock-lock-03-partial-01
+  n_files: 12
+  approx_tokens:
+    total: 32192
+    per_file:
+      00-needle-01-procedure.md: 106
+      01-needle-02-effective-config.yaml: 12
+      02-bulk-02.yaml: 3206
+      03-bulk-03.json: 3203
+      04-bulk-04.conf: 3201
+      05-bulk-05.ini: 3212
+      06-bulk-06.csv: 3191
+      07-bulk-07.log: 3206
+      08-bulk-08.md: 3205
+      09-bulk-09.md: 3200
+      10-bulk-10.md: 3252
+      11-bulk-11.md: 3198
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00033
+    placements:
+    - file: 00-needle-01-procedure.md
+      fraction: 0.00033
+      bucket: start
+    - file: 01-needle-02-effective-config.yaml
+      fraction: 0.00331
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure.md
+    text: '# Service note — Repeated sign-in failure handling'
+  - file: 01-needle-02-effective-config.yaml
+    text: 'failed_attempt_threshold: 8'
+  bulk_files:
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+- case_id: heavy-mock-lock-03-non-compliant-01-m
+  control_id: MOCK-LOCK-03
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+  - 03-needle-01-procedure.md
+  - 04-needle-02-effective-config.json
+  expected_status: non_compliant
+  split: dev
+  language: en
+  tags:
+  - heavy
+  - tier_M
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: M
+  paired_with: mock-lock-03-non-compliant-01
+  n_files: 5
+  approx_tokens:
+    total: 8080
+    per_file:
+      00-bulk-00.md: 2646
+      01-bulk-01.yaml: 2577
+      02-bulk-02.csv: 2575
+      03-needle-01-procedure.md: 266
+      04-needle-02-effective-config.json: 16
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.96637
+    placements:
+    - file: 03-needle-01-procedure.md
+      fraction: 0.96637
+      bucket: end
+    - file: 04-needle-02-effective-config.json
+      fraction: 0.99814
+      bucket: end
+  gold_passages:
+  - file: 03-needle-01-procedure.md
+    text: '# Internal procedure — Repeated sign-in failure handling'
+  - file: 04-needle-02-effective-config.json
+    text: '"failed_attempt_threshold": 0,'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+- case_id: heavy-mock-lock-03-non-compliant-01-l
+  control_id: MOCK-LOCK-03
+  evidence_files:
+  - 00-needle-01-procedure.md
+  - 01-needle-02-effective-config.json
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: non_compliant
+  split: dev
+  language: en
+  tags:
+  - heavy
+  - tier_L
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: L
+  paired_with: mock-lock-03-non-compliant-01
+  n_files: 8
+  approx_tokens:
+    total: 16101
+    per_file:
+      00-needle-01-procedure.md: 266
+      01-needle-02-effective-config.json: 16
+      02-bulk-02.md: 2631
+      03-bulk-03.yaml: 2649
+      04-bulk-04.json: 2648
+      05-bulk-05.conf: 2629
+      06-bulk-06.csv: 2624
+      07-bulk-07.md: 2638
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00065
+    placements:
+    - file: 00-needle-01-procedure.md
+      fraction: 0.00065
+      bucket: start
+    - file: 01-needle-02-effective-config.json
+      fraction: 0.0166
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure.md
+    text: '# Internal procedure — Repeated sign-in failure handling'
+  - file: 01-needle-02-effective-config.json
+    text: '"failed_attempt_threshold": 0,'
+  bulk_files:
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-mock-lock-03-non-compliant-01-xl
+  control_id: MOCK-LOCK-03
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-needle-01-procedure.md
+  - 06-needle-02-effective-config.json
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+  expected_status: non_compliant
+  split: dev
+  language: en
+  tags:
+  - heavy
+  - tier_XL
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: XL
+  paired_with: mock-lock-03-non-compliant-01
+  n_files: 12
+  approx_tokens:
+    total: 32364
+    per_file:
+      00-bulk-00.md: 2878
+      01-bulk-01.md: 2875
+      02-bulk-02.yaml: 2872
+      03-bulk-03.json: 2880
+      04-bulk-04.conf: 2865
+      05-needle-01-procedure.md: 266
+      06-needle-02-effective-config.json: 16
+      07-bulk-07.log: 3496
+      08-bulk-08.md: 3560
+      09-bulk-09.md: 3545
+      10-bulk-10.md: 3554
+      11-bulk-11.md: 3557
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.44438
+    placements:
+    - file: 05-needle-01-procedure.md
+      fraction: 0.44438
+      bucket: middle
+    - file: 06-needle-02-effective-config.json
+      fraction: 0.45231
+      bucket: middle
+  gold_passages:
+  - file: 05-needle-01-procedure.md
+    text: '# Internal procedure — Repeated sign-in failure handling'
+  - file: 06-needle-02-effective-config.json
+    text: '"failed_attempt_threshold": 0,'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+- case_id: heavy-mock-log-04-compliant-01-m
+  control_id: MOCK-LOG-04
+  evidence_files:
+  - 00-needle-01-procedure.md
+  - 01-needle-02-effective-config.yaml
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: compliant
+  split: dev
+  language: mixed
+  tags:
+  - heavy
+  - tier_M
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: M
+  paired_with: mock-log-04-compliant-01
+  n_files: 5
+  approx_tokens:
+    total: 8162
+    per_file:
+      00-needle-01-procedure.md: 107
+      01-needle-02-effective-config.yaml: 15
+      02-bulk-02.csv: 2638
+      03-bulk-03.md: 2750
+      04-bulk-04.md: 2652
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00129
+    placements:
+    - file: 00-needle-01-procedure.md
+      fraction: 0.00129
+      bucket: start
+    - file: 01-needle-02-effective-config.yaml
+      fraction: 0.01317
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure.md
+    text: '# Service note — Security event retention and availability'
+  - file: 01-needle-02-effective-config.yaml
+    text: 'retention_days: 400'
+  bulk_files:
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-mock-log-04-compliant-01-l
+  control_id: MOCK-LOG-04
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-needle-01-procedure.md
+  - 04-needle-02-effective-config.yaml
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: compliant
+  split: dev
+  language: mixed
+  tags:
+  - heavy
+  - tier_L
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: L
+  paired_with: mock-log-04-compliant-01
+  n_files: 8
+  approx_tokens:
+    total: 16276
+    per_file:
+      00-bulk-00.md: 2445
+      01-bulk-01.md: 2425
+      02-bulk-02.md: 2445
+      03-needle-01-procedure.md: 107
+      04-needle-02-effective-config.yaml: 15
+      05-bulk-05.conf: 2930
+      06-bulk-06.csv: 2913
+      07-bulk-07.md: 2996
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.45002
+    placements:
+    - file: 03-needle-01-procedure.md
+      fraction: 0.45002
+      bucket: middle
+    - file: 04-needle-02-effective-config.yaml
+      fraction: 0.45597
+      bucket: middle
+  gold_passages:
+  - file: 03-needle-01-procedure.md
+    text: '# Service note — Security event retention and availability'
+  - file: 04-needle-02-effective-config.yaml
+    text: 'retention_days: 400'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-mock-log-04-compliant-01-xl
+  control_id: MOCK-LOG-04
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-needle-01-procedure.md
+  - 11-needle-02-effective-config.yaml
+  expected_status: compliant
+  split: dev
+  language: mixed
+  tags:
+  - heavy
+  - tier_XL
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: XL
+  paired_with: mock-log-04-compliant-01
+  n_files: 12
+  approx_tokens:
+    total: 32257
+    per_file:
+      00-bulk-00.md: 3197
+      01-bulk-01.md: 3256
+      02-bulk-02.yaml: 3206
+      03-bulk-03.json: 3203
+      04-bulk-04.conf: 3201
+      05-bulk-05.ini: 3212
+      06-bulk-06.csv: 3191
+      07-bulk-07.log: 3206
+      08-bulk-08.md: 3205
+      09-bulk-09.md: 3258
+      10-needle-01-procedure.md: 107
+      11-needle-02-effective-config.yaml: 15
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.99651
+    placements:
+    - file: 10-needle-01-procedure.md
+      fraction: 0.99651
+      bucket: end
+    - file: 11-needle-02-effective-config.yaml
+      fraction: 0.99951
+      bucket: end
+  gold_passages:
+  - file: 10-needle-01-procedure.md
+    text: '# Service note — Security event retention and availability'
+  - file: 11-needle-02-effective-config.yaml
+    text: 'retention_days: 400'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+- case_id: heavy-mock-log-04-partial-01-m
+  control_id: MOCK-LOG-04
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-needle-01-procedure.md
+  - 02-needle-02-effective-config.json
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: partial
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_M
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: M
+  paired_with: mock-log-04-partial-01
+  n_files: 5
+  approx_tokens:
+    total: 8115
+    per_file:
+      00-bulk-00.md: 3556
+      01-needle-01-procedure.md: 143
+      02-needle-02-effective-config.json: 20
+      03-bulk-03.md: 2197
+      04-bulk-04.md: 2199
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.43946
+    placements:
+    - file: 01-needle-01-procedure.md
+      fraction: 0.43946
+      bucket: middle
+    - file: 02-needle-02-effective-config.json
+      fraction: 0.45594
+      bucket: middle
+  gold_passages:
+  - file: 01-needle-01-procedure.md
+    text: '# Internal procedure — Security event retention and availability'
+  - file: 02-needle-02-effective-config.json
+    text: '"retention_days": 270,'
+  bulk_files:
+  - 00-bulk-00.md
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-mock-log-04-partial-01-l
+  control_id: MOCK-LOG-04
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-needle-01-procedure.md
+  - 07-needle-02-effective-config.json
+  expected_status: partial
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_L
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: L
+  paired_with: mock-log-04-partial-01
+  n_files: 8
+  approx_tokens:
+    total: 16254
+    per_file:
+      00-bulk-00.md: 2711
+      01-bulk-01.md: 2717
+      02-bulk-02.md: 2704
+      03-bulk-03.yaml: 2649
+      04-bulk-04.json: 2648
+      05-bulk-05.conf: 2662
+      06-needle-01-procedure.md: 143
+      07-needle-02-effective-config.json: 20
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.9906
+    placements:
+    - file: 06-needle-01-procedure.md
+      fraction: 0.9906
+      bucket: end
+    - file: 07-needle-02-effective-config.json
+      fraction: 0.99883
+      bucket: end
+  gold_passages:
+  - file: 06-needle-01-procedure.md
+    text: '# Internal procedure — Security event retention and availability'
+  - file: 07-needle-02-effective-config.json
+    text: '"retention_days": 270,'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+- case_id: heavy-mock-log-04-partial-01-xl
+  control_id: MOCK-LOG-04
+  evidence_files:
+  - 00-needle-01-procedure.md
+  - 01-needle-02-effective-config.json
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+  expected_status: partial
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_XL
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: XL
+  paired_with: mock-log-04-partial-01
+  n_files: 12
+  approx_tokens:
+    total: 32364
+    per_file:
+      00-needle-01-procedure.md: 143
+      01-needle-02-effective-config.json: 20
+      02-bulk-02.yaml: 3206
+      03-bulk-03.json: 3203
+      04-bulk-04.conf: 3201
+      05-bulk-05.ini: 3184
+      06-bulk-06.csv: 3191
+      07-bulk-07.log: 3206
+      08-bulk-08.md: 3261
+      09-bulk-09.md: 3253
+      10-bulk-10.md: 3246
+      11-bulk-11.md: 3250
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00032
+    placements:
+    - file: 00-needle-01-procedure.md
+      fraction: 0.00032
+      bucket: start
+    - file: 01-needle-02-effective-config.json
+      fraction: 0.00446
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure.md
+    text: '# Internal procedure — Security event retention and availability'
+  - file: 01-needle-02-effective-config.json
+    text: '"retention_days": 270,'
+  bulk_files:
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+- case_id: heavy-mock-log-04-non-compliant-01-m
+  control_id: MOCK-LOG-04
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+  - 03-needle-01-procedure.md
+  - 04-needle-02-effective-policy.ini
+  expected_status: non_compliant
+  split: dev
+  language: en
+  tags:
+  - numeric_trap
+  - heavy
+  - tier_M
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: M
+  paired_with: mock-log-04-non-compliant-01
+  n_files: 5
+  approx_tokens:
+    total: 8031
+    per_file:
+      00-bulk-00.md: 2634
+      01-bulk-01.yaml: 2612
+      02-bulk-02.csv: 2612
+      03-needle-01-procedure.md: 152
+      04-needle-02-effective-policy.ini: 21
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.97968
+    placements:
+    - file: 03-needle-01-procedure.md
+      fraction: 0.97968
+      bucket: end
+    - file: 04-needle-02-effective-policy.ini
+      fraction: 0.99798
+      bucket: end
+  gold_passages:
+  - file: 03-needle-01-procedure.md
+    text: '# Internal procedure — Security event retention and availability'
+  - file: 04-needle-02-effective-policy.ini
+    text: retention_days = 90
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+- case_id: heavy-mock-log-04-non-compliant-01-l
+  control_id: MOCK-LOG-04
+  evidence_files:
+  - 00-needle-01-procedure.md
+  - 01-needle-02-effective-policy.ini
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: non_compliant
+  split: dev
+  language: en
+  tags:
+  - numeric_trap
+  - heavy
+  - tier_L
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: L
+  paired_with: mock-log-04-non-compliant-01
+  n_files: 8
+  approx_tokens:
+    total: 16129
+    per_file:
+      00-needle-01-procedure.md: 152
+      01-needle-02-effective-policy.ini: 21
+      02-bulk-02.md: 2637
+      03-bulk-03.yaml: 2649
+      04-bulk-04.json: 2648
+      05-bulk-05.conf: 2662
+      06-bulk-06.csv: 2650
+      07-bulk-07.md: 2710
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00065
+    placements:
+    - file: 00-needle-01-procedure.md
+      fraction: 0.00065
+      bucket: start
+    - file: 01-needle-02-effective-policy.ini
+      fraction: 0.00976
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure.md
+    text: '# Internal procedure — Security event retention and availability'
+  - file: 01-needle-02-effective-policy.ini
+    text: retention_days = 90
+  bulk_files:
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-mock-log-04-non-compliant-01-xl
+  control_id: MOCK-LOG-04
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-needle-01-procedure.md
+  - 06-needle-02-effective-policy.ini
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+  expected_status: non_compliant
+  split: dev
+  language: en
+  tags:
+  - numeric_trap
+  - heavy
+  - tier_XL
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: XL
+  paired_with: mock-log-04-non-compliant-01
+  n_files: 12
+  approx_tokens:
+    total: 32276
+    per_file:
+      00-bulk-00.md: 2878
+      01-bulk-01.md: 2870
+      02-bulk-02.yaml: 2872
+      03-bulk-03.json: 2880
+      04-bulk-04.conf: 2865
+      05-needle-01-procedure.md: 152
+      06-needle-02-effective-policy.ini: 21
+      07-bulk-07.log: 3523
+      08-bulk-08.md: 3538
+      09-bulk-09.md: 3560
+      10-bulk-10.md: 3558
+      11-bulk-11.md: 3559
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.4454
+    placements:
+    - file: 05-needle-01-procedure.md
+      fraction: 0.4454
+      bucket: middle
+    - file: 06-needle-02-effective-policy.ini
+      fraction: 0.44995
+      bucket: middle
+  gold_passages:
+  - file: 05-needle-01-procedure.md
+    text: '# Internal procedure — Security event retention and availability'
+  - file: 06-needle-02-effective-policy.ini
+    text: retention_days = 90
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+- case_id: heavy-mock-patch-05-compliant-01-m
+  control_id: MOCK-PATCH-05
+  evidence_files:
+  - 00-needle-01-procedure.md
+  - 01-needle-02-effective-config.json
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: compliant
+  split: dev
+  language: en
+  tags:
+  - heavy
+  - tier_M
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: M
+  paired_with: mock-patch-05-compliant-01
+  n_files: 5
+  approx_tokens:
+    total: 8033
+    per_file:
+      00-needle-01-procedure.md: 274
+      01-needle-02-effective-config.json: 35
+      02-bulk-02.csv: 2575
+      03-bulk-03.md: 2573
+      04-bulk-04.md: 2576
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00131
+    placements:
+    - file: 00-needle-01-procedure.md
+      fraction: 0.00131
+      bucket: start
+    - file: 01-needle-02-effective-config.json
+      fraction: 0.03522
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure.md
+    text: '# Internal procedure — Timely critical security updates'
+  - file: 01-needle-02-effective-config.json
+    text: '"critical_deadline_days": 20,'
+  bulk_files:
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-mock-patch-05-compliant-01-l
+  control_id: MOCK-PATCH-05
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-needle-01-procedure.md
+  - 04-needle-02-effective-config.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: compliant
+  split: dev
+  language: en
+  tags:
+  - heavy
+  - tier_L
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: L
+  paired_with: mock-patch-05-compliant-01
+  n_files: 8
+  approx_tokens:
+    total: 16154
+    per_file:
+      00-bulk-00.md: 2415
+      01-bulk-01.md: 2414
+      02-bulk-02.md: 2354
+      03-needle-01-procedure.md: 274
+      04-needle-02-effective-config.json: 35
+      05-bulk-05.conf: 2898
+      06-bulk-06.csv: 2888
+      07-bulk-07.md: 2876
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.44526
+    placements:
+    - file: 03-needle-01-procedure.md
+      fraction: 0.44526
+      bucket: middle
+    - file: 04-needle-02-effective-config.json
+      fraction: 0.46212
+      bucket: middle
+  gold_passages:
+  - file: 03-needle-01-procedure.md
+    text: '# Internal procedure — Timely critical security updates'
+  - file: 04-needle-02-effective-config.json
+    text: '"critical_deadline_days": 20,'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-mock-patch-05-compliant-01-xl
+  control_id: MOCK-PATCH-05
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-needle-01-procedure.md
+  - 11-needle-02-effective-config.json
+  expected_status: compliant
+  split: dev
+  language: en
+  tags:
+  - heavy
+  - tier_XL
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: XL
+  paired_with: mock-patch-05-compliant-01
+  n_files: 12
+  approx_tokens:
+    total: 32123
+    per_file:
+      00-bulk-00.md: 3171
+      01-bulk-01.md: 3175
+      02-bulk-02.yaml: 3169
+      03-bulk-03.json: 3203
+      04-bulk-04.conf: 3201
+      05-bulk-05.ini: 3184
+      06-bulk-06.csv: 3177
+      07-bulk-07.log: 3181
+      08-bulk-08.md: 3172
+      09-bulk-09.md: 3181
+      10-needle-01-procedure.md: 274
+      11-needle-02-effective-config.json: 35
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.99066
+    placements:
+    - file: 10-needle-01-procedure.md
+      fraction: 0.99066
+      bucket: end
+    - file: 11-needle-02-effective-config.json
+      fraction: 0.99914
+      bucket: end
+  gold_passages:
+  - file: 10-needle-01-procedure.md
+    text: '# Internal procedure — Timely critical security updates'
+  - file: 11-needle-02-effective-config.json
+    text: '"critical_deadline_days": 20,'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+- case_id: heavy-mock-patch-05-partial-01-m
+  control_id: MOCK-PATCH-05
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-needle-01-procedure.md
+  - 02-needle-02-effective-config.yaml
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: partial
+  split: dev
+  language: en
+  tags:
+  - heavy
+  - tier_M
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: M
+  paired_with: mock-patch-05-partial-01
+  n_files: 5
+  approx_tokens:
+    total: 8091
+    per_file:
+      00-bulk-00.md: 3550
+      01-needle-01-procedure.md: 147
+      02-needle-02-effective-config.yaml: 19
+      03-bulk-03.md: 2185
+      04-bulk-04.md: 2190
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.44001
+    placements:
+    - file: 01-needle-01-procedure.md
+      fraction: 0.44001
+      bucket: middle
+    - file: 02-needle-02-effective-config.yaml
+      fraction: 0.45777
+      bucket: middle
+  gold_passages:
+  - file: 01-needle-01-procedure.md
+    text: '# Internal procedure — Timely critical security updates'
+  - file: 02-needle-02-effective-config.yaml
+    text: 'critical_deadline_days: 45'
+  bulk_files:
+  - 00-bulk-00.md
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-mock-patch-05-partial-01-l
+  control_id: MOCK-PATCH-05
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-needle-01-procedure.md
+  - 07-needle-02-effective-config.yaml
+  expected_status: partial
+  split: dev
+  language: en
+  tags:
+  - heavy
+  - tier_L
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: L
+  paired_with: mock-patch-05-partial-01
+  n_files: 8
+  approx_tokens:
+    total: 16133
+    per_file:
+      00-bulk-00.md: 2645
+      01-bulk-01.md: 2648
+      02-bulk-02.md: 2715
+      03-bulk-03.yaml: 2649
+      04-bulk-04.json: 2648
+      05-bulk-05.conf: 2662
+      06-needle-01-procedure.md: 147
+      07-needle-02-effective-config.yaml: 19
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.99029
+    placements:
+    - file: 06-needle-01-procedure.md
+      fraction: 0.99029
+      bucket: end
+    - file: 07-needle-02-effective-config.yaml
+      fraction: 0.99919
+      bucket: end
+  gold_passages:
+  - file: 06-needle-01-procedure.md
+    text: '# Internal procedure — Timely critical security updates'
+  - file: 07-needle-02-effective-config.yaml
+    text: 'critical_deadline_days: 45'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+- case_id: heavy-mock-patch-05-partial-01-xl
+  control_id: MOCK-PATCH-05
+  evidence_files:
+  - 00-needle-01-procedure.md
+  - 01-needle-02-effective-config.yaml
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+  expected_status: partial
+  split: dev
+  language: en
+  tags:
+  - heavy
+  - tier_XL
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: XL
+  paired_with: mock-patch-05-partial-01
+  n_files: 12
+  approx_tokens:
+    total: 32361
+    per_file:
+      00-needle-01-procedure.md: 147
+      01-needle-02-effective-config.yaml: 19
+      02-bulk-02.yaml: 3206
+      03-bulk-03.json: 3203
+      04-bulk-04.conf: 3201
+      05-bulk-05.ini: 3184
+      06-bulk-06.csv: 3191
+      07-bulk-07.log: 3206
+      08-bulk-08.md: 3247
+      09-bulk-09.md: 3255
+      10-bulk-10.md: 3250
+      11-bulk-11.md: 3252
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00032
+    placements:
+    - file: 00-needle-01-procedure.md
+      fraction: 0.00032
+      bucket: start
+    - file: 01-needle-02-effective-config.yaml
+      fraction: 0.00477
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure.md
+    text: '# Internal procedure — Timely critical security updates'
+  - file: 01-needle-02-effective-config.yaml
+    text: 'critical_deadline_days: 45'
+  bulk_files:
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+- case_id: heavy-mock-patch-05-non-compliant-01-m
+  control_id: MOCK-PATCH-05
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+  - 03-needle-01-procedure.md
+  - 04-needle-02-export.csv
+  expected_status: non_compliant
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_M
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: M
+  paired_with: mock-patch-05-non-compliant-01
+  n_files: 5
+  approx_tokens:
+    total: 8035
+    per_file:
+      00-bulk-00.md: 2643
+      01-bulk-01.yaml: 2612
+      02-bulk-02.csv: 2612
+      03-needle-01-procedure.md: 148
+      04-needle-02-export.csv: 20
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.98028
+    placements:
+    - file: 03-needle-01-procedure.md
+      fraction: 0.98028
+      bucket: end
+    - file: 04-needle-02-export.csv
+      fraction: 0.99841
+      bucket: end
+  gold_passages:
+  - file: 03-needle-01-procedure.md
+    text: '# Internal procedure — Timely critical security updates'
+  - file: 04-needle-02-export.csv
+    text: critical_deadline_days,90
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+- case_id: heavy-mock-patch-05-non-compliant-01-l
+  control_id: MOCK-PATCH-05
+  evidence_files:
+  - 00-needle-01-procedure.md
+  - 01-needle-02-export.csv
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: non_compliant
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_L
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: L
+  paired_with: mock-patch-05-non-compliant-01
+  n_files: 8
+  approx_tokens:
+    total: 16078
+    per_file:
+      00-needle-01-procedure.md: 148
+      01-needle-02-export.csv: 20
+      02-bulk-02.md: 2652
+      03-bulk-03.yaml: 2649
+      04-bulk-04.json: 2648
+      05-bulk-05.conf: 2662
+      06-bulk-06.csv: 2650
+      07-bulk-07.md: 2649
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00065
+    placements:
+    - file: 00-needle-01-procedure.md
+      fraction: 0.00065
+      bucket: start
+    - file: 01-needle-02-export.csv
+      fraction: 0.00972
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure.md
+    text: '# Internal procedure — Timely critical security updates'
+  - file: 01-needle-02-export.csv
+    text: critical_deadline_days,90
+  bulk_files:
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-mock-patch-05-non-compliant-01-xl
+  control_id: MOCK-PATCH-05
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-needle-01-procedure.md
+  - 06-needle-02-export.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+  expected_status: non_compliant
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_XL
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: XL
+  paired_with: mock-patch-05-non-compliant-01
+  n_files: 12
+  approx_tokens:
+    total: 32288
+    per_file:
+      00-bulk-00.md: 2869
+      01-bulk-01.md: 2875
+      02-bulk-02.yaml: 2872
+      03-bulk-03.json: 2880
+      04-bulk-04.conf: 2865
+      05-needle-01-procedure.md: 148
+      06-needle-02-export.csv: 20
+      07-bulk-07.log: 3523
+      08-bulk-08.md: 3564
+      09-bulk-09.md: 3559
+      10-bulk-10.md: 3555
+      11-bulk-11.md: 3558
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.44511
+    placements:
+    - file: 05-needle-01-procedure.md
+      fraction: 0.44511
+      bucket: middle
+    - file: 06-needle-02-export.csv
+      fraction: 0.44962
+      bucket: middle
+  gold_passages:
+  - file: 05-needle-01-procedure.md
+    text: '# Internal procedure — Timely critical security updates'
+  - file: 06-needle-02-export.csv
+    text: critical_deadline_days,90
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+- case_id: heavy-mock-fw-06-compliant-01-m
+  control_id: MOCK-FW-06
+  evidence_files:
+  - 00-needle-01-procedure.md
+  - 01-needle-02-effective-config.yaml
+  - 02-needle-03-maintenance-window.md
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: compliant
+  split: dev
+  language: en
+  tags:
+  - distractor
+  - heavy
+  - tier_M
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: M
+  paired_with: mock-fw-06-compliant-01
+  n_files: 5
+  approx_tokens:
+    total: 8095
+    per_file:
+      00-needle-01-procedure.md: 152
+      01-needle-02-effective-config.yaml: 33
+      02-needle-03-maintenance-window.md: 43
+      03-bulk-03.md: 3933
+      04-bulk-04.md: 3934
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.0013
+    placements:
+    - file: 00-needle-01-procedure.md
+      fraction: 0.0013
+      bucket: start
+    - file: 01-needle-02-effective-config.yaml
+      fraction: 0.0188
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure.md
+    text: '# Internal procedure — Restrictive inbound network rules'
+  - file: 01-needle-02-effective-config.yaml
+    text: 'default_inbound: deny'
+  bulk_files:
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-mock-fw-06-compliant-01-l
+  control_id: MOCK-FW-06
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-needle-01-procedure.md
+  - 03-needle-02-effective-config.yaml
+  - 04-needle-03-maintenance-window.md
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: compliant
+  split: dev
+  language: en
+  tags:
+  - distractor
+  - heavy
+  - tier_L
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: L
+  paired_with: mock-fw-06-compliant-01
+  n_files: 8
+  approx_tokens:
+    total: 16081
+    per_file:
+      00-bulk-00.md: 3557
+      01-bulk-01.md: 3556
+      02-needle-01-procedure.md: 152
+      03-needle-02-effective-config.yaml: 33
+      04-needle-03-maintenance-window.md: 43
+      05-bulk-05.conf: 2898
+      06-bulk-06.csv: 2902
+      07-bulk-07.md: 2940
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.44295
+    placements:
+    - file: 02-needle-01-procedure.md
+      fraction: 0.44295
+      bucket: middle
+    - file: 03-needle-02-effective-config.yaml
+      fraction: 0.45176
+      bucket: middle
+  gold_passages:
+  - file: 02-needle-01-procedure.md
+    text: '# Internal procedure — Restrictive inbound network rules'
+  - file: 03-needle-02-effective-config.yaml
+    text: 'default_inbound: deny'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-mock-fw-06-compliant-01-xl
+  control_id: MOCK-FW-06
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-needle-01-procedure.md
+  - 10-needle-02-effective-config.yaml
+  - 11-needle-03-maintenance-window.md
+  expected_status: compliant
+  split: dev
+  language: en
+  tags:
+  - distractor
+  - heavy
+  - tier_XL
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: XL
+  paired_with: mock-fw-06-compliant-01
+  n_files: 12
+  approx_tokens:
+    total: 32165
+    per_file:
+      00-bulk-00.md: 3553
+      01-bulk-01.md: 3549
+      02-bulk-02.yaml: 3540
+      03-bulk-03.json: 3575
+      04-bulk-04.conf: 3537
+      05-bulk-05.ini: 3549
+      06-bulk-06.csv: 3532
+      07-bulk-07.log: 3550
+      08-bulk-08.md: 3552
+      09-needle-01-procedure.md: 152
+      10-needle-02-effective-config.yaml: 33
+      11-needle-03-maintenance-window.md: 43
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.99321
+    placements:
+    - file: 09-needle-01-procedure.md
+      fraction: 0.99321
+      bucket: end
+    - file: 10-needle-02-effective-config.yaml
+      fraction: 0.99761
+      bucket: end
+  gold_passages:
+  - file: 09-needle-01-procedure.md
+    text: '# Internal procedure — Restrictive inbound network rules'
+  - file: 10-needle-02-effective-config.yaml
+    text: 'default_inbound: deny'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+- case_id: heavy-mock-fw-06-partial-01-m
+  control_id: MOCK-FW-06
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-needle-01-procedure.md
+  - 02-needle-02-effective-config.json
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: partial
+  split: test
+  language: en
+  tags:
+  - numeric_trap
+  - heavy
+  - tier_M
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: M
+  paired_with: mock-fw-06-partial-01
+  n_files: 5
+  approx_tokens:
+    total: 8143
+    per_file:
+      00-bulk-00.md: 3475
+      01-needle-01-procedure.md: 271
+      02-needle-02-effective-config.json: 40
+      03-bulk-03.md: 2170
+      04-bulk-04.md: 2187
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.42802
+    placements:
+    - file: 01-needle-01-procedure.md
+      fraction: 0.42802
+      bucket: middle
+    - file: 02-needle-02-effective-config.json
+      fraction: 0.46016
+      bucket: middle
+  gold_passages:
+  - file: 01-needle-01-procedure.md
+    text: '# Internal procedure — Restrictive inbound network rules'
+  - file: 02-needle-02-effective-config.json
+    text: '"default_inbound": "deny",'
+  bulk_files:
+  - 00-bulk-00.md
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-mock-fw-06-partial-01-l
+  control_id: MOCK-FW-06
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-needle-01-procedure.md
+  - 07-needle-02-effective-config.json
+  expected_status: partial
+  split: test
+  language: en
+  tags:
+  - numeric_trap
+  - heavy
+  - tier_L
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: L
+  paired_with: mock-fw-06-partial-01
+  n_files: 8
+  approx_tokens:
+    total: 16174
+    per_file:
+      00-bulk-00.md: 2646
+      01-bulk-01.md: 2649
+      02-bulk-02.md: 2642
+      03-bulk-03.yaml: 2649
+      04-bulk-04.json: 2648
+      05-bulk-05.conf: 2629
+      06-needle-01-procedure.md: 271
+      07-needle-02-effective-config.json: 40
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.98141
+    placements:
+    - file: 06-needle-01-procedure.md
+      fraction: 0.98141
+      bucket: end
+    - file: 07-needle-02-effective-config.json
+      fraction: 0.99759
+      bucket: end
+  gold_passages:
+  - file: 06-needle-01-procedure.md
+    text: '# Internal procedure — Restrictive inbound network rules'
+  - file: 07-needle-02-effective-config.json
+    text: '"default_inbound": "deny",'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+- case_id: heavy-mock-fw-06-partial-01-xl
+  control_id: MOCK-FW-06
+  evidence_files:
+  - 00-needle-01-procedure.md
+  - 01-needle-02-effective-config.json
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+  expected_status: partial
+  split: test
+  language: en
+  tags:
+  - numeric_trap
+  - heavy
+  - tier_XL
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: XL
+  paired_with: mock-fw-06-partial-01
+  n_files: 12
+  approx_tokens:
+    total: 32118
+    per_file:
+      00-needle-01-procedure.md: 271
+      01-needle-02-effective-config.json: 40
+      02-bulk-02.yaml: 3169
+      03-bulk-03.json: 3203
+      04-bulk-04.conf: 3201
+      05-bulk-05.ini: 3184
+      06-bulk-06.csv: 3177
+      07-bulk-07.log: 3181
+      08-bulk-08.md: 3172
+      09-bulk-09.md: 3175
+      10-bulk-10.md: 3171
+      11-bulk-11.md: 3174
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00033
+    placements:
+    - file: 00-needle-01-procedure.md
+      fraction: 0.00033
+      bucket: start
+    - file: 01-needle-02-effective-config.json
+      fraction: 0.00848
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure.md
+    text: '# Internal procedure — Restrictive inbound network rules'
+  - file: 01-needle-02-effective-config.json
+    text: '"default_inbound": "deny",'
+  bulk_files:
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+- case_id: heavy-mock-fw-06-non-compliant-01-m
+  control_id: MOCK-FW-06
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+  - 03-needle-01-procedure_fr.md
+  - 04-needle-02-effective-config.yaml
+  expected_status: non_compliant
+  split: dev
+  language: fr
+  tags:
+  - heavy
+  - tier_M
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: M
+  paired_with: mock-fw-06-non-compliant-01
+  n_files: 5
+  approx_tokens:
+    total: 8022
+    per_file:
+      00-bulk-00.md: 2615
+      01-bulk-01.yaml: 2612
+      02-bulk-02.csv: 2612
+      03-needle-01-procedure_fr.md: 164
+      04-needle-02-effective-config.yaml: 19
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.9785
+    placements:
+    - file: 03-needle-01-procedure_fr.md
+      fraction: 0.9785
+      bucket: end
+    - file: 04-needle-02-effective-config.yaml
+      fraction: 0.99757
+      bucket: end
+  gold_passages:
+  - file: 03-needle-01-procedure_fr.md
+    text: '# Procédure interne — Restrictive inbound network rules'
+  - file: 04-needle-02-effective-config.yaml
+    text: 'default_inbound: allow'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+- case_id: heavy-mock-fw-06-non-compliant-01-l
+  control_id: MOCK-FW-06
+  evidence_files:
+  - 00-needle-01-procedure_fr.md
+  - 01-needle-02-effective-config.yaml
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: non_compliant
+  split: dev
+  language: fr
+  tags:
+  - heavy
+  - tier_L
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: L
+  paired_with: mock-fw-06-non-compliant-01
+  n_files: 8
+  approx_tokens:
+    total: 16171
+    per_file:
+      00-needle-01-procedure_fr.md: 164
+      01-needle-02-effective-config.yaml: 19
+      02-bulk-02.md: 2695
+      03-bulk-03.yaml: 2649
+      04-bulk-04.json: 2648
+      05-bulk-05.conf: 2662
+      06-bulk-06.csv: 2636
+      07-bulk-07.md: 2698
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00068
+    placements:
+    - file: 00-needle-01-procedure_fr.md
+      fraction: 0.00068
+      bucket: start
+    - file: 01-needle-02-effective-config.yaml
+      fraction: 0.01014
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure_fr.md
+    text: '# Procédure interne — Restrictive inbound network rules'
+  - file: 01-needle-02-effective-config.yaml
+    text: 'default_inbound: allow'
+  bulk_files:
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-mock-fw-06-non-compliant-01-xl
+  control_id: MOCK-FW-06
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-needle-01-procedure_fr.md
+  - 06-needle-02-effective-config.yaml
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+  expected_status: non_compliant
+  split: dev
+  language: fr
+  tags:
+  - heavy
+  - tier_XL
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: XL
+  paired_with: mock-fw-06-non-compliant-01
+  n_files: 12
+  approx_tokens:
+    total: 32291
+    per_file:
+      00-bulk-00.md: 2941
+      01-bulk-01.md: 2940
+      02-bulk-02.yaml: 2872
+      03-bulk-03.json: 2880
+      04-bulk-04.conf: 2865
+      05-needle-01-procedure_fr.md: 164
+      06-needle-02-effective-config.yaml: 19
+      07-bulk-07.log: 3523
+      08-bulk-08.md: 3532
+      09-bulk-09.md: 3518
+      10-bulk-10.md: 3518
+      11-bulk-11.md: 3519
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.44933
+    placements:
+    - file: 05-needle-01-procedure_fr.md
+      fraction: 0.44933
+      bucket: middle
+    - file: 06-needle-02-effective-config.yaml
+      fraction: 0.45407
+      bucket: middle
+  gold_passages:
+  - file: 05-needle-01-procedure_fr.md
+    text: '# Procédure interne — Restrictive inbound network rules'
+  - file: 06-needle-02-effective-config.yaml
+    text: 'default_inbound: allow'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+- case_id: heavy-mock-tls-07-compliant-01-m
+  control_id: MOCK-TLS-07
+  evidence_files:
+  - 00-needle-01-procedure.md
+  - 01-needle-02-web-server.conf
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: compliant
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_M
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: M
+  paired_with: mock-tls-07-compliant-01
+  n_files: 5
+  approx_tokens:
+    total: 8070
+    per_file:
+      00-needle-01-procedure.md: 146
+      01-needle-02-web-server.conf: 15
+      02-bulk-02.csv: 2624
+      03-bulk-03.md: 2635
+      04-bulk-04.md: 2650
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.0013
+    placements:
+    - file: 00-needle-01-procedure.md
+      fraction: 0.0013
+      bucket: start
+    - file: 01-needle-02-web-server.conf
+      fraction: 0.01849
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure.md
+    text: '# Internal procedure — Modern TLS for public web services'
+  - file: 01-needle-02-web-server.conf
+    text: listen 443 ssl;
+  bulk_files:
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-mock-tls-07-compliant-01-l
+  control_id: MOCK-TLS-07
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-needle-01-procedure.md
+  - 04-needle-02-web-server.conf
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: compliant
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_L
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: L
+  paired_with: mock-tls-07-compliant-01
+  n_files: 8
+  approx_tokens:
+    total: 16220
+    per_file:
+      00-bulk-00.md: 2423
+      01-bulk-01.md: 2422
+      02-bulk-02.md: 2421
+      03-needle-01-procedure.md: 146
+      04-needle-02-web-server.conf: 15
+      05-bulk-05.conf: 2930
+      06-bulk-06.csv: 2913
+      07-bulk-07.md: 2950
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.44859
+    placements:
+    - file: 03-needle-01-procedure.md
+      fraction: 0.44859
+      bucket: middle
+    - file: 04-needle-02-web-server.conf
+      fraction: 0.45714
+      bucket: middle
+  gold_passages:
+  - file: 03-needle-01-procedure.md
+    text: '# Internal procedure — Modern TLS for public web services'
+  - file: 04-needle-02-web-server.conf
+    text: listen 443 ssl;
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-mock-tls-07-compliant-01-xl
+  control_id: MOCK-TLS-07
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-needle-01-procedure.md
+  - 11-needle-02-web-server.conf
+  expected_status: compliant
+  split: test
+  language: en
+  tags:
+  - heavy
+  - tier_XL
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: XL
+  paired_with: mock-tls-07-compliant-01
+  n_files: 12
+  approx_tokens:
+    total: 32341
+    per_file:
+      00-bulk-00.md: 3246
+      01-bulk-01.md: 3246
+      02-bulk-02.yaml: 3206
+      03-bulk-03.json: 3203
+      04-bulk-04.conf: 3201
+      05-bulk-05.ini: 3184
+      06-bulk-06.csv: 3191
+      07-bulk-07.log: 3206
+      08-bulk-08.md: 3249
+      09-bulk-09.md: 3248
+      10-needle-01-procedure.md: 146
+      11-needle-02-web-server.conf: 15
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.99532
+    placements:
+    - file: 10-needle-01-procedure.md
+      fraction: 0.99532
+      bucket: end
+    - file: 11-needle-02-web-server.conf
+      fraction: 0.99961
+      bucket: end
+  gold_passages:
+  - file: 10-needle-01-procedure.md
+    text: '# Internal procedure — Modern TLS for public web services'
+  - file: 11-needle-02-web-server.conf
+    text: listen 443 ssl;
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+- case_id: heavy-mock-tls-07-partial-01-m
+  control_id: MOCK-TLS-07
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-needle-01-procedure_fr.md
+  - 02-needle-02-web-server.conf
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: partial
+  split: dev
+  language: fr
+  tags:
+  - heavy
+  - tier_M
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: M
+  paired_with: mock-tls-07-partial-01
+  n_files: 5
+  approx_tokens:
+    total: 8075
+    per_file:
+      00-bulk-00.md: 3529
+      01-needle-01-procedure_fr.md: 170
+      02-needle-02-web-server.conf: 24
+      03-bulk-03.md: 2149
+      04-bulk-04.md: 2203
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.43833
+    placements:
+    - file: 01-needle-01-procedure_fr.md
+      fraction: 0.43833
+      bucket: middle
+    - file: 02-needle-02-web-server.conf
+      fraction: 0.45835
+      bucket: middle
+  gold_passages:
+  - file: 01-needle-01-procedure_fr.md
+    text: '# Procédure interne — Modern TLS for public web services'
+  - file: 02-needle-02-web-server.conf
+    text: listen 443 ssl;
+  bulk_files:
+  - 00-bulk-00.md
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-mock-tls-07-partial-01-l
+  control_id: MOCK-TLS-07
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-needle-01-procedure_fr.md
+  - 07-needle-02-web-server.conf
+  expected_status: partial
+  split: dev
+  language: fr
+  tags:
+  - heavy
+  - tier_L
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: L
+  paired_with: mock-tls-07-partial-01
+  n_files: 8
+  approx_tokens:
+    total: 16261
+    per_file:
+      00-bulk-00.md: 2699
+      01-bulk-01.md: 2708
+      02-bulk-02.md: 2701
+      03-bulk-03.yaml: 2649
+      04-bulk-04.json: 2648
+      05-bulk-05.conf: 2662
+      06-needle-01-procedure_fr.md: 170
+      07-needle-02-web-server.conf: 24
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.98872
+    placements:
+    - file: 06-needle-01-procedure_fr.md
+      fraction: 0.98872
+      bucket: end
+    - file: 07-needle-02-web-server.conf
+      fraction: 0.99866
+      bucket: end
+  gold_passages:
+  - file: 06-needle-01-procedure_fr.md
+    text: '# Procédure interne — Modern TLS for public web services'
+  - file: 07-needle-02-web-server.conf
+    text: listen 443 ssl;
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+- case_id: heavy-mock-tls-07-partial-01-xl
+  control_id: MOCK-TLS-07
+  evidence_files:
+  - 00-needle-01-procedure_fr.md
+  - 01-needle-02-web-server.conf
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+  expected_status: partial
+  split: dev
+  language: fr
+  tags:
+  - heavy
+  - tier_XL
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: XL
+  paired_with: mock-tls-07-partial-01
+  n_files: 12
+  approx_tokens:
+    total: 32140
+    per_file:
+      00-needle-01-procedure_fr.md: 170
+      01-needle-02-web-server.conf: 24
+      02-bulk-02.yaml: 3206
+      03-bulk-03.json: 3203
+      04-bulk-04.conf: 3201
+      05-bulk-05.ini: 3184
+      06-bulk-06.csv: 3191
+      07-bulk-07.log: 3181
+      08-bulk-08.md: 3197
+      09-bulk-09.md: 3199
+      10-bulk-10.md: 3195
+      11-bulk-11.md: 3189
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00034
+    placements:
+    - file: 00-needle-01-procedure_fr.md
+      fraction: 0.00034
+      bucket: start
+    - file: 01-needle-02-web-server.conf
+      fraction: 0.00537
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure_fr.md
+    text: '# Procédure interne — Modern TLS for public web services'
+  - file: 01-needle-02-web-server.conf
+    text: listen 443 ssl;
+  bulk_files:
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+- case_id: heavy-mock-tls-07-non-compliant-01-m
+  control_id: MOCK-TLS-07
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-needle-01-procedure.md
+  - 03-needle-02-web-server.conf
+  - 04-needle-03-change-request.md
+  expected_status: non_compliant
+  split: dev
+  language: en
+  tags:
+  - numeric_trap
+  - injection
+  - heavy
+  - tier_M
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: M
+  paired_with: mock-tls-07-non-compliant-01
+  n_files: 5
+  approx_tokens:
+    total: 8050
+    per_file:
+      00-bulk-00.md: 3855
+      01-bulk-01.yaml: 3837
+      02-needle-01-procedure.md: 288
+      03-needle-02-web-server.conf: 15
+      04-needle-03-change-request.md: 55
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.95674
+    placements:
+    - file: 02-needle-01-procedure.md
+      fraction: 0.95674
+      bucket: end
+    - file: 03-needle-02-web-server.conf
+      fraction: 0.99162
+      bucket: end
+  gold_passages:
+  - file: 02-needle-01-procedure.md
+    text: '# Internal procedure — Modern TLS for public web services'
+  - file: 03-needle-02-web-server.conf
+    text: listen 443 ssl;
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+- case_id: heavy-mock-tls-07-non-compliant-01-l
+  control_id: MOCK-TLS-07
+  evidence_files:
+  - 00-needle-01-procedure.md
+  - 01-needle-02-web-server.conf
+  - 02-needle-03-change-request.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: non_compliant
+  split: dev
+  language: en
+  tags:
+  - numeric_trap
+  - injection
+  - heavy
+  - tier_L
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: L
+  paired_with: mock-tls-07-non-compliant-01
+  n_files: 8
+  approx_tokens:
+    total: 16080
+    per_file:
+      00-needle-01-procedure.md: 288
+      01-needle-02-web-server.conf: 15
+      02-needle-03-change-request.md: 55
+      03-bulk-03.yaml: 3131
+      04-bulk-04.json: 3157
+      05-bulk-05.conf: 3133
+      06-bulk-06.csv: 3128
+      07-bulk-07.md: 3173
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00065
+    placements:
+    - file: 00-needle-01-procedure.md
+      fraction: 0.00065
+      bucket: start
+    - file: 01-needle-02-web-server.conf
+      fraction: 0.01811
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure.md
+    text: '# Internal procedure — Modern TLS for public web services'
+  - file: 01-needle-02-web-server.conf
+    text: listen 443 ssl;
+  bulk_files:
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-mock-tls-07-non-compliant-01-xl
+  control_id: MOCK-TLS-07
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-needle-01-procedure.md
+  - 05-needle-02-web-server.conf
+  - 06-needle-03-change-request.md
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+  expected_status: non_compliant
+  split: dev
+  language: en
+  tags:
+  - numeric_trap
+  - injection
+  - heavy
+  - tier_XL
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: XL
+  paired_with: mock-tls-07-non-compliant-01
+  n_files: 12
+  approx_tokens:
+    total: 32401
+    per_file:
+      00-bulk-00.md: 3623
+      01-bulk-01.md: 3638
+      02-bulk-02.yaml: 3577
+      03-bulk-03.json: 3575
+      04-needle-01-procedure.md: 288
+      05-needle-02-web-server.conf: 15
+      06-needle-03-change-request.md: 55
+      07-bulk-07.log: 3496
+      08-bulk-08.md: 3548
+      09-bulk-09.md: 3546
+      10-bulk-10.md: 3489
+      11-bulk-11.md: 3551
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.44516
+    placements:
+    - file: 04-needle-01-procedure.md
+      fraction: 0.44516
+      bucket: middle
+    - file: 05-needle-02-web-server.conf
+      fraction: 0.45382
+      bucket: middle
+  gold_passages:
+  - file: 04-needle-01-procedure.md
+    text: '# Internal procedure — Modern TLS for public web services'
+  - file: 05-needle-02-web-server.conf
+    text: listen 443 ssl;
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+- case_id: heavy-mock-access-08-compliant-01-m
+  control_id: MOCK-ACCESS-08
+  evidence_files:
+  - 00-needle-01-procedure_fr.md
+  - 01-needle-02-export.csv
+  - 02-needle-03-cafeteria-menu.md
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: compliant
+  split: dev
+  language: fr
+  tags:
+  - distractor
+  - heavy
+  - tier_M
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: M
+  paired_with: mock-access-08-compliant-01
+  n_files: 5
+  approx_tokens:
+    total: 8127
+    per_file:
+      00-needle-01-procedure_fr.md: 172
+      01-needle-02-export.csv: 51
+      02-needle-03-cafeteria-menu.md: 37
+      03-bulk-03.md: 3924
+      04-bulk-04.md: 3943
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00135
+    placements:
+    - file: 00-needle-01-procedure_fr.md
+      fraction: 0.00135
+      bucket: start
+    - file: 01-needle-02-export.csv
+      fraction: 0.02116
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure_fr.md
+    text: '# Procédure interne — Periodic review of user access'
+  - file: 01-needle-02-export.csv
+    text: review_date,account,owner,decision,action,status
+  bulk_files:
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-mock-access-08-compliant-01-l
+  control_id: MOCK-ACCESS-08
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-needle-01-procedure_fr.md
+  - 03-needle-02-export.csv
+  - 04-needle-03-cafeteria-menu.md
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: compliant
+  split: dev
+  language: fr
+  tags:
+  - distractor
+  - heavy
+  - tier_L
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: L
+  paired_with: mock-access-08-compliant-01
+  n_files: 8
+  approx_tokens:
+    total: 16187
+    per_file:
+      00-bulk-00.md: 3601
+      01-bulk-01.md: 3601
+      02-needle-01-procedure_fr.md: 172
+      03-needle-02-export.csv: 51
+      04-needle-03-cafeteria-menu.md: 37
+      05-bulk-05.conf: 2898
+      06-bulk-06.csv: 2888
+      07-bulk-07.md: 2939
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.44559
+    placements:
+    - file: 02-needle-01-procedure_fr.md
+      fraction: 0.44559
+      bucket: middle
+    - file: 03-needle-02-export.csv
+      fraction: 0.45554
+      bucket: middle
+  gold_passages:
+  - file: 02-needle-01-procedure_fr.md
+    text: '# Procédure interne — Periodic review of user access'
+  - file: 03-needle-02-export.csv
+    text: review_date,account,owner,decision,action,status
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-mock-access-08-compliant-01-xl
+  control_id: MOCK-ACCESS-08
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-needle-01-procedure_fr.md
+  - 10-needle-02-export.csv
+  - 11-needle-03-cafeteria-menu.md
+  expected_status: compliant
+  split: dev
+  language: fr
+  tags:
+  - distractor
+  - heavy
+  - tier_XL
+  rationale: The cited policy and effective export satisfy the stated mock criteria.
+  tier: XL
+  paired_with: mock-access-08-compliant-01
+  n_files: 12
+  approx_tokens:
+    total: 32226
+    per_file:
+      00-bulk-00.md: 3529
+      01-bulk-01.md: 3601
+      02-bulk-02.yaml: 3540
+      03-bulk-03.json: 3528
+      04-bulk-04.conf: 3537
+      05-bulk-05.ini: 3549
+      06-bulk-06.csv: 3532
+      07-bulk-07.log: 3550
+      08-bulk-08.md: 3600
+      09-needle-01-procedure_fr.md: 172
+      10-needle-02-export.csv: 51
+      11-needle-03-cafeteria-menu.md: 37
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.99225
+    placements:
+    - file: 09-needle-01-procedure_fr.md
+      fraction: 0.99225
+      bucket: end
+    - file: 10-needle-02-export.csv
+      fraction: 0.99725
+      bucket: end
+  gold_passages:
+  - file: 09-needle-01-procedure_fr.md
+    text: '# Procédure interne — Periodic review of user access'
+  - file: 10-needle-02-export.csv
+    text: review_date,account,owner,decision,action,status
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+- case_id: heavy-mock-access-08-partial-01-m
+  control_id: MOCK-ACCESS-08
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-needle-01-procedure.md
+  - 02-needle-02-export.csv
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: partial
+  split: dev
+  language: en
+  tags:
+  - heavy
+  - tier_M
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: M
+  paired_with: mock-access-08-partial-01
+  n_files: 5
+  approx_tokens:
+    total: 8120
+    per_file:
+      00-bulk-00.md: 3550
+      01-needle-01-procedure.md: 150
+      02-needle-02-export.csv: 36
+      03-bulk-03.md: 2194
+      04-bulk-04.md: 2190
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.43843
+    placements:
+    - file: 01-needle-01-procedure.md
+      fraction: 0.43843
+      bucket: middle
+    - file: 02-needle-02-export.csv
+      fraction: 0.45567
+      bucket: middle
+  gold_passages:
+  - file: 01-needle-01-procedure.md
+    text: '# Internal procedure — Periodic review of user access'
+  - file: 02-needle-02-export.csv
+    text: review_date,account,owner,decision,action,status
+  bulk_files:
+  - 00-bulk-00.md
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-mock-access-08-partial-01-l
+  control_id: MOCK-ACCESS-08
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-needle-01-procedure.md
+  - 07-needle-02-export.csv
+  expected_status: partial
+  split: dev
+  language: en
+  tags:
+  - heavy
+  - tier_L
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: L
+  paired_with: mock-access-08-partial-01
+  n_files: 8
+  approx_tokens:
+    total: 16155
+    per_file:
+      00-bulk-00.md: 2650
+      01-bulk-01.md: 2718
+      02-bulk-02.md: 2642
+      03-bulk-03.yaml: 2649
+      04-bulk-04.json: 2648
+      05-bulk-05.conf: 2662
+      06-needle-01-procedure.md: 150
+      07-needle-02-export.csv: 36
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.98911
+    placements:
+    - file: 06-needle-01-procedure.md
+      fraction: 0.98911
+      bucket: end
+    - file: 07-needle-02-export.csv
+      fraction: 0.99777
+      bucket: end
+  gold_passages:
+  - file: 06-needle-01-procedure.md
+    text: '# Internal procedure — Periodic review of user access'
+  - file: 07-needle-02-export.csv
+    text: review_date,account,owner,decision,action,status
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+- case_id: heavy-mock-access-08-partial-01-xl
+  control_id: MOCK-ACCESS-08
+  evidence_files:
+  - 00-needle-01-procedure.md
+  - 01-needle-02-export.csv
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+  expected_status: partial
+  split: dev
+  language: en
+  tags:
+  - heavy
+  - tier_XL
+  rationale: Some safeguards are present, but at least one required scope, threshold,
+    or follow-up condition is missing.
+  tier: XL
+  paired_with: mock-access-08-partial-01
+  n_files: 12
+  approx_tokens:
+    total: 32348
+    per_file:
+      00-needle-01-procedure.md: 150
+      01-needle-02-export.csv: 36
+      02-bulk-02.yaml: 3206
+      03-bulk-03.json: 3203
+      04-bulk-04.conf: 3201
+      05-bulk-05.ini: 3184
+      06-bulk-06.csv: 3191
+      07-bulk-07.log: 3181
+      08-bulk-08.md: 3246
+      09-bulk-09.md: 3248
+      10-bulk-10.md: 3246
+      11-bulk-11.md: 3256
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00032
+    placements:
+    - file: 00-needle-01-procedure.md
+      fraction: 0.00032
+      bucket: start
+    - file: 01-needle-02-export.csv
+      fraction: 0.00465
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure.md
+    text: '# Internal procedure — Periodic review of user access'
+  - file: 01-needle-02-export.csv
+    text: review_date,account,owner,decision,action,status
+  bulk_files:
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-bulk-05.ini
+  - 06-bulk-06.csv
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+- case_id: heavy-mock-access-08-non-compliant-01-m
+  control_id: MOCK-ACCESS-08
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+  - 03-needle-01-procedure_fr.md
+  - 04-needle-02-effective-config.json
+  expected_status: non_compliant
+  split: dev
+  language: fr
+  tags:
+  - heavy
+  - tier_M
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: M
+  paired_with: mock-access-08-non-compliant-01
+  n_files: 5
+  approx_tokens:
+    total: 8037
+    per_file:
+      00-bulk-00.md: 2624
+      01-bulk-01.yaml: 2612
+      02-bulk-02.csv: 2612
+      03-needle-01-procedure_fr.md: 164
+      04-needle-02-effective-config.json: 25
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.97779
+    placements:
+    - file: 03-needle-01-procedure_fr.md
+      fraction: 0.97779
+      bucket: end
+    - file: 04-needle-02-effective-config.json
+      fraction: 0.99695
+      bucket: end
+  gold_passages:
+  - file: 03-needle-01-procedure_fr.md
+    text: '# Procédure interne — Periodic review of user access'
+  - file: 04-needle-02-effective-config.json
+    text: '"review_frequency": "upon_request",'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+- case_id: heavy-mock-access-08-non-compliant-01-l
+  control_id: MOCK-ACCESS-08
+  evidence_files:
+  - 00-needle-01-procedure_fr.md
+  - 01-needle-02-effective-config.json
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: non_compliant
+  split: dev
+  language: fr
+  tags:
+  - heavy
+  - tier_L
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: L
+  paired_with: mock-access-08-non-compliant-01
+  n_files: 8
+  approx_tokens:
+    total: 16170
+    per_file:
+      00-needle-01-procedure_fr.md: 164
+      01-needle-02-effective-config.json: 25
+      02-bulk-02.md: 2690
+      03-bulk-03.yaml: 2649
+      04-bulk-04.json: 2648
+      05-bulk-05.conf: 2662
+      06-bulk-06.csv: 2636
+      07-bulk-07.md: 2696
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00068
+    placements:
+    - file: 00-needle-01-procedure_fr.md
+      fraction: 0.00068
+      bucket: start
+    - file: 01-needle-02-effective-config.json
+      fraction: 0.0102
+      bucket: start
+  gold_passages:
+  - file: 00-needle-01-procedure_fr.md
+    text: '# Procédure interne — Periodic review of user access'
+  - file: 01-needle-02-effective-config.json
+    text: '"review_frequency": "upon_request",'
+  bulk_files:
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-mock-access-08-non-compliant-01-xl
+  control_id: MOCK-ACCESS-08
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 05-needle-01-procedure_fr.md
+  - 06-needle-02-effective-config.json
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+  expected_status: non_compliant
+  split: dev
+  language: fr
+  tags:
+  - heavy
+  - tier_XL
+  rationale: The effective evidence shows a material failure against one or more required
+    criteria.
+  tier: XL
+  paired_with: mock-access-08-non-compliant-01
+  n_files: 12
+  approx_tokens:
+    total: 32149
+    per_file:
+      00-bulk-00.md: 2872
+      01-bulk-01.md: 2871
+      02-bulk-02.yaml: 2872
+      03-bulk-03.json: 2880
+      04-bulk-04.conf: 2865
+      05-needle-01-procedure_fr.md: 164
+      06-needle-02-effective-config.json: 25
+      07-bulk-07.log: 3523
+      08-bulk-08.md: 3519
+      09-bulk-09.md: 3522
+      10-bulk-10.md: 3525
+      11-bulk-11.md: 3511
+    target: 32000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.44703
+    placements:
+    - file: 05-needle-01-procedure_fr.md
+      fraction: 0.44703
+      bucket: middle
+    - file: 06-needle-02-effective-config.json
+      fraction: 0.45182
+      bucket: middle
+  gold_passages:
+  - file: 05-needle-01-procedure_fr.md
+    text: '# Procédure interne — Periodic review of user access'
+  - file: 06-needle-02-effective-config.json
+    text: '"review_frequency": "upon_request",'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.yaml
+  - 03-bulk-03.json
+  - 04-bulk-04.conf
+  - 07-bulk-07.log
+  - 08-bulk-08.md
+  - 09-bulk-09.md
+  - 10-bulk-10.md
+  - 11-bulk-11.md
+- case_id: heavy-pwd-unclear-m
+  control_id: MOCK-PWD-01
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-needle-01-context.md
+  expected_status: insufficient_evidence
+  split: dev
+  language: fr
+  tags:
+  - insufficient_evidence
+  - heavy
+  - tier_M
+  rationale: The evidence does not establish the facts required to assess this control.
+  tier: M
+  paired_with: pwd-unclear
+  n_files: 5
+  approx_tokens:
+    total: 8164
+    per_file:
+      00-bulk-00.md: 2038
+      01-bulk-01.yaml: 2020
+      02-bulk-02.csv: 1994
+      03-bulk-03.md: 2055
+      04-needle-01-context.md: 57
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: none
+    fraction: null
+    placements: []
+  gold_passages: []
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+- case_id: heavy-pwd-unclear-l
+  control_id: MOCK-PWD-01
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-needle-01-context.md
+  expected_status: insufficient_evidence
+  split: dev
+  language: fr
+  tags:
+  - insufficient_evidence
+  - heavy
+  - tier_L
+  rationale: The evidence does not establish the facts required to assess this control.
+  tier: L
+  paired_with: pwd-unclear
+  n_files: 8
+  approx_tokens:
+    total: 16134
+    per_file:
+      00-bulk-00.md: 2308
+      01-bulk-01.md: 2299
+      02-bulk-02.md: 2293
+      03-bulk-03.yaml: 2278
+      04-bulk-04.json: 2323
+      05-bulk-05.conf: 2293
+      06-bulk-06.csv: 2283
+      07-needle-01-context.md: 57
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: none
+    fraction: null
+    placements: []
+  gold_passages: []
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+- case_id: heavy-mfa-vague-m
+  control_id: MOCK-MFA-02
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-needle-01-context.md
+  expected_status: insufficient_evidence
+  split: test
+  language: en
+  tags:
+  - insufficient_evidence
+  - heavy
+  - tier_M
+  rationale: The evidence does not establish the facts required to assess this control.
+  tier: M
+  paired_with: mfa-vague
+  n_files: 5
+  approx_tokens:
+    total: 8153
+    per_file:
+      00-bulk-00.md: 2051
+      01-bulk-01.yaml: 2020
+      02-bulk-02.csv: 1994
+      03-bulk-03.md: 2041
+      04-needle-01-context.md: 47
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: none
+    fraction: null
+    placements: []
+  gold_passages: []
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+- case_id: heavy-mfa-vague-l
+  control_id: MOCK-MFA-02
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-needle-01-context.md
+  expected_status: insufficient_evidence
+  split: test
+  language: en
+  tags:
+  - insufficient_evidence
+  - heavy
+  - tier_L
+  rationale: The evidence does not establish the facts required to assess this control.
+  tier: L
+  paired_with: mfa-vague
+  n_files: 8
+  approx_tokens:
+    total: 16282
+    per_file:
+      00-bulk-00.md: 2339
+      01-bulk-01.md: 2345
+      02-bulk-02.md: 2336
+      03-bulk-03.yaml: 2316
+      04-bulk-04.json: 2323
+      05-bulk-05.conf: 2293
+      06-bulk-06.csv: 2283
+      07-needle-01-context.md: 47
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: none
+    fraction: null
+    placements: []
+  gold_passages: []
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+- case_id: heavy-log-unrelated-m
+  control_id: MOCK-LOG-04
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-needle-01-context.md
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: insufficient_evidence
+  split: dev
+  language: en
+  tags:
+  - insufficient_evidence
+  - heavy
+  - tier_M
+  rationale: The evidence does not establish the facts required to assess this control.
+  tier: M
+  paired_with: log-unrelated
+  n_files: 5
+  approx_tokens:
+    total: 8048
+    per_file:
+      00-bulk-00.md: 1821
+      01-bulk-01.yaml: 1796
+      02-needle-01-context.md: 61
+      03-bulk-03.md: 2185
+      04-bulk-04.md: 2185
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: none
+    fraction: null
+    placements: []
+  gold_passages: []
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-log-unrelated-l
+  control_id: MOCK-LOG-04
+  evidence_files:
+  - 00-needle-01-context.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: insufficient_evidence
+  split: dev
+  language: en
+  tags:
+  - insufficient_evidence
+  - heavy
+  - tier_L
+  rationale: The evidence does not establish the facts required to assess this control.
+  tier: L
+  paired_with: log-unrelated
+  n_files: 8
+  approx_tokens:
+    total: 16154
+    per_file:
+      00-needle-01-context.md: 61
+      01-bulk-01.md: 2337
+      02-bulk-02.md: 2281
+      03-bulk-03.yaml: 2278
+      04-bulk-04.json: 2277
+      05-bulk-05.conf: 2293
+      06-bulk-06.csv: 2283
+      07-bulk-07.md: 2344
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: none
+    fraction: null
+    placements: []
+  gold_passages: []
+  bulk_files:
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-patch-empty-m
+  control_id: MOCK-PATCH-05
+  evidence_files:
+  - 00-needle-01-context.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: insufficient_evidence
+  split: dev
+  language: fr
+  tags:
+  - insufficient_evidence
+  - heavy
+  - tier_M
+  rationale: The evidence does not establish the facts required to assess this control.
+  tier: M
+  paired_with: patch-empty
+  n_files: 5
+  approx_tokens:
+    total: 8175
+    per_file:
+      00-needle-01-context.md: 52
+      01-bulk-01.yaml: 2020
+      02-bulk-02.csv: 1994
+      03-bulk-03.md: 2048
+      04-bulk-04.md: 2061
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: none
+    fraction: null
+    placements: []
+  gold_passages: []
+  bulk_files:
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-patch-empty-l
+  control_id: MOCK-PATCH-05
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-needle-01-context.md
+  expected_status: insufficient_evidence
+  split: dev
+  language: fr
+  tags:
+  - insufficient_evidence
+  - heavy
+  - tier_L
+  rationale: The evidence does not establish the facts required to assess this control.
+  tier: L
+  paired_with: patch-empty
+  n_files: 8
+  approx_tokens:
+    total: 16234
+    per_file:
+      00-bulk-00.md: 2299
+      01-bulk-01.md: 2351
+      02-bulk-02.md: 2355
+      03-bulk-03.yaml: 2278
+      04-bulk-04.json: 2323
+      05-bulk-05.conf: 2293
+      06-bulk-06.csv: 2283
+      07-needle-01-context.md: 52
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: none
+    fraction: null
+    placements: []
+  gold_passages: []
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+- case_id: heavy-tls-no-facts-m
+  control_id: MOCK-TLS-07
+  evidence_files:
+  - 00-needle-01-context.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: insufficient_evidence
+  split: test
+  language: mixed
+  tags:
+  - insufficient_evidence
+  - heavy
+  - tier_M
+  rationale: The evidence does not establish the facts required to assess this control.
+  tier: M
+  paired_with: tls-no-facts
+  n_files: 5
+  approx_tokens:
+    total: 8093
+    per_file:
+      00-needle-01-context.md: 62
+      01-bulk-01.yaml: 2020
+      02-bulk-02.csv: 1994
+      03-bulk-03.md: 2007
+      04-bulk-04.md: 2010
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: none
+    fraction: null
+    placements: []
+  gold_passages: []
+  bulk_files:
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+- case_id: heavy-tls-no-facts-l
+  control_id: MOCK-TLS-07
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-needle-01-context.md
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: insufficient_evidence
+  split: test
+  language: mixed
+  tags:
+  - insufficient_evidence
+  - heavy
+  - tier_L
+  rationale: The evidence does not establish the facts required to assess this control.
+  tier: L
+  paired_with: tls-no-facts
+  n_files: 8
+  approx_tokens:
+    total: 16185
+    per_file:
+      00-bulk-00.md: 2425
+      01-bulk-01.md: 2411
+      02-bulk-02.md: 2456
+      03-needle-01-context.md: 62
+      04-bulk-04.json: 2230
+      05-bulk-05.conf: 2193
+      06-bulk-06.csv: 2195
+      07-bulk-07.md: 2213
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: none
+    fraction: null
+    placements: []
+  gold_passages: []
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-access-insufficient-m
+  control_id: MOCK-ACCESS-08
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+  - 04-needle-01-context.md
+  expected_status: insufficient_evidence
+  split: dev
+  language: fr
+  tags:
+  - insufficient_evidence
+  - heavy
+  - tier_M
+  rationale: The evidence does not establish the facts required to assess this control.
+  tier: M
+  paired_with: access-insufficient
+  n_files: 5
+  approx_tokens:
+    total: 8125
+    per_file:
+      00-bulk-00.md: 2067
+      01-bulk-01.yaml: 1982
+      02-bulk-02.csv: 1982
+      03-bulk-03.md: 2023
+      04-needle-01-context.md: 71
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: none
+    fraction: null
+    placements: []
+  gold_passages: []
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-bulk-02.csv
+  - 03-bulk-03.md
+- case_id: heavy-access-insufficient-l
+  control_id: MOCK-ACCESS-08
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-needle-01-context.md
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: insufficient_evidence
+  split: dev
+  language: fr
+  tags:
+  - insufficient_evidence
+  - heavy
+  - tier_L
+  rationale: The evidence does not establish the facts required to assess this control.
+  tier: L
+  paired_with: access-insufficient
+  n_files: 8
+  approx_tokens:
+    total: 16308
+    per_file:
+      00-bulk-00.md: 2463
+      01-bulk-01.md: 2462
+      02-bulk-02.md: 2466
+      03-needle-01-context.md: 71
+      04-bulk-04.json: 2230
+      05-bulk-05.conf: 2193
+      06-bulk-06.csv: 2195
+      07-bulk-07.md: 2228
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: none
+    fraction: null
+    placements: []
+  gold_passages: []
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+- case_id: heavy-adv-superseded-policy
+  control_id: MOCK-PWD-01
+  evidence_files:
+  - 00-needle-01-2023-password-policy.md
+  - 01-needle-02-approved-current-policy.md
+  - 02-needle-03-active-policy.ini
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: compliant
+  split: test
+  language: en
+  tags:
+  - superseded
+  - needle_start
+  - heavy
+  - tier_M
+  rationale: The retired edition is superseded; the approved current policy and active
+    export meet the mock criteria.
+  tier: M
+  paired_with: null
+  n_files: 5
+  approx_tokens:
+    total: 8147
+    per_file:
+      00-needle-01-2023-password-policy.md: 49
+      01-needle-02-approved-current-policy.md: 58
+      02-needle-03-active-policy.ini: 24
+      03-bulk-03.md: 4004
+      04-bulk-04.md: 4012
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00893
+    placements:
+    - file: 01-needle-02-approved-current-policy.md
+      fraction: 0.00893
+      bucket: start
+    - file: 02-needle-03-active-policy.ini
+      fraction: 0.01384
+      bucket: start
+  gold_passages:
+  - file: 01-needle-02-approved-current-policy.md
+    text: The approved identity policy requires a minimum length of 14 characters,
+      multiple character types, and blocks known compromised choices.
+  - file: 02-needle-03-active-policy.ini
+    text: minimum_length = 14
+  bulk_files:
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  adversarial_name: superseded older policy version
+- case_id: heavy-adv-approved-vs-draft
+  control_id: MOCK-MFA-02
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-needle-01-draft-watermark.md
+  - 03-needle-02-approved-standard.md
+  - 04-needle-03-identity-export.yaml
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: compliant
+  split: dev
+  language: en
+  tags:
+  - draft_conflict
+  - heavy
+  - tier_L
+  rationale: The unapproved draft is not effective; the approved policy and live identity
+    export show complete coverage.
+  tier: L
+  paired_with: null
+  n_files: 8
+  approx_tokens:
+    total: 16181
+    per_file:
+      00-bulk-00.md: 3631
+      01-bulk-01.md: 3632
+      02-needle-01-draft-watermark.md: 49
+      03-needle-02-approved-standard.md: 59
+      04-needle-03-identity-export.yaml: 27
+      05-bulk-05.conf: 2930
+      06-bulk-06.csv: 2913
+      07-bulk-07.md: 2940
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.45322
+    placements:
+    - file: 03-needle-02-approved-standard.md
+      fraction: 0.45322
+      bucket: middle
+    - file: 04-needle-03-identity-export.yaml
+      fraction: 0.45627
+      bucket: middle
+  gold_passages:
+  - file: 03-needle-02-approved-standard.md
+    text: All interactive privileged users must complete a second factor.
+  - file: 04-needle-03-identity-export.yaml
+    text: 'mfa_required: true'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  adversarial_name: draft policy versus approved policy
+- case_id: heavy-adv-time-limited-waiver
+  control_id: MOCK-MFA-02
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  - 02-needle-01-privileged-standard.md
+  - 03-needle-02-waiver-2026-04.md
+  - 04-needle-03-identity-export.yaml
+  expected_status: partial
+  split: dev
+  language: fr
+  tags:
+  - waiver
+  - exception
+  - heavy
+  - tier_M
+  rationale: MFA is broadly required, but one active documented waiver leaves a privileged
+    account outside the safeguard.
+  tier: M
+  paired_with: null
+  n_files: 5
+  approx_tokens:
+    total: 8063
+    per_file:
+      00-bulk-00.md: 3995
+      01-bulk-01.yaml: 3947
+      02-needle-01-privileged-standard.md: 37
+      03-needle-02-waiver-2026-04.md: 62
+      04-needle-03-identity-export.yaml: 22
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.9871
+    placements:
+    - file: 02-needle-01-privileged-standard.md
+      fraction: 0.9871
+      bucket: end
+    - file: 03-needle-02-waiver-2026-04.md
+      fraction: 0.99095
+      bucket: end
+    - file: 04-needle-03-identity-export.yaml
+      fraction: 0.99792
+      bucket: end
+  gold_passages:
+  - file: 02-needle-01-privileged-standard.md
+    text: Tous les comptes administratifs interactifs utilisent un second facteur.
+  - file: 03-needle-02-waiver-2026-04.md
+    text: '# Dérogation temporaire approuvée
+
+      Le compte de garde du site Delta est exempté jusqu''au 2026-12-15, avec un propriétaire
+      nommé et un suivi hebdomadaire. Cette exception reste active aujourd''hui.'
+  - file: 04-needle-03-identity-export.yaml
+    text: 'general_mfa_required: true'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.yaml
+  adversarial_name: documented time-limited exception
+- case_id: heavy-adv-buried-effective-setting
+  control_id: MOCK-PWD-01
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-needle-01-approved-policy.md
+  - 04-needle-02-directory-export.conf
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: non_compliant
+  split: test
+  language: en
+  tags:
+  - buried_fact
+  - contradiction
+  - heavy
+  - tier_L
+  rationale: The approved policy is contradicted by the active export's buried effective
+    value of eight.
+  tier: L
+  paired_with: null
+  n_files: 8
+  approx_tokens:
+    total: 16235
+    per_file:
+      00-bulk-00.md: 829
+      01-bulk-01.md: 826
+      02-bulk-02.md: 833
+      03-needle-01-approved-policy.md: 39
+      04-needle-02-directory-export.conf: 10826
+      05-bulk-05.conf: 949
+      06-bulk-06.csv: 949
+      07-bulk-07.md: 984
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.68157
+    placements:
+    - file: 04-needle-02-directory-export.conf
+      fraction: 0.68157
+      bucket: middle
+  gold_passages:
+  - file: 04-needle-02-directory-export.conf
+    text: 'directory_password_minimum_length = 8;  # deployed on active identity service'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  adversarial_name: policy versus buried effective configuration
+- case_id: heavy-adv-single-csv-exception
+  control_id: MOCK-ACCESS-08
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  - 06-needle-01-quarterly-procedure.md
+  - 07-needle-02-access-review-2000.csv
+  expected_status: partial
+  split: dev
+  language: en
+  tags:
+  - large_csv
+  - single_violation
+  - heavy
+  - tier_L
+  rationale: The export contains one unresolved removal among otherwise completed
+    review records.
+  tier: L
+  paired_with: null
+  n_files: 8
+  approx_tokens:
+    total: 16181
+    per_file:
+      00-bulk-00.md: 542
+      01-bulk-01.md: 533
+      02-bulk-02.md: 523
+      03-bulk-03.yaml: 497
+      04-bulk-04.json: 517
+      05-bulk-05.conf: 513
+      06-needle-01-quarterly-procedure.md: 45
+      07-needle-02-access-review-2000.csv: 13011
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: end
+    fraction: 0.99954
+    placements:
+    - file: 07-needle-02-access-review-2000.csv
+      fraction: 0.99954
+      bucket: end
+  gold_passages:
+  - file: 07-needle-02-access-review-2000.csv
+    text: 0930,a2000,t19,remove,T9,open
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-bulk-03.yaml
+  - 04-bulk-04.json
+  - 05-bulk-05.conf
+  adversarial_name: two-thousand-row review export with one pending action
+- case_id: heavy-adv-near-duplicate-retention
+  control_id: MOCK-LOG-04
+  evidence_files:
+  - 00-needle-01-retention-standard-v3.md
+  - 01-needle-02-retention-standard-v4-approved.md
+  - 02-needle-03-siem-settings.yaml
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: partial
+  split: dev
+  language: fr
+  tags:
+  - near_duplicate
+  - numeric_trap
+  - heavy
+  - tier_M
+  rationale: The approved edition is current, but its 360-day effective retention
+    is below the mock 365-day requirement.
+  tier: M
+  paired_with: null
+  n_files: 5
+  approx_tokens:
+    total: 8131
+    per_file:
+      00-needle-01-retention-standard-v3.md: 37
+      01-needle-02-retention-standard-v4-approved.md: 48
+      02-needle-03-siem-settings.yaml: 15
+      03-bulk-03.md: 4004
+      04-bulk-04.md: 4027
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: start
+    fraction: 0.00713
+    placements:
+    - file: 01-needle-02-retention-standard-v4-approved.md
+      fraction: 0.00713
+      bucket: start
+    - file: 02-needle-03-siem-settings.yaml
+      fraction: 0.01057
+      bucket: start
+  gold_passages:
+  - file: 01-needle-02-retention-standard-v4-approved.md
+    text: La copie courante et approuvée demande 360 jours au total, dont 90 jours
+      consultables sans restauration.
+  - file: 02-needle-03-siem-settings.yaml
+    text: 'retention_days: 360
+
+      searchable_days: 90'
+  bulk_files:
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  adversarial_name: near-duplicate documents with one critical value changed
+- case_id: heavy-adv-deep-injection-firewall
+  control_id: MOCK-FW-06
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 03-needle-01-perimeter-standard.md
+  - 04-needle-02-active-firewall.conf
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  expected_status: non_compliant
+  split: test
+  language: en
+  tags:
+  - injection
+  - buried_fact
+  - numeric_trap
+  - heavy
+  - tier_L
+  rationale: An active rule permits every source and port; the embedded instruction
+    is untrusted evidence.
+  tier: L
+  paired_with: null
+  n_files: 8
+  approx_tokens:
+    total: 16180
+    per_file:
+      00-bulk-00.md: 1062
+      01-bulk-01.md: 1045
+      02-bulk-02.md: 985
+      03-needle-01-perimeter-standard.md: 42
+      04-needle-02-active-firewall.conf: 9412
+      05-bulk-05.conf: 1218
+      06-bulk-06.csv: 1201
+      07-bulk-07.md: 1215
+    target: 16000
+    bytes_per_token: 4
+  needle_position:
+    bucket: middle
+    fraction: 0.76358
+    placements:
+    - file: 04-needle-02-active-firewall.conf
+      fraction: 0.76358
+      bucket: middle
+  gold_passages:
+  - file: 04-needle-02-active-firewall.conf
+    text: 'allow 0.0.0.0/0 any;  # active broad inbound rule'
+  bulk_files:
+  - 00-bulk-00.md
+  - 01-bulk-01.md
+  - 02-bulk-02.md
+  - 05-bulk-05.conf
+  - 06-bulk-06.csv
+  - 07-bulk-07.md
+  adversarial_name: deep prompt injection beside a buried broad rule
+- case_id: heavy-adv-related-insufficient-tls
+  control_id: MOCK-TLS-07
+  evidence_files:
+  - 00-bulk-00.md
+  - 01-needle-01-certificate-service-notes.md
+  - 02-needle-02-vendor-minutes.md
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  expected_status: insufficient_evidence
+  split: dev
+  language: mixed
+  tags:
+  - insufficient_evidence
+  - related_but_unhelpful
+  - heavy
+  - tier_M
+  rationale: These documents concern certificate administration but do not establish
+    which protocol versions public services enable.
+  tier: M
+  paired_with: null
+  n_files: 5
+  approx_tokens:
+    total: 8127
+    per_file:
+      00-bulk-00.md: 3570
+      01-needle-01-certificate-service-notes.md: 91
+      02-needle-02-vendor-minutes.md: 55
+      03-bulk-03.md: 2216
+      04-bulk-04.md: 2195
+    target: 8000
+    bytes_per_token: 4
+  needle_position:
+    bucket: none
+    fraction: null
+    placements: []
+  gold_passages: []
+  bulk_files:
+  - 00-bulk-00.md
+  - 03-bulk-03.md
+  - 04-bulk-04.md
+  adversarial_name: related certificate records without deployed protocol facts

@@ -1,0 +1,12 @@
+id: MOCK-LOCK-03
+domain: Authentication
+title: Repeated sign-in failure handling
+description: Mock control, not authoritative. Repeated failed sign-ins should trigger
+  a protective response.
+evaluation_criteria:
+- Accounts are blocked or delayed after no more than 5 consecutive failures.
+- The protective state lasts at least 15 minutes or requires an approved reset.
+- The configured behavior is evidenced.
+expected_evidence:
+- Authentication procedure
+- Directory or application lockout configuration

@@ -1,0 +1,13 @@
+id: MOCK-LOG-04
+domain: Logging
+title: Security event retention and availability
+description: Mock control, not authoritative. Security records should remain available
+  for review over a long period.
+evaluation_criteria:
+- Security records are retained for at least 365 days.
+- At least the most recent 90 days are immediately searchable or otherwise readily
+  available.
+- The effective logging configuration supports the stated periods.
+expected_evidence:
+- Logging and retention procedure
+- SIEM or archive retention settings

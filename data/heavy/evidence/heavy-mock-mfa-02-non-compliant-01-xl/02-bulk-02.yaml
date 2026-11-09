@@ -1,0 +1,488 @@
+# Fictional operations register OPS-0002
+register:
+  entries:
+    - reference: OPS-02-00000
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0002
+    - reference: OPS-02-00001
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0019
+    - reference: OPS-02-00002
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0036
+    - reference: OPS-02-00003
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0053
+    - reference: OPS-02-00004
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0070
+    - reference: OPS-02-00005
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0087
+    - reference: OPS-02-00006
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0104
+    - reference: OPS-02-00007
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0121
+    - reference: OPS-02-00008
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0138
+    - reference: OPS-02-00009
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0155
+    - reference: OPS-02-00010
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0172
+    - reference: OPS-02-00011
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0189
+    - reference: OPS-02-00012
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0206
+    - reference: OPS-02-00013
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0223
+    - reference: OPS-02-00014
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0240
+    - reference: OPS-02-00015
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0257
+    - reference: OPS-02-00016
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0274
+    - reference: OPS-02-00017
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0291
+    - reference: OPS-02-00018
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0308
+    - reference: OPS-02-00019
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0325
+    - reference: OPS-02-00020
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0342
+    - reference: OPS-02-00021
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0359
+    - reference: OPS-02-00022
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0376
+    - reference: OPS-02-00023
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0393
+    - reference: OPS-02-00024
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0410
+    - reference: OPS-02-00025
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0427
+    - reference: OPS-02-00026
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0444
+    - reference: OPS-02-00027
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0461
+    - reference: OPS-02-00028
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0478
+    - reference: OPS-02-00029
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0495
+    - reference: OPS-02-00030
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0512
+    - reference: OPS-02-00031
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0529
+    - reference: OPS-02-00032
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0546
+    - reference: OPS-02-00033
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0563
+    - reference: OPS-02-00034
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0580
+    - reference: OPS-02-00035
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0597
+    - reference: OPS-02-00036
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0614
+    - reference: OPS-02-00037
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0631
+    - reference: OPS-02-00038
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0648
+    - reference: OPS-02-00039
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0665
+    - reference: OPS-02-00040
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0682
+    - reference: OPS-02-00041
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0699
+    - reference: OPS-02-00042
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0716
+    - reference: OPS-02-00043
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0733
+    - reference: OPS-02-00044
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0750
+    - reference: OPS-02-00045
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0767
+    - reference: OPS-02-00046
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0784
+    - reference: OPS-02-00047
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0801
+    - reference: OPS-02-00048
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0818
+    - reference: OPS-02-00049
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0835
+    - reference: OPS-02-00050
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0852
+    - reference: OPS-02-00051
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0869
+    - reference: OPS-02-00052
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0886
+    - reference: OPS-02-00053
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0903
+    - reference: OPS-02-00054
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0920
+    - reference: OPS-02-00055
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0937
+    - reference: OPS-02-00056
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0954
+    - reference: OPS-02-00057
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0971
+    - reference: OPS-02-00058
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0988
+    - reference: OPS-02-00059
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-1005
+    - reference: OPS-02-00060
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-1022
+    - reference: OPS-02-00061
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-1039
+    - reference: OPS-02-00062
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-1056
+    - reference: OPS-02-00063
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-1073
+    - reference: OPS-02-00064
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-1090
+    - reference: OPS-02-00065
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-1107
+    - reference: OPS-02-00066
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-1124
+    - reference: OPS-02-00067
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-1141
+    - reference: OPS-02-00068
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-1158
+    - reference: OPS-02-00069
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-1175
+    - reference: OPS-02-00070
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-1192
+    - reference: OPS-02-00071
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-1209
+    - reference: OPS-02-00072
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-1226
+    - reference: OPS-02-00073
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-1243
+    - reference: OPS-02-00074
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-1260
+    - reference: OPS-02-00075
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-1277
+    - reference: OPS-02-00076
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-1294
+    - reference: OPS-02-00077
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-1311
+    - reference: OPS-02-00078
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-1328
+    - reference: OPS-02-00079
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-1345
+    - reference: OPS-02-00080
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-1362
+    - reference: OPS-02-00081
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-1379
+    - reference: OPS-02-00082
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-1396
+    - reference: OPS-02-00083
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-1413
+    - reference: OPS-02-00084
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-1430
+    - reference: OPS-02-00085
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-1447
+    - reference: OPS-02-00086
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-1464
+    - reference: OPS-02-00087
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-1481
+    - reference: OPS-02-00088
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-1498
+    - reference: OPS-02-00089
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-1515
+    - reference: OPS-02-00090
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-1532
+    - reference: OPS-02-00091
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-1549
+    - reference: OPS-02-00092
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-1566
+    - reference: OPS-02-00093
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-1583
+    - reference: OPS-02-00094
+      owner_group: records-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-1600
+    - reference: OPS-02-00095
+      owner_group: facilities-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-1617
+    - reference: OPS-02-00096
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-1634
