@@ -1,0 +1,269 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-mfa-02-compliant-01-m",
+    "control_id": "MOCK-MFA-02",
+    "evidence_files": [
+      "privileged-access-settings.yaml",
+      "privileged-access-standard-v4.md",
+      "supplier-coordination-notes-1936.md",
+      "platform-change-register-4796.yaml",
+      "operations-handbook-6706.md"
+    ],
+    "file_order": [
+      "privileged-access-settings.yaml",
+      "privileged-access-standard-v4.md",
+      "supplier-coordination-notes-1936.md",
+      "platform-change-register-4796.yaml",
+      "operations-handbook-6706.md"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 202682705,
+    "file_roles": {
+      "privileged-access-standard-v4.md": "decisive",
+      "privileged-access-settings.yaml": "decisive",
+      "platform-change-register-4796.yaml": "filler_adjacent",
+      "operations-handbook-6706.md": "filler_generic",
+      "supplier-coordination-notes-1936.md": "filler_adjacent"
+    },
+    "expected_status": "compliant",
+    "split": "dev",
+    "language": "fr",
+    "tags": [
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "The cited policy and effective export satisfy the stated mock criteria.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-mfa-02-compliant-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8093,
+      "per_file": {
+        "privileged-access-settings.yaml": 711,
+        "privileged-access-standard-v4.md": 2062,
+        "supplier-coordination-notes-1936.md": 1834,
+        "platform-change-register-4796.yaml": 1832,
+        "operations-handbook-6706.md": 1654
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "start",
+      "fraction": 0.00093,
+      "placements": [
+        {
+          "file": "privileged-access-settings.yaml",
+          "fraction": 0.00093,
+          "bucket": "start"
+        },
+        {
+          "file": "privileged-access-standard-v4.md",
+          "fraction": 0.09002,
+          "bucket": "start"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "privileged-access-settings.yaml",
+        "text": "mfa_required: true\nexceptions:\n- vaulted_emergency_account",
+        "required": true
+      },
+      {
+        "file": "privileged-access-standard-v4.md",
+        "text": "Référence fictive: mock-mfa-02-compliant-01.",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-MFA-02",
+    "domain": "Authentication",
+    "title": "Multi-factor authentication for administrators",
+    "description": "Mock control, not authoritative. Privileged human access should require more than one authentication factor.",
+    "evaluation_criteria": [
+      "All interactive privileged accounts require MFA.",
+      "Any emergency account exception is limited, documented, and monitored.",
+      "The active identity configuration agrees with the policy."
+    ],
+    "expected_evidence": [
+      "Privileged-access policy",
+      "Identity-provider MFA configuration or coverage export"
+    ],
+    "retrieval_hints": [
+      "administrator sign-in",
+      "interactive privileged identities",
+      "connexion administrateur",
+      "facteur indépendant",
+      "mfa_required",
+      "all_interactive_admins",
+      "remote_admin_mfa",
+      "identity provider coverage",
+      "emergency identity"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-mfa-02-compliant-01-m",
+      "control_id": "MOCK-MFA-02",
+      "repetition": 1,
+      "expected_status": "compliant",
+      "status": "non_compliant",
+      "matches_expected": false,
+      "confidence": 0.8,
+      "justification": "Les preuves fournies ne montrent pas que tous les comptes d'administrateurs interactifs nécessitent l'authentification multifactorielle (MFA). Les documents ne contiennent pas de preuves concrètes que l'authentification MFA est activée pour tous les comptes d'administrateurs interactifs. De plus, il n'y a aucune mention d'exceptions d'urgence limitées, documentées et surveillées.",
+      "criteria_assessment": [
+        {
+          "criterion": "All interactive privileged accounts require MFA.",
+          "met": "no",
+          "note": "Insufficient evidence to determine if all interactive privileged accounts require MFA."
+        },
+        {
+          "criterion": "Any emergency account exception is limited, documented, and monitored.",
+          "met": "no",
+          "note": "No evidence of limited, documented, and monitored emergency account exceptions."
+        },
+        {
+          "criterion": "The active identity configuration agrees with the policy.",
+          "met": "unclear",
+          "note": "Insufficient evidence to determine if the active identity configuration agrees with the policy."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "privileged-access-standard-v4.md",
+          "text": "All interactive privileged users must complete a password and a hardware or app-based second factor. A monitored emergency identity is excluded and reviewed monthly.",
+          "valid": true
+        }
+      ],
+      "recommendation": "Implement MFA for all interactive privileged accounts and ensure that any emergency account exceptions are limited, documented, and monitored.",
+      "raw_output_initial": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"Les preuves fournies ne montrent pas que tous les comptes d'administrateurs interactifs nécessitent l'authentification multifactorielle (MFA). Les documents ne contiennent pas de preuves concrètes que l'authentification MFA est activée pour tous les comptes d'administrateurs interactifs. De plus, il n'y a aucune mention d'exceptions d'urgence limitées, documentées et surveillées.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"All interactive privileged accounts require MFA.\",\n      \"met\": \"no\",\n      \"note\": \"Insufficient evidence to determine if all interactive privileged accounts require MFA.\"\n    },\n    {\n      \"criterion\": \"Any emergency account exception is limited, documented, and monitored.\",\n      \"met\": \"no\",\n      \"note\": \"No evidence of limited, documented, and monitored emergency account exceptions.\"\n    },\n    {\n      \"criterion\": \"The active identity configuration agrees with the policy.\",\n      \"met\": \"unclear\",\n      \"note\": \"Insufficient evidence to determine if the active identity configuration agrees with the policy.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"privileged-access-standard-v4.md\",\n      \"text\": \"All interactive privileged users must complete a password and a hardware or app-based second factor. A monitored emergency identity is excluded and reviewed monthly.\"\n    }\n  ],\n  \"recommendation\": \"Implement MFA for all interactive privileged accounts and ensure that any emergency account exceptions are limited, documented, and monitored.\",\n  \"confidence\": 0.8\n}",
+      "raw_output_final": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"Les preuves fournies ne montrent pas que tous les comptes d'administrateurs interactifs nécessitent l'authentification multifactorielle (MFA). Les documents ne contiennent pas de preuves concrètes que l'authentification MFA est activée pour tous les comptes d'administrateurs interactifs. De plus, il n'y a aucune mention d'exceptions d'urgence limitées, documentées et surveillées.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"All interactive privileged accounts require MFA.\",\n      \"met\": \"no\",\n      \"note\": \"Insufficient evidence to determine if all interactive privileged accounts require MFA.\"\n    },\n    {\n      \"criterion\": \"Any emergency account exception is limited, documented, and monitored.\",\n      \"met\": \"no\",\n      \"note\": \"No evidence of limited, documented, and monitored emergency account exceptions.\"\n    },\n    {\n      \"criterion\": \"The active identity configuration agrees with the policy.\",\n      \"met\": \"unclear\",\n      \"note\": \"Insufficient evidence to determine if the active identity configuration agrees with the policy.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"privileged-access-standard-v4.md\",\n      \"text\": \"All interactive privileged users must complete a password and a hardware or app-based second factor. A monitored emergency identity is excluded and reviewed monthly.\"\n    }\n  ],\n  \"recommendation\": \"Implement MFA for all interactive privileged accounts and ensure that any emergency account exceptions are limited, documented, and monitored.\",\n  \"confidence\": 0.8\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 1,
+        "total": 1,
+        "rate": 1.0
+      },
+      "wall_clock_total_seconds": 246.2393683989976,
+      "wall_clock_elapsed_seconds": 246.23945780800204,
+      "model_reported_total_seconds": 246.237767142,
+      "model_load_seconds": 0.001897487,
+      "prompt_tokens": 3787,
+      "output_tokens": 359,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 170.97054,
+      "prompt_processing_tokens_per_second": 22.150014850511674,
+      "generation_seconds": 75.014764,
+      "generation_tokens_per_second": 4.785724580830515,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 246237767142,
+          "load_duration": 1897487,
+          "prompt_eval_count": 3787,
+          "prompt_eval_duration": 170970540000,
+          "eval_count": 359,
+          "eval_duration": 75014764000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 3203,
+      "prompt_tokens_reported_by_backend": 3787,
+      "prefix_cached": false,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 7.705863657534156e-06,
+        "prompt_processing": 0.6943265860029553,
+        "generation": 0.3046416358510501
+      },
+      "likely_truncated": false,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 7168,
+      "prompt_version": "eval_v2_retrieval",
+      "language": "fr",
+      "tags": [
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-mfa-02-compliant-01",
+      "needle_position": "start",
+      "context_mode": "retrieval",
+      "label_confidence": "firm",
+      "retrieval": {
+        "retrieved_chunks": [
+          {
+            "chunk_id": "695b50cf63b2c0a77210",
+            "file": "privileged-access-standard-v4.md",
+            "score": 0.03278688524590164,
+            "rank": 1,
+            "start_line": 1,
+            "end_line": 31
+          },
+          {
+            "chunk_id": "2055ff21025abcd37fdc",
+            "file": "privileged-access-settings.yaml",
+            "score": 0.028693528693528692,
+            "rank": 2,
+            "start_line": 55,
+            "end_line": 103
+          },
+          {
+            "chunk_id": "5f0f67a91c10ad8bffd6",
+            "file": "supplier-coordination-notes-1936.md",
+            "score": 0.028006267136701922,
+            "rank": 3,
+            "start_line": 83,
+            "end_line": 120
+          },
+          {
+            "chunk_id": "e3ec3af6c50bee91bbde",
+            "file": "platform-change-register-4796.yaml",
+            "score": 0.027730294396961064,
+            "rank": 4,
+            "start_line": 134,
+            "end_line": 185
+          },
+          {
+            "chunk_id": "1f728dd6899e53b0fe64",
+            "file": "privileged-access-standard-v4.md",
+            "score": 0.029273504273504274,
+            "rank": 5,
+            "start_line": 128,
+            "end_line": 159
+          }
+        ],
+        "context_chunk_ids": [
+          "e3ec3af6c50bee91bbde",
+          "2055ff21025abcd37fdc",
+          "695b50cf63b2c0a77210",
+          "1f728dd6899e53b0fe64",
+          "5f0f67a91c10ad8bffd6"
+        ],
+        "chunks_requested": 5,
+        "chunks_returned": 5,
+        "shortfall_reason": null,
+        "min_files": 4,
+        "tokens_sent": 1896,
+        "retrieval_seconds": 0.004314256002544425,
+        "embedding_seconds": 0.2815802689983684,
+        "gold_passage_count": 2,
+        "gold_passages_retrieved": 1,
+        "required_gold_passage_count": 2,
+        "required_gold_passages_retrieved": 1,
+        "all_required_gold_in_context": false,
+        "all_gold_in_context": false,
+        "failure_attribution": "retrieval_miss"
+      },
+      "resource_peak_ram_used_bytes": 18439786496,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

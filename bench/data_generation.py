@@ -62,6 +62,21 @@ CONTROLS: list[dict[str, Any]] = [
     },
 ]
 
+# Bilingual retrieval metadata. Threshold values intentionally stay in the
+# evaluation criteria and are not repeated as query hints.
+RETRIEVAL_HINTS: dict[str, list[str]] = {
+    "MOCK-PWD-01": ["password policy", "minimum length", "longueur minimale", "character classes", "complexity_required", "minimum_length", "min_length", "breached_password_block", "service account rotation", "SSH key handling"],
+    "MOCK-MFA-02": ["administrator sign-in", "interactive privileged identities", "connexion administrateur", "facteur indépendant", "mfa_required", "all_interactive_admins", "remote_admin_mfa", "identity provider coverage", "emergency identity"],
+    "MOCK-LOCK-03": ["repeated authentication failures", "account recovery", "échecs de connexion", "récupération de compte", "failed_attempt_threshold", "lockout_minutes", "lockout_enabled", "directory authentication settings"],
+    "MOCK-LOG-04": ["security event archive", "searchable event index", "archive des événements", "index de recherche", "retention_days", "searchable_days", "collector health", "event pipeline"],
+    "MOCK-PATCH-05": ["critical update deployment", "change ticket due date", "déploiement des correctifs", "échéance du ticket", "critical_deadline_days", "identified_at", "due_at", "deployed_at", "production scope"],
+    "MOCK-FW-06": ["inbound network access", "perimeter rule source and service", "accès réseau entrant", "source et service du pare-feu", "default_inbound", "source", "destination_port", "network zone", "service owner"],
+    "MOCK-TLS-07": ["public web endpoint protocol profile", "reverse proxy transport settings", "profil protocolaire public", "paramètres de transport du proxy", "ssl_protocols", "minimum_tls_version", "certificate deployment", "endpoint inventory"],
+    "MOCK-ACCESS-08": ["active identity owner confirmation", "access decision and removal tracking", "confirmation du propriétaire des identités", "décision d’accès et suivi des retraits", "review_date", "review_frequency", "last_review_date", "owner_assignment", "active population"],
+}
+for _control in CONTROLS:
+    _control["retrieval_hints"] = RETRIEVAL_HINTS[_control["id"]]
+
 
 # Each row is: policy statement, configuration/export facts, output extension.
 EXAMPLES: dict[str, dict[str, tuple[str, dict[str, Any], str]]] = {

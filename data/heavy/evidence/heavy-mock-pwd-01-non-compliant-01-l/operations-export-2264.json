@@ -1,0 +1,276 @@
+{
+  "register": [
+    {
+      "asset_ref": "SEC-5F6211-07-00000",
+      "service_name": "svc-007",
+      "owner_group": "platform-west",
+      "change_ref": "CHG-00007",
+      "lifecycle_state": "assigned",
+      "updated_at": "2026-01-01"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00001",
+      "service_name": "svc-014",
+      "owner_group": "service-blue",
+      "change_ref": "CHG-00026",
+      "lifecycle_state": "archived",
+      "updated_at": "2026-02-02"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00002",
+      "service_name": "svc-021",
+      "owner_group": "continuity-green",
+      "change_ref": "CHG-00045",
+      "lifecycle_state": "in-transit",
+      "updated_at": "2026-03-03"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00003",
+      "service_name": "svc-028",
+      "owner_group": "ops-north",
+      "change_ref": "CHG-00064",
+      "lifecycle_state": "active",
+      "updated_at": "2026-04-04"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00004",
+      "service_name": "svc-035",
+      "owner_group": "identity-east",
+      "change_ref": "CHG-00083",
+      "lifecycle_state": "staged",
+      "updated_at": "2026-05-05"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00005",
+      "service_name": "svc-042",
+      "owner_group": "platform-west",
+      "change_ref": "CHG-00102",
+      "lifecycle_state": "assigned",
+      "updated_at": "2026-06-06"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00006",
+      "service_name": "svc-049",
+      "owner_group": "service-blue",
+      "change_ref": "CHG-00121",
+      "lifecycle_state": "archived",
+      "updated_at": "2026-07-07"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00007",
+      "service_name": "svc-056",
+      "owner_group": "continuity-green",
+      "change_ref": "CHG-00140",
+      "lifecycle_state": "in-transit",
+      "updated_at": "2026-08-08"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00008",
+      "service_name": "svc-063",
+      "owner_group": "ops-north",
+      "change_ref": "CHG-00159",
+      "lifecycle_state": "active",
+      "updated_at": "2026-09-09"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00009",
+      "service_name": "svc-070",
+      "owner_group": "identity-east",
+      "change_ref": "CHG-00178",
+      "lifecycle_state": "staged",
+      "updated_at": "2026-10-10"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00010",
+      "service_name": "svc-077",
+      "owner_group": "platform-west",
+      "change_ref": "CHG-00197",
+      "lifecycle_state": "assigned",
+      "updated_at": "2026-11-11"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00011",
+      "service_name": "svc-084",
+      "owner_group": "service-blue",
+      "change_ref": "CHG-00216",
+      "lifecycle_state": "archived",
+      "updated_at": "2026-12-12"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00012",
+      "service_name": "svc-091",
+      "owner_group": "continuity-green",
+      "change_ref": "CHG-00235",
+      "lifecycle_state": "in-transit",
+      "updated_at": "2026-01-13"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00013",
+      "service_name": "svc-098",
+      "owner_group": "ops-north",
+      "change_ref": "CHG-00254",
+      "lifecycle_state": "active",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00014",
+      "service_name": "svc-105",
+      "owner_group": "identity-east",
+      "change_ref": "CHG-00273",
+      "lifecycle_state": "staged",
+      "updated_at": "2026-03-15"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00015",
+      "service_name": "svc-112",
+      "owner_group": "platform-west",
+      "change_ref": "CHG-00292",
+      "lifecycle_state": "assigned",
+      "updated_at": "2026-04-16"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00016",
+      "service_name": "svc-119",
+      "owner_group": "service-blue",
+      "change_ref": "CHG-00311",
+      "lifecycle_state": "archived",
+      "updated_at": "2026-05-17"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00017",
+      "service_name": "svc-126",
+      "owner_group": "continuity-green",
+      "change_ref": "CHG-00330",
+      "lifecycle_state": "in-transit",
+      "updated_at": "2026-06-18"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00018",
+      "service_name": "svc-133",
+      "owner_group": "ops-north",
+      "change_ref": "CHG-00349",
+      "lifecycle_state": "active",
+      "updated_at": "2026-07-19"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00019",
+      "service_name": "svc-140",
+      "owner_group": "identity-east",
+      "change_ref": "CHG-00368",
+      "lifecycle_state": "staged",
+      "updated_at": "2026-08-20"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00020",
+      "service_name": "svc-147",
+      "owner_group": "platform-west",
+      "change_ref": "CHG-00387",
+      "lifecycle_state": "assigned",
+      "updated_at": "2026-09-21"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00021",
+      "service_name": "svc-154",
+      "owner_group": "service-blue",
+      "change_ref": "CHG-00406",
+      "lifecycle_state": "archived",
+      "updated_at": "2026-10-22"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00022",
+      "service_name": "svc-161",
+      "owner_group": "continuity-green",
+      "change_ref": "CHG-00425",
+      "lifecycle_state": "in-transit",
+      "updated_at": "2026-11-23"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00023",
+      "service_name": "svc-168",
+      "owner_group": "ops-north",
+      "change_ref": "CHG-00444",
+      "lifecycle_state": "active",
+      "updated_at": "2026-12-24"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00024",
+      "service_name": "svc-175",
+      "owner_group": "identity-east",
+      "change_ref": "CHG-00463",
+      "lifecycle_state": "staged",
+      "updated_at": "2026-01-25"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00025",
+      "service_name": "svc-182",
+      "owner_group": "platform-west",
+      "change_ref": "CHG-00482",
+      "lifecycle_state": "assigned",
+      "updated_at": "2026-02-26"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00026",
+      "service_name": "svc-189",
+      "owner_group": "service-blue",
+      "change_ref": "CHG-00501",
+      "lifecycle_state": "archived",
+      "updated_at": "2026-03-27"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00027",
+      "service_name": "svc-196",
+      "owner_group": "continuity-green",
+      "change_ref": "CHG-00520",
+      "lifecycle_state": "in-transit",
+      "updated_at": "2026-04-01"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00028",
+      "service_name": "svc-203",
+      "owner_group": "ops-north",
+      "change_ref": "CHG-00539",
+      "lifecycle_state": "active",
+      "updated_at": "2026-05-02"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00029",
+      "service_name": "svc-210",
+      "owner_group": "identity-east",
+      "change_ref": "CHG-00558",
+      "lifecycle_state": "staged",
+      "updated_at": "2026-06-03"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00030",
+      "service_name": "svc-217",
+      "owner_group": "platform-west",
+      "change_ref": "CHG-00577",
+      "lifecycle_state": "assigned",
+      "updated_at": "2026-07-04"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00031",
+      "service_name": "svc-224",
+      "owner_group": "service-blue",
+      "change_ref": "CHG-00596",
+      "lifecycle_state": "archived",
+      "updated_at": "2026-08-05"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00032",
+      "service_name": "svc-231",
+      "owner_group": "continuity-green",
+      "change_ref": "CHG-00615",
+      "lifecycle_state": "in-transit",
+      "updated_at": "2026-09-06"
+    },
+    {
+      "asset_ref": "SEC-5F6211-07-00033",
+      "service_name": "svc-238",
+      "owner_group": "ops-north",
+      "change_ref": "CHG-00634",
+      "lifecycle_state": "active",
+      "updated_at": "2026-10-07"
+    }
+  ]
+}

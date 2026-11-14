@@ -1,3 +1,0 @@
-scope: production_servers
-critical_deadline_days: 45
-exceptions_tracked: true

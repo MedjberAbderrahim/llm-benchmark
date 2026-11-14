@@ -1,0 +1,326 @@
+{
+  "register": [
+    {
+      "reference": "OPS-162B11-10-00000",
+      "owner_group": "ops-north",
+      "site_code": "site-a3",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0010"
+    },
+    {
+      "reference": "OPS-162B11-10-00001",
+      "owner_group": "identity-east",
+      "site_code": "hub-04",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0027"
+    },
+    {
+      "reference": "OPS-162B11-10-00002",
+      "owner_group": "platform-west",
+      "site_code": "site-b1",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0044"
+    },
+    {
+      "reference": "OPS-162B11-10-00003",
+      "owner_group": "service-blue",
+      "site_code": "annex-02",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0061"
+    },
+    {
+      "reference": "OPS-162B11-10-00004",
+      "owner_group": "continuity-green",
+      "site_code": "site-c7",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0078"
+    },
+    {
+      "reference": "OPS-162B11-10-00005",
+      "owner_group": "ops-north",
+      "site_code": "site-a3",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0095"
+    },
+    {
+      "reference": "OPS-162B11-10-00006",
+      "owner_group": "identity-east",
+      "site_code": "hub-04",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0112"
+    },
+    {
+      "reference": "OPS-162B11-10-00007",
+      "owner_group": "platform-west",
+      "site_code": "site-b1",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0129"
+    },
+    {
+      "reference": "OPS-162B11-10-00008",
+      "owner_group": "service-blue",
+      "site_code": "annex-02",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0146"
+    },
+    {
+      "reference": "OPS-162B11-10-00009",
+      "owner_group": "continuity-green",
+      "site_code": "site-c7",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0163"
+    },
+    {
+      "reference": "OPS-162B11-10-00010",
+      "owner_group": "ops-north",
+      "site_code": "site-a3",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0180"
+    },
+    {
+      "reference": "OPS-162B11-10-00011",
+      "owner_group": "identity-east",
+      "site_code": "hub-04",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0197"
+    },
+    {
+      "reference": "OPS-162B11-10-00012",
+      "owner_group": "platform-west",
+      "site_code": "site-b1",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0214"
+    },
+    {
+      "reference": "OPS-162B11-10-00013",
+      "owner_group": "service-blue",
+      "site_code": "annex-02",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0231"
+    },
+    {
+      "reference": "OPS-162B11-10-00014",
+      "owner_group": "continuity-green",
+      "site_code": "site-c7",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0248"
+    },
+    {
+      "reference": "OPS-162B11-10-00015",
+      "owner_group": "ops-north",
+      "site_code": "site-a3",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0265"
+    },
+    {
+      "reference": "OPS-162B11-10-00016",
+      "owner_group": "identity-east",
+      "site_code": "hub-04",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0282"
+    },
+    {
+      "reference": "OPS-162B11-10-00017",
+      "owner_group": "platform-west",
+      "site_code": "site-b1",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0299"
+    },
+    {
+      "reference": "OPS-162B11-10-00018",
+      "owner_group": "service-blue",
+      "site_code": "annex-02",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0316"
+    },
+    {
+      "reference": "OPS-162B11-10-00019",
+      "owner_group": "continuity-green",
+      "site_code": "site-c7",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0333"
+    },
+    {
+      "reference": "OPS-162B11-10-00020",
+      "owner_group": "ops-north",
+      "site_code": "site-a3",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0350"
+    },
+    {
+      "reference": "OPS-162B11-10-00021",
+      "owner_group": "identity-east",
+      "site_code": "hub-04",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0367"
+    },
+    {
+      "reference": "OPS-162B11-10-00022",
+      "owner_group": "platform-west",
+      "site_code": "site-b1",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0384"
+    },
+    {
+      "reference": "OPS-162B11-10-00023",
+      "owner_group": "service-blue",
+      "site_code": "annex-02",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0401"
+    },
+    {
+      "reference": "OPS-162B11-10-00024",
+      "owner_group": "continuity-green",
+      "site_code": "site-c7",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0418"
+    },
+    {
+      "reference": "OPS-162B11-10-00025",
+      "owner_group": "ops-north",
+      "site_code": "site-a3",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0435"
+    },
+    {
+      "reference": "OPS-162B11-10-00026",
+      "owner_group": "identity-east",
+      "site_code": "hub-04",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0452"
+    },
+    {
+      "reference": "OPS-162B11-10-00027",
+      "owner_group": "platform-west",
+      "site_code": "site-b1",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0469"
+    },
+    {
+      "reference": "OPS-162B11-10-00028",
+      "owner_group": "service-blue",
+      "site_code": "annex-02",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0486"
+    },
+    {
+      "reference": "OPS-162B11-10-00029",
+      "owner_group": "continuity-green",
+      "site_code": "site-c7",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0503"
+    },
+    {
+      "reference": "OPS-162B11-10-00030",
+      "owner_group": "ops-north",
+      "site_code": "site-a3",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0520"
+    },
+    {
+      "reference": "OPS-162B11-10-00031",
+      "owner_group": "identity-east",
+      "site_code": "hub-04",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0537"
+    },
+    {
+      "reference": "OPS-162B11-10-00032",
+      "owner_group": "platform-west",
+      "site_code": "site-b1",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0554"
+    },
+    {
+      "reference": "OPS-162B11-10-00033",
+      "owner_group": "service-blue",
+      "site_code": "annex-02",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0571"
+    },
+    {
+      "reference": "OPS-162B11-10-00034",
+      "owner_group": "continuity-green",
+      "site_code": "site-c7",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0588"
+    },
+    {
+      "reference": "OPS-162B11-10-00035",
+      "owner_group": "ops-north",
+      "site_code": "site-a3",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0605"
+    },
+    {
+      "reference": "OPS-162B11-10-00036",
+      "owner_group": "identity-east",
+      "site_code": "hub-04",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0622"
+    },
+    {
+      "reference": "OPS-162B11-10-00037",
+      "owner_group": "platform-west",
+      "site_code": "site-b1",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0639"
+    },
+    {
+      "reference": "OPS-162B11-10-00038",
+      "owner_group": "service-blue",
+      "site_code": "annex-02",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0656"
+    },
+    {
+      "reference": "OPS-162B11-10-00039",
+      "owner_group": "continuity-green",
+      "site_code": "site-c7",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0673"
+    },
+    {
+      "reference": "OPS-162B11-10-00040",
+      "owner_group": "ops-north",
+      "site_code": "site-a3",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0690"
+    },
+    {
+      "reference": "OPS-162B11-10-00041",
+      "owner_group": "identity-east",
+      "site_code": "hub-04",
+      "lifecycle_state": "staged",
+      "delivery_batch": "B-0707"
+    },
+    {
+      "reference": "OPS-162B11-10-00042",
+      "owner_group": "platform-west",
+      "site_code": "site-b1",
+      "lifecycle_state": "assigned",
+      "delivery_batch": "B-0724"
+    },
+    {
+      "reference": "OPS-162B11-10-00043",
+      "owner_group": "service-blue",
+      "site_code": "annex-02",
+      "lifecycle_state": "archived",
+      "delivery_batch": "B-0741"
+    },
+    {
+      "reference": "OPS-162B11-10-00044",
+      "owner_group": "continuity-green",
+      "site_code": "site-c7",
+      "lifecycle_state": "in-transit",
+      "delivery_batch": "B-0758"
+    },
+    {
+      "reference": "OPS-162B11-10-00045",
+      "owner_group": "ops-north",
+      "site_code": "site-a3",
+      "lifecycle_state": "active",
+      "delivery_batch": "B-0775"
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-log-04-non-compliant-01-m",
+    "control_id": "MOCK-LOG-04",
+    "evidence_files": [
+      "operations-handbook-1520.md",
+      "platform-change-register-7092.yaml",
+      "supplier-coordination-notes-4096.md",
+      "security-event-handling-standard.md",
+      "collector-settings.ini"
+    ],
+    "file_order": [
+      "operations-handbook-1520.md",
+      "platform-change-register-7092.yaml",
+      "supplier-coordination-notes-4096.md",
+      "security-event-handling-standard.md",
+      "collector-settings.ini"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 3517076229,
+    "file_roles": {
+      "security-event-handling-standard.md": "decisive",
+      "collector-settings.ini": "decisive",
+      "platform-change-register-7092.yaml": "filler_adjacent",
+      "operations-handbook-1520.md": "filler_generic",
+      "supplier-coordination-notes-4096.md": "filler_adjacent"
+    },
+    "expected_status": "non_compliant",
+    "split": "dev",
+    "language": "en",
+    "tags": [
+      "numeric_trap",
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "The effective evidence shows a material failure against one or more required criteria.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-log-04-non-compliant-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8122,
+      "per_file": {
+        "operations-handbook-1520.md": 1655,
+        "platform-change-register-7092.yaml": 1925,
+        "supplier-coordination-notes-4096.md": 1942,
+        "security-event-handling-standard.md": 2113,
+        "collector-settings.ini": 487
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "middle",
+      "fraction": 0.68193,
+      "placements": [
+        {
+          "file": "security-event-handling-standard.md",
+          "fraction": 0.68193,
+          "bucket": "middle"
+        },
+        {
+          "file": "collector-settings.ini",
+          "fraction": 0.94058,
+          "bucket": "end"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "security-event-handling-standard.md",
+        "text": "Fictional reference: mock-log-04-non-compliant-01.",
+        "required": true
+      },
+      {
+        "file": "collector-settings.ini",
+        "text": "retention_days = 90\nsearchable_days = 30\narchive_enabled = false",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-LOG-04",
+    "domain": "Logging",
+    "title": "Security event retention and availability",
+    "description": "Mock control, not authoritative. Security records should remain available for review over a long period.",
+    "evaluation_criteria": [
+      "Security records are retained for at least 365 days.",
+      "At least the most recent 90 days are immediately searchable or otherwise readily available.",
+      "The effective logging configuration supports the stated periods."
+    ],
+    "expected_evidence": [
+      "Logging and retention procedure",
+      "SIEM or archive retention settings"
+    ],
+    "retrieval_hints": [
+      "security event archive",
+      "searchable event index",
+      "archive des événements",
+      "index de recherche",
+      "retention_days",
+      "searchable_days",
+      "collector health",
+      "event pipeline"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-log-04-non-compliant-01-m",
+      "control_id": "MOCK-LOG-04",
+      "repetition": 1,
+      "expected_status": "non_compliant",
+      "status": "non_compliant",
+      "matches_expected": true,
+      "confidence": 0.9,
+      "justification": "The evidence indicates that the security records are retained for only 90 days, which does not meet the requirement of at least 365 days. Additionally, the most recent 90 days are immediately searchable, but the policy does not specify that the previous 365 days must be immediately searchable. The effective logging configuration does not support the stated periods.",
+      "criteria_assessment": [
+        {
+          "criterion": "Security records are retained for at least 365 days.",
+          "met": "no",
+          "note": "The retention_days setting in the collector-settings.ini file is set to 90 days, which is less than the required 365 days."
+        },
+        {
+          "criterion": "At least the most recent 90 days are immediately searchable or otherwise readily available.",
+          "met": "yes",
+          "note": "The searchable_days setting in the collector-settings.ini file is set to 30 days, which is less than the required 90 days, but the policy states that the most recent 90 days are immediately searchable."
+        },
+        {
+          "criterion": "The effective logging configuration supports the stated periods.",
+          "met": "no",
+          "note": "The effective logging configuration in the collector-settings.ini file does not support the required retention and searchable periods."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "collector-settings.ini",
+          "text": "retention_days = 90",
+          "valid": true
+        },
+        {
+          "file": "collector-settings.ini",
+          "text": "searchable_days = 30",
+          "valid": true
+        }
+      ],
+      "recommendation": "Increase the retention_days setting to at least 365 days and ensure that the searchable_days setting supports the required 90 days of immediate searchability.",
+      "raw_output_initial": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"The evidence indicates that the security records are retained for only 90 days, which does not meet the requirement of at least 365 days. Additionally, the most recent 90 days are immediately searchable, but the policy does not specify that the previous 365 days must be immediately searchable. The effective logging configuration does not support the stated periods.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Security records are retained for at least 365 days.\",\n      \"met\": \"no\",\n      \"note\": \"The retention_days setting in the collector-settings.ini file is set to 90 days, which is less than the required 365 days.\"\n    },\n    {\n      \"criterion\": \"At least the most recent 90 days are immediately searchable or otherwise readily available.\",\n      \"met\": \"yes\",\n      \"note\": \"The searchable_days setting in the collector-settings.ini file is set to 30 days, which is less than the required 90 days, but the policy states that the most recent 90 days are immediately searchable.\"\n    },\n    {\n      \"criterion\": \"The effective logging configuration supports the stated periods.\",\n      \"met\": \"no\",\n      \"note\": \"The effective logging configuration in the collector-settings.ini file does not support the required retention and searchable periods.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"collector-settings.ini\",\n      \"text\": \"retention_days = 90\"\n    },\n    {\n      \"file\": \"collector-settings.ini\",\n      \"text\": \"searchable_days = 30\"\n    }\n  ],\n  \"recommendation\": \"Increase the retention_days setting to at least 365 days and ensure that the searchable_days setting supports the required 90 days of immediate searchability.\",\n  \"confidence\": 0.9\n}",
+      "raw_output_final": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"The evidence indicates that the security records are retained for only 90 days, which does not meet the requirement of at least 365 days. Additionally, the most recent 90 days are immediately searchable, but the policy does not specify that the previous 365 days must be immediately searchable. The effective logging configuration does not support the stated periods.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Security records are retained for at least 365 days.\",\n      \"met\": \"no\",\n      \"note\": \"The retention_days setting in the collector-settings.ini file is set to 90 days, which is less than the required 365 days.\"\n    },\n    {\n      \"criterion\": \"At least the most recent 90 days are immediately searchable or otherwise readily available.\",\n      \"met\": \"yes\",\n      \"note\": \"The searchable_days setting in the collector-settings.ini file is set to 30 days, which is less than the required 90 days, but the policy states that the most recent 90 days are immediately searchable.\"\n    },\n    {\n      \"criterion\": \"The effective logging configuration supports the stated periods.\",\n      \"met\": \"no\",\n      \"note\": \"The effective logging configuration in the collector-settings.ini file does not support the required retention and searchable periods.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"collector-settings.ini\",\n      \"text\": \"retention_days = 90\"\n    },\n    {\n      \"file\": \"collector-settings.ini\",\n      \"text\": \"searchable_days = 30\"\n    }\n  ],\n  \"recommendation\": \"Increase the retention_days setting to at least 365 days and ensure that the searchable_days setting supports the required 90 days of immediate searchability.\",\n  \"confidence\": 0.9\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 2,
+        "total": 2,
+        "rate": 1.0
+      },
+      "wall_clock_total_seconds": 790.8698327110005,
+      "wall_clock_elapsed_seconds": 790.8699165319995,
+      "model_reported_total_seconds": 790.868065505,
+      "model_load_seconds": 0.00291027,
+      "prompt_tokens": 10467,
+      "output_tokens": 407,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 671.69448,
+      "prompt_processing_tokens_per_second": 15.582977546577427,
+      "generation_seconds": 118.516868,
+      "generation_tokens_per_second": 3.4341103242789033,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 790868065505,
+          "load_duration": 2910270,
+          "prompt_eval_count": 10467,
+          "prompt_eval_duration": 671694480000,
+          "eval_count": 407,
+          "eval_duration": 118516868000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 9561,
+      "prompt_tokens_reported_by_backend": 10467,
+      "prefix_cached": false,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 3.6798343793490858e-06,
+        "prompt_processing": 0.8493110398426974,
+        "generation": 0.1498563519533162
+      },
+      "likely_truncated": true,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 11264,
+      "prompt_version": "eval_v1",
+      "language": "en",
+      "tags": [
+        "numeric_trap",
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-log-04-non-compliant-01",
+      "needle_position": "middle",
+      "context_mode": "full",
+      "label_confidence": "firm",
+      "retrieval": {},
+      "resource_peak_ram_used_bytes": 18492796928,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

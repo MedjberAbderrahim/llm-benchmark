@@ -1,0 +1,274 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-patch-05-compliant-01-m",
+    "control_id": "MOCK-PATCH-05",
+    "evidence_files": [
+      "change-management-standard-v4.md",
+      "asset-update-register.json",
+      "supplier-coordination-notes-2565.md",
+      "service-continuity-plan-8445.md",
+      "service-inventory-8997.yaml"
+    ],
+    "file_order": [
+      "change-management-standard-v4.md",
+      "asset-update-register.json",
+      "supplier-coordination-notes-2565.md",
+      "service-continuity-plan-8445.md",
+      "service-inventory-8997.yaml"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 3067834335,
+    "file_roles": {
+      "change-management-standard-v4.md": "decisive",
+      "asset-update-register.json": "decisive",
+      "service-continuity-plan-8445.md": "filler_generic",
+      "service-inventory-8997.yaml": "filler_adjacent",
+      "supplier-coordination-notes-2565.md": "filler_adjacent"
+    },
+    "expected_status": "compliant",
+    "split": "dev",
+    "language": "en",
+    "tags": [
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "The cited policy and effective export satisfy the stated mock criteria.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-patch-05-compliant-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8062,
+      "per_file": {
+        "change-management-standard-v4.md": 2145,
+        "asset-update-register.json": 805,
+        "supplier-coordination-notes-2565.md": 1804,
+        "service-continuity-plan-8445.md": 1522,
+        "service-inventory-8997.yaml": 1786
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "start",
+      "fraction": 0.00177,
+      "placements": [
+        {
+          "file": "change-management-standard-v4.md",
+          "fraction": 0.00177,
+          "bucket": "start"
+        },
+        {
+          "file": "asset-update-register.json",
+          "fraction": 0.26711,
+          "bucket": "middle"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "change-management-standard-v4.md",
+        "text": "Fictional reference: mock-patch-05-compliant-01.",
+        "required": true
+      },
+      {
+        "file": "asset-update-register.json",
+        "text": "\"critical_deadline_days\": 20,",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-PATCH-05",
+    "domain": "Vulnerability Management",
+    "title": "Timely critical security updates",
+    "description": "Mock control, not authoritative. Critical fixes should be prioritized and applied on a defined short schedule.",
+    "evaluation_criteria": [
+      "Critical security updates are deployed within 30 calendar days of release or identification.",
+      "The deadline applies to in-scope production systems.",
+      "Records show due dates and completion or tracked exceptions."
+    ],
+    "expected_evidence": [
+      "Patch-management procedure",
+      "Recent ticket or vulnerability remediation export"
+    ],
+    "retrieval_hints": [
+      "critical update deployment",
+      "change ticket due date",
+      "déploiement des correctifs",
+      "échéance du ticket",
+      "critical_deadline_days",
+      "identified_at",
+      "due_at",
+      "deployed_at",
+      "production scope"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-patch-05-compliant-01-m",
+      "control_id": "MOCK-PATCH-05",
+      "repetition": 1,
+      "expected_status": "compliant",
+      "status": "partial",
+      "matches_expected": false,
+      "confidence": 0.8,
+      "justification": "Le control de 'Timely critical security updates' est partiellement respecté. Bien que la procédure indique que les mises à jour critiques doivent être déployées dans un délai de 20 jours, il n'y a pas de preuves suffisantes que ce délai est respecté pour tous les systèmes en production. Les registres de mise à jour et les tickets de changement ne contiennent pas de preuves de déploiement dans les 20 jours pour tous les systèmes en production.",
+      "criteria_assessment": [
+        {
+          "criterion": "Critical security updates are deployed within 30 calendar days of release or identification.",
+          "met": "no",
+          "note": "Il n'y a pas de preuves que toutes les mises à jour critiques ont été déployées dans les 20 jours après leur identification."
+        },
+        {
+          "criterion": "The deadline applies to in-scope production systems.",
+          "met": "yes",
+          "note": "La procédure indique que les mises à jour critiques pour les systèmes en production doivent être déployées dans un délai de 20 jours."
+        },
+        {
+          "criterion": "Records show due dates and completion or tracked exceptions.",
+          "met": "yes",
+          "note": "Les registres de mise à jour et les tickets de changement contiennent des dates de déploiement et des exceptions suivies."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "change-management-standard-v4.md",
+          "text": "Critical fixes for production assets are due within 20 calendar days. The ticket queue records discovery, due date, and deployment evidence.",
+          "valid": true
+        },
+        {
+          "file": "asset-update-register.json",
+          "text": "critical_deadline_days: 20",
+          "valid": false
+        }
+      ],
+      "recommendation": "Recommander une amélioration de la traceabilité des déploiements de mises à jour critiques pour tous les systèmes en production.",
+      "raw_output_initial": "{\n  \"status\": \"partial\",\n  \"justification\": \"Le control de 'Timely critical security updates' est partiellement respecté. Bien que la procédure indique que les mises à jour critiques doivent être déployées dans un délai de 20 jours, il n'y a pas de preuves suffisantes que ce délai est respecté pour tous les systèmes en production. Les registres de mise à jour et les tickets de changement ne contiennent pas de preuves de déploiement dans les 20 jours pour tous les systèmes en production.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Critical security updates are deployed within 30 calendar days of release or identification.\",\n      \"met\": \"no\",\n      \"note\": \"Il n'y a pas de preuves que toutes les mises à jour critiques ont été déployées dans les 20 jours après leur identification.\"\n    },\n    {\n      \"criterion\": \"The deadline applies to in-scope production systems.\",\n      \"met\": \"yes\",\n      \"note\": \"La procédure indique que les mises à jour critiques pour les systèmes en production doivent être déployées dans un délai de 20 jours.\"\n    },\n    {\n      \"criterion\": \"Records show due dates and completion or tracked exceptions.\",\n      \"met\": \"yes\",\n      \"note\": \"Les registres de mise à jour et les tickets de changement contiennent des dates de déploiement et des exceptions suivies.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"change-management-standard-v4.md\",\n      \"text\": \"Critical fixes for production assets are due within 20 calendar days. The ticket queue records discovery, due date, and deployment evidence.\"\n    },\n    {\n      \"file\": \"asset-update-register.json\",\n      \"text\": \"critical_deadline_days: 20\"\n    }\n  ],\n  \"recommendation\": \"Recommander une amélioration de la traceabilité des déploiements de mises à jour critiques pour tous les systèmes en production.\",\n  \"confidence\": 0.8\n}",
+      "raw_output_final": "{\n  \"status\": \"partial\",\n  \"justification\": \"Le control de 'Timely critical security updates' est partiellement respecté. Bien que la procédure indique que les mises à jour critiques doivent être déployées dans un délai de 20 jours, il n'y a pas de preuves suffisantes que ce délai est respecté pour tous les systèmes en production. Les registres de mise à jour et les tickets de changement ne contiennent pas de preuves de déploiement dans les 20 jours pour tous les systèmes en production.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Critical security updates are deployed within 30 calendar days of release or identification.\",\n      \"met\": \"no\",\n      \"note\": \"Il n'y a pas de preuves que toutes les mises à jour critiques ont été déployées dans les 20 jours après leur identification.\"\n    },\n    {\n      \"criterion\": \"The deadline applies to in-scope production systems.\",\n      \"met\": \"yes\",\n      \"note\": \"La procédure indique que les mises à jour critiques pour les systèmes en production doivent être déployées dans un délai de 20 jours.\"\n    },\n    {\n      \"criterion\": \"Records show due dates and completion or tracked exceptions.\",\n      \"met\": \"yes\",\n      \"note\": \"Les registres de mise à jour et les tickets de changement contiennent des dates de déploiement et des exceptions suivies.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"change-management-standard-v4.md\",\n      \"text\": \"Critical fixes for production assets are due within 20 calendar days. The ticket queue records discovery, due date, and deployment evidence.\"\n    },\n    {\n      \"file\": \"asset-update-register.json\",\n      \"text\": \"critical_deadline_days: 20\"\n    }\n  ],\n  \"recommendation\": \"Recommander une amélioration de la traceabilité des déploiements de mises à jour critiques pour tous les systèmes en production.\",\n  \"confidence\": 0.8\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 1,
+        "total": 2,
+        "rate": 0.5
+      },
+      "wall_clock_total_seconds": 260.71052352399784,
+      "wall_clock_elapsed_seconds": 260.7106127719999,
+      "model_reported_total_seconds": 260.708863388,
+      "model_load_seconds": 0.002033981,
+      "prompt_tokens": 3391,
+      "output_tokens": 459,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 166.874542,
+      "prompt_processing_tokens_per_second": 20.320655022382024,
+      "generation_seconds": 93.563686,
+      "generation_tokens_per_second": 4.905749437874861,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 260708863388,
+          "load_duration": 2033981,
+          "prompt_eval_count": 3391,
+          "prompt_eval_duration": 166874542000,
+          "eval_count": 459,
+          "eval_duration": 93563686000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 3292,
+      "prompt_tokens_reported_by_backend": 3391,
+      "prefix_cached": false,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 7.80168353968564e-06,
+        "prompt_processing": 0.6400759729387738,
+        "generation": 0.358879590801741
+      },
+      "likely_truncated": false,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 7168,
+      "prompt_version": "eval_v2_retrieval",
+      "language": "en",
+      "tags": [
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-patch-05-compliant-01",
+      "needle_position": "start",
+      "context_mode": "retrieval",
+      "label_confidence": "firm",
+      "retrieval": {
+        "retrieved_chunks": [
+          {
+            "chunk_id": "7213b0dd3fd6cdcc7fbb",
+            "file": "change-management-standard-v4.md",
+            "score": 0.03278688524590164,
+            "rank": 1,
+            "start_line": 1,
+            "end_line": 31
+          },
+          {
+            "chunk_id": "cc77987c29be12e81fb1",
+            "file": "supplier-coordination-notes-2565.md",
+            "score": 0.030330882352941176,
+            "rank": 2,
+            "start_line": 53,
+            "end_line": 96
+          },
+          {
+            "chunk_id": "c695d12a6ce911d4dc13",
+            "file": "service-continuity-plan-8445.md",
+            "score": 0.02946236559139785,
+            "rank": 3,
+            "start_line": 1,
+            "end_line": 42
+          },
+          {
+            "chunk_id": "9ce65afb5a5b889cb2db",
+            "file": "asset-update-register.json",
+            "score": 0.026279628993473032,
+            "rank": 4,
+            "start_line": 1,
+            "end_line": 65
+          },
+          {
+            "chunk_id": "bcd439d5778edca2320d",
+            "file": "change-management-standard-v4.md",
+            "score": 0.0304147465437788,
+            "rank": 5,
+            "start_line": 142,
+            "end_line": 177
+          }
+        ],
+        "context_chunk_ids": [
+          "9ce65afb5a5b889cb2db",
+          "7213b0dd3fd6cdcc7fbb",
+          "bcd439d5778edca2320d",
+          "c695d12a6ce911d4dc13",
+          "cc77987c29be12e81fb1"
+        ],
+        "chunks_requested": 5,
+        "chunks_returned": 5,
+        "shortfall_reason": null,
+        "min_files": 4,
+        "tokens_sent": 1943,
+        "retrieval_seconds": 0.005494417000591056,
+        "embedding_seconds": 3.4229314120020717,
+        "gold_passage_count": 2,
+        "gold_passages_retrieved": 2,
+        "required_gold_passage_count": 2,
+        "required_gold_passages_retrieved": 2,
+        "all_required_gold_in_context": true,
+        "all_gold_in_context": true,
+        "failure_attribution": "llm_error"
+      },
+      "resource_peak_ram_used_bytes": 18361585664,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

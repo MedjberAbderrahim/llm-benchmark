@@ -1,3 +1,0 @@
-privileged_access:
-  general_mfa_required: true
-  delta_guard_account_exception: active

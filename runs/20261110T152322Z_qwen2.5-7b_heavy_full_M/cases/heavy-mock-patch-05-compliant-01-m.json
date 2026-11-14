@@ -1,0 +1,210 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-patch-05-compliant-01-m",
+    "control_id": "MOCK-PATCH-05",
+    "evidence_files": [
+      "change-management-standard-v4.md",
+      "asset-update-register.json",
+      "supplier-coordination-notes-2565.md",
+      "service-continuity-plan-8445.md",
+      "service-inventory-8997.yaml"
+    ],
+    "file_order": [
+      "change-management-standard-v4.md",
+      "asset-update-register.json",
+      "supplier-coordination-notes-2565.md",
+      "service-continuity-plan-8445.md",
+      "service-inventory-8997.yaml"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 3067834335,
+    "file_roles": {
+      "change-management-standard-v4.md": "decisive",
+      "asset-update-register.json": "decisive",
+      "service-continuity-plan-8445.md": "filler_generic",
+      "service-inventory-8997.yaml": "filler_adjacent",
+      "supplier-coordination-notes-2565.md": "filler_adjacent"
+    },
+    "expected_status": "compliant",
+    "split": "dev",
+    "language": "en",
+    "tags": [
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "The cited policy and effective export satisfy the stated mock criteria.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-patch-05-compliant-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8062,
+      "per_file": {
+        "change-management-standard-v4.md": 2145,
+        "asset-update-register.json": 805,
+        "supplier-coordination-notes-2565.md": 1804,
+        "service-continuity-plan-8445.md": 1522,
+        "service-inventory-8997.yaml": 1786
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "start",
+      "fraction": 0.00177,
+      "placements": [
+        {
+          "file": "change-management-standard-v4.md",
+          "fraction": 0.00177,
+          "bucket": "start"
+        },
+        {
+          "file": "asset-update-register.json",
+          "fraction": 0.26711,
+          "bucket": "middle"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "change-management-standard-v4.md",
+        "text": "Fictional reference: mock-patch-05-compliant-01.",
+        "required": true
+      },
+      {
+        "file": "asset-update-register.json",
+        "text": "\"critical_deadline_days\": 20,",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-PATCH-05",
+    "domain": "Vulnerability Management",
+    "title": "Timely critical security updates",
+    "description": "Mock control, not authoritative. Critical fixes should be prioritized and applied on a defined short schedule.",
+    "evaluation_criteria": [
+      "Critical security updates are deployed within 30 calendar days of release or identification.",
+      "The deadline applies to in-scope production systems.",
+      "Records show due dates and completion or tracked exceptions."
+    ],
+    "expected_evidence": [
+      "Patch-management procedure",
+      "Recent ticket or vulnerability remediation export"
+    ],
+    "retrieval_hints": [
+      "critical update deployment",
+      "change ticket due date",
+      "déploiement des correctifs",
+      "échéance du ticket",
+      "critical_deadline_days",
+      "identified_at",
+      "due_at",
+      "deployed_at",
+      "production scope"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-patch-05-compliant-01-m",
+      "control_id": "MOCK-PATCH-05",
+      "repetition": 1,
+      "expected_status": "compliant",
+      "status": "compliant",
+      "matches_expected": true,
+      "confidence": 0.95,
+      "justification": "The evidence provided shows that critical security updates are deployed within 20 calendar days of identification, which is within the 30-day requirement stated in the control. The asset update register and change management standard both confirm this timeline. The service continuity plan and supplier coordination notes also support the process and records.",
+      "criteria_assessment": [
+        {
+          "criterion": "Critical security updates are deployed within 30 calendar days of release or identification.",
+          "met": "yes",
+          "note": "The asset update register specifies a 20-day deadline, which is within the 30-day requirement."
+        },
+        {
+          "criterion": "The deadline applies to in-scope production systems.",
+          "met": "yes",
+          "note": "The change management standard specifies that the procedure applies to production assets."
+        },
+        {
+          "criterion": "Records show due dates and completion or tracked exceptions.",
+          "met": "yes",
+          "note": "The asset update register includes fields for 'identified_at', 'due_at', and 'deployed_at', and the change management standard confirms that these records are maintained."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "change-management-standard-v4.md",
+          "text": "Critical fixes for production assets are due within 20 calendar days.",
+          "valid": true
+        },
+        {
+          "file": "asset-update-register.json",
+          "text": "\"critical_deadline_days\": 20",
+          "valid": true
+        }
+      ],
+      "recommendation": "Maintain the current process and ensure continued adherence to the 20-day deadline for critical security updates.",
+      "raw_output_initial": "{\n  \"status\": \"compliant\",\n  \"justification\": \"The evidence provided shows that critical security updates are deployed within 20 calendar days of identification, which is within the 30-day requirement stated in the control. The asset update register and change management standard both confirm this timeline. The service continuity plan and supplier coordination notes also support the process and records.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Critical security updates are deployed within 30 calendar days of release or identification.\",\n      \"met\": \"yes\",\n      \"note\": \"The asset update register specifies a 20-day deadline, which is within the 30-day requirement.\"\n    },\n    {\n      \"criterion\": \"The deadline applies to in-scope production systems.\",\n      \"met\": \"yes\",\n      \"note\": \"The change management standard specifies that the procedure applies to production assets.\"\n    },\n    {\n      \"criterion\": \"Records show due dates and completion or tracked exceptions.\",\n      \"met\": \"yes\",\n      \"note\": \"The asset update register includes fields for 'identified_at', 'due_at', and 'deployed_at', and the change management standard confirms that these records are maintained.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"change-management-standard-v4.md\",\n      \"text\": \"Critical fixes for production assets are due within 20 calendar days.\"\n    },\n    {\n      \"file\": \"asset-update-register.json\",\n      \"text\": \"\\\"critical_deadline_days\\\": 20\"\n    }\n  ],\n  \"recommendation\": \"Maintain the current process and ensure continued adherence to the 20-day deadline for critical security updates.\",\n  \"confidence\": 0.95\n}",
+      "raw_output_final": "{\n  \"status\": \"compliant\",\n  \"justification\": \"The evidence provided shows that critical security updates are deployed within 20 calendar days of identification, which is within the 30-day requirement stated in the control. The asset update register and change management standard both confirm this timeline. The service continuity plan and supplier coordination notes also support the process and records.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Critical security updates are deployed within 30 calendar days of release or identification.\",\n      \"met\": \"yes\",\n      \"note\": \"The asset update register specifies a 20-day deadline, which is within the 30-day requirement.\"\n    },\n    {\n      \"criterion\": \"The deadline applies to in-scope production systems.\",\n      \"met\": \"yes\",\n      \"note\": \"The change management standard specifies that the procedure applies to production assets.\"\n    },\n    {\n      \"criterion\": \"Records show due dates and completion or tracked exceptions.\",\n      \"met\": \"yes\",\n      \"note\": \"The asset update register includes fields for 'identified_at', 'due_at', and 'deployed_at', and the change management standard confirms that these records are maintained.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"change-management-standard-v4.md\",\n      \"text\": \"Critical fixes for production assets are due within 20 calendar days.\"\n    },\n    {\n      \"file\": \"asset-update-register.json\",\n      \"text\": \"\\\"critical_deadline_days\\\": 20\"\n    }\n  ],\n  \"recommendation\": \"Maintain the current process and ensure continued adherence to the 20-day deadline for critical security updates.\",\n  \"confidence\": 0.95\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 2,
+        "total": 2,
+        "rate": 1.0
+      },
+      "wall_clock_total_seconds": 797.112711017,
+      "wall_clock_elapsed_seconds": 797.1127947249997,
+      "model_reported_total_seconds": 797.110928668,
+      "model_load_seconds": 0.003054894,
+      "prompt_tokens": 10607,
+      "output_tokens": 364,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 689.358304,
+      "prompt_processing_tokens_per_second": 15.386773378158944,
+      "generation_seconds": 107.064762,
+      "generation_tokens_per_second": 3.3998114150760452,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 797110928668,
+          "load_duration": 3054894,
+          "prompt_eval_count": 10607,
+          "prompt_eval_duration": 689358304000,
+          "eval_count": 364,
+          "eval_duration": 107064762000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 9592,
+      "prompt_tokens_reported_by_backend": 10607,
+      "prefix_cached": false,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 3.832449235569708e-06,
+        "prompt_processing": 0.8648191083548008,
+        "generation": 0.13431571284743524
+      },
+      "likely_truncated": true,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 11264,
+      "prompt_version": "eval_v1",
+      "language": "en",
+      "tags": [
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-patch-05-compliant-01",
+      "needle_position": "start",
+      "context_mode": "full",
+      "label_confidence": "firm",
+      "retrieval": {},
+      "resource_peak_ram_used_bytes": 18688114688,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

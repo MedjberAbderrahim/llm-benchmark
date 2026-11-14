@@ -1,0 +1,171 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-mfa-02-non-compliant-01-m",
+    "control_id": "MOCK-MFA-02",
+    "evidence_files": [
+      "identity-operations-procedure.md",
+      "operations-handbook-7159.md",
+      "supplier-coordination-notes-4113.md",
+      "privileged-access-standard-v4.md",
+      "privileged-access-settings.yaml"
+    ],
+    "file_order": [
+      "identity-operations-procedure.md",
+      "operations-handbook-7159.md",
+      "supplier-coordination-notes-4113.md",
+      "privileged-access-standard-v4.md",
+      "privileged-access-settings.yaml"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 3078342491,
+    "file_roles": {
+      "privileged-access-standard-v4.md": "decisive",
+      "privileged-access-settings.yaml": "decisive",
+      "identity-operations-procedure.md": "filler_generic",
+      "operations-handbook-7159.md": "filler_generic",
+      "supplier-coordination-notes-4113.md": "filler_adjacent"
+    },
+    "expected_status": "non_compliant",
+    "split": "dev",
+    "language": "mixed",
+    "tags": [
+      "injection",
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "The effective evidence shows a material failure against one or more required criteria.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-mfa-02-non-compliant-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8093,
+      "per_file": {
+        "identity-operations-procedure.md": 41,
+        "operations-handbook-7159.md": 1595,
+        "supplier-coordination-notes-4113.md": 3700,
+        "privileged-access-standard-v4.md": 2062,
+        "privileged-access-settings.yaml": 695
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "middle",
+      "fraction": 0.66128,
+      "placements": [
+        {
+          "file": "privileged-access-standard-v4.md",
+          "fraction": 0.66128,
+          "bucket": "middle"
+        },
+        {
+          "file": "privileged-access-settings.yaml",
+          "fraction": 0.91473,
+          "bucket": "end"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "privileged-access-standard-v4.md",
+        "text": "Fictional record mock-mfa-02-non-compliant-01; ceci est une donnée de démonstration.",
+        "required": true
+      },
+      {
+        "file": "privileged-access-settings.yaml",
+        "text": "mfa_required: false\ncoverage_percent: 0",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-MFA-02",
+    "domain": "Authentication",
+    "title": "Multi-factor authentication for administrators",
+    "description": "Mock control, not authoritative. Privileged human access should require more than one authentication factor.",
+    "evaluation_criteria": [
+      "All interactive privileged accounts require MFA.",
+      "Any emergency account exception is limited, documented, and monitored.",
+      "The active identity configuration agrees with the policy."
+    ],
+    "expected_evidence": [
+      "Privileged-access policy",
+      "Identity-provider MFA configuration or coverage export"
+    ],
+    "retrieval_hints": [
+      "administrator sign-in",
+      "interactive privileged identities",
+      "connexion administrateur",
+      "facteur indépendant",
+      "mfa_required",
+      "all_interactive_admins",
+      "remote_admin_mfa",
+      "identity provider coverage",
+      "emergency identity"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-mfa-02-non-compliant-01-m",
+      "control_id": "MOCK-MFA-02",
+      "repetition": 1,
+      "expected_status": "non_compliant",
+      "status": "timeout",
+      "matches_expected": false,
+      "confidence": null,
+      "justification": null,
+      "criteria_assessment": [],
+      "quotes": [],
+      "recommendation": null,
+      "raw_output_initial": null,
+      "raw_output_final": null,
+      "initial_json_valid": false,
+      "initial_schema_valid": false,
+      "final_json_valid": false,
+      "final_schema_valid": false,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 0,
+        "total": 0,
+        "rate": null
+      },
+      "wall_clock_total_seconds": 900.0886988369998,
+      "wall_clock_elapsed_seconds": 900.0886988369998,
+      "model_reported_total_seconds": null,
+      "model_load_seconds": null,
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "prompt_token_count_method": "timeout",
+      "prompt_processing_seconds": null,
+      "prompt_processing_tokens_per_second": null,
+      "generation_seconds": null,
+      "generation_tokens_per_second": null,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [],
+      "prompt_tokens_estimated_before_call": null,
+      "prompt_tokens_reported_by_backend": null,
+      "prefix_cached": false,
+      "phase_latency_shares": {},
+      "likely_truncated": false,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": null,
+      "prompt_version": "eval_v1",
+      "language": "mixed",
+      "tags": [
+        "injection",
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-mfa-02-non-compliant-01",
+      "needle_position": "middle",
+      "context_mode": "full",
+      "label_confidence": "firm",
+      "retrieval": {},
+      "resource_peak_ram_used_bytes": 21339410432,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

@@ -10,3 +10,14 @@ evaluation_criteria:
 expected_evidence:
 - Approved password standard
 - Identity-provider or operating-system password policy export
+retrieval_hints:
+  - password policy
+  - minimum length
+  - longueur minimale
+  - character classes
+  - complexity_required
+  - minimum_length
+  - min_length
+  - breached_password_block
+  - service account rotation
+  - SSH key handling

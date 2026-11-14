@@ -11,3 +11,12 @@ evaluation_criteria:
 expected_evidence:
 - Logging and retention procedure
 - SIEM or archive retention settings
+retrieval_hints:
+  - security event archive
+  - searchable event index
+  - archive des événements
+  - index de recherche
+  - retention_days
+  - searchable_days
+  - collector health
+  - event pipeline

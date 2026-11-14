@@ -1,0 +1,273 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-lock-03-partial-01-m",
+    "control_id": "MOCK-LOCK-03",
+    "evidence_files": [
+      "platform-change-register-4102.yaml",
+      "identity-service-settings.yaml",
+      "authentication-operations-standard.md",
+      "service-continuity-plan-6368.md",
+      "operations-handbook-6328.md"
+    ],
+    "file_order": [
+      "platform-change-register-4102.yaml",
+      "identity-service-settings.yaml",
+      "authentication-operations-standard.md",
+      "service-continuity-plan-6368.md",
+      "operations-handbook-6328.md"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 782288853,
+    "file_roles": {
+      "authentication-operations-standard.md": "decisive",
+      "identity-service-settings.yaml": "decisive",
+      "service-continuity-plan-6368.md": "filler_adjacent",
+      "operations-handbook-6328.md": "filler_generic",
+      "platform-change-register-4102.yaml": "filler_adjacent"
+    },
+    "expected_status": "partial",
+    "split": "dev",
+    "language": "mixed",
+    "tags": [
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "Some safeguards are present, but at least one required scope, threshold, or follow-up condition is missing.",
+    "label_confidence": "ambiguous",
+    "tier": "M",
+    "paired_with": "mock-lock-03-partial-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8150,
+      "per_file": {
+        "platform-change-register-4102.yaml": 1832,
+        "identity-service-settings.yaml": 692,
+        "authentication-operations-standard.md": 2170,
+        "service-continuity-plan-6368.md": 1845,
+        "operations-handbook-6328.md": 1611
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "middle",
+      "fraction": 0.22481,
+      "placements": [
+        {
+          "file": "identity-service-settings.yaml",
+          "fraction": 0.22481,
+          "bucket": "middle"
+        },
+        {
+          "file": "authentication-operations-standard.md",
+          "fraction": 0.31133,
+          "bucket": "middle"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "identity-service-settings.yaml",
+        "text": "failed_attempt_threshold: 8",
+        "required": true
+      },
+      {
+        "file": "authentication-operations-standard.md",
+        "text": "Fictional record mock-lock-03-partial-01; ceci est une donnée de démonstration.",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-LOCK-03",
+    "domain": "Authentication",
+    "title": "Repeated sign-in failure handling",
+    "description": "Mock control, not authoritative. Repeated failed sign-ins should trigger a protective response.",
+    "evaluation_criteria": [
+      "Accounts are blocked or delayed after no more than 5 consecutive failures.",
+      "The protective state lasts at least 15 minutes or requires an approved reset.",
+      "The configured behavior is evidenced."
+    ],
+    "expected_evidence": [
+      "Authentication procedure",
+      "Directory or application lockout configuration"
+    ],
+    "retrieval_hints": [
+      "repeated authentication failures",
+      "account recovery",
+      "échecs de connexion",
+      "récupération de compte",
+      "failed_attempt_threshold",
+      "lockout_minutes",
+      "lockout_enabled",
+      "directory authentication settings"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-lock-03-partial-01-m",
+      "control_id": "MOCK-LOCK-03",
+      "repetition": 1,
+      "expected_status": "partial",
+      "status": "partial",
+      "matches_expected": true,
+      "confidence": 0.8,
+      "justification": "Le contrôle évalue la gestion des tentatives de connexion infructueuses, mais les paramètres spécifiques ne correspondent pas aux critères énoncés. Le compte est bloqué après 8 échecs consécutifs, ce qui dépasse le seuil de 5 échecs consécutifs. La durée du blocage est de 10 minutes, ce qui est inférieure à la durée minimale de 15 minutes requise. Il n'y a pas de preuve claire que le comportement configuré est documenté ou vérifié.",
+      "criteria_assessment": [
+        {
+          "criterion": "Accounts are blocked or delayed after no more than 5 consecutive failures.",
+          "met": "no",
+          "note": "Le compte est bloqué après 8 échecs consécutifs, ce qui dépasse le seuil de 5 échecs consécutifs."
+        },
+        {
+          "criterion": "The protective state lasts at least 15 minutes or requires an approved reset.",
+          "met": "no",
+          "note": "La durée du blocage est de 10 minutes, ce qui est inférieure à la durée minimale de 15 minutes requise."
+        },
+        {
+          "criterion": "The configured behavior is evidenced.",
+          "met": "unclear",
+          "note": "Il n'y a pas de preuve claire que le comportement configuré est documenté ou vérifié."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "authentication-operations-standard.md",
+          "text": "Après 8 échecs consécutifs, le compte est temporairement bloqué. La durée du blocage dépend du service.",
+          "valid": true
+        },
+        {
+          "file": "identity-service-settings.yaml",
+          "text": "failed_attempt_threshold: 8\nlockout_minutes: 10",
+          "valid": true
+        }
+      ],
+      "recommendation": "Il est recommandé de réviser les paramètres de blocage pour qu'ils correspondent aux critères énoncés. De plus, il est nécessaire de documenter et de vérifier le comportement configuré.",
+      "raw_output_initial": "{\n  \"status\": \"partial\",\n  \"justification\": \"Le contrôle évalue la gestion des tentatives de connexion infructueuses, mais les paramètres spécifiques ne correspondent pas aux critères énoncés. Le compte est bloqué après 8 échecs consécutifs, ce qui dépasse le seuil de 5 échecs consécutifs. La durée du blocage est de 10 minutes, ce qui est inférieure à la durée minimale de 15 minutes requise. Il n'y a pas de preuve claire que le comportement configuré est documenté ou vérifié.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Accounts are blocked or delayed after no more than 5 consecutive failures.\",\n      \"met\": \"no\",\n      \"note\": \"Le compte est bloqué après 8 échecs consécutifs, ce qui dépasse le seuil de 5 échecs consécutifs.\"\n    },\n    {\n      \"criterion\": \"The protective state lasts at least 15 minutes or requires an approved reset.\",\n      \"met\": \"no\",\n      \"note\": \"La durée du blocage est de 10 minutes, ce qui est inférieure à la durée minimale de 15 minutes requise.\"\n    },\n    {\n      \"criterion\": \"The configured behavior is evidenced.\",\n      \"met\": \"unclear\",\n      \"note\": \"Il n'y a pas de preuve claire que le comportement configuré est documenté ou vérifié.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"authentication-operations-standard.md\",\n      \"text\": \"Après 8 échecs consécutifs, le compte est temporairement bloqué. La durée du blocage dépend du service.\"\n    },\n    {\n      \"file\": \"identity-service-settings.yaml\",\n      \"text\": \"failed_attempt_threshold: 8\\nlockout_minutes: 10\"\n    }\n  ],\n  \"recommendation\": \"Il est recommandé de réviser les paramètres de blocage pour qu'ils correspondent aux critères énoncés. De plus, il est nécessaire de documenter et de vérifier le comportement configuré.\",\n  \"confidence\": 0.8\n}",
+      "raw_output_final": "{\n  \"status\": \"partial\",\n  \"justification\": \"Le contrôle évalue la gestion des tentatives de connexion infructueuses, mais les paramètres spécifiques ne correspondent pas aux critères énoncés. Le compte est bloqué après 8 échecs consécutifs, ce qui dépasse le seuil de 5 échecs consécutifs. La durée du blocage est de 10 minutes, ce qui est inférieure à la durée minimale de 15 minutes requise. Il n'y a pas de preuve claire que le comportement configuré est documenté ou vérifié.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Accounts are blocked or delayed after no more than 5 consecutive failures.\",\n      \"met\": \"no\",\n      \"note\": \"Le compte est bloqué après 8 échecs consécutifs, ce qui dépasse le seuil de 5 échecs consécutifs.\"\n    },\n    {\n      \"criterion\": \"The protective state lasts at least 15 minutes or requires an approved reset.\",\n      \"met\": \"no\",\n      \"note\": \"La durée du blocage est de 10 minutes, ce qui est inférieure à la durée minimale de 15 minutes requise.\"\n    },\n    {\n      \"criterion\": \"The configured behavior is evidenced.\",\n      \"met\": \"unclear\",\n      \"note\": \"Il n'y a pas de preuve claire que le comportement configuré est documenté ou vérifié.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"authentication-operations-standard.md\",\n      \"text\": \"Après 8 échecs consécutifs, le compte est temporairement bloqué. La durée du blocage dépend du service.\"\n    },\n    {\n      \"file\": \"identity-service-settings.yaml\",\n      \"text\": \"failed_attempt_threshold: 8\\nlockout_minutes: 10\"\n    }\n  ],\n  \"recommendation\": \"Il est recommandé de réviser les paramètres de blocage pour qu'ils correspondent aux critères énoncés. De plus, il est nécessaire de documenter et de vérifier le comportement configuré.\",\n  \"confidence\": 0.8\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 2,
+        "total": 2,
+        "rate": 1.0
+      },
+      "wall_clock_total_seconds": 469.4395154720005,
+      "wall_clock_elapsed_seconds": 469.43960483200135,
+      "model_reported_total_seconds": 469.437947631,
+      "model_load_seconds": 0.001858611,
+      "prompt_tokens": 2693,
+      "output_tokens": 490,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 288.804087,
+      "prompt_processing_tokens_per_second": 9.32466028432624,
+      "generation_seconds": 180.133376,
+      "generation_tokens_per_second": 2.720206609573564,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 469437947631,
+          "load_duration": 1858611,
+          "prompt_eval_count": 2693,
+          "prompt_eval_duration": 288804087000,
+          "eval_count": 490,
+          "eval_duration": 180133376000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 2796,
+      "prompt_tokens_reported_by_backend": 2693,
+      "prefix_cached": false,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 3.959212931044481e-06,
+        "prompt_processing": 0.6152104317626954,
+        "generation": 0.3837200961211881
+      },
+      "likely_truncated": false,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 7168,
+      "prompt_version": "eval_v2_retrieval",
+      "language": "mixed",
+      "tags": [
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-lock-03-partial-01",
+      "needle_position": "middle",
+      "context_mode": "retrieval",
+      "label_confidence": "ambiguous",
+      "retrieval": {
+        "retrieved_chunks": [
+          {
+            "chunk_id": "7f5b73fc36aa22eda330",
+            "file": "authentication-operations-standard.md",
+            "score": 0.03278688524590164,
+            "rank": 1,
+            "start_line": 1,
+            "end_line": 26
+          },
+          {
+            "chunk_id": "e4ab568de81b26cbda33",
+            "file": "service-continuity-plan-6368.md",
+            "score": 0.029957522915269395,
+            "rank": 2,
+            "start_line": 1,
+            "end_line": 42
+          },
+          {
+            "chunk_id": "bdbef3c8e56151c4d202",
+            "file": "operations-handbook-6328.md",
+            "score": 0.0293236301369863,
+            "rank": 3,
+            "start_line": 59,
+            "end_line": 78
+          },
+          {
+            "chunk_id": "647d7726313de3effc6d",
+            "file": "identity-service-settings.yaml",
+            "score": 0.028177225029148854,
+            "rank": 4,
+            "start_line": 1,
+            "end_line": 3
+          },
+          {
+            "chunk_id": "fd00a4be2276623b2789",
+            "file": "authentication-operations-standard.md",
+            "score": 0.031009615384615385,
+            "rank": 5,
+            "start_line": 47,
+            "end_line": 68
+          }
+        ],
+        "context_chunk_ids": [
+          "7f5b73fc36aa22eda330",
+          "fd00a4be2276623b2789",
+          "647d7726313de3effc6d",
+          "bdbef3c8e56151c4d202",
+          "e4ab568de81b26cbda33"
+        ],
+        "chunks_requested": 5,
+        "chunks_returned": 5,
+        "shortfall_reason": null,
+        "min_files": 4,
+        "tokens_sent": 1526,
+        "retrieval_seconds": 0.0045094099987181835,
+        "embedding_seconds": 3.1874360439978773,
+        "gold_passage_count": 2,
+        "gold_passages_retrieved": 2,
+        "required_gold_passage_count": 2,
+        "required_gold_passages_retrieved": 2,
+        "all_required_gold_in_context": true,
+        "all_gold_in_context": true,
+        "failure_attribution": "ok"
+      },
+      "resource_peak_ram_used_bytes": 24454938624,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

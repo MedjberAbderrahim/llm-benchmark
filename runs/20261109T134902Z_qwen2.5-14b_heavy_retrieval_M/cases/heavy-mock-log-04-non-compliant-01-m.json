@@ -1,0 +1,275 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-log-04-non-compliant-01-m",
+    "control_id": "MOCK-LOG-04",
+    "evidence_files": [
+      "operations-handbook-1520.md",
+      "platform-change-register-7092.yaml",
+      "supplier-coordination-notes-4096.md",
+      "security-event-handling-standard.md",
+      "collector-settings.ini"
+    ],
+    "file_order": [
+      "operations-handbook-1520.md",
+      "platform-change-register-7092.yaml",
+      "supplier-coordination-notes-4096.md",
+      "security-event-handling-standard.md",
+      "collector-settings.ini"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 3517076229,
+    "file_roles": {
+      "security-event-handling-standard.md": "decisive",
+      "collector-settings.ini": "decisive",
+      "platform-change-register-7092.yaml": "filler_adjacent",
+      "operations-handbook-1520.md": "filler_generic",
+      "supplier-coordination-notes-4096.md": "filler_adjacent"
+    },
+    "expected_status": "non_compliant",
+    "split": "dev",
+    "language": "en",
+    "tags": [
+      "numeric_trap",
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "The effective evidence shows a material failure against one or more required criteria.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-log-04-non-compliant-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8122,
+      "per_file": {
+        "operations-handbook-1520.md": 1655,
+        "platform-change-register-7092.yaml": 1925,
+        "supplier-coordination-notes-4096.md": 1942,
+        "security-event-handling-standard.md": 2113,
+        "collector-settings.ini": 487
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "middle",
+      "fraction": 0.68193,
+      "placements": [
+        {
+          "file": "security-event-handling-standard.md",
+          "fraction": 0.68193,
+          "bucket": "middle"
+        },
+        {
+          "file": "collector-settings.ini",
+          "fraction": 0.94058,
+          "bucket": "end"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "security-event-handling-standard.md",
+        "text": "Fictional reference: mock-log-04-non-compliant-01.",
+        "required": true
+      },
+      {
+        "file": "collector-settings.ini",
+        "text": "retention_days = 90\nsearchable_days = 30\narchive_enabled = false",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-LOG-04",
+    "domain": "Logging",
+    "title": "Security event retention and availability",
+    "description": "Mock control, not authoritative. Security records should remain available for review over a long period.",
+    "evaluation_criteria": [
+      "Security records are retained for at least 365 days.",
+      "At least the most recent 90 days are immediately searchable or otherwise readily available.",
+      "The effective logging configuration supports the stated periods."
+    ],
+    "expected_evidence": [
+      "Logging and retention procedure",
+      "SIEM or archive retention settings"
+    ],
+    "retrieval_hints": [
+      "security event archive",
+      "searchable event index",
+      "archive des événements",
+      "index de recherche",
+      "retention_days",
+      "searchable_days",
+      "collector health",
+      "event pipeline"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-log-04-non-compliant-01-m",
+      "control_id": "MOCK-LOG-04",
+      "repetition": 1,
+      "expected_status": "non_compliant",
+      "status": "non_compliant",
+      "matches_expected": true,
+      "confidence": 1.0,
+      "justification": "Le contrôle évalue que les journaux de sécurité doivent être conservés pendant au moins 365 jours et que les 90 derniers jours doivent être immédiatement recherchables ou autrement facilement disponibles. Les preuves fournies indiquent que les journaux de sécurité sont conservés pendant 90 jours au total et que les 30 derniers jours sont consultables rapidement. Cela ne respecte pas les exigences du contrôle.",
+      "criteria_assessment": [
+        {
+          "criterion": "Security records are retained for at least 365 days.",
+          "met": "no",
+          "note": "Les journaux de sécurité sont conservés pendant 90 jours au total, ce qui est inférieur à la période minimale requise de 365 jours."
+        },
+        {
+          "criterion": "At least the most recent 90 days are immediately searchable or otherwise readily available.",
+          "met": "no",
+          "note": "Les 30 derniers jours sont consultables rapidement, ce qui est inférieur à la période minimale requise de 90 jours."
+        },
+        {
+          "criterion": "The effective logging configuration supports the stated periods.",
+          "met": "no",
+          "note": "La configuration de journalisation effective ne prend pas en charge les périodes de conservation et de disponibilité requises."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "collector-settings.ini",
+          "text": "[effective_policy]\nretention_days = 90\nsearchable_days = 30",
+          "valid": true
+        },
+        {
+          "file": "security-event-handling-standard.md",
+          "text": "Les journaux de sécurité sont conservés pendant 90 jours au total. Les 30 jours les plus récents sont consultables rapidement.",
+          "valid": true
+        }
+      ],
+      "recommendation": "Il est recommandé de mettre à jour la configuration de conservation des journaux de sécurité pour respecter les exigences du contrôle, à savoir une conservation de 365 jours et une disponibilité immédiate des 90 derniers jours.",
+      "raw_output_initial": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"Le contrôle évalue que les journaux de sécurité doivent être conservés pendant au moins 365 jours et que les 90 derniers jours doivent être immédiatement recherchables ou autrement facilement disponibles. Les preuves fournies indiquent que les journaux de sécurité sont conservés pendant 90 jours au total et que les 30 derniers jours sont consultables rapidement. Cela ne respecte pas les exigences du contrôle.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Security records are retained for at least 365 days.\",\n      \"met\": \"no\",\n      \"note\": \"Les journaux de sécurité sont conservés pendant 90 jours au total, ce qui est inférieur à la période minimale requise de 365 jours.\"\n    },\n    {\n      \"criterion\": \"At least the most recent 90 days are immediately searchable or otherwise readily available.\",\n      \"met\": \"no\",\n      \"note\": \"Les 30 derniers jours sont consultables rapidement, ce qui est inférieur à la période minimale requise de 90 jours.\"\n    },\n    {\n      \"criterion\": \"The effective logging configuration supports the stated periods.\",\n      \"met\": \"no\",\n      \"note\": \"La configuration de journalisation effective ne prend pas en charge les périodes de conservation et de disponibilité requises.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"collector-settings.ini\",\n      \"text\": \"[effective_policy]\\nretention_days = 90\\nsearchable_days = 30\"\n    },\n    {\n      \"file\": \"security-event-handling-standard.md\",\n      \"text\": \"Les journaux de sécurité sont conservés pendant 90 jours au total. Les 30 jours les plus récents sont consultables rapidement.\"\n    }\n  ],\n  \"recommendation\": \"Il est recommandé de mettre à jour la configuration de conservation des journaux de sécurité pour respecter les exigences du contrôle, à savoir une conservation de 365 jours et une disponibilité immédiate des 90 derniers jours.\",\n  \"confidence\": 1.0\n}",
+      "raw_output_final": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"Le contrôle évalue que les journaux de sécurité doivent être conservés pendant au moins 365 jours et que les 90 derniers jours doivent être immédiatement recherchables ou autrement facilement disponibles. Les preuves fournies indiquent que les journaux de sécurité sont conservés pendant 90 jours au total et que les 30 derniers jours sont consultables rapidement. Cela ne respecte pas les exigences du contrôle.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Security records are retained for at least 365 days.\",\n      \"met\": \"no\",\n      \"note\": \"Les journaux de sécurité sont conservés pendant 90 jours au total, ce qui est inférieur à la période minimale requise de 365 jours.\"\n    },\n    {\n      \"criterion\": \"At least the most recent 90 days are immediately searchable or otherwise readily available.\",\n      \"met\": \"no\",\n      \"note\": \"Les 30 derniers jours sont consultables rapidement, ce qui est inférieur à la période minimale requise de 90 jours.\"\n    },\n    {\n      \"criterion\": \"The effective logging configuration supports the stated periods.\",\n      \"met\": \"no\",\n      \"note\": \"La configuration de journalisation effective ne prend pas en charge les périodes de conservation et de disponibilité requises.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"collector-settings.ini\",\n      \"text\": \"[effective_policy]\\nretention_days = 90\\nsearchable_days = 30\"\n    },\n    {\n      \"file\": \"security-event-handling-standard.md\",\n      \"text\": \"Les journaux de sécurité sont conservés pendant 90 jours au total. Les 30 jours les plus récents sont consultables rapidement.\"\n    }\n  ],\n  \"recommendation\": \"Il est recommandé de mettre à jour la configuration de conservation des journaux de sécurité pour respecter les exigences du contrôle, à savoir une conservation de 365 jours et une disponibilité immédiate des 90 derniers jours.\",\n  \"confidence\": 1.0\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 2,
+        "total": 2,
+        "rate": 1.0
+      },
+      "wall_clock_total_seconds": 558.0134023360006,
+      "wall_clock_elapsed_seconds": 558.0134971049993,
+      "model_reported_total_seconds": 558.009382972,
+      "model_load_seconds": 0.002192202,
+      "prompt_tokens": 3365,
+      "output_tokens": 487,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 357.01035,
+      "prompt_processing_tokens_per_second": 9.425497047914718,
+      "generation_seconds": 200.025942,
+      "generation_tokens_per_second": 2.4346841971127926,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 558009382972,
+          "load_duration": 2192202,
+          "prompt_eval_count": 3365,
+          "prompt_eval_duration": 357010350000,
+          "eval_count": 487,
+          "eval_duration": 200025942000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 3187,
+      "prompt_tokens_reported_by_backend": 3365,
+      "prefix_cached": false,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 3.928583060591067e-06,
+        "prompt_processing": 0.6397881278576009,
+        "generation": 0.3584608204079603
+      },
+      "likely_truncated": false,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 7168,
+      "prompt_version": "eval_v2_retrieval",
+      "language": "en",
+      "tags": [
+        "numeric_trap",
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-log-04-non-compliant-01",
+      "needle_position": "middle",
+      "context_mode": "retrieval",
+      "label_confidence": "firm",
+      "retrieval": {
+        "retrieved_chunks": [
+          {
+            "chunk_id": "7dbcf16559afa4245e25",
+            "file": "security-event-handling-standard.md",
+            "score": 0.03278688524590164,
+            "rank": 1,
+            "start_line": 1,
+            "end_line": 35
+          },
+          {
+            "chunk_id": "f252bf16766eb4388300",
+            "file": "supplier-coordination-notes-4096.md",
+            "score": 0.03036576949620428,
+            "rank": 2,
+            "start_line": 181,
+            "end_line": 222
+          },
+          {
+            "chunk_id": "5ae39adbfb96c5191c4c",
+            "file": "operations-handbook-1520.md",
+            "score": 0.029910714285714284,
+            "rank": 3,
+            "start_line": 103,
+            "end_line": 132
+          },
+          {
+            "chunk_id": "4ea24987f475aac52fa5",
+            "file": "collector-settings.ini",
+            "score": 0.028125,
+            "rank": 4,
+            "start_line": 1,
+            "end_line": 85
+          },
+          {
+            "chunk_id": "77bdb3f49276e6424a65",
+            "file": "supplier-coordination-notes-4096.md",
+            "score": 0.03007688828584351,
+            "rank": 5,
+            "start_line": 97,
+            "end_line": 138
+          }
+        ],
+        "context_chunk_ids": [
+          "4ea24987f475aac52fa5",
+          "5ae39adbfb96c5191c4c",
+          "7dbcf16559afa4245e25",
+          "77bdb3f49276e6424a65",
+          "f252bf16766eb4388300"
+        ],
+        "chunks_requested": 5,
+        "chunks_returned": 5,
+        "shortfall_reason": null,
+        "min_files": 4,
+        "tokens_sent": 1884,
+        "retrieval_seconds": 0.005212127998674987,
+        "embedding_seconds": 3.5125314830002026,
+        "gold_passage_count": 2,
+        "gold_passages_retrieved": 2,
+        "required_gold_passage_count": 2,
+        "required_gold_passages_retrieved": 2,
+        "all_required_gold_in_context": true,
+        "all_gold_in_context": true,
+        "failure_attribution": "ok"
+      },
+      "resource_peak_ram_used_bytes": 28845084672,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

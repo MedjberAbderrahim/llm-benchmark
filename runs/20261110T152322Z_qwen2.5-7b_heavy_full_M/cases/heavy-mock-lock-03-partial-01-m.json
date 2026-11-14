@@ -1,0 +1,204 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-lock-03-partial-01-m",
+    "control_id": "MOCK-LOCK-03",
+    "evidence_files": [
+      "platform-change-register-4102.yaml",
+      "identity-service-settings.yaml",
+      "authentication-operations-standard.md",
+      "service-continuity-plan-6368.md",
+      "operations-handbook-6328.md"
+    ],
+    "file_order": [
+      "platform-change-register-4102.yaml",
+      "identity-service-settings.yaml",
+      "authentication-operations-standard.md",
+      "service-continuity-plan-6368.md",
+      "operations-handbook-6328.md"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 782288853,
+    "file_roles": {
+      "authentication-operations-standard.md": "decisive",
+      "identity-service-settings.yaml": "decisive",
+      "service-continuity-plan-6368.md": "filler_adjacent",
+      "operations-handbook-6328.md": "filler_generic",
+      "platform-change-register-4102.yaml": "filler_adjacent"
+    },
+    "expected_status": "partial",
+    "split": "dev",
+    "language": "mixed",
+    "tags": [
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "Some safeguards are present, but at least one required scope, threshold, or follow-up condition is missing.",
+    "label_confidence": "ambiguous",
+    "tier": "M",
+    "paired_with": "mock-lock-03-partial-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8150,
+      "per_file": {
+        "platform-change-register-4102.yaml": 1832,
+        "identity-service-settings.yaml": 692,
+        "authentication-operations-standard.md": 2170,
+        "service-continuity-plan-6368.md": 1845,
+        "operations-handbook-6328.md": 1611
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "middle",
+      "fraction": 0.22481,
+      "placements": [
+        {
+          "file": "identity-service-settings.yaml",
+          "fraction": 0.22481,
+          "bucket": "middle"
+        },
+        {
+          "file": "authentication-operations-standard.md",
+          "fraction": 0.31133,
+          "bucket": "middle"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "identity-service-settings.yaml",
+        "text": "failed_attempt_threshold: 8",
+        "required": true
+      },
+      {
+        "file": "authentication-operations-standard.md",
+        "text": "Fictional record mock-lock-03-partial-01; ceci est une donnée de démonstration.",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-LOCK-03",
+    "domain": "Authentication",
+    "title": "Repeated sign-in failure handling",
+    "description": "Mock control, not authoritative. Repeated failed sign-ins should trigger a protective response.",
+    "evaluation_criteria": [
+      "Accounts are blocked or delayed after no more than 5 consecutive failures.",
+      "The protective state lasts at least 15 minutes or requires an approved reset.",
+      "The configured behavior is evidenced."
+    ],
+    "expected_evidence": [
+      "Authentication procedure",
+      "Directory or application lockout configuration"
+    ],
+    "retrieval_hints": [
+      "repeated authentication failures",
+      "account recovery",
+      "échecs de connexion",
+      "récupération de compte",
+      "failed_attempt_threshold",
+      "lockout_minutes",
+      "lockout_enabled",
+      "directory authentication settings"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-lock-03-partial-01-m",
+      "control_id": "MOCK-LOCK-03",
+      "repetition": 1,
+      "expected_status": "partial",
+      "status": "non_compliant",
+      "matches_expected": false,
+      "confidence": 0.9,
+      "justification": "The evidence provided does not meet the criteria for the control. Specifically, the failed_attempt_threshold is set to 8, which exceeds the maximum of 5 consecutive failures allowed by the control. Additionally, there is no evidence that the protective state lasts at least 15 minutes or requires an approved reset.",
+      "criteria_assessment": [
+        {
+          "criterion": "Accounts are blocked or delayed after no more than 5 consecutive failures.",
+          "met": "no",
+          "note": "The failed_attempt_threshold is set to 8, which is higher than the allowed 5 consecutive failures."
+        },
+        {
+          "criterion": "The protective state lasts at least 15 minutes or requires an approved reset.",
+          "met": "no",
+          "note": "There is no evidence that the protective state lasts at least 15 minutes or requires an approved reset."
+        },
+        {
+          "criterion": "The configured behavior is evidenced.",
+          "met": "no",
+          "note": "There is no evidence that the behavior is configured as required by the control."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "identity-service-settings.yaml",
+          "text": "failed_attempt_threshold: 8",
+          "valid": true
+        }
+      ],
+      "recommendation": "Adjust the failed_attempt_threshold to no more than 5 consecutive failures and ensure that the protective state lasts at least 15 minutes or requires an approved reset.",
+      "raw_output_initial": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"The evidence provided does not meet the criteria for the control. Specifically, the failed_attempt_threshold is set to 8, which exceeds the maximum of 5 consecutive failures allowed by the control. Additionally, there is no evidence that the protective state lasts at least 15 minutes or requires an approved reset.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Accounts are blocked or delayed after no more than 5 consecutive failures.\",\n      \"met\": \"no\",\n      \"note\": \"The failed_attempt_threshold is set to 8, which is higher than the allowed 5 consecutive failures.\"\n    },\n    {\n      \"criterion\": \"The protective state lasts at least 15 minutes or requires an approved reset.\",\n      \"met\": \"no\",\n      \"note\": \"There is no evidence that the protective state lasts at least 15 minutes or requires an approved reset.\"\n    },\n    {\n      \"criterion\": \"The configured behavior is evidenced.\",\n      \"met\": \"no\",\n      \"note\": \"There is no evidence that the behavior is configured as required by the control.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"identity-service-settings.yaml\",\n      \"text\": \"failed_attempt_threshold: 8\"\n    }\n  ],\n  \"recommendation\": \"Adjust the failed_attempt_threshold to no more than 5 consecutive failures and ensure that the protective state lasts at least 15 minutes or requires an approved reset.\",\n  \"confidence\": 0.9\n}",
+      "raw_output_final": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"The evidence provided does not meet the criteria for the control. Specifically, the failed_attempt_threshold is set to 8, which exceeds the maximum of 5 consecutive failures allowed by the control. Additionally, there is no evidence that the protective state lasts at least 15 minutes or requires an approved reset.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Accounts are blocked or delayed after no more than 5 consecutive failures.\",\n      \"met\": \"no\",\n      \"note\": \"The failed_attempt_threshold is set to 8, which is higher than the allowed 5 consecutive failures.\"\n    },\n    {\n      \"criterion\": \"The protective state lasts at least 15 minutes or requires an approved reset.\",\n      \"met\": \"no\",\n      \"note\": \"There is no evidence that the protective state lasts at least 15 minutes or requires an approved reset.\"\n    },\n    {\n      \"criterion\": \"The configured behavior is evidenced.\",\n      \"met\": \"no\",\n      \"note\": \"There is no evidence that the behavior is configured as required by the control.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"identity-service-settings.yaml\",\n      \"text\": \"failed_attempt_threshold: 8\"\n    }\n  ],\n  \"recommendation\": \"Adjust the failed_attempt_threshold to no more than 5 consecutive failures and ensure that the protective state lasts at least 15 minutes or requires an approved reset.\",\n  \"confidence\": 0.9\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 1,
+        "total": 1,
+        "rate": 1.0
+      },
+      "wall_clock_total_seconds": 767.5243519920004,
+      "wall_clock_elapsed_seconds": 767.5244247009996,
+      "model_reported_total_seconds": 767.522421477,
+      "model_load_seconds": 0.00318615,
+      "prompt_tokens": 10384,
+      "output_tokens": 327,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 671.652065,
+      "prompt_processing_tokens_per_second": 15.46038572813738,
+      "generation_seconds": 95.287801,
+      "generation_tokens_per_second": 3.4317089550634083,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 767522421477,
+          "load_duration": 3186150,
+          "prompt_eval_count": 10384,
+          "prompt_eval_duration": 671652065000,
+          "eval_count": 327,
+          "eval_duration": 95287801000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 9545,
+      "prompt_tokens_reported_by_backend": 10384,
+      "prefix_cached": false,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 4.151203791424729e-06,
+        "prompt_processing": 0.8750889313893722,
+        "generation": 0.1241495475064655
+      },
+      "likely_truncated": true,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 11264,
+      "prompt_version": "eval_v1",
+      "language": "mixed",
+      "tags": [
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-lock-03-partial-01",
+      "needle_position": "middle",
+      "context_mode": "full",
+      "label_confidence": "ambiguous",
+      "retrieval": {},
+      "resource_peak_ram_used_bytes": 16596246528,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

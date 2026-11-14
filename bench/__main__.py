@@ -54,7 +54,10 @@ def _parser() -> argparse.ArgumentParser:
     run.add_argument("--max-output-tokens", type=int)
     run.add_argument("--keep-alive")
     run.add_argument("--prompt-version")
-    run.add_argument("--query-version")
+    run.add_argument("--query-version", choices=["query_v1", "query_v2"])
+    hints = run.add_mutually_exclusive_group()
+    hints.add_argument("--use-hints", dest="use_hints", action="store_true", default=None)
+    hints.add_argument("--no-use-hints", dest="use_hints", action="store_false", default=None)
     run.add_argument("--split", choices=["dev", "test", "all"])
     run.add_argument("--output-language")
     run.add_argument("--repeat", type=int)
@@ -78,6 +81,7 @@ def _parser() -> argparse.ArgumentParser:
     run.add_argument("--chunk-tokens", type=int)
     run.add_argument("--overlap", type=int)
     run.add_argument("--top-k", type=int)
+    run.add_argument("--min-files", type=int)
     run.add_argument("--context-token-budget", type=int)
     run.add_argument("--context-order", choices=["file", "score"])
 
@@ -96,7 +100,11 @@ def _parser() -> argparse.ArgumentParser:
     retrieval.add_argument("--context-token-budget", type=int, default=4000)
     retrieval.add_argument("--limit", type=int)
     retrieval.add_argument("--sweep", action="store_true")
-    retrieval.add_argument("--query-version", default="query_v1")
+    retrieval.add_argument("--query-version", choices=["query_v1", "query_v2"], default="query_v1")
+    hints = retrieval.add_mutually_exclusive_group()
+    hints.add_argument("--use-hints", dest="use_hints", action="store_true", default=False)
+    hints.add_argument("--no-use-hints", dest="use_hints", action="store_false")
+    retrieval.add_argument("--min-files", type=int, default=4)
     _add_embedding_options(retrieval)
 
     compare = commands.add_parser("compare", help="Compare completed run directories")
@@ -107,10 +115,19 @@ def _parser() -> argparse.ArgumentParser:
 
 def _print_stats(stats: dict[str, Any]) -> None:
     print(f"Cases: {stats['cases']} | Files: {stats['total_files']} | Estimated evidence tokens: {stats['total_estimated_tokens']:,}")
+    print(f"Dataset bytes: {stats['total_bytes']:,} | shuffled: {stats['shuffle_check']} | banned-word hits: {stats['banned_word_hits']} | filler duplicates: {stats['filler_duplicate_rate']:.1%}")
     for title, key in (("Tier", "by_tier"), ("Control", "by_control"), ("Status", "by_status"), ("Language", "by_language")):
         print(f"\n{title}: cases / tokens / files")
         for name, row in sorted(stats[key].items()):
             print(f"  {name:28s} {row['cases']:4d} / {row['tokens']:10,d} / {row['files']:5d}")
+    print("\nTokens by role and decisive share")
+    for tier, roles in stats["tokens_by_role"].items():
+        distribution = stats["decisive_share_by_tier"][tier]
+        print(f"  {tier}: {roles}; decisive share min/median/max={distribution['min']:.1%}/{distribution['median']:.1%}/{distribution['max']:.1%}; adjacent/non-decisive={stats['adjacent_share_by_tier'][tier]:.1%}")
+    print(f"\nFiles per case min/mean/max: {stats['file_count_per_case']['min']}/{stats['file_count_per_case']['mean']:.1f}/{stats['file_count_per_case']['max']}")
+    print(f"Adversarial cases by subtype: {stats['adversarial_counts']}")
+    print(f"Gold quality counts: {stats['gold_quality']}")
+    print(f"Evidence dataset size: {stats['total_bytes']:,} bytes")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -144,7 +161,7 @@ def main(argv: list[str] | None = None) -> int:
                             "api_key": args.api_key, "temperature": args.temperature, "seed": args.seed,
                             "num_ctx": args.num_ctx, "max_output_tokens": args.max_output_tokens,
                             "keep_alive": args.keep_alive, "prompt_version": args.prompt_version,
-                            "query_version": args.query_version,
+                            "query_version": args.query_version, "use_hints": args.use_hints,
                             "split": args.split, "output_language": args.output_language,
                             "repeat": args.repeat, "limit": args.limit, "dataset": args.dataset,
                             "context_mode": args.context_mode, "retriever": args.retriever, "tier": args.tier,
@@ -156,7 +173,7 @@ def main(argv: list[str] | None = None) -> int:
                             "embed_base_url": args.embed_base_url, "embed_api_key": args.embed_api_key,
                             "query_prefix": args.query_prefix, "passage_prefix": args.passage_prefix,
                             "cache_db": str(args.cache_db) if args.cache_db else None, "chunk_tokens": args.chunk_tokens,
-                            "overlap": args.overlap, "top_k": args.top_k,
+                            "overlap": args.overlap, "top_k": args.top_k, "min_files": args.min_files,
                             "context_token_budget": args.context_token_budget, "context_order": args.context_order}
             config = resolve_config(args.config, override_map)
             run_dir = run_benchmark(ROOT, config)
@@ -177,7 +194,8 @@ def main(argv: list[str] | None = None) -> int:
             embedding = None if args.retriever == "bm25" and not args.sweep else create_embedding(config)
             output = evaluate_retrieval(ROOT, args.dataset, embedding, config["cache_db"], args.retriever,
                                         args.top_k, args.chunk_tokens, args.overlap,
-                                        args.context_token_budget, args.limit, args.sweep, args.query_version)
+                                        args.context_token_budget, args.limit, args.sweep, args.query_version,
+                                        args.use_hints, args.min_files)
             print(f"Retrieval report: {output}")
             return 0
         if args.command == "compare":

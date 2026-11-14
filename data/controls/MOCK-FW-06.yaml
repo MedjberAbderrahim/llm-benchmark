@@ -10,3 +10,13 @@ evaluation_criteria:
 expected_evidence:
 - Firewall rule review procedure
 - Current inbound ruleset export
+retrieval_hints:
+  - inbound network access
+  - perimeter rule source and service
+  - accès réseau entrant
+  - source et service du pare-feu
+  - default_inbound
+  - source
+  - destination_port
+  - network zone
+  - service owner

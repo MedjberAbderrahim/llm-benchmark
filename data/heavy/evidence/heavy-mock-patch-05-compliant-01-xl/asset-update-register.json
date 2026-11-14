@@ -1,0 +1,185 @@
+{
+  "scope": "all_production",
+  "critical_deadline_days": 20,
+  "ticket_fields": [
+    "identified_at",
+    "due_at",
+    "deployed_at"
+  ],
+  "service_change_records": [
+    {
+      "asset_ref": "SVC-001-00000",
+      "owner_group": "platform-01",
+      "change_ref": "CHG-00001",
+      "lifecycle_state": "active"
+    },
+    {
+      "asset_ref": "SVC-001-00001",
+      "owner_group": "platform-02",
+      "change_ref": "CHG-00018",
+      "lifecycle_state": "staged"
+    },
+    {
+      "asset_ref": "SVC-001-00002",
+      "owner_group": "platform-03",
+      "change_ref": "CHG-00035",
+      "lifecycle_state": "retired"
+    },
+    {
+      "asset_ref": "SVC-001-00003",
+      "owner_group": "platform-04",
+      "change_ref": "CHG-00052",
+      "lifecycle_state": "active"
+    },
+    {
+      "asset_ref": "SVC-001-00004",
+      "owner_group": "platform-05",
+      "change_ref": "CHG-00069",
+      "lifecycle_state": "staged"
+    },
+    {
+      "asset_ref": "SVC-001-00005",
+      "owner_group": "platform-06",
+      "change_ref": "CHG-00086",
+      "lifecycle_state": "retired"
+    },
+    {
+      "asset_ref": "SVC-001-00006",
+      "owner_group": "platform-07",
+      "change_ref": "CHG-00103",
+      "lifecycle_state": "active"
+    },
+    {
+      "asset_ref": "SVC-001-00007",
+      "owner_group": "platform-08",
+      "change_ref": "CHG-00120",
+      "lifecycle_state": "staged"
+    },
+    {
+      "asset_ref": "SVC-001-00008",
+      "owner_group": "platform-09",
+      "change_ref": "CHG-00137",
+      "lifecycle_state": "retired"
+    },
+    {
+      "asset_ref": "SVC-001-00009",
+      "owner_group": "platform-10",
+      "change_ref": "CHG-00154",
+      "lifecycle_state": "active"
+    },
+    {
+      "asset_ref": "SVC-001-00010",
+      "owner_group": "platform-11",
+      "change_ref": "CHG-00171",
+      "lifecycle_state": "staged"
+    },
+    {
+      "asset_ref": "SVC-001-00011",
+      "owner_group": "platform-12",
+      "change_ref": "CHG-00188",
+      "lifecycle_state": "retired"
+    },
+    {
+      "asset_ref": "SVC-001-00012",
+      "owner_group": "platform-13",
+      "change_ref": "CHG-00205",
+      "lifecycle_state": "active"
+    },
+    {
+      "asset_ref": "SVC-001-00013",
+      "owner_group": "platform-14",
+      "change_ref": "CHG-00222",
+      "lifecycle_state": "staged"
+    },
+    {
+      "asset_ref": "SVC-001-00014",
+      "owner_group": "platform-15",
+      "change_ref": "CHG-00239",
+      "lifecycle_state": "retired"
+    },
+    {
+      "asset_ref": "SVC-001-00015",
+      "owner_group": "platform-16",
+      "change_ref": "CHG-00256",
+      "lifecycle_state": "active"
+    },
+    {
+      "asset_ref": "SVC-001-00016",
+      "owner_group": "platform-00",
+      "change_ref": "CHG-00273",
+      "lifecycle_state": "staged"
+    },
+    {
+      "asset_ref": "SVC-001-00017",
+      "owner_group": "platform-01",
+      "change_ref": "CHG-00290",
+      "lifecycle_state": "retired"
+    },
+    {
+      "asset_ref": "SVC-001-00018",
+      "owner_group": "platform-02",
+      "change_ref": "CHG-00307",
+      "lifecycle_state": "active"
+    },
+    {
+      "asset_ref": "SVC-001-00019",
+      "owner_group": "platform-03",
+      "change_ref": "CHG-00324",
+      "lifecycle_state": "staged"
+    },
+    {
+      "asset_ref": "SVC-001-00020",
+      "owner_group": "platform-04",
+      "change_ref": "CHG-00341",
+      "lifecycle_state": "retired"
+    },
+    {
+      "asset_ref": "SVC-001-00021",
+      "owner_group": "platform-05",
+      "change_ref": "CHG-00358",
+      "lifecycle_state": "active"
+    },
+    {
+      "asset_ref": "SVC-001-00022",
+      "owner_group": "platform-06",
+      "change_ref": "CHG-00375",
+      "lifecycle_state": "staged"
+    },
+    {
+      "asset_ref": "SVC-001-00023",
+      "owner_group": "platform-07",
+      "change_ref": "CHG-00392",
+      "lifecycle_state": "retired"
+    },
+    {
+      "asset_ref": "SVC-001-00024",
+      "owner_group": "platform-08",
+      "change_ref": "CHG-00409",
+      "lifecycle_state": "active"
+    },
+    {
+      "asset_ref": "SVC-001-00025",
+      "owner_group": "platform-09",
+      "change_ref": "CHG-00426",
+      "lifecycle_state": "staged"
+    },
+    {
+      "asset_ref": "SVC-001-00026",
+      "owner_group": "platform-10",
+      "change_ref": "CHG-00443",
+      "lifecycle_state": "retired"
+    },
+    {
+      "asset_ref": "SVC-001-00027",
+      "owner_group": "platform-11",
+      "change_ref": "CHG-00460",
+      "lifecycle_state": "active"
+    },
+    {
+      "asset_ref": "SVC-001-00028",
+      "owner_group": "platform-12",
+      "change_ref": "CHG-00477",
+      "lifecycle_state": "staged"
+    }
+  ]
+}

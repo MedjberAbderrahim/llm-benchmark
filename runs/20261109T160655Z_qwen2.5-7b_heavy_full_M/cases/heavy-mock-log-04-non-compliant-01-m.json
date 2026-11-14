@@ -1,0 +1,211 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-log-04-non-compliant-01-m",
+    "control_id": "MOCK-LOG-04",
+    "evidence_files": [
+      "operations-handbook-1520.md",
+      "platform-change-register-7092.yaml",
+      "supplier-coordination-notes-4096.md",
+      "security-event-handling-standard.md",
+      "collector-settings.ini"
+    ],
+    "file_order": [
+      "operations-handbook-1520.md",
+      "platform-change-register-7092.yaml",
+      "supplier-coordination-notes-4096.md",
+      "security-event-handling-standard.md",
+      "collector-settings.ini"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 3517076229,
+    "file_roles": {
+      "security-event-handling-standard.md": "decisive",
+      "collector-settings.ini": "decisive",
+      "platform-change-register-7092.yaml": "filler_adjacent",
+      "operations-handbook-1520.md": "filler_generic",
+      "supplier-coordination-notes-4096.md": "filler_adjacent"
+    },
+    "expected_status": "non_compliant",
+    "split": "dev",
+    "language": "en",
+    "tags": [
+      "numeric_trap",
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "The effective evidence shows a material failure against one or more required criteria.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-log-04-non-compliant-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8122,
+      "per_file": {
+        "operations-handbook-1520.md": 1655,
+        "platform-change-register-7092.yaml": 1925,
+        "supplier-coordination-notes-4096.md": 1942,
+        "security-event-handling-standard.md": 2113,
+        "collector-settings.ini": 487
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "middle",
+      "fraction": 0.68193,
+      "placements": [
+        {
+          "file": "security-event-handling-standard.md",
+          "fraction": 0.68193,
+          "bucket": "middle"
+        },
+        {
+          "file": "collector-settings.ini",
+          "fraction": 0.94058,
+          "bucket": "end"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "security-event-handling-standard.md",
+        "text": "Fictional reference: mock-log-04-non-compliant-01.",
+        "required": true
+      },
+      {
+        "file": "collector-settings.ini",
+        "text": "retention_days = 90\nsearchable_days = 30\narchive_enabled = false",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-LOG-04",
+    "domain": "Logging",
+    "title": "Security event retention and availability",
+    "description": "Mock control, not authoritative. Security records should remain available for review over a long period.",
+    "evaluation_criteria": [
+      "Security records are retained for at least 365 days.",
+      "At least the most recent 90 days are immediately searchable or otherwise readily available.",
+      "The effective logging configuration supports the stated periods."
+    ],
+    "expected_evidence": [
+      "Logging and retention procedure",
+      "SIEM or archive retention settings"
+    ],
+    "retrieval_hints": [
+      "security event archive",
+      "searchable event index",
+      "archive des événements",
+      "index de recherche",
+      "retention_days",
+      "searchable_days",
+      "collector health",
+      "event pipeline"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-log-04-non-compliant-01-m",
+      "control_id": "MOCK-LOG-04",
+      "repetition": 1,
+      "expected_status": "non_compliant",
+      "status": "non_compliant",
+      "matches_expected": true,
+      "confidence": 0.9,
+      "justification": "The evidence indicates that the security records are retained for 90 days, but the most recent 30 days are not immediately searchable or otherwise readily available. The `collector-settings.ini` file specifies a `searchable_days` value of 30, but the actual implementation does not provide immediate searchability for the most recent 30 days, as evidenced by the lack of searchable event index or archive settings.",
+      "criteria_assessment": [
+        {
+          "criterion": "Security records are retained for at least 365 days.",
+          "met": "no",
+          "note": "The retention period is set to 90 days, which is less than the required 365 days."
+        },
+        {
+          "criterion": "At least the most recent 90 days are immediately searchable or otherwise readily available.",
+          "met": "no",
+          "note": "The `searchable_days` value is set to 30, which is less than the required 90 days. The evidence does not indicate that the most recent 30 days are immediately searchable or otherwise readily available."
+        },
+        {
+          "criterion": "The effective logging configuration supports the stated periods.",
+          "met": "no",
+          "note": "The `searchable_days` value is set to 30, which is less than the required 90 days. The evidence does not indicate that the most recent 30 days are immediately searchable or otherwise readily available."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "collector-settings.ini",
+          "text": "searchable_days = 30",
+          "valid": true
+        },
+        {
+          "file": "security-event-handling-standard.md",
+          "text": "Les journaux de sécurité sont conservés pendant 90 jours au total. Les 30 jours les plus récents sont consultables rapidement.",
+          "valid": true
+        }
+      ],
+      "recommendation": "Increase the retention period to at least 365 days and ensure that the most recent 90 days are immediately searchable or otherwise readily available. Review and update the logging configuration to support these requirements.",
+      "raw_output_initial": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"The evidence indicates that the security records are retained for 90 days, but the most recent 30 days are not immediately searchable or otherwise readily available. The `collector-settings.ini` file specifies a `searchable_days` value of 30, but the actual implementation does not provide immediate searchability for the most recent 30 days, as evidenced by the lack of searchable event index or archive settings.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Security records are retained for at least 365 days.\",\n      \"met\": \"no\",\n      \"note\": \"The retention period is set to 90 days, which is less than the required 365 days.\"\n    },\n    {\n      \"criterion\": \"At least the most recent 90 days are immediately searchable or otherwise readily available.\",\n      \"met\": \"no\",\n      \"note\": \"The `searchable_days` value is set to 30, which is less than the required 90 days. The evidence does not indicate that the most recent 30 days are immediately searchable or otherwise readily available.\"\n    },\n    {\n      \"criterion\": \"The effective logging configuration supports the stated periods.\",\n      \"met\": \"no\",\n      \"note\": \"The `searchable_days` value is set to 30, which is less than the required 90 days. The evidence does not indicate that the most recent 30 days are immediately searchable or otherwise readily available.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"collector-settings.ini\",\n      \"text\": \"searchable_days = 30\"\n    },\n    {\n      \"file\": \"security-event-handling-standard.md\",\n      \"text\": \"Les journaux de sécurité sont conservés pendant 90 jours au total. Les 30 jours les plus récents sont consultables rapidement.\"\n    }\n  ],\n  \"recommendation\": \"Increase the retention period to at least 365 days and ensure that the most recent 90 days are immediately searchable or otherwise readily available. Review and update the logging configuration to support these requirements.\",\n  \"confidence\": 0.9\n}",
+      "raw_output_final": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"The evidence indicates that the security records are retained for 90 days, but the most recent 30 days are not immediately searchable or otherwise readily available. The `collector-settings.ini` file specifies a `searchable_days` value of 30, but the actual implementation does not provide immediate searchability for the most recent 30 days, as evidenced by the lack of searchable event index or archive settings.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Security records are retained for at least 365 days.\",\n      \"met\": \"no\",\n      \"note\": \"The retention period is set to 90 days, which is less than the required 365 days.\"\n    },\n    {\n      \"criterion\": \"At least the most recent 90 days are immediately searchable or otherwise readily available.\",\n      \"met\": \"no\",\n      \"note\": \"The `searchable_days` value is set to 30, which is less than the required 90 days. The evidence does not indicate that the most recent 30 days are immediately searchable or otherwise readily available.\"\n    },\n    {\n      \"criterion\": \"The effective logging configuration supports the stated periods.\",\n      \"met\": \"no\",\n      \"note\": \"The `searchable_days` value is set to 30, which is less than the required 90 days. The evidence does not indicate that the most recent 30 days are immediately searchable or otherwise readily available.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"collector-settings.ini\",\n      \"text\": \"searchable_days = 30\"\n    },\n    {\n      \"file\": \"security-event-handling-standard.md\",\n      \"text\": \"Les journaux de sécurité sont conservés pendant 90 jours au total. Les 30 jours les plus récents sont consultables rapidement.\"\n    }\n  ],\n  \"recommendation\": \"Increase the retention period to at least 365 days and ensure that the most recent 90 days are immediately searchable or otherwise readily available. Review and update the logging configuration to support these requirements.\",\n  \"confidence\": 0.9\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 2,
+        "total": 2,
+        "rate": 1.0
+      },
+      "wall_clock_total_seconds": 684.0922913670001,
+      "wall_clock_elapsed_seconds": 684.0923620399954,
+      "model_reported_total_seconds": 684.09072059,
+      "model_load_seconds": 0.002946243,
+      "prompt_tokens": 10468,
+      "output_tokens": 472,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 555.621091,
+      "prompt_processing_tokens_per_second": 18.84017754106458,
+      "generation_seconds": 127.840817,
+      "generation_tokens_per_second": 3.6920915485075474,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 684090720590,
+          "load_duration": 2946243,
+          "prompt_eval_count": 10468,
+          "prompt_eval_duration": 555621091000,
+          "eval_count": 472,
+          "eval_duration": 127840817000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 9561,
+      "prompt_tokens_reported_by_backend": 10468,
+      "prefix_cached": false,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 4.306791696355202e-06,
+        "prompt_processing": 0.8122019470351286,
+        "generation": 0.18687656419068793
+      },
+      "likely_truncated": true,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 11264,
+      "prompt_version": "eval_v1",
+      "language": "en",
+      "tags": [
+        "numeric_trap",
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-log-04-non-compliant-01",
+      "needle_position": "middle",
+      "context_mode": "full",
+      "label_confidence": "firm",
+      "retrieval": {},
+      "resource_peak_ram_used_bytes": 19871649792,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

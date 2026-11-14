@@ -1,0 +1,277 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-pwd-01-partial-01-m",
+    "control_id": "MOCK-PWD-01",
+    "evidence_files": [
+      "operations-handbook-7480.md",
+      "identity-access-standard-v4.md",
+      "identity-policy-export.ini",
+      "service-continuity-plan-4714.md",
+      "platform-change-register-5855.yaml"
+    ],
+    "file_order": [
+      "operations-handbook-7480.md",
+      "identity-access-standard-v4.md",
+      "identity-policy-export.ini",
+      "service-continuity-plan-4714.md",
+      "platform-change-register-5855.yaml"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 4191102118,
+    "file_roles": {
+      "identity-access-standard-v4.md": "decisive",
+      "identity-policy-export.ini": "decisive",
+      "service-continuity-plan-4714.md": "filler_adjacent",
+      "operations-handbook-7480.md": "filler_generic",
+      "platform-change-register-5855.yaml": "filler_adjacent"
+    },
+    "expected_status": "partial",
+    "split": "dev",
+    "language": "fr",
+    "tags": [
+      "contradiction",
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "Some safeguards are present, but at least one required scope, threshold, or follow-up condition is missing.",
+    "label_confidence": "ambiguous",
+    "tier": "M",
+    "paired_with": "mock-pwd-01-partial-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8080,
+      "per_file": {
+        "operations-handbook-7480.md": 1638,
+        "identity-access-standard-v4.md": 2148,
+        "identity-policy-export.ini": 490,
+        "service-continuity-plan-4714.md": 1925,
+        "platform-change-register-5855.yaml": 1879
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "middle",
+      "fraction": 0.21171,
+      "placements": [
+        {
+          "file": "identity-access-standard-v4.md",
+          "fraction": 0.21171,
+          "bucket": "middle"
+        },
+        {
+          "file": "identity-policy-export.ini",
+          "fraction": 0.46916,
+          "bucket": "middle"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "identity-access-standard-v4.md",
+        "text": "La norme interne demande 12 caractères.",
+        "required": true
+      },
+      {
+        "file": "identity-policy-export.ini",
+        "text": "minimum_length = 8\ncomplexity_required = true\nbreached_password_block = false",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-PWD-01",
+    "domain": "Authentication",
+    "title": "Password strength for workforce accounts",
+    "description": "Mock control, not authoritative. Workforce passwords should resist guessing and reuse.",
+    "evaluation_criteria": [
+      "The enforced minimum password length is at least 14 characters.",
+      "A mix of character types or an equivalent breached-password check is enforced.",
+      "The effective configuration agrees with the written policy."
+    ],
+    "expected_evidence": [
+      "Approved password standard",
+      "Identity-provider or operating-system password policy export"
+    ],
+    "retrieval_hints": [
+      "password policy",
+      "minimum length",
+      "longueur minimale",
+      "character classes",
+      "complexity_required",
+      "minimum_length",
+      "min_length",
+      "breached_password_block",
+      "service account rotation",
+      "SSH key handling"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-pwd-01-partial-01-m",
+      "control_id": "MOCK-PWD-01",
+      "repetition": 1,
+      "expected_status": "partial",
+      "status": "non_compliant",
+      "matches_expected": false,
+      "confidence": 0.9,
+      "justification": "Les preuves fournies indiquent que la longueur minimale de mot de passe est de 8 caractères, ce qui ne satisfait pas le critère d'un minimum de 14 caractères. De plus, il n'y a aucune mention d'un contrôle de complexité équivalent ou d'un blocage de mots de passe compromis.",
+      "criteria_assessment": [
+        {
+          "criterion": "The enforced minimum password length is at least 14 characters.",
+          "met": "no",
+          "note": "The effective policy shows a minimum length of 8 characters, which is below the required 14 characters."
+        },
+        {
+          "criterion": "A mix of character types or an equivalent breached-password check is enforced.",
+          "met": "unclear",
+          "note": "There is no evidence of a complexity check or breached password block in the provided policy."
+        },
+        {
+          "criterion": "The effective configuration agrees with the written policy.",
+          "met": "no",
+          "note": "The effective policy shows a minimum length of 8 characters, which does not align with the written policy requiring 12 characters."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "identity-access-standard-v4.md",
+          "text": "La norme interne demande 12 caractères. Les administrateurs appliquent un contrôle de complexité.",
+          "valid": true
+        },
+        {
+          "file": "identity-policy-export.ini",
+          "text": "[effective_policy] minimum_length = 8",
+          "valid": true
+        }
+      ],
+      "recommendation": "Reviser the password policy to enforce a minimum length of at least 14 characters and implement a complexity check or breached password block.",
+      "raw_output_initial": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"Les preuves fournies indiquent que la longueur minimale de mot de passe est de 8 caractères, ce qui ne satisfait pas le critère d'un minimum de 14 caractères. De plus, il n'y a aucune mention d'un contrôle de complexité équivalent ou d'un blocage de mots de passe compromis.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"The enforced minimum password length is at least 14 characters.\",\n      \"met\": \"no\",\n      \"note\": \"The effective policy shows a minimum length of 8 characters, which is below the required 14 characters.\"\n    },\n    {\n      \"criterion\": \"A mix of character types or an equivalent breached-password check is enforced.\",\n      \"met\": \"unclear\",\n      \"note\": \"There is no evidence of a complexity check or breached password block in the provided policy.\"\n    },\n    {\n      \"criterion\": \"The effective configuration agrees with the written policy.\",\n      \"met\": \"no\",\n      \"note\": \"The effective policy shows a minimum length of 8 characters, which does not align with the written policy requiring 12 characters.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"identity-access-standard-v4.md\",\n      \"text\": \"La norme interne demande 12 caractères. Les administrateurs appliquent un contrôle de complexité.\"\n    },\n    {\n      \"file\": \"identity-policy-export.ini\",\n      \"text\": \"[effective_policy] minimum_length = 8\"\n    }\n  ],\n  \"recommendation\": \"Reviser the password policy to enforce a minimum length of at least 14 characters and implement a complexity check or breached password block.\",\n  \"confidence\": 0.9\n}",
+      "raw_output_final": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"Les preuves fournies indiquent que la longueur minimale de mot de passe est de 8 caractères, ce qui ne satisfait pas le critère d'un minimum de 14 caractères. De plus, il n'y a aucune mention d'un contrôle de complexité équivalent ou d'un blocage de mots de passe compromis.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"The enforced minimum password length is at least 14 characters.\",\n      \"met\": \"no\",\n      \"note\": \"The effective policy shows a minimum length of 8 characters, which is below the required 14 characters.\"\n    },\n    {\n      \"criterion\": \"A mix of character types or an equivalent breached-password check is enforced.\",\n      \"met\": \"unclear\",\n      \"note\": \"There is no evidence of a complexity check or breached password block in the provided policy.\"\n    },\n    {\n      \"criterion\": \"The effective configuration agrees with the written policy.\",\n      \"met\": \"no\",\n      \"note\": \"The effective policy shows a minimum length of 8 characters, which does not align with the written policy requiring 12 characters.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"identity-access-standard-v4.md\",\n      \"text\": \"La norme interne demande 12 caractères. Les administrateurs appliquent un contrôle de complexité.\"\n    },\n    {\n      \"file\": \"identity-policy-export.ini\",\n      \"text\": \"[effective_policy] minimum_length = 8\"\n    }\n  ],\n  \"recommendation\": \"Reviser the password policy to enforce a minimum length of at least 14 characters and implement a complexity check or breached password block.\",\n  \"confidence\": 0.9\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 2,
+        "total": 2,
+        "rate": 1.0
+      },
+      "wall_clock_total_seconds": 222.16090822200204,
+      "wall_clock_elapsed_seconds": 222.16100261999964,
+      "model_reported_total_seconds": 222.159439295,
+      "model_load_seconds": 0.001907145,
+      "prompt_tokens": 3684,
+      "output_tokens": 394,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 156.745813,
+      "prompt_processing_tokens_per_second": 23.503020141278032,
+      "generation_seconds": 65.373862,
+      "generation_tokens_per_second": 6.0268735538371585,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 222159439295,
+          "load_duration": 1907145,
+          "prompt_eval_count": 3684,
+          "prompt_eval_duration": 156745813000,
+          "eval_count": 394,
+          "eval_duration": 65373862000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 3221,
+      "prompt_tokens_reported_by_backend": 3684,
+      "prefix_cached": false,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 8.58452108097352e-06,
+        "prompt_processing": 0.7055508291466214,
+        "generation": 0.29426357014472093
+      },
+      "likely_truncated": false,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 7168,
+      "prompt_version": "eval_v2_retrieval",
+      "language": "fr",
+      "tags": [
+        "contradiction",
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-pwd-01-partial-01",
+      "needle_position": "middle",
+      "context_mode": "retrieval",
+      "label_confidence": "ambiguous",
+      "retrieval": {
+        "retrieved_chunks": [
+          {
+            "chunk_id": "d7fb2461cf83a89fb47d",
+            "file": "identity-access-standard-v4.md",
+            "score": 0.03278688524590164,
+            "rank": 1,
+            "start_line": 1,
+            "end_line": 31
+          },
+          {
+            "chunk_id": "2680b0d30d296ab0f86f",
+            "file": "operations-handbook-7480.md",
+            "score": 0.02946236559139785,
+            "rank": 2,
+            "start_line": 69,
+            "end_line": 96
+          },
+          {
+            "chunk_id": "36547abd4c8fefbd179b",
+            "file": "service-continuity-plan-4714.md",
+            "score": 0.0293236301369863,
+            "rank": 3,
+            "start_line": 81,
+            "end_line": 116
+          },
+          {
+            "chunk_id": "ca295eb7a50a411d9389",
+            "file": "identity-policy-export.ini",
+            "score": 0.028177225029148854,
+            "rank": 4,
+            "start_line": 1,
+            "end_line": 85
+          },
+          {
+            "chunk_id": "9ab85278a369eefc20d2",
+            "file": "identity-access-standard-v4.md",
+            "score": 0.030798389007344232,
+            "rank": 5,
+            "start_line": 62,
+            "end_line": 89
+          }
+        ],
+        "context_chunk_ids": [
+          "d7fb2461cf83a89fb47d",
+          "9ab85278a369eefc20d2",
+          "ca295eb7a50a411d9389",
+          "2680b0d30d296ab0f86f",
+          "36547abd4c8fefbd179b"
+        ],
+        "chunks_requested": 5,
+        "chunks_returned": 5,
+        "shortfall_reason": null,
+        "min_files": 4,
+        "tokens_sent": 1905,
+        "retrieval_seconds": 0.004467336002562661,
+        "embedding_seconds": 0.30006241500086617,
+        "gold_passage_count": 2,
+        "gold_passages_retrieved": 2,
+        "required_gold_passage_count": 2,
+        "required_gold_passages_retrieved": 2,
+        "all_required_gold_in_context": true,
+        "all_gold_in_context": true,
+        "failure_attribution": "llm_error"
+      },
+      "resource_peak_ram_used_bytes": 16901324800,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

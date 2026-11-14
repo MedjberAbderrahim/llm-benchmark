@@ -1,0 +1,210 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-patch-05-partial-01-m",
+    "control_id": "MOCK-PATCH-05",
+    "evidence_files": [
+      "platform-change-register-9177.yaml",
+      "change-management-standard-v4.md",
+      "deployment-service-export.yaml",
+      "operations-handbook-8334.md",
+      "supplier-coordination-notes-8332.md"
+    ],
+    "file_order": [
+      "platform-change-register-9177.yaml",
+      "change-management-standard-v4.md",
+      "deployment-service-export.yaml",
+      "operations-handbook-8334.md",
+      "supplier-coordination-notes-8332.md"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 13252599,
+    "file_roles": {
+      "change-management-standard-v4.md": "decisive",
+      "deployment-service-export.yaml": "decisive",
+      "platform-change-register-9177.yaml": "filler_generic",
+      "operations-handbook-8334.md": "filler_adjacent",
+      "supplier-coordination-notes-8332.md": "filler_adjacent"
+    },
+    "expected_status": "partial",
+    "split": "dev",
+    "language": "en",
+    "tags": [
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "Some safeguards are present, but at least one required scope, threshold, or follow-up condition is missing.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-patch-05-partial-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8078,
+      "per_file": {
+        "platform-change-register-9177.yaml": 1567,
+        "change-management-standard-v4.md": 2102,
+        "deployment-service-export.yaml": 699,
+        "operations-handbook-8334.md": 1852,
+        "supplier-coordination-notes-8332.md": 1858
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "start",
+      "fraction": 0.19575,
+      "placements": [
+        {
+          "file": "change-management-standard-v4.md",
+          "fraction": 0.19575,
+          "bucket": "start"
+        },
+        {
+          "file": "deployment-service-export.yaml",
+          "fraction": 0.45498,
+          "bucket": "middle"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "change-management-standard-v4.md",
+        "text": "Fictional reference: mock-patch-05-partial-01.",
+        "required": true
+      },
+      {
+        "file": "deployment-service-export.yaml",
+        "text": "critical_deadline_days: 45",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-PATCH-05",
+    "domain": "Vulnerability Management",
+    "title": "Timely critical security updates",
+    "description": "Mock control, not authoritative. Critical fixes should be prioritized and applied on a defined short schedule.",
+    "evaluation_criteria": [
+      "Critical security updates are deployed within 30 calendar days of release or identification.",
+      "The deadline applies to in-scope production systems.",
+      "Records show due dates and completion or tracked exceptions."
+    ],
+    "expected_evidence": [
+      "Patch-management procedure",
+      "Recent ticket or vulnerability remediation export"
+    ],
+    "retrieval_hints": [
+      "critical update deployment",
+      "change ticket due date",
+      "déploiement des correctifs",
+      "échéance du ticket",
+      "critical_deadline_days",
+      "identified_at",
+      "due_at",
+      "deployed_at",
+      "production scope"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-patch-05-partial-01-m",
+      "control_id": "MOCK-PATCH-05",
+      "repetition": 1,
+      "expected_status": "partial",
+      "status": "partial",
+      "matches_expected": true,
+      "confidence": 0.8,
+      "justification": "The evidence indicates that critical security updates are deployed within 45 days, which is longer than the 30-day requirement. However, the evidence does not show that all critical updates are deployed within 30 days. The policy states that exceptions are discussed at the monthly meeting, but there is no evidence of such discussions or exceptions being tracked. The deployment service export shows that some assets are in a staged or retired state, which may indicate that not all critical updates are being applied in a timely manner.",
+      "criteria_assessment": [
+        {
+          "criterion": "Critical security updates are deployed within 30 calendar days of release or identification.",
+          "met": "no",
+          "note": "The critical_deadline_days in the deployment-service-export.yaml is set to 45 days, which is longer than the required 30 days."
+        },
+        {
+          "criterion": "The deadline applies to in-scope production systems.",
+          "met": "yes",
+          "note": "The scope in the deployment-service-export.yaml is set to production_servers, indicating that the deadline applies to in-scope production systems."
+        },
+        {
+          "criterion": "Records show due dates and completion or tracked exceptions.",
+          "met": "no",
+          "note": "There is no evidence of due dates, completion, or tracked exceptions in the provided evidence."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "deployment-service-export.yaml",
+          "text": "critical_deadline_days: 45",
+          "valid": true
+        },
+        {
+          "file": "change-management-standard-v4.md",
+          "text": "Critical updates should be installed within 45 days when operations allow. Exceptions are discussed at the monthly meeting.",
+          "valid": true
+        }
+      ],
+      "recommendation": "Implement a more stringent timeline for critical security updates, ideally within 30 days. Ensure that all critical updates are tracked and documented, and that exceptions are formally discussed and recorded at the monthly meeting.",
+      "raw_output_initial": "{\n  \"status\": \"partial\",\n  \"justification\": \"The evidence indicates that critical security updates are deployed within 45 days, which is longer than the 30-day requirement. However, the evidence does not show that all critical updates are deployed within 30 days. The policy states that exceptions are discussed at the monthly meeting, but there is no evidence of such discussions or exceptions being tracked. The deployment service export shows that some assets are in a staged or retired state, which may indicate that not all critical updates are being applied in a timely manner.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Critical security updates are deployed within 30 calendar days of release or identification.\",\n      \"met\": \"no\",\n      \"note\": \"The critical_deadline_days in the deployment-service-export.yaml is set to 45 days, which is longer than the required 30 days.\"\n    },\n    {\n      \"criterion\": \"The deadline applies to in-scope production systems.\",\n      \"met\": \"yes\",\n      \"note\": \"The scope in the deployment-service-export.yaml is set to production_servers, indicating that the deadline applies to in-scope production systems.\"\n    },\n    {\n      \"criterion\": \"Records show due dates and completion or tracked exceptions.\",\n      \"met\": \"no\",\n      \"note\": \"There is no evidence of due dates, completion, or tracked exceptions in the provided evidence.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"deployment-service-export.yaml\",\n      \"text\": \"critical_deadline_days: 45\"\n    },\n    {\n      \"file\": \"change-management-standard-v4.md\",\n      \"text\": \"Critical updates should be installed within 45 days when operations allow. Exceptions are discussed at the monthly meeting.\"\n    }\n  ],\n  \"recommendation\": \"Implement a more stringent timeline for critical security updates, ideally within 30 days. Ensure that all critical updates are tracked and documented, and that exceptions are formally discussed and recorded at the monthly meeting.\",\n  \"confidence\": 0.8\n}",
+      "raw_output_final": "{\n  \"status\": \"partial\",\n  \"justification\": \"The evidence indicates that critical security updates are deployed within 45 days, which is longer than the 30-day requirement. However, the evidence does not show that all critical updates are deployed within 30 days. The policy states that exceptions are discussed at the monthly meeting, but there is no evidence of such discussions or exceptions being tracked. The deployment service export shows that some assets are in a staged or retired state, which may indicate that not all critical updates are being applied in a timely manner.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Critical security updates are deployed within 30 calendar days of release or identification.\",\n      \"met\": \"no\",\n      \"note\": \"The critical_deadline_days in the deployment-service-export.yaml is set to 45 days, which is longer than the required 30 days.\"\n    },\n    {\n      \"criterion\": \"The deadline applies to in-scope production systems.\",\n      \"met\": \"yes\",\n      \"note\": \"The scope in the deployment-service-export.yaml is set to production_servers, indicating that the deadline applies to in-scope production systems.\"\n    },\n    {\n      \"criterion\": \"Records show due dates and completion or tracked exceptions.\",\n      \"met\": \"no\",\n      \"note\": \"There is no evidence of due dates, completion, or tracked exceptions in the provided evidence.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"deployment-service-export.yaml\",\n      \"text\": \"critical_deadline_days: 45\"\n    },\n    {\n      \"file\": \"change-management-standard-v4.md\",\n      \"text\": \"Critical updates should be installed within 45 days when operations allow. Exceptions are discussed at the monthly meeting.\"\n    }\n  ],\n  \"recommendation\": \"Implement a more stringent timeline for critical security updates, ideally within 30 days. Ensure that all critical updates are tracked and documented, and that exceptions are formally discussed and recorded at the monthly meeting.\",\n  \"confidence\": 0.8\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 2,
+        "total": 2,
+        "rate": 1.0
+      },
+      "wall_clock_total_seconds": 775.3385342199999,
+      "wall_clock_elapsed_seconds": 775.3386082380002,
+      "model_reported_total_seconds": 775.336943188,
+      "model_load_seconds": 0.003016168,
+      "prompt_tokens": 10167,
+      "output_tokens": 436,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 656.002111,
+      "prompt_processing_tokens_per_second": 15.498425736011084,
+      "generation_seconds": 118.659537,
+      "generation_tokens_per_second": 3.6743780653720233,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 775336943188,
+          "load_duration": 3016168,
+          "prompt_eval_count": 10167,
+          "prompt_eval_duration": 656002111000,
+          "eval_count": 436,
+          "eval_duration": 118659537000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 9537,
+      "prompt_tokens_reported_by_backend": 10167,
+      "prefix_cached": false,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 3.89013039708429e-06,
+        "prompt_processing": 0.8460847514304782,
+        "generation": 0.15304222834658018
+      },
+      "likely_truncated": true,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 11264,
+      "prompt_version": "eval_v1",
+      "language": "en",
+      "tags": [
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-patch-05-partial-01",
+      "needle_position": "start",
+      "context_mode": "full",
+      "label_confidence": "firm",
+      "retrieval": {},
+      "resource_peak_ram_used_bytes": 19366002688,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

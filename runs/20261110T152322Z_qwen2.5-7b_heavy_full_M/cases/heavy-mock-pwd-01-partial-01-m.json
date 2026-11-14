@@ -1,0 +1,218 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-pwd-01-partial-01-m",
+    "control_id": "MOCK-PWD-01",
+    "evidence_files": [
+      "operations-handbook-7480.md",
+      "identity-access-standard-v4.md",
+      "identity-policy-export.ini",
+      "service-continuity-plan-4714.md",
+      "platform-change-register-5855.yaml"
+    ],
+    "file_order": [
+      "operations-handbook-7480.md",
+      "identity-access-standard-v4.md",
+      "identity-policy-export.ini",
+      "service-continuity-plan-4714.md",
+      "platform-change-register-5855.yaml"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 4191102118,
+    "file_roles": {
+      "identity-access-standard-v4.md": "decisive",
+      "identity-policy-export.ini": "decisive",
+      "service-continuity-plan-4714.md": "filler_adjacent",
+      "operations-handbook-7480.md": "filler_generic",
+      "platform-change-register-5855.yaml": "filler_adjacent"
+    },
+    "expected_status": "partial",
+    "split": "dev",
+    "language": "fr",
+    "tags": [
+      "contradiction",
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "Some safeguards are present, but at least one required scope, threshold, or follow-up condition is missing.",
+    "label_confidence": "ambiguous",
+    "tier": "M",
+    "paired_with": "mock-pwd-01-partial-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8080,
+      "per_file": {
+        "operations-handbook-7480.md": 1638,
+        "identity-access-standard-v4.md": 2148,
+        "identity-policy-export.ini": 490,
+        "service-continuity-plan-4714.md": 1925,
+        "platform-change-register-5855.yaml": 1879
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "middle",
+      "fraction": 0.21171,
+      "placements": [
+        {
+          "file": "identity-access-standard-v4.md",
+          "fraction": 0.21171,
+          "bucket": "middle"
+        },
+        {
+          "file": "identity-policy-export.ini",
+          "fraction": 0.46916,
+          "bucket": "middle"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "identity-access-standard-v4.md",
+        "text": "La norme interne demande 12 caractères.",
+        "required": true
+      },
+      {
+        "file": "identity-policy-export.ini",
+        "text": "minimum_length = 8\ncomplexity_required = true\nbreached_password_block = false",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-PWD-01",
+    "domain": "Authentication",
+    "title": "Password strength for workforce accounts",
+    "description": "Mock control, not authoritative. Workforce passwords should resist guessing and reuse.",
+    "evaluation_criteria": [
+      "The enforced minimum password length is at least 14 characters.",
+      "A mix of character types or an equivalent breached-password check is enforced.",
+      "The effective configuration agrees with the written policy."
+    ],
+    "expected_evidence": [
+      "Approved password standard",
+      "Identity-provider or operating-system password policy export"
+    ],
+    "retrieval_hints": [
+      "password policy",
+      "minimum length",
+      "longueur minimale",
+      "character classes",
+      "complexity_required",
+      "minimum_length",
+      "min_length",
+      "breached_password_block",
+      "service account rotation",
+      "SSH key handling"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-pwd-01-partial-01-m",
+      "control_id": "MOCK-PWD-01",
+      "repetition": 1,
+      "expected_status": "partial",
+      "status": "non_compliant",
+      "matches_expected": false,
+      "confidence": 0.85,
+      "justification": "The evaluation found that the criteria for the 'Access Management' section were not fully met. Specifically, the document does not provide clear evidence that all access requests are properly authorized, documented, and reviewed. Additionally, the document does not specify the process for revoking access when a service is decommissioned, which is a critical aspect of access management.",
+      "criteria_assessment": [
+        {
+          "criterion": "All access requests are properly authorized, documented, and reviewed.",
+          "met": "no",
+          "note": "The document does not provide clear evidence of this process."
+        },
+        {
+          "criterion": "Access is revoked when a service is decommissioned.",
+          "met": "no",
+          "note": "The document does not specify the process for revoking access."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "platform-access-management-5854.yaml",
+          "text": "La procédure d'accès distant consigne la passerelle autorisée, le contact du support et la trace de revue de chaque fenêtre de maintenance.",
+          "valid": false
+        },
+        {
+          "file": "platform-access-management-5854.yaml",
+          "text": "Les identités de service sont attribuées à une équipe propriétaire, inscrites à l'inventaire et retirées par le processus de changement lorsqu'une charge est arrêtée.",
+          "valid": false
+        },
+        {
+          "file": "platform-access-management-5854.yaml",
+          "text": "Les demandes de réinitialisation au support exigent une vérification d'identité consignée, un responsable de ticket et une confirmation de reprise d'accès.",
+          "valid": false
+        },
+        {
+          "file": "platform-access-management-5854.yaml",
+          "text": "Les clés privées SSH restent auprès de leurs dépositaires désignés; les transferts sont documentés sans copier de secret dans le registre de service.",
+          "valid": false
+        }
+      ],
+      "recommendation": "The organization should establish and document a clear process for authorizing, documenting, and reviewing access requests. Additionally, a process for revoking access when a service is decommissioned should be defined and implemented.",
+      "raw_output_initial": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"The evaluation found that the criteria for the 'Access Management' section were not fully met. Specifically, the document does not provide clear evidence that all access requests are properly authorized, documented, and reviewed. Additionally, the document does not specify the process for revoking access when a service is decommissioned, which is a critical aspect of access management.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"All access requests are properly authorized, documented, and reviewed.\",\n      \"met\": \"no\",\n      \"note\": \"The document does not provide clear evidence of this process.\"\n    },\n    {\n      \"criterion\": \"Access is revoked when a service is decommissioned.\",\n      \"met\": \"no\",\n      \"note\": \"The document does not specify the process for revoking access.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"platform-access-management-5854.yaml\",\n      \"text\": \"La procédure d'accès distant consigne la passerelle autorisée, le contact du support et la trace de revue de chaque fenêtre de maintenance.\"\n    },\n    {\n      \"file\": \"platform-access-management-5854.yaml\",\n      \"text\": \"Les identités de service sont attribuées à une équipe propriétaire, inscrites à l'inventaire et retirées par le processus de changement lorsqu'une charge est arrêtée.\"\n    },\n    {\n      \"file\": \"platform-access-management-5854.yaml\",\n      \"text\": \"Les demandes de réinitialisation au support exigent une vérification d'identité consignée, un responsable de ticket et une confirmation de reprise d'accès.\"\n    },\n    {\n      \"file\": \"platform-access-management-5854.yaml\",\n      \"text\": \"Les clés privées SSH restent auprès de leurs dépositaires désignés; les transferts sont documentés sans copier de secret dans le registre de service.\"\n    }\n  ],\n  \"recommendation\": \"The organization should establish and document a clear process for authorizing, documenting, and reviewing access requests. Additionally, a process for revoking access when a service is decommissioned should be defined and implemented.\",\n  \"confidence\": 0.85\n}",
+      "raw_output_final": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"The evaluation found that the criteria for the 'Access Management' section were not fully met. Specifically, the document does not provide clear evidence that all access requests are properly authorized, documented, and reviewed. Additionally, the document does not specify the process for revoking access when a service is decommissioned, which is a critical aspect of access management.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"All access requests are properly authorized, documented, and reviewed.\",\n      \"met\": \"no\",\n      \"note\": \"The document does not provide clear evidence of this process.\"\n    },\n    {\n      \"criterion\": \"Access is revoked when a service is decommissioned.\",\n      \"met\": \"no\",\n      \"note\": \"The document does not specify the process for revoking access.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"platform-access-management-5854.yaml\",\n      \"text\": \"La procédure d'accès distant consigne la passerelle autorisée, le contact du support et la trace de revue de chaque fenêtre de maintenance.\"\n    },\n    {\n      \"file\": \"platform-access-management-5854.yaml\",\n      \"text\": \"Les identités de service sont attribuées à une équipe propriétaire, inscrites à l'inventaire et retirées par le processus de changement lorsqu'une charge est arrêtée.\"\n    },\n    {\n      \"file\": \"platform-access-management-5854.yaml\",\n      \"text\": \"Les demandes de réinitialisation au support exigent une vérification d'identité consignée, un responsable de ticket et une confirmation de reprise d'accès.\"\n    },\n    {\n      \"file\": \"platform-access-management-5854.yaml\",\n      \"text\": \"Les clés privées SSH restent auprès de leurs dépositaires désignés; les transferts sont documentés sans copier de secret dans le registre de service.\"\n    }\n  ],\n  \"recommendation\": \"The organization should establish and document a clear process for authorizing, documenting, and reviewing access requests. Additionally, a process for revoking access when a service is decommissioned should be defined and implemented.\",\n  \"confidence\": 0.85\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 0,
+        "total": 4,
+        "rate": 0.0
+      },
+      "wall_clock_total_seconds": 335.7034251360001,
+      "wall_clock_elapsed_seconds": 335.70351929699973,
+      "model_reported_total_seconds": 335.701067342,
+      "model_load_seconds": 0.00401373,
+      "prompt_tokens": 9505,
+      "output_tokens": 494,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": null,
+      "prompt_processing_tokens_per_second": null,
+      "generation_seconds": 89.233001,
+      "generation_tokens_per_second": 5.536068432798758,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 335701067342,
+          "load_duration": 4013730,
+          "prompt_eval_count": 5634,
+          "prompt_eval_duration": 246312363000,
+          "eval_count": 494,
+          "eval_duration": 89233001000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 9505,
+      "prompt_tokens_reported_by_backend": 5634,
+      "prefix_cached": true,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 1.195617827960486e-05,
+        "prompt_processing": 0.7337201367552744,
+        "generation": 0.26580902760777597
+      },
+      "likely_truncated": false,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 11264,
+      "prompt_version": "eval_v1",
+      "language": "fr",
+      "tags": [
+        "contradiction",
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-pwd-01-partial-01",
+      "needle_position": "middle",
+      "context_mode": "full",
+      "label_confidence": "ambiguous",
+      "retrieval": {},
+      "resource_peak_ram_used_bytes": 11683041280,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-log-04-non-compliant-01-m",
+    "control_id": "MOCK-LOG-04",
+    "evidence_files": [
+      "operations-handbook-1520.md",
+      "platform-change-register-7092.yaml",
+      "supplier-coordination-notes-4096.md",
+      "security-event-handling-standard.md",
+      "collector-settings.ini"
+    ],
+    "file_order": [
+      "operations-handbook-1520.md",
+      "platform-change-register-7092.yaml",
+      "supplier-coordination-notes-4096.md",
+      "security-event-handling-standard.md",
+      "collector-settings.ini"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 3517076229,
+    "file_roles": {
+      "security-event-handling-standard.md": "decisive",
+      "collector-settings.ini": "decisive",
+      "platform-change-register-7092.yaml": "filler_adjacent",
+      "operations-handbook-1520.md": "filler_generic",
+      "supplier-coordination-notes-4096.md": "filler_adjacent"
+    },
+    "expected_status": "non_compliant",
+    "split": "dev",
+    "language": "en",
+    "tags": [
+      "numeric_trap",
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "The effective evidence shows a material failure against one or more required criteria.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-log-04-non-compliant-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8122,
+      "per_file": {
+        "operations-handbook-1520.md": 1655,
+        "platform-change-register-7092.yaml": 1925,
+        "supplier-coordination-notes-4096.md": 1942,
+        "security-event-handling-standard.md": 2113,
+        "collector-settings.ini": 487
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "middle",
+      "fraction": 0.68193,
+      "placements": [
+        {
+          "file": "security-event-handling-standard.md",
+          "fraction": 0.68193,
+          "bucket": "middle"
+        },
+        {
+          "file": "collector-settings.ini",
+          "fraction": 0.94058,
+          "bucket": "end"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "security-event-handling-standard.md",
+        "text": "Fictional reference: mock-log-04-non-compliant-01.",
+        "required": true
+      },
+      {
+        "file": "collector-settings.ini",
+        "text": "retention_days = 90\nsearchable_days = 30\narchive_enabled = false",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-LOG-04",
+    "domain": "Logging",
+    "title": "Security event retention and availability",
+    "description": "Mock control, not authoritative. Security records should remain available for review over a long period.",
+    "evaluation_criteria": [
+      "Security records are retained for at least 365 days.",
+      "At least the most recent 90 days are immediately searchable or otherwise readily available.",
+      "The effective logging configuration supports the stated periods."
+    ],
+    "expected_evidence": [
+      "Logging and retention procedure",
+      "SIEM or archive retention settings"
+    ],
+    "retrieval_hints": [
+      "security event archive",
+      "searchable event index",
+      "archive des événements",
+      "index de recherche",
+      "retention_days",
+      "searchable_days",
+      "collector health",
+      "event pipeline"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-log-04-non-compliant-01-m",
+      "control_id": "MOCK-LOG-04",
+      "repetition": 1,
+      "expected_status": "non_compliant",
+      "status": "timeout",
+      "matches_expected": false,
+      "confidence": null,
+      "justification": null,
+      "criteria_assessment": [],
+      "quotes": [],
+      "recommendation": null,
+      "raw_output_initial": null,
+      "raw_output_final": null,
+      "initial_json_valid": false,
+      "initial_schema_valid": false,
+      "final_json_valid": false,
+      "final_schema_valid": false,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 0,
+        "total": 0,
+        "rate": null
+      },
+      "wall_clock_total_seconds": 900.0948844149998,
+      "wall_clock_elapsed_seconds": 900.0948844149998,
+      "model_reported_total_seconds": null,
+      "model_load_seconds": null,
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "prompt_token_count_method": "timeout",
+      "prompt_processing_seconds": null,
+      "prompt_processing_tokens_per_second": null,
+      "generation_seconds": null,
+      "generation_tokens_per_second": null,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [],
+      "prompt_tokens_estimated_before_call": null,
+      "prompt_tokens_reported_by_backend": null,
+      "prefix_cached": false,
+      "phase_latency_shares": {},
+      "likely_truncated": false,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": null,
+      "prompt_version": "eval_v1",
+      "language": "en",
+      "tags": [
+        "numeric_trap",
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-log-04-non-compliant-01",
+      "needle_position": "middle",
+      "context_mode": "full",
+      "label_confidence": "firm",
+      "retrieval": {},
+      "resource_peak_ram_used_bytes": 25831759872,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

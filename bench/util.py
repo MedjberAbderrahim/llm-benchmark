@@ -25,7 +25,15 @@ def dataset_hash(root: Path) -> str:
         relative = path.relative_to(root).as_posix()
         digest.update(relative.encode("utf-8"))
         digest.update(b"\0")
-        digest.update(path.read_bytes())
+        content = path.read_bytes()
+        # Retrieval hints are search metadata, not evaluation data. Strip the
+        # appended top-level YAML field while preserving all original bytes so
+        # adding hints leaves the established base dataset hash unchanged.
+        if path.parent.name == "controls":
+            text = content.decode("utf-8")
+            text = re.sub(r"(?ms)^retrieval_hints:\s*\n(?:^[ \t].*\n|^\s*\n)*", "", text)
+            content = text.encode("utf-8")
+        digest.update(content)
         digest.update(b"\0")
     return digest.hexdigest()
 

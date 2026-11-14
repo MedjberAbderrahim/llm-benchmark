@@ -10,9 +10,9 @@ from bench.chunking import chunk_text
 from bench.data_generation import build_dataset
 from bench.embeddings import HashEmbeddingBackend
 from bench.heavy_data import (DENYLISTS, generate_heavy_dataset, heavy_dataset_hash,
-                              validate_filler_text, validate_heavy_dataset)
-from bench.retrieval import (IndexStore, bm25_scores, build_index, build_query, data_hash, gold_hit,
-                             reciprocal_rank_fusion, tokenize)
+                              BANNED_ROLE_WORDS, validate_filler_text, validate_heavy_dataset)
+from bench.retrieval import (IndexStore, _diversify, bm25_scores, build_index, build_query,
+                             build_queries, data_hash, gold_hit, reciprocal_rank_fusion, tokenize)
 from bench.retrieval_eval import evaluate_retrieval
 from bench.runner import (_check_quotes, _completed_case_ids, _detect_prefix_cache,
                           _failure_attribution, _make_record, _project_seconds, compare_runs,
@@ -150,22 +150,91 @@ def test_heavy_labels_validate_deterministically_without_changing_base_hash(tmp_
     assert build_dataset(tmp_path) == 30
     from bench.util import dataset_hash
     base_before = dataset_hash(tmp_path)
-    assert generate_heavy_dataset(tmp_path, seed=91) == 92
+    assert base_before == "a1d5f5446bba2ffbf4899027b87c24ef35d8c743f866900ea3dfe934d583a7b8"
+    assert generate_heavy_dataset(tmp_path, seed=91) == 108
     digest1 = heavy_dataset_hash(tmp_path)
-    assert validate_heavy_dataset(tmp_path) == 92
+    assert validate_heavy_dataset(tmp_path) == 108
     labels = yaml.safe_load((tmp_path / "data" / "labels_heavy.yaml").read_text(encoding="utf-8"))
     assert {row["tier"] for row in labels} == {"M", "L", "XL"}
     for row in labels:
+        assert row["heavy_dataset_version"] == 2
+        assert row["file_order"] == row["evidence_files"]
+        assert set(row["file_roles"]) == set(row["evidence_files"])
         target = {"M": 8000, "L": 16000, "XL": 32000}[row["tier"]]
         assert target * .85 <= row["approx_tokens"]["total"] <= target * 1.15
         case_root = tmp_path / "data" / "heavy" / "evidence" / row["case_id"]
         for passage in row["gold_passages"]:
             assert passage["text"] in (case_root / passage["file"]).read_text(encoding="utf-8")
+            assert passage["required"] is True
+            assert not passage["text"].lstrip().startswith("#")
+            assert len(passage["text"].strip()) >= 25 or "=" in passage["text"] or ":" in passage["text"]
     assert validate_filler_text("MOCK-PWD-01", "minimum_length = 8")
     assert not validate_filler_text("MOCK-PWD-01", "Backup media is inventoried by the operations team.")
     assert dataset_hash(tmp_path) == base_before
+    row = next(row for row in labels if row["file_roles"])
+    filename = next(iter(row["file_roles"]))
+    evidence_path = tmp_path / "data" / "heavy" / "evidence" / row["case_id"] / filename
+    original = evidence_path.read_text(encoding="utf-8")
+    evidence_path.write_text(original + "\nneedle marker\n", encoding="utf-8")
+    import pytest
+    with pytest.raises(ValueError, match="Banned role word"):
+        validate_heavy_dataset(tmp_path)
     generate_heavy_dataset(tmp_path, seed=91, force=True)
     assert heavy_dataset_hash(tmp_path) == digest1
+
+
+def test_heavy_validator_rejects_contamination_tier_and_invalid_gold(tmp_path: Path) -> None:
+    import pytest
+    generate_heavy_dataset(tmp_path, seed=27)
+    labels_path = tmp_path / "data" / "labels_heavy.yaml"
+    labels = yaml.safe_load(labels_path.read_text(encoding="utf-8"))
+    row = next(label for label in labels if label["tier"] == "M" and label["expected_status"] != "insufficient_evidence")
+    case_root = tmp_path / "data" / "heavy" / "evidence" / row["case_id"]
+    filler = next(name for name, role in row["file_roles"].items() if role == "filler_adjacent")
+    filler_path = case_root / filler
+    original_filler = filler_path.read_text(encoding="utf-8")
+    filler_path.write_text(original_filler + "minimum_length = 8\n", encoding="utf-8")
+    with pytest.raises(ValueError, match="Denylist contamination"):
+        validate_heavy_dataset(tmp_path)
+    filler_path.write_text(original_filler, encoding="utf-8")
+
+    original_label_text = labels_path.read_text(encoding="utf-8")
+    labels[0]["approx_tokens"]["total"] += 50000
+    labels_path.write_text(yaml.safe_dump(labels, sort_keys=False, allow_unicode=True), encoding="utf-8")
+    with pytest.raises(ValueError, match="out of tolerance"):
+        validate_heavy_dataset(tmp_path)
+    labels = yaml.safe_load(original_label_text)
+    labels[0]["gold_passages"][0]["text"] += " invented"
+    labels_path.write_text(yaml.safe_dump(labels, sort_keys=False, allow_unicode=True), encoding="utf-8")
+    with pytest.raises(ValueError, match="not verbatim"):
+        validate_heavy_dataset(tmp_path)
+    labels_path.write_text(original_label_text, encoding="utf-8")
+
+
+def test_retrieval_query_versions_hints_and_file_diversity() -> None:
+    control = {"title": "Authentication review", "description": "Assess controls.",
+               "evaluation_criteria": ["Key rotation is recorded.", "Remote ownership is documented."],
+               "expected_evidence": ["A service export."],
+               "retrieval_hints": ["service key", "rotation_alias"]}
+    template = "{{TITLE}} {{DESCRIPTION}} {{EVALUATION_CRITERIA}} {{EXPECTED_EVIDENCE}}"
+    legacy = build_queries(control, "query_v1", template, False)
+    hinted = build_queries(control, "query_v1", template, True)
+    multi = build_queries(control, "query_v2", template, True)
+    assert len(legacy) == 1 and len(hinted) == 1 and len(multi) == 3
+    assert "rotation_alias" not in legacy[0] and "rotation_alias" in hinted[0]
+    assert "rotation_alias" in multi[-1]
+    from bench.chunking import Chunk
+    chunks = {
+        "a1": Chunk("a1", "a.md", "a", 0, 1, 1, 1, ()),
+        "a2": Chunk("a2", "a.md", "b", 2, 3, 2, 2, ()),
+        "b1": Chunk("b1", "b.yaml", "c", 0, 1, 1, 1, ()),
+        "c1": Chunk("c1", "c.csv", "d", 0, 1, 1, 1, ()),
+    }
+    ranked = [("a1", 4.0), ("a2", 3.0), ("b1", 2.0), ("c1", 1.0)]
+    selected = _diversify(ranked, chunks, top_k=3, min_files=3)
+    assert [chunk_id for chunk_id, _ in selected] == ["a1", "b1", "c1"]
+    assert BANNED_ROLE_WORDS.search("service-export.md") is None
+    assert BANNED_ROLE_WORDS.search("01-needle-file.md") is not None
 
 
 class _FakeLLM(Backend):
@@ -222,12 +291,22 @@ def test_bm25_retrieval_evaluation_runs_without_an_embedding_service(tmp_path: P
     (tmp_path / "prompts").mkdir()
     (tmp_path / "prompts" / "query_v1.md").write_text(
         (ROOT / "prompts" / "query_v1.md").read_text(encoding="utf-8"), encoding="utf-8")
-    report = evaluate_retrieval(tmp_path, "base", None, tmp_path / ".cache" / "index.sqlite3",
+    with __import__("pytest").raises(ValueError, match="no gold passages"):
+        evaluate_retrieval(tmp_path, "base", None, tmp_path / ".cache" / "index.sqlite3",
+                           retriever="bm25", top_k=3, chunk_tokens=100, overlap=10,
+                           token_budget=500, limit=1, query_version="query_v1")
+    generate_heavy_dataset(tmp_path)
+    (tmp_path / "prompts" / "query_v2.md").write_text(
+        (ROOT / "prompts" / "query_v2.md").read_text(encoding="utf-8"), encoding="utf-8")
+    report = evaluate_retrieval(tmp_path, "heavy", None, tmp_path / ".cache" / "index.sqlite3",
                                 retriever="bm25", top_k=3, chunk_tokens=100, overlap=10,
                                 token_budget=500, limit=1, query_version="query_v1")
     assert report.exists()
     assert "Recall@k" in report.read_text(encoding="utf-8")
-    assert report.with_suffix(".json").exists()
+    result = json.loads(report.with_suffix(".json").read_text(encoding="utf-8"))
+    assert result["details"][0]["chunks_requested"] == 3
+    assert result["details"][0]["chunks_returned"] == 3
+    assert "all_required_gold_in_context" in result["details"][0]
 
 
 def test_retrieval_sweep_runs_offline_with_hash_embeddings(tmp_path: Path) -> None:
@@ -235,12 +314,15 @@ def test_retrieval_sweep_runs_offline_with_hash_embeddings(tmp_path: Path) -> No
     (tmp_path / "prompts").mkdir()
     (tmp_path / "prompts" / "query_v1.md").write_text(
         (ROOT / "prompts" / "query_v1.md").read_text(encoding="utf-8"), encoding="utf-8")
-    report = evaluate_retrieval(tmp_path, "base", HashEmbeddingBackend(dimension=24),
+    generate_heavy_dataset(tmp_path)
+    (tmp_path / "prompts" / "query_v2.md").write_text(
+        (ROOT / "prompts" / "query_v2.md").read_text(encoding="utf-8"), encoding="utf-8")
+    report = evaluate_retrieval(tmp_path, "heavy", HashEmbeddingBackend(dimension=24),
                                 tmp_path / ".cache" / "sweep.sqlite3", limit=1,
                                 sweep=True, query_version="query_v1")
     contents = report.read_text(encoding="utf-8")
     assert "dense" in contents and "bm25" in contents and "hybrid" in contents
-    assert "Recall@k" in contents
+    assert "Recall@k" in contents and "query_v2" in contents and "All required gold in context" in contents
 
 
 def test_compare_report_warns_on_incomparable_runs(tmp_path: Path) -> None:

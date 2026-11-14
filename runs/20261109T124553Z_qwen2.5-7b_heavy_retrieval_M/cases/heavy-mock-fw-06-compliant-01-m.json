@@ -1,0 +1,276 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-fw-06-compliant-01-m",
+    "control_id": "MOCK-FW-06",
+    "evidence_files": [
+      "perimeter-service-export.yaml",
+      "network-access-standard-v4.md",
+      "perimeter-operations-procedure.md",
+      "supplier-coordination-notes-8769.md",
+      "operations-handbook-1824.md"
+    ],
+    "file_order": [
+      "perimeter-service-export.yaml",
+      "network-access-standard-v4.md",
+      "perimeter-operations-procedure.md",
+      "supplier-coordination-notes-8769.md",
+      "operations-handbook-1824.md"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 2478535464,
+    "file_roles": {
+      "network-access-standard-v4.md": "decisive",
+      "perimeter-service-export.yaml": "decisive",
+      "perimeter-operations-procedure.md": "filler_generic",
+      "operations-handbook-1824.md": "filler_adjacent",
+      "supplier-coordination-notes-8769.md": "filler_generic"
+    },
+    "expected_status": "compliant",
+    "split": "dev",
+    "language": "en",
+    "tags": [
+      "distractor",
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "The cited policy and effective export satisfy the stated mock criteria.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-fw-06-compliant-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8102,
+      "per_file": {
+        "perimeter-service-export.yaml": 685,
+        "network-access-standard-v4.md": 1963,
+        "perimeter-operations-procedure.md": 30,
+        "supplier-coordination-notes-8769.md": 1652,
+        "operations-handbook-1824.md": 3772
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "start",
+      "fraction": 0.0,
+      "placements": [
+        {
+          "file": "perimeter-service-export.yaml",
+          "fraction": 0.0,
+          "bucket": "start"
+        },
+        {
+          "file": "network-access-standard-v4.md",
+          "fraction": 0.09341,
+          "bucket": "start"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "perimeter-service-export.yaml",
+        "text": "default_inbound: deny\nrules:\n- source: 203.0.113.8/32",
+        "required": true
+      },
+      {
+        "file": "network-access-standard-v4.md",
+        "text": "Inbound connections are denied unless a service owner approves a named source and destination port.",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-FW-06",
+    "domain": "Network Security",
+    "title": "Restrictive inbound network rules",
+    "description": "Mock control, not authoritative. Inbound network access should be limited to approved sources and services.",
+    "evaluation_criteria": [
+      "No inbound rule allows every source to reach every port.",
+      "Publicly reachable ports are specifically approved and documented.",
+      "A default-deny inbound policy is in effect."
+    ],
+    "expected_evidence": [
+      "Firewall rule review procedure",
+      "Current inbound ruleset export"
+    ],
+    "retrieval_hints": [
+      "inbound network access",
+      "perimeter rule source and service",
+      "accès réseau entrant",
+      "source et service du pare-feu",
+      "default_inbound",
+      "source",
+      "destination_port",
+      "network zone",
+      "service owner"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-fw-06-compliant-01-m",
+      "control_id": "MOCK-FW-06",
+      "repetition": 1,
+      "expected_status": "compliant",
+      "status": "compliant",
+      "matches_expected": true,
+      "confidence": 0.95,
+      "justification": "Les évidences fournies montrent que les règles d'accès réseau entrant sont limitées aux sources approuvées et aux ports spécifiques. Le pare-feu utilise une stratégie par défaut de refus. Ces aspects correspondent aux critères d'évaluation du contrôle.",
+      "criteria_assessment": [
+        {
+          "criterion": "No inbound rule allows every source to reach every port.",
+          "met": "yes",
+          "note": "Les règles d'accès réseau entrant sont spécifiquement définies pour des sources et des ports spécifiques, comme indiqué dans 'perimeter-service-export.yaml'."
+        },
+        {
+          "criterion": "Publicly reachable ports are specifically approved and documented.",
+          "met": "yes",
+          "note": "Les règles d'accès réseau entrant sont spécifiquement définies pour des sources et des ports spécifiques, comme indiqué dans 'perimeter-service-export.yaml'."
+        },
+        {
+          "criterion": "A default-deny inbound policy is in effect.",
+          "met": "yes",
+          "note": "Le fichier 'perimeter-service-export.yaml' montre que la stratégie par défaut est de refuser l'accès, conformément au critère."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "network-access-standard-v4.md",
+          "text": "Inbound connections are denied unless a service owner approves a named source and destination port. The perimeter uses a default-deny policy.",
+          "valid": true
+        },
+        {
+          "file": "perimeter-service-export.yaml",
+          "text": "default_inbound: deny\nrules:\n- source: 203.0.113.8/32\n  port: 443\n  action: allow\n- source: 198.51.100.0/24\n  port: 22\n  action: allow\n",
+          "valid": true
+        }
+      ],
+      "recommendation": "Le contrôle est conforme aux exigences du mock control.",
+      "raw_output_initial": "{\n  \"status\": \"compliant\",\n  \"justification\": \"Les évidences fournies montrent que les règles d'accès réseau entrant sont limitées aux sources approuvées et aux ports spécifiques. Le pare-feu utilise une stratégie par défaut de refus. Ces aspects correspondent aux critères d'évaluation du contrôle.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"No inbound rule allows every source to reach every port.\",\n      \"met\": \"yes\",\n      \"note\": \"Les règles d'accès réseau entrant sont spécifiquement définies pour des sources et des ports spécifiques, comme indiqué dans 'perimeter-service-export.yaml'.\"\n    },\n    {\n      \"criterion\": \"Publicly reachable ports are specifically approved and documented.\",\n      \"met\": \"yes\",\n      \"note\": \"Les règles d'accès réseau entrant sont spécifiquement définies pour des sources et des ports spécifiques, comme indiqué dans 'perimeter-service-export.yaml'.\"\n    },\n    {\n      \"criterion\": \"A default-deny inbound policy is in effect.\",\n      \"met\": \"yes\",\n      \"note\": \"Le fichier 'perimeter-service-export.yaml' montre que la stratégie par défaut est de refuser l'accès, conformément au critère.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"network-access-standard-v4.md\",\n      \"text\": \"Inbound connections are denied unless a service owner approves a named source and destination port. The perimeter uses a default-deny policy.\"\n    },\n    {\n      \"file\": \"perimeter-service-export.yaml\",\n      \"text\": \"default_inbound: deny\\nrules:\\n- source: 203.0.113.8/32\\n  port: 443\\n  action: allow\\n- source: 198.51.100.0/24\\n  port: 22\\n  action: allow\\n\"\n    }\n  ],\n  \"recommendation\": \"Le contrôle est conforme aux exigences du mock control.\",\n  \"confidence\": 0.95\n}",
+      "raw_output_final": "{\n  \"status\": \"compliant\",\n  \"justification\": \"Les évidences fournies montrent que les règles d'accès réseau entrant sont limitées aux sources approuvées et aux ports spécifiques. Le pare-feu utilise une stratégie par défaut de refus. Ces aspects correspondent aux critères d'évaluation du contrôle.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"No inbound rule allows every source to reach every port.\",\n      \"met\": \"yes\",\n      \"note\": \"Les règles d'accès réseau entrant sont spécifiquement définies pour des sources et des ports spécifiques, comme indiqué dans 'perimeter-service-export.yaml'.\"\n    },\n    {\n      \"criterion\": \"Publicly reachable ports are specifically approved and documented.\",\n      \"met\": \"yes\",\n      \"note\": \"Les règles d'accès réseau entrant sont spécifiquement définies pour des sources et des ports spécifiques, comme indiqué dans 'perimeter-service-export.yaml'.\"\n    },\n    {\n      \"criterion\": \"A default-deny inbound policy is in effect.\",\n      \"met\": \"yes\",\n      \"note\": \"Le fichier 'perimeter-service-export.yaml' montre que la stratégie par défaut est de refuser l'accès, conformément au critère.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"network-access-standard-v4.md\",\n      \"text\": \"Inbound connections are denied unless a service owner approves a named source and destination port. The perimeter uses a default-deny policy.\"\n    },\n    {\n      \"file\": \"perimeter-service-export.yaml\",\n      \"text\": \"default_inbound: deny\\nrules:\\n- source: 203.0.113.8/32\\n  port: 443\\n  action: allow\\n- source: 198.51.100.0/24\\n  port: 22\\n  action: allow\\n\"\n    }\n  ],\n  \"recommendation\": \"Le contrôle est conforme aux exigences du mock control.\",\n  \"confidence\": 0.95\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 2,
+        "total": 2,
+        "rate": 1.0
+      },
+      "wall_clock_total_seconds": 214.37852297800055,
+      "wall_clock_elapsed_seconds": 214.3786053340009,
+      "model_reported_total_seconds": 214.37697293,
+      "model_load_seconds": 0.00242946,
+      "prompt_tokens": 2751,
+      "output_tokens": 463,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 129.659094,
+      "prompt_processing_tokens_per_second": 21.217177408319696,
+      "generation_seconds": 84.511148,
+      "generation_tokens_per_second": 5.478567158974103,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 214376972930,
+          "load_duration": 2429460,
+          "prompt_eval_count": 2751,
+          "prompt_eval_duration": 129659094000,
+          "eval_count": 463,
+          "eval_duration": 84511148000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 2848,
+      "prompt_tokens_reported_by_backend": 2751,
+      "prefix_cached": false,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 1.1332571781219476e-05,
+        "prompt_processing": 0.6048138227601539,
+        "generation": 0.3942146201309191
+      },
+      "likely_truncated": false,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 7168,
+      "prompt_version": "eval_v2_retrieval",
+      "language": "en",
+      "tags": [
+        "distractor",
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-fw-06-compliant-01",
+      "needle_position": "start",
+      "context_mode": "retrieval",
+      "label_confidence": "firm",
+      "retrieval": {
+        "retrieved_chunks": [
+          {
+            "chunk_id": "8e335f45b4575363d2cb",
+            "file": "network-access-standard-v4.md",
+            "score": 0.03278688524590164,
+            "rank": 1,
+            "start_line": 1,
+            "end_line": 37
+          },
+          {
+            "chunk_id": "eb6e692b56eb5497176d",
+            "file": "perimeter-service-export.yaml",
+            "score": 0.03200204813108039,
+            "rank": 2,
+            "start_line": 1,
+            "end_line": 9
+          },
+          {
+            "chunk_id": "ddb078c64bcc4ad8f497",
+            "file": "operations-handbook-1824.md",
+            "score": 0.030090497737556562,
+            "rank": 3,
+            "start_line": 183,
+            "end_line": 228
+          },
+          {
+            "chunk_id": "c6408a6c31ba6d9e34a0",
+            "file": "supplier-coordination-notes-8769.md",
+            "score": 0.028629032258064516,
+            "rank": 4,
+            "start_line": 43,
+            "end_line": 72
+          },
+          {
+            "chunk_id": "04cb4523fe04e0697951",
+            "file": "operations-handbook-1824.md",
+            "score": 0.029877369007803793,
+            "rank": 5,
+            "start_line": 229,
+            "end_line": 270
+          }
+        ],
+        "context_chunk_ids": [
+          "8e335f45b4575363d2cb",
+          "ddb078c64bcc4ad8f497",
+          "04cb4523fe04e0697951",
+          "eb6e692b56eb5497176d",
+          "c6408a6c31ba6d9e34a0"
+        ],
+        "chunks_requested": 5,
+        "chunks_returned": 5,
+        "shortfall_reason": null,
+        "min_files": 4,
+        "tokens_sent": 1567,
+        "retrieval_seconds": 0.005274283001199365,
+        "embedding_seconds": 0.2721397479981533,
+        "gold_passage_count": 2,
+        "gold_passages_retrieved": 2,
+        "required_gold_passage_count": 2,
+        "required_gold_passages_retrieved": 2,
+        "all_required_gold_in_context": true,
+        "all_gold_in_context": true,
+        "failure_attribution": "ok"
+      },
+      "resource_peak_ram_used_bytes": 18276159488,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

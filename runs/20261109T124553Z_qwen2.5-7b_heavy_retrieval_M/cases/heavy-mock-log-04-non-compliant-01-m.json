@@ -1,0 +1,256 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-log-04-non-compliant-01-m",
+    "control_id": "MOCK-LOG-04",
+    "evidence_files": [
+      "operations-handbook-1520.md",
+      "platform-change-register-7092.yaml",
+      "supplier-coordination-notes-4096.md",
+      "security-event-handling-standard.md",
+      "collector-settings.ini"
+    ],
+    "file_order": [
+      "operations-handbook-1520.md",
+      "platform-change-register-7092.yaml",
+      "supplier-coordination-notes-4096.md",
+      "security-event-handling-standard.md",
+      "collector-settings.ini"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 3517076229,
+    "file_roles": {
+      "security-event-handling-standard.md": "decisive",
+      "collector-settings.ini": "decisive",
+      "platform-change-register-7092.yaml": "filler_adjacent",
+      "operations-handbook-1520.md": "filler_generic",
+      "supplier-coordination-notes-4096.md": "filler_adjacent"
+    },
+    "expected_status": "non_compliant",
+    "split": "dev",
+    "language": "en",
+    "tags": [
+      "numeric_trap",
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "The effective evidence shows a material failure against one or more required criteria.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-log-04-non-compliant-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8122,
+      "per_file": {
+        "operations-handbook-1520.md": 1655,
+        "platform-change-register-7092.yaml": 1925,
+        "supplier-coordination-notes-4096.md": 1942,
+        "security-event-handling-standard.md": 2113,
+        "collector-settings.ini": 487
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "middle",
+      "fraction": 0.68193,
+      "placements": [
+        {
+          "file": "security-event-handling-standard.md",
+          "fraction": 0.68193,
+          "bucket": "middle"
+        },
+        {
+          "file": "collector-settings.ini",
+          "fraction": 0.94058,
+          "bucket": "end"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "security-event-handling-standard.md",
+        "text": "Fictional reference: mock-log-04-non-compliant-01.",
+        "required": true
+      },
+      {
+        "file": "collector-settings.ini",
+        "text": "retention_days = 90\nsearchable_days = 30\narchive_enabled = false",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-LOG-04",
+    "domain": "Logging",
+    "title": "Security event retention and availability",
+    "description": "Mock control, not authoritative. Security records should remain available for review over a long period.",
+    "evaluation_criteria": [
+      "Security records are retained for at least 365 days.",
+      "At least the most recent 90 days are immediately searchable or otherwise readily available.",
+      "The effective logging configuration supports the stated periods."
+    ],
+    "expected_evidence": [
+      "Logging and retention procedure",
+      "SIEM or archive retention settings"
+    ],
+    "retrieval_hints": [
+      "security event archive",
+      "searchable event index",
+      "archive des événements",
+      "index de recherche",
+      "retention_days",
+      "searchable_days",
+      "collector health",
+      "event pipeline"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-log-04-non-compliant-01-m",
+      "control_id": "MOCK-LOG-04",
+      "repetition": 1,
+      "expected_status": "non_compliant",
+      "status": "invalid_output",
+      "matches_expected": false,
+      "confidence": null,
+      "justification": null,
+      "criteria_assessment": [],
+      "quotes": [],
+      "recommendation": null,
+      "raw_output_initial": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"Les paramètres effectifs de la politique de conservation des journaux indiquent une conservation de 90 jours au total, avec seulement 30 jours consultables rapidement. Cela ne correspond pas aux exigences de conservation de 365 jours et de 90 jours consultables immédiatement. De plus, les procédures de gestion des événements de sécurité ne sont pas conformes aux exigences de conservation de 365 jours et de 90 jours consultables immédiatement.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Security records are retained for at least 365 days.\",\n      \"met\": \"no\",\n      \"note\": \"Les paramètres effectifs de la politique de conservation des journaux indiquent une conservation de 90 jours au total, ce qui ne satisfait pas à la exigence de 365 jours.\"\n    },\n    {\n      \"criterion\": \"At least the most recent 90 days are immediately searchable or otherwise readily available.\",\n      \"met\": \"no\",\n      \"note\": \"Les paramètres effectifs de la politique de conservation des journaux indiquent que seules les 30 jours les plus récents sont consultables rapidement, ce qui ne satisfait pas à la exigence de 90 jours consultables immédiatement.\"\n    },\n    {\n      \"criterion\": \"The effective logging configuration supports the stated periods.\",\n      \"met\": \"no\",\n      \"note\": \"Les paramètres effectifs de la politique de conservation des journaux ne correspondent pas aux exigences de 365 jours et de 90 jours consultables immédiatement.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"collector-settings.ini\",\n      \"text\": \"retention_days = 90\\nsearchable_days = 30\"\n    },\n    {\n      \"file\": \"security-event-handling-standard.md\",\n      \"text\": \"Les journaux de sécurité sont conservés pendant 90 jours au total. Les 30 jours les plus récents sont consultables rapidement.\"\n    }\n  ],\n  \"recommendation\": \"Reviser la politique de conservation des journaux pour aligner les paramètres effectifs avec les exigences de 365 jours de conservation et de",
+      "raw_output_final": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"Les paramètres effectifs de la politique de conservation des journaux indiquent une conservation de 90 jours au total, avec seulement 30 jours consultables rapidement. Cela ne correspond pas aux exigences de conservation de 365 jours et de 90 jours consultables immédiatement. De plus, les procédures de gestion des événements de sécurité ne sont pas conformes aux exigences de conservation de 365 jours et de 90 jours consultables immédiatement.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Security records are retained for at least 365 days.\",\n      \"met\": \"no\",\n      \"note\": \"Les paramètres effectifs de la politique de conservation des journaux indiquent une conservation de 90 jours au total, ce qui ne satisfait pas à la exigence de 365 jours.\"\n    },\n    {\n      \"criterion\": \"At least the most recent 90 days are immediately searchable or otherwise readily available.\",\n      \"met\": \"no\",\n      \"note\": \"Les paramètres effectifs de la politique de conservation des journaux indiquent que seules les 30 jours les plus récents sont consultables rapidement, ce qui ne satisfait pas à la exigence de 90 jours consultables immédiatement.\"\n    },\n    {\n      \"criterion\": \"The effective logging configuration supports the stated periods.\",\n      \"met\": \"no\",\n      \"note\": \"Les paramètres effectifs de la politique de conservation des journaux ne correspondent pas aux exigences de 365 jours et de 90 jours consultables immédiatement.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"collector-settings.ini\",\n      \"text\": \"retention_days = 90\\nsearchable_days = 30\"\n    },\n    {\n      \"file\": \"security-event-handling-standard.md\",\n      \"text\": \"Les journaux de sécurité sont conservés pendant 90 jours au total. Les 30 jours les plus récents sont consultables rapidement.\"\n    }\n  ],\n  \"recommendation\": \"Reviser la politique de conservation des journaux pour aligner les paramètres effectifs avec les exigences de 365 jours de conservation et de",
+      "initial_json_valid": false,
+      "initial_schema_valid": false,
+      "final_json_valid": false,
+      "final_schema_valid": false,
+      "retry_count": 1,
+      "quote_validity": {
+        "valid": 0,
+        "total": 0,
+        "rate": null
+      },
+      "wall_clock_total_seconds": 521.0387646530035,
+      "wall_clock_elapsed_seconds": 521.0389257870011,
+      "model_reported_total_seconds": 521.035575272,
+      "model_load_seconds": 0.006221141,
+      "prompt_tokens": 7303,
+      "output_tokens": 1024,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 333.552407,
+      "prompt_processing_tokens_per_second": 21.894610402256816,
+      "generation_seconds": 186.97609899999998,
+      "generation_tokens_per_second": 5.47663581322231,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 252032095437,
+          "load_duration": 4107300,
+          "prompt_eval_count": 3366,
+          "prompt_eval_duration": 154021768000,
+          "eval_count": 512,
+          "eval_duration": 97785310000
+        },
+        {
+          "total_duration": 269003479835,
+          "load_duration": 2113841,
+          "prompt_eval_count": 3937,
+          "prompt_eval_duration": 179530639000,
+          "eval_count": 512,
+          "eval_duration": 89190789000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 3187,
+      "prompt_tokens_reported_by_backend": 7303,
+      "prefix_cached": false,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 1.1939881294903457e-05,
+        "prompt_processing": 0.6401681211226887,
+        "generation": 0.35885256853109687
+      },
+      "likely_truncated": true,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 7168,
+      "prompt_version": "eval_v2_retrieval",
+      "language": "en",
+      "tags": [
+        "numeric_trap",
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-log-04-non-compliant-01",
+      "needle_position": "middle",
+      "context_mode": "retrieval",
+      "label_confidence": "firm",
+      "retrieval": {
+        "retrieved_chunks": [
+          {
+            "chunk_id": "7dbcf16559afa4245e25",
+            "file": "security-event-handling-standard.md",
+            "score": 0.03278688524590164,
+            "rank": 1,
+            "start_line": 1,
+            "end_line": 35
+          },
+          {
+            "chunk_id": "f252bf16766eb4388300",
+            "file": "supplier-coordination-notes-4096.md",
+            "score": 0.03036576949620428,
+            "rank": 2,
+            "start_line": 181,
+            "end_line": 222
+          },
+          {
+            "chunk_id": "5ae39adbfb96c5191c4c",
+            "file": "operations-handbook-1520.md",
+            "score": 0.029910714285714284,
+            "rank": 3,
+            "start_line": 103,
+            "end_line": 132
+          },
+          {
+            "chunk_id": "4ea24987f475aac52fa5",
+            "file": "collector-settings.ini",
+            "score": 0.028125,
+            "rank": 4,
+            "start_line": 1,
+            "end_line": 85
+          },
+          {
+            "chunk_id": "77bdb3f49276e6424a65",
+            "file": "supplier-coordination-notes-4096.md",
+            "score": 0.03007688828584351,
+            "rank": 5,
+            "start_line": 97,
+            "end_line": 138
+          }
+        ],
+        "context_chunk_ids": [
+          "4ea24987f475aac52fa5",
+          "5ae39adbfb96c5191c4c",
+          "7dbcf16559afa4245e25",
+          "77bdb3f49276e6424a65",
+          "f252bf16766eb4388300"
+        ],
+        "chunks_requested": 5,
+        "chunks_returned": 5,
+        "shortfall_reason": null,
+        "min_files": 4,
+        "tokens_sent": 1884,
+        "retrieval_seconds": 0.004422155001520878,
+        "embedding_seconds": 0.30854103000092437,
+        "gold_passage_count": 2,
+        "gold_passages_retrieved": 2,
+        "required_gold_passage_count": 2,
+        "required_gold_passages_retrieved": 2,
+        "all_required_gold_in_context": true,
+        "all_gold_in_context": true,
+        "failure_attribution": "llm_error"
+      },
+      "resource_peak_ram_used_bytes": 20498018304,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

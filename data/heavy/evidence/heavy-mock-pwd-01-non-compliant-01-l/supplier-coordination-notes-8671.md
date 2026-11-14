@@ -1,0 +1,214 @@
+# Fictional Operations Dossier OPS-5F62114-0004
+
+Edition: 4.2 | State: approved | Owner: Operations Office
+
+| Edition | Date | Change note |
+|---|---|---|
+| 4.2 | 2026-04-12 | Annual procedure consolidation |
+
+## Table of contents
+
+1. Organization
+2. Continuity
+3. Appendices
+
+See Appendix C for fictional team contacts.
+
+## Section 5: Records Stewardship
+
+SSH private keys remain with their assigned custodians; transfer events are documented without copying secret material into the service register.
+
+Cross-reference: see Appendix C, record OPS-0388.
+
+## Section 6: Training Delivery
+
+The remote-access procedure records the approved gateway, the support contact, and the session review trail for each maintenance window.
+
+Cross-reference: see Appendix C, record OPS-0389.
+
+## Section 7: Facilities Planning
+
+Help-desk reset requests require a recorded identity check, a ticket owner, and confirmation that the requester can regain access safely.
+
+Cross-reference: see Appendix C, record OPS-0390.
+
+## Section 8: Recovery Exercise
+
+Service identities are assigned to an owning team, recorded in the inventory, and removed through the change process when a workload is retired.
+
+Cross-reference: see Appendix C, record OPS-0391.
+
+## Section 9: Identity Operations
+
+SSH private keys remain with their assigned custodians; transfer events are documented without copying secret material into the service register.
+
+Cross-reference: see Appendix C, record OPS-0392.
+
+## Section 10: Network Change Review
+
+The remote-access procedure records the approved gateway, the support contact, and the session review trail for each maintenance window.
+
+Cross-reference: see Appendix C, record OPS-0393.
+
+## Section 11: Security Monitoring
+
+Help-desk reset requests require a recorded identity check, a ticket owner, and confirmation that the requester can regain access safely.
+
+Cross-reference: see Appendix C, record OPS-0394.
+
+## Section 12: Service Continuity
+
+Service identities are assigned to an owning team, recorded in the inventory, and removed through the change process when a workload is retired.
+
+Cross-reference: see Appendix C, record OPS-0395.
+
+## Section 13: Supplier Coordination
+
+SSH private keys remain with their assigned custodians; transfer events are documented without copying secret material into the service register.
+
+Cross-reference: see Appendix C, record OPS-0396.
+
+## Section 14: Asset Catalogue
+
+The remote-access procedure records the approved gateway, the support contact, and the session review trail for each maintenance window.
+
+Cross-reference: see Appendix C, record OPS-0397.
+
+## Section 15: Operational Handover
+
+Help-desk reset requests require a recorded identity check, a ticket owner, and confirmation that the requester can regain access safely.
+
+Cross-reference: see Appendix C, record OPS-0398.
+
+## Section 16: Records Stewardship
+
+Service identities are assigned to an owning team, recorded in the inventory, and removed through the change process when a workload is retired.
+
+Cross-reference: see Appendix C, record OPS-0399.
+
+## Section 17: Training Delivery
+
+SSH private keys remain with their assigned custodians; transfer events are documented without copying secret material into the service register.
+
+Cross-reference: see Appendix C, record OPS-0400.
+
+## Section 18: Facilities Planning
+
+The remote-access procedure records the approved gateway, the support contact, and the session review trail for each maintenance window.
+
+Cross-reference: see Appendix C, record OPS-0401.
+
+## Section 19: Recovery Exercise
+
+Help-desk reset requests require a recorded identity check, a ticket owner, and confirmation that the requester can regain access safely.
+
+Cross-reference: see Appendix C, record OPS-0402.
+
+## Section 20: Identity Operations
+
+Service identities are assigned to an owning team, recorded in the inventory, and removed through the change process when a workload is retired.
+
+Cross-reference: see Appendix C, record OPS-0403.
+
+## Section 21: Network Change Review
+
+SSH private keys remain with their assigned custodians; transfer events are documented without copying secret material into the service register.
+
+Cross-reference: see Appendix C, record OPS-0404.
+
+## Section 22: Security Monitoring
+
+The remote-access procedure records the approved gateway, the support contact, and the session review trail for each maintenance window.
+
+Cross-reference: see Appendix C, record OPS-0405.
+
+## Section 23: Service Continuity
+
+Help-desk reset requests require a recorded identity check, a ticket owner, and confirmation that the requester can regain access safely.
+
+Cross-reference: see Appendix C, record OPS-0406.
+
+## Section 24: Supplier Coordination
+
+Service identities are assigned to an owning team, recorded in the inventory, and removed through the change process when a workload is retired.
+
+Cross-reference: see Appendix C, record OPS-0407.
+
+## Section 25: Asset Catalogue
+
+SSH private keys remain with their assigned custodians; transfer events are documented without copying secret material into the service register.
+
+Cross-reference: see Appendix C, record OPS-0408.
+
+## Section 26: Operational Handover
+
+The remote-access procedure records the approved gateway, the support contact, and the session review trail for each maintenance window.
+
+Cross-reference: see Appendix C, record OPS-0409.
+
+## Section 27: Records Stewardship
+
+Help-desk reset requests require a recorded identity check, a ticket owner, and confirmation that the requester can regain access safely.
+
+Cross-reference: see Appendix C, record OPS-0410.
+
+## Section 28: Training Delivery
+
+Service identities are assigned to an owning team, recorded in the inventory, and removed through the change process when a workload is retired.
+
+Cross-reference: see Appendix C, record OPS-0411.
+
+## Section 29: Facilities Planning
+
+SSH private keys remain with their assigned custodians; transfer events are documented without copying secret material into the service register.
+
+Cross-reference: see Appendix C, record OPS-0412.
+
+## Section 30: Recovery Exercise
+
+The remote-access procedure records the approved gateway, the support contact, and the session review trail for each maintenance window.
+
+Cross-reference: see Appendix C, record OPS-0413.
+
+## Section 31: Identity Operations
+
+Help-desk reset requests require a recorded identity check, a ticket owner, and confirmation that the requester can regain access safely.
+
+Cross-reference: see Appendix C, record OPS-0414.
+
+## Section 32: Network Change Review
+
+Service identities are assigned to an owning team, recorded in the inventory, and removed through the change process when a workload is retired.
+
+Cross-reference: see Appendix C, record OPS-0415.
+
+## Section 33: Security Monitoring
+
+SSH private keys remain with their assigned custodians; transfer events are documented without copying secret material into the service register.
+
+Cross-reference: see Appendix C, record OPS-0416.
+
+## Section 34: Service Continuity
+
+The remote-access procedure records the approved gateway, the support contact, and the session review trail for each maintenance window.
+
+Cross-reference: see Appendix C, record OPS-0417.
+
+## Section 35: Supplier Coordination
+
+Help-desk reset requests require a recorded identity check, a ticket owner, and confirmation that the requester can regain access safely.
+
+Cross-reference: see Appendix C, record OPS-0418.
+
+## Section 36: Asset Catalogue
+
+Service identities are assigned to an owning team, recorded in the inventory, and removed through the change process when a workload is retired.
+
+Cross-reference: see Appendix C, record OPS-0419.
+
+## Section 37: Operational Handover
+
+SSH private keys remain with their assigned custodians; transfer events are documented without copying secret material into the service register.
+
+Cross-reference: see Appendix C, record OPS-0420.
+

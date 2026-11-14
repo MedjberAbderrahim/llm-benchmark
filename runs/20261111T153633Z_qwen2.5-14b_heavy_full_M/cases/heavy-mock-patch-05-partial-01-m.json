@@ -1,0 +1,169 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-patch-05-partial-01-m",
+    "control_id": "MOCK-PATCH-05",
+    "evidence_files": [
+      "platform-change-register-9177.yaml",
+      "change-management-standard-v4.md",
+      "deployment-service-export.yaml",
+      "operations-handbook-8334.md",
+      "supplier-coordination-notes-8332.md"
+    ],
+    "file_order": [
+      "platform-change-register-9177.yaml",
+      "change-management-standard-v4.md",
+      "deployment-service-export.yaml",
+      "operations-handbook-8334.md",
+      "supplier-coordination-notes-8332.md"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 13252599,
+    "file_roles": {
+      "change-management-standard-v4.md": "decisive",
+      "deployment-service-export.yaml": "decisive",
+      "platform-change-register-9177.yaml": "filler_generic",
+      "operations-handbook-8334.md": "filler_adjacent",
+      "supplier-coordination-notes-8332.md": "filler_adjacent"
+    },
+    "expected_status": "partial",
+    "split": "dev",
+    "language": "en",
+    "tags": [
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "Some safeguards are present, but at least one required scope, threshold, or follow-up condition is missing.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-patch-05-partial-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8078,
+      "per_file": {
+        "platform-change-register-9177.yaml": 1567,
+        "change-management-standard-v4.md": 2102,
+        "deployment-service-export.yaml": 699,
+        "operations-handbook-8334.md": 1852,
+        "supplier-coordination-notes-8332.md": 1858
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "start",
+      "fraction": 0.19575,
+      "placements": [
+        {
+          "file": "change-management-standard-v4.md",
+          "fraction": 0.19575,
+          "bucket": "start"
+        },
+        {
+          "file": "deployment-service-export.yaml",
+          "fraction": 0.45498,
+          "bucket": "middle"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "change-management-standard-v4.md",
+        "text": "Fictional reference: mock-patch-05-partial-01.",
+        "required": true
+      },
+      {
+        "file": "deployment-service-export.yaml",
+        "text": "critical_deadline_days: 45",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-PATCH-05",
+    "domain": "Vulnerability Management",
+    "title": "Timely critical security updates",
+    "description": "Mock control, not authoritative. Critical fixes should be prioritized and applied on a defined short schedule.",
+    "evaluation_criteria": [
+      "Critical security updates are deployed within 30 calendar days of release or identification.",
+      "The deadline applies to in-scope production systems.",
+      "Records show due dates and completion or tracked exceptions."
+    ],
+    "expected_evidence": [
+      "Patch-management procedure",
+      "Recent ticket or vulnerability remediation export"
+    ],
+    "retrieval_hints": [
+      "critical update deployment",
+      "change ticket due date",
+      "déploiement des correctifs",
+      "échéance du ticket",
+      "critical_deadline_days",
+      "identified_at",
+      "due_at",
+      "deployed_at",
+      "production scope"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-patch-05-partial-01-m",
+      "control_id": "MOCK-PATCH-05",
+      "repetition": 1,
+      "expected_status": "partial",
+      "status": "timeout",
+      "matches_expected": false,
+      "confidence": null,
+      "justification": null,
+      "criteria_assessment": [],
+      "quotes": [],
+      "recommendation": null,
+      "raw_output_initial": null,
+      "raw_output_final": null,
+      "initial_json_valid": false,
+      "initial_schema_valid": false,
+      "final_json_valid": false,
+      "final_schema_valid": false,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 0,
+        "total": 0,
+        "rate": null
+      },
+      "wall_clock_total_seconds": 900.1041406949998,
+      "wall_clock_elapsed_seconds": 900.1041406949998,
+      "model_reported_total_seconds": null,
+      "model_load_seconds": null,
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "prompt_token_count_method": "timeout",
+      "prompt_processing_seconds": null,
+      "prompt_processing_tokens_per_second": null,
+      "generation_seconds": null,
+      "generation_tokens_per_second": null,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [],
+      "prompt_tokens_estimated_before_call": null,
+      "prompt_tokens_reported_by_backend": null,
+      "prefix_cached": false,
+      "phase_latency_shares": {},
+      "likely_truncated": false,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": null,
+      "prompt_version": "eval_v1",
+      "language": "en",
+      "tags": [
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-patch-05-partial-01",
+      "needle_position": "start",
+      "context_mode": "full",
+      "label_confidence": "firm",
+      "retrieval": {},
+      "resource_peak_ram_used_bytes": 25992118272,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

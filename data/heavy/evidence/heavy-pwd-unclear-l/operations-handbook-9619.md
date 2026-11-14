@@ -1,0 +1,190 @@
+# Dossier opérationnel fictif OPS-241C3E6-0006
+
+Édition: 4.2 | État: approuvé | Propriétaire: Bureau des opérations
+
+| Édition | Date | Motif |
+|---|---|---|
+| 4.2 | 2026-04-12 | Regroupement annuel des procédures |
+
+## Table des matières
+
+1. Organisation
+2. Continuité
+3. Annexes
+
+Voir l'appendice C pour les coordonnées fictives des équipes.
+
+## Section 7: Planification des locaux
+
+Les notes de gestion des données indiquent les collections fictives, leur finalité, le département propriétaire, les emplacements approuvés et la procédure de retrait. Le catalogue contient des descriptions, pas des dossiers clients.
+
+Référence croisée: voir l'appendice C, dossier OPS-0582.
+
+## Section 8: Exercice de reprise
+
+Le calendrier des interventions coordonne les visites, accompagnateurs, livraisons et travaux. Les répartiteurs confirment l'arrivée avec le contact du site et joignent la note d'intervention terminée.
+
+Référence croisée: voir l'appendice C, dossier OPS-0583.
+
+## Section 9: Opérations d'identité
+
+Un formulaire de transfert indique la référence du matériel, les emplacements précédent et suivant, l'expéditeur, le réceptionnaire et l'heure de remise. Le magasinier conserve une copie avec le bordereau.
+
+Référence croisée: voir l'appendice C, dossier OPS-0584.
+
+## Section 10: Revue des changements réseau
+
+Les catalogues de sauvegarde indiquent le propriétaire du service, l'emplacement, le format des copies et le contact de restauration. Les opérateurs joignent un manifeste après chaque exécution planifiée et transmettent les écarts au coordinateur de continuité.
+
+Référence croisée: voir l'appendice C, dossier OPS-0585.
+
+## Section 11: Surveillance de sécurité
+
+Le catalogue de services décrit les offres fictives, départements propriétaires, heures d'assistance, contacts de dépendance et supports d'accueil. Les rédacteurs demandent les corrections dans la file documentaire.
+
+Référence croisée: voir l'appendice C, dossier OPS-0586.
+
+## Section 12: Continuité des services
+
+Une note de transfert indique le département émetteur, l'archive destinataire, l'identifiant du colis, la date de remise et les questions ouvertes. Les deux coordinateurs accusent réception dans le registre documentaire.
+
+Référence croisée: voir l'appendice C, dossier OPS-0587.
+
+## Section 13: Coordination des fournisseurs
+
+Une feuille de capacité suit les disponibilités, congés prévus, compétences spécialisées et engagements de projet. Les responsables résolvent les conflits de calendrier avant d'accepter du travail supplémentaire.
+
+Référence croisée: voir l'appendice C, dossier OPS-0588.
+
+## Section 14: Catalogue du matériel
+
+La maintenance du bâtiment planifie les travaux avec le coordinateur et informe les équipes concernées. Le ticket indique la salle, le prestataire, l'activité prévue, le contact sécurité et la confirmation de fin.
+
+Référence croisée: voir l'appendice C, dossier OPS-0589.
+
+## Section 15: Passation opérationnelle
+
+Au départ d'un employé, le matériel attribué est rendu lors d'une remise documentée. Les services généraux notent l'état, le lieu de collecte, le collègue réceptionnaire et toute demande de réparation.
+
+Référence croisée: voir l'appendice C, dossier OPS-0590.
+
+## Section 16: Gestion documentaire
+
+Le centre de services classe les demandes par service métier, groupe demandeur, impact et file d'assistance. Une note de capacité relève les thèmes récurrents sans exposer le contenu privé des messages.
+
+Référence croisée: voir l'appendice C, dossier OPS-0591.
+
+## Section 17: Organisation des formations
+
+Un plan de déménagement liste les zones d'emballage, identifiants des caisses, salles d'arrivée, aides affectées et contact des locaux. Le coordinateur clôt le ticket après la visite finale.
+
+Référence croisée: voir l'appendice C, dossier OPS-0592.
+
+## Section 18: Planification des locaux
+
+Les ateliers de gestion des problèmes regroupent les symptômes opérationnels et attribuent un responsable à chaque enquête. Le compte rendu contient une chronologie concise, les services touchés et les tickets associés.
+
+Référence croisée: voir l'appendice C, dossier OPS-0593.
+
+## Section 19: Exercice de reprise
+
+Les plans de continuité recensent les activités essentielles, les lieux de travail alternatifs, les arbres de communication et les dépendances externes. Les propriétaires consignent les hypothèses et la date du dernier exercice.
+
+Référence croisée: voir l'appendice C, dossier OPS-0594.
+
+## Section 20: Opérations d'identité
+
+Un guide d'animation contient les objectifs, la préparation, les exercices, les notes d'accessibilité et un formulaire de retour. Les animateurs actualisent les exemples après chaque groupe et conservent les éditions précédentes.
+
+Référence croisée: voir l'appendice C, dossier OPS-0595.
+
+## Section 21: Revue des changements réseau
+
+L'accueil utilise des badges temporaires, un registre des hôtes et une procédure d'accompagnement simple. Le personnel vérifie le retour des badges à la fin de la visite et signale les cartes endommagées.
+
+Référence croisée: voir l'appendice C, dossier OPS-0596.
+
+## Section 22: Surveillance de sécurité
+
+Un atelier après incident distingue les faits confirmés des hypothèses de travail. L'animateur note les décisions, les communications, les mesures de reprise et les tâches attribuées aux équipes sans recopier de données personnelles confidentielles.
+
+Référence croisée: voir l'appendice C, dossier OPS-0597.
+
+## Section 23: Continuité des services
+
+Le plan de formation annuel combine ateliers courts, démonstrations enregistrées et exercices par rôle. Les coordinateurs publient les descriptions, les consignes de participation et les supports accessibles sur le portail.
+
+Référence croisée: voir l'appendice C, dossier OPS-0598.
+
+## Section 24: Coordination des fournisseurs
+
+Les dépositaires de clés cryptographiques consignent le propriétaire métier, l'emplacement approuvé, les transferts de garde et le contact d'urgence. Le matériel secret n'est jamais copié dans l'inventaire.
+
+Référence croisée: voir l'appendice C, dossier OPS-0599.
+
+## Section 25: Catalogue du matériel
+
+Les règles d'utilisation couvrent la collaboration respectueuse, les espaces de partage approuvés, le rangement du bureau et le signalement d'un matériel perdu. Les responsables abordent ces exemples lors de l'accueil.
+
+Référence croisée: voir l'appendice C, dossier OPS-0600.
+
+## Section 26: Passation opérationnelle
+
+Le registre des achats contient les références, dates de livraison, équipes réceptionnaires, contacts de garantie et états de facture. Les acheteurs rapprochent les relevés et transmettent les écarts à la finance.
+
+Référence croisée: voir l'appendice C, dossier OPS-0601.
+
+## Section 27: Gestion documentaire
+
+L'annuaire d'urgence liste une boîte fonctionnelle, un coordinateur suppléant, une conférence téléphonique et un canal alternatif. Les responsables vérifient les contacts lors d'un exercice de continuité.
+
+Référence croisée: voir l'appendice C, dossier OPS-0602.
+
+## Section 28: Organisation des formations
+
+Un formulaire d'inspection des locaux contient la salle, la date, l'état constaté, la référence de maintenance et le technicien responsable. Les formulaires aident l'équipe bâtiment à planifier l'entretien.
+
+Référence croisée: voir l'appendice C, dossier OPS-0603.
+
+## Section 29: Planification des locaux
+
+Les coordinateurs rapprochent les étiquettes du matériel avec les reçus et certificats de retrait. L'inventaire contient une référence stable, l'équipe, la zone, l'état du cycle de vie et la date du dernier comptage.
+
+Référence croisée: voir l'appendice C, dossier OPS-0604.
+
+## Section 30: Exercice de reprise
+
+Un rapport d'exercice de continuité liste le scénario, les départements présents, les décisions prises, les observations de reprise et les responsables d'amélioration. Il distingue les capacités testées des éléments théoriques.
+
+Référence croisée: voir l'appendice C, dossier OPS-0605.
+
+## Section 31: Opérations d'identité
+
+Les nouveaux employés reçoivent une présentation de leur rôle, une orientation des locaux et la liste des canaux de collaboration approuvés. Le coordinateur consigne la participation dans le registre fictif de formation.
+
+Référence croisée: voir l'appendice C, dossier OPS-0606.
+
+## Section 32: Revue des changements réseau
+
+Une liste de cérémonie de clés indique les participants, les rôles de garde, la préparation du matériel, les étapes observées et l'approbation finale. Le coordinateur classe le compte rendu séparément des secrets.
+
+Référence croisée: voir l'appendice C, dossier OPS-0607.
+
+## Section 33: Surveillance de sécurité
+
+L'intégration d'un fournisseur recueille un profil fictif, la description du service, le propriétaire métier, le support et le contact de renouvellement. Les achats classent le questionnaire avec le dossier commercial signé.
+
+Référence croisée: voir l'appendice C, dossier OPS-0608.
+
+## Section 34: Continuité des services
+
+Le journal de réunion du fournisseur indique les participants, l'ordre du jour, les préoccupations opérationnelles, les décisions et les responsables. Le gestionnaire classe le procès-verbal dans le dossier de gouvernance.
+
+Référence croisée: voir l'appendice C, dossier OPS-0609.
+
+## Section 35: Coordination des fournisseurs
+
+Le bureau de communication conserve des modèles approuvés, variantes linguistiques, descriptions d'audience et calendrier de publication. Les rédacteurs se coordonnent avec les propriétaires avant les avis opérationnels.
+
+Référence croisée: voir l'appendice C, dossier OPS-0610.
+

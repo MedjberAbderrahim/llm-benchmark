@@ -62,7 +62,14 @@ def _group_metrics(rows: list[dict[str, Any]], total_seconds: float | None = Non
     ram = [int(r["resource_peak_ram_used_bytes"]) for r in rows if r.get("resource_peak_ram_used_bytes") is not None]
     vram = [float(r["resource_peak_gpu_vram_used_mb"]) for r in rows if r.get("resource_peak_gpu_vram_used_mb") is not None]
     confidences = [float(r["confidence"]) for r in rows if r.get("confidence") is not None]
+    firm = [row for row in rows if row.get("label_confidence", "firm") == "firm"]
+    ambiguous = [row for row in rows if row.get("label_confidence") == "ambiguous"]
+    lenient = [row for row in ambiguous if row.get("matches_expected") or
+               {row.get("expected_status"), row.get("status")} == {"partial", "non_compliant"}]
     return {"cases": len(rows), "verdict_accuracy": sum(bool(r.get("matches_expected")) for r in rows) / len(rows) if rows else None,
+            "firm_label_accuracy": sum(bool(r.get("matches_expected")) for r in firm) / len(firm) if firm else None,
+            "ambiguous_label_accuracy": sum(bool(r.get("matches_expected")) for r in ambiguous) / len(ambiguous) if ambiguous else None,
+            "lenient_ambiguous_accuracy": len(lenient) / len(ambiguous) if ambiguous else None,
             "dangerous_false_reassurance_count": sum(r.get("status") == "compliant" and r.get("expected_status") in {"partial", "non_compliant"} for r in rows),
             "quote_validity_rate": sum(bool(q.get("valid")) for q in quotes) / len(quotes) if quotes else None,
             "median_latency_seconds": statistics.median(latencies) if latencies else None,
@@ -104,6 +111,10 @@ def build_metrics(records: list[dict[str, Any]], total_run_seconds: float, resou
     final_schema = sum(bool(r.get("final_schema_valid")) for r in records)
     injections = [r for r in records if "injection" in r.get("tags", [])]
     confidence = _calibration(scored)
+    firm_records = [row for row in records if row.get("label_confidence", "firm") == "firm"]
+    ambiguous_records = [row for row in records if row.get("label_confidence") == "ambiguous"]
+    lenient_ambiguous = [row for row in ambiguous_records if row.get("matches_expected") or
+                         {row.get("expected_status"), row.get("status")} == {"partial", "non_compliant"}]
     latencies = [float(r["wall_clock_total_seconds"]) for r in records if r.get("wall_clock_total_seconds") is not None]
     prompt_rates = [float(r["prompt_processing_tokens_per_second"]) for r in records
                     if r.get("prompt_processing_tokens_per_second") is not None and not r.get("prefix_cached")]
@@ -133,6 +144,11 @@ def build_metrics(records: list[dict[str, Any]], total_run_seconds: float, resou
     return {
         "selected_case_repetitions": len(records), "scored_outputs": len(scored),
         "verdict_accuracy": sum(bool(r.get("matches_expected")) for r in records) / len(records) if records else None,
+        "firm_label_case_count": len(firm_records),
+        "firm_label_accuracy": sum(bool(r.get("matches_expected")) for r in firm_records) / len(firm_records) if firm_records else None,
+        "ambiguous_label_case_count": len(ambiguous_records),
+        "ambiguous_label_accuracy": sum(bool(r.get("matches_expected")) for r in ambiguous_records) / len(ambiguous_records) if ambiguous_records else None,
+        "lenient_ambiguous_accuracy": len(lenient_ambiguous) / len(ambiguous_records) if ambiguous_records else None,
         "confusion_matrix": matrix, "per_class": per_class,
         "dangerous_false_reassurance_count": dangerous, "over_strict_error_count": over_strict,
         "initial_valid_json_schema_count": initial_schema, "initial_valid_json_rate": initial / len(records) if records else None,

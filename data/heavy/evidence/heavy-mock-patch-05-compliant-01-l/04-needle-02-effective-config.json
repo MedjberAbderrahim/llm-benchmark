@@ -1,9 +1,0 @@
-{
-  "scope": "all_production",
-  "critical_deadline_days": 20,
-  "ticket_fields": [
-    "identified_at",
-    "due_at",
-    "deployed_at"
-  ]
-}

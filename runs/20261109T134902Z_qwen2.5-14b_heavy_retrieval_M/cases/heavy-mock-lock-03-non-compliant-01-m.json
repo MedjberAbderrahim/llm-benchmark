@@ -1,0 +1,273 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-lock-03-non-compliant-01-m",
+    "control_id": "MOCK-LOCK-03",
+    "evidence_files": [
+      "supplier-coordination-notes-4095.md",
+      "operations-handbook-2770.md",
+      "platform-change-register-7686.yaml",
+      "authentication-export.json",
+      "authentication-operations-standard.md"
+    ],
+    "file_order": [
+      "supplier-coordination-notes-4095.md",
+      "operations-handbook-2770.md",
+      "platform-change-register-7686.yaml",
+      "authentication-export.json",
+      "authentication-operations-standard.md"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 4226446623,
+    "file_roles": {
+      "authentication-operations-standard.md": "decisive",
+      "authentication-export.json": "decisive",
+      "platform-change-register-7686.yaml": "filler_adjacent",
+      "operations-handbook-2770.md": "filler_generic",
+      "supplier-coordination-notes-4095.md": "filler_adjacent"
+    },
+    "expected_status": "non_compliant",
+    "split": "dev",
+    "language": "en",
+    "tags": [
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "The effective evidence shows a material failure against one or more required criteria.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-lock-03-non-compliant-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8071,
+      "per_file": {
+        "supplier-coordination-notes-4095.md": 1774,
+        "operations-handbook-2770.md": 1509,
+        "platform-change-register-7686.yaml": 1739,
+        "authentication-export.json": 786,
+        "authentication-operations-standard.md": 2263
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "middle",
+      "fraction": 0.62234,
+      "placements": [
+        {
+          "file": "authentication-export.json",
+          "fraction": 0.62234,
+          "bucket": "middle"
+        },
+        {
+          "file": "authentication-operations-standard.md",
+          "fraction": 0.72138,
+          "bucket": "middle"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "authentication-export.json",
+        "text": "\"failed_attempt_threshold\": 0,",
+        "required": true
+      },
+      {
+        "file": "authentication-operations-standard.md",
+        "text": "Fictional reference: mock-lock-03-non-compliant-01.",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-LOCK-03",
+    "domain": "Authentication",
+    "title": "Repeated sign-in failure handling",
+    "description": "Mock control, not authoritative. Repeated failed sign-ins should trigger a protective response.",
+    "evaluation_criteria": [
+      "Accounts are blocked or delayed after no more than 5 consecutive failures.",
+      "The protective state lasts at least 15 minutes or requires an approved reset.",
+      "The configured behavior is evidenced."
+    ],
+    "expected_evidence": [
+      "Authentication procedure",
+      "Directory or application lockout configuration"
+    ],
+    "retrieval_hints": [
+      "repeated authentication failures",
+      "account recovery",
+      "échecs de connexion",
+      "récupération de compte",
+      "failed_attempt_threshold",
+      "lockout_minutes",
+      "lockout_enabled",
+      "directory authentication settings"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-lock-03-non-compliant-01-m",
+      "control_id": "MOCK-LOCK-03",
+      "repetition": 1,
+      "expected_status": "non_compliant",
+      "status": "non_compliant",
+      "matches_expected": true,
+      "confidence": 1.0,
+      "justification": "Le contrôle évalue la réaction en cas de tentatives de connexion infructueuses répétées. Les preuves montrent que les tentatives de connexion infructueuses ne déclenchent pas de blocage ou de délai des comptes, et que les comptes restent disponibles après des tentatives infructueuses. Les paramètres configurés indiquent que le seuil de tentatives infructueuses est de 0 et que le verrouillage est désactivé.",
+      "criteria_assessment": [
+        {
+          "criterion": "Accounts are blocked or delayed after no more than 5 consecutive failures.",
+          "met": "no",
+          "note": "Le paramètre failed_attempt_threshold est défini à 0 et lockout_enabled est défini à false, ce qui signifie que les comptes ne sont pas verrouillés après un certain nombre de tentatives infructueuses."
+        },
+        {
+          "criterion": "The protective state lasts at least 15 minutes or requires an approved reset.",
+          "met": "no",
+          "note": "Comme le verrouillage est désactivé, il n'y a pas d'état protecteur qui dure au moins 15 minutes."
+        },
+        {
+          "criterion": "The configured behavior is evidenced.",
+          "met": "yes",
+          "note": "Les preuves montrent que le verrouillage est désactivé et que le seuil de tentatives infructueuses est de 0."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "authentication-export.json",
+          "text": "  \"failed_attempt_threshold\": 0,\n  \"lockout_enabled\": false,",
+          "valid": true
+        },
+        {
+          "file": "authentication-operations-standard.md",
+          "text": "Accounts remain available after failed sign-ins. Monitoring alerts are reviewed during business hours.",
+          "valid": true
+        }
+      ],
+      "recommendation": "Il est recommandé de configurer un seuil de tentatives infructueuses et d'activer le verrouillage pour répondre aux exigences du contrôle.",
+      "raw_output_initial": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"Le contrôle évalue la réaction en cas de tentatives de connexion infructueuses répétées. Les preuves montrent que les tentatives de connexion infructueuses ne déclenchent pas de blocage ou de délai des comptes, et que les comptes restent disponibles après des tentatives infructueuses. Les paramètres configurés indiquent que le seuil de tentatives infructueuses est de 0 et que le verrouillage est désactivé.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Accounts are blocked or delayed after no more than 5 consecutive failures.\",\n      \"met\": \"no\",\n      \"note\": \"Le paramètre failed_attempt_threshold est défini à 0 et lockout_enabled est défini à false, ce qui signifie que les comptes ne sont pas verrouillés après un certain nombre de tentatives infructueuses.\"\n    },\n    {\n      \"criterion\": \"The protective state lasts at least 15 minutes or requires an approved reset.\",\n      \"met\": \"no\",\n      \"note\": \"Comme le verrouillage est désactivé, il n'y a pas d'état protecteur qui dure au moins 15 minutes.\"\n    },\n    {\n      \"criterion\": \"The configured behavior is evidenced.\",\n      \"met\": \"yes\",\n      \"note\": \"Les preuves montrent que le verrouillage est désactivé et que le seuil de tentatives infructueuses est de 0.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"authentication-export.json\",\n      \"text\": \"  \\\"failed_attempt_threshold\\\": 0,\\n  \\\"lockout_enabled\\\": false,\"\n    },\n    {\n      \"file\": \"authentication-operations-standard.md\",\n      \"text\": \"Accounts remain available after failed sign-ins. Monitoring alerts are reviewed during business hours.\"\n    }\n  ],\n  \"recommendation\": \"Il est recommandé de configurer un seuil de tentatives infructueuses et d'activer le verrouillage pour répondre aux exigences du contrôle.\",\n  \"confidence\": 1.0\n}",
+      "raw_output_final": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"Le contrôle évalue la réaction en cas de tentatives de connexion infructueuses répétées. Les preuves montrent que les tentatives de connexion infructueuses ne déclenchent pas de blocage ou de délai des comptes, et que les comptes restent disponibles après des tentatives infructueuses. Les paramètres configurés indiquent que le seuil de tentatives infructueuses est de 0 et que le verrouillage est désactivé.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Accounts are blocked or delayed after no more than 5 consecutive failures.\",\n      \"met\": \"no\",\n      \"note\": \"Le paramètre failed_attempt_threshold est défini à 0 et lockout_enabled est défini à false, ce qui signifie que les comptes ne sont pas verrouillés après un certain nombre de tentatives infructueuses.\"\n    },\n    {\n      \"criterion\": \"The protective state lasts at least 15 minutes or requires an approved reset.\",\n      \"met\": \"no\",\n      \"note\": \"Comme le verrouillage est désactivé, il n'y a pas d'état protecteur qui dure au moins 15 minutes.\"\n    },\n    {\n      \"criterion\": \"The configured behavior is evidenced.\",\n      \"met\": \"yes\",\n      \"note\": \"Les preuves montrent que le verrouillage est désactivé et que le seuil de tentatives infructueuses est de 0.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"authentication-export.json\",\n      \"text\": \"  \\\"failed_attempt_threshold\\\": 0,\\n  \\\"lockout_enabled\\\": false,\"\n    },\n    {\n      \"file\": \"authentication-operations-standard.md\",\n      \"text\": \"Accounts remain available after failed sign-ins. Monitoring alerts are reviewed during business hours.\"\n    }\n  ],\n  \"recommendation\": \"Il est recommandé de configurer un seuil de tentatives infructueuses et d'activer le verrouillage pour répondre aux exigences du contrôle.\",\n  \"confidence\": 1.0\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 2,
+        "total": 2,
+        "rate": 1.0
+      },
+      "wall_clock_total_seconds": 603.9929523659994,
+      "wall_clock_elapsed_seconds": 603.9930234109997,
+      "model_reported_total_seconds": 603.991612295,
+      "model_load_seconds": 0.002045335,
+      "prompt_tokens": 3300,
+      "output_tokens": 474,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 399.35524,
+      "prompt_processing_tokens_per_second": 8.263319644935672,
+      "generation_seconds": 204.056807,
+      "generation_tokens_per_second": 2.3228825686760843,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 603991612295,
+          "load_duration": 2045335,
+          "prompt_eval_count": 3300,
+          "prompt_eval_duration": 399355240000,
+          "eval_count": 474,
+          "eval_duration": 204056807000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 3285,
+      "prompt_tokens_reported_by_backend": 3300,
+      "prefix_cached": false,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 3.3863557380725793e-06,
+        "prompt_processing": 0.6611918871497099,
+        "generation": 0.3378463377770482
+      },
+      "likely_truncated": false,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 7168,
+      "prompt_version": "eval_v2_retrieval",
+      "language": "en",
+      "tags": [
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-lock-03-non-compliant-01",
+      "needle_position": "middle",
+      "context_mode": "retrieval",
+      "label_confidence": "firm",
+      "retrieval": {
+        "retrieved_chunks": [
+          {
+            "chunk_id": "fa9a761c05eec9c597a9",
+            "file": "authentication-operations-standard.md",
+            "score": 0.03278688524590164,
+            "rank": 1,
+            "start_line": 1,
+            "end_line": 31
+          },
+          {
+            "chunk_id": "ecae3e7b96b3369bf11d",
+            "file": "supplier-coordination-notes-4095.md",
+            "score": 0.030303030303030304,
+            "rank": 2,
+            "start_line": 53,
+            "end_line": 96
+          },
+          {
+            "chunk_id": "f90cebc93e3432c13ad4",
+            "file": "operations-handbook-2770.md",
+            "score": 0.02946236559139785,
+            "rank": 3,
+            "start_line": 73,
+            "end_line": 102
+          },
+          {
+            "chunk_id": "2349c9800da6bc930ae6",
+            "file": "authentication-export.json",
+            "score": 0.027242401779095628,
+            "rank": 4,
+            "start_line": 1,
+            "end_line": 62
+          },
+          {
+            "chunk_id": "a3373a2a8ee2b2c7be66",
+            "file": "authentication-operations-standard.md",
+            "score": 0.03125,
+            "rank": 5,
+            "start_line": 70,
+            "end_line": 105
+          }
+        ],
+        "context_chunk_ids": [
+          "2349c9800da6bc930ae6",
+          "fa9a761c05eec9c597a9",
+          "a3373a2a8ee2b2c7be66",
+          "f90cebc93e3432c13ad4",
+          "ecae3e7b96b3369bf11d"
+        ],
+        "chunks_requested": 5,
+        "chunks_returned": 5,
+        "shortfall_reason": null,
+        "min_files": 4,
+        "tokens_sent": 1940,
+        "retrieval_seconds": 0.0041811899973254185,
+        "embedding_seconds": 3.167934665001667,
+        "gold_passage_count": 2,
+        "gold_passages_retrieved": 2,
+        "required_gold_passage_count": 2,
+        "required_gold_passages_retrieved": 2,
+        "all_required_gold_in_context": true,
+        "all_gold_in_context": true,
+        "failure_attribution": "ok"
+      },
+      "resource_peak_ram_used_bytes": 25373945856,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

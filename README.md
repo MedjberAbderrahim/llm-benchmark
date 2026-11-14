@@ -139,7 +139,7 @@ Latency distributions use wall time across all attempts for each repetition; war
 
 ## Heavy evidence tiers
 
-`data/heavy/` is generated, reproducible evidence and is ignored by Git; `data/labels_heavy.yaml` is tracked. Heavy generation never calls a model or uses the network. The default estimator is UTF-8 bytes divided by four; it is a sizing estimate, not an exact tokenizer.
+`data/heavy/` and `data/labels_heavy.yaml` are committed so a Windows collaborator can clone a ready-to-run dataset. Heavy generation is deterministic, offline, and never calls a model or uses the network. The default estimator is UTF-8 bytes divided by four; it is a sizing estimate, not an exact tokenizer. Heavy labels include `heavy_dataset_version: 2`; older heavy v1 runs use a different evidence set and should not be compared (the comparison tool warns when dataset hashes differ).
 
 ```bash
 python3 -m bench generate-heavy-data --seed 1729
@@ -147,9 +147,11 @@ python3 -m bench validate-data --dataset heavy
 python3 -m bench data-stats --dataset heavy
 ```
 
-The generator creates M (~8k tokens/case), L (~16k), and XL (~32k) variants. Scorable base cases are paired across all three tiers; insufficient-evidence cases have M/L pairs. The current generated set has 92 cases and 730 files. Labels include per-file token estimates, exact gold passages, needle depth, `paired_with`, split, language, and tags. Eight additional adversarial cases cover superseded and draft records, a temporary waiver, buried config facts, a 2,000-row CSV, a near-duplicate number, deep prompt injection, and related but insufficient evidence. The separate heavy dataset hash includes heavy labels, controls, and generated evidence; the base hash is unchanged.
+The generator creates M (~8k tokens/case), L (~16k), and XL (~32k) variants. Scorable base cases are paired across all three tiers; insufficient-evidence cases have M/L pairs. Heavy v2 has 108 cases: 84 paired examples and 24 adversarial examples (three per subtype), stored with neutral filenames and seeded, recorded file ordering. The committed evidence occupies about 7.82 MB. Labels keep file roles, required gold passages, needle depth, `paired_with`, split, language, and tags out of model-visible evidence. Decisive facts are preserved verbatim in expanded documents; adjacent bilingual security material makes up most non-decisive content. Large CSV examples contain 1,500 rows with one unresolved record. The separate heavy dataset hash includes heavy labels and generated evidence; the base hash is unchanged.
 
-A bilingual pool of 80 handwritten topical blocks supplies realistic adjacent material. A per-control regex denylist checks every bulk file to prevent filler from introducing decisive settings. Tier tolerance is ±15%. `--force` regenerates the heavy tree; changing its seed requires `--force`. Use `--bytes-per-token` to change the estimator consistently.
+A bilingual pool of handwritten topical blocks supplies security-adjacent and generic operations content. A per-control regex denylist checks non-decoy filler; decoy documents must carry a scope marker such as `superseded by edition X` or `draft — not approved`. Validation checks for answer-revealing role words in evidence names/text, tier tolerance (±15%), exact and sufficiently informative gold passages, file ordering, and three examples per adversarial subtype. `data-stats --dataset heavy` reports role token totals, decisive-share distributions, adjacent-topic ratios, file counts, shuffle status, duplicate rate, subtype counts, and gold quality. The 1,500-row CSV adversarial examples can dominate smaller tiers because the native export itself is the buried evidence; other scorable cases target 8–40%. `--force` regenerates the heavy tree; changing its seed requires `--force`. Use `--bytes-per-token` to change the estimator consistently.
+
+The eight controls now carry optional bilingual `retrieval_hints` with search concepts and key aliases, never required thresholds. These are platform-style search metadata. They are excluded from the base dataset hash because they do not change control wording, evidence, or labeled verdict; the base controls, labels, and evidence otherwise remain unchanged.
 
 Heavy runs default to tier M when `--dataset heavy` is selected. Choose one tier first, and use filters/time controls before attempting L or XL on a laptop:
 
@@ -164,7 +166,7 @@ The runner also accepts `--control`, comma-separated `--status`, `--repeat`, `--
 
 Retrieval indexes only each case's own evidence, so chunks from one case cannot answer another. Markdown is split around heading/paragraph structure; configs use section/line windows; CSV uses row groups with a repeated header stored as metadata. Every chunk records exact source text, offsets, lines, filename, and heading path. CSV header metadata is not treated as a quote. Embeddings are normalized and cached in SQLite at `.cache/retrieval.sqlite3` by model and chunk-content hash. Dense cosine, a small in-process BM25 implementation, and reciprocal-rank fusion are available; there is no vector database service.
 
-The default embedding model is multilingual `bge-m3` through Ollama. Pull it once before indexing (`ollama pull bge-m3`). An OpenAI-compatible embedding endpoint, alternate model, and optional query/passage prefixes can be set with CLI flags. BM25 can run without an embedding model. The retrieval query uses the control's title, description, criteria, and expected-evidence list, never its ID.
+The default embedding model is multilingual `bge-m3` through Ollama. Pull it once before indexing (`ollama pull bge-m3`). An OpenAI-compatible embedding endpoint, alternate model, and optional query/passage prefixes can be set with CLI flags. BM25 can run without an embedding model. The retrieval query uses the control's title, description, criteria, and expected-evidence list, never its ID. `query_v1` is the legacy combined query; `query_v2` adds one query per criterion and merges rankings with reciprocal-rank fusion. Hints can be switched with `--use-hints` / `--no-use-hints`. Context assembly considers high-ranked chunks across distinct files first (`--min-files`, default 4), and BM25 backfills zero-score chunks so it can return the requested count when enough chunks are indexed. Retrieval evaluation refuses datasets with no gold passages.
 
 ```bash
 # Build the dense index (embedding work is cached)
@@ -179,9 +181,11 @@ python3 -m bench run --dataset heavy --tier M --backend ollama --model qwen2.5:7
 python3 -m bench run --dataset heavy --tier M --backend ollama --model qwen2.5:7b --split dev --limit 5 --context-mode retrieval --retriever hybrid --top-k 8 --embed-model bge-m3
 ```
 
-`eval-retrieval` reports gold-passage recall@k, first-hit MRR, and assembled context tokens overall and by tier, language, control, and tag; `--sweep` covers 200/400/800-token chunks, k=3/5/8/12, and dense/BM25/hybrid. It writes Markdown and JSON under `runs/` and makes no LLM calls. `query_v1` is a versioned plain-text query template and can be replaced with another `query_*.md` file selected by `--query-version`. Retrieval runs record selected chunk IDs and scores, tokens sent, query embedding and retrieval time separately from LLM time, whether gold passages reached the final context, and a `retrieval_miss` / `llm_error` / `ok` attribution. Quote checking always uses the original source files.
+`eval-retrieval` reports recall@k, first-hit MRR, context tokens, and the headline rate at which every required gold passage reaches the assembled context, overall and by tier, language, control, and tag. `--sweep` compares 400-token chunks, k=5/8, dense/BM25/hybrid, query_v1/query_v2, and hints on/off. It writes Markdown and JSON under `runs/` and makes no LLM calls. Retrieval runs record selected chunk IDs and scores, tokens sent, query embedding and retrieval time separately from LLM time, whether required gold passages reached the final context, and a `retrieval_miss` / `llm_error` / `ok` attribution. Quote checking always uses the original source files.
 
 Choose retrieval settings by looking at both recall and context size. A retrieval miss means the LLM never saw the labeled support; an `llm_error` means all labeled gold passages were present but the verdict still missed. High recall does not guarantee a correct verdict, and labels only assess this synthetic evidence set.
+
+`LABEL_POLICY.md` proposes two draft rules for `partial` versus `non_compliant`; the choice is pending auditor review. `data/label_flags.yaml` marks the five cases identified in `LABEL_REVIEW.md` as ambiguous without changing base labels. Run reports and comparisons show firm-label accuracy, ambiguous-label accuracy, and lenient ambiguous accuracy treating `partial` and `non_compliant` as adjacent outcomes.
 
 ## Measurement additions
 

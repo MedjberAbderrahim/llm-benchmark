@@ -10,3 +10,12 @@ evaluation_criteria:
 expected_evidence:
 - Authentication procedure
 - Directory or application lockout configuration
+retrieval_hints:
+  - repeated authentication failures
+  - account recovery
+  - échecs de connexion
+  - récupération de compte
+  - failed_attempt_threshold
+  - lockout_minutes
+  - lockout_enabled
+  - directory authentication settings

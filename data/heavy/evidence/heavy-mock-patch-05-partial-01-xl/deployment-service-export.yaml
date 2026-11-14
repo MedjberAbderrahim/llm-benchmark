@@ -1,0 +1,173 @@
+scope: production_servers
+critical_deadline_days: 45
+exceptions_tracked: true
+
+service_change_records:
+  - asset_ref: SVC-001-00000
+    owner_group: platform-00
+    change_ref: CHG-00000
+    lifecycle_state: active
+  - asset_ref: SVC-001-00001
+    owner_group: platform-01
+    change_ref: CHG-00013
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00002
+    owner_group: platform-02
+    change_ref: CHG-00026
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00003
+    owner_group: platform-03
+    change_ref: CHG-00039
+    lifecycle_state: active
+  - asset_ref: SVC-001-00004
+    owner_group: platform-04
+    change_ref: CHG-00052
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00005
+    owner_group: platform-05
+    change_ref: CHG-00065
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00006
+    owner_group: platform-06
+    change_ref: CHG-00078
+    lifecycle_state: active
+  - asset_ref: SVC-001-00007
+    owner_group: platform-07
+    change_ref: CHG-00091
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00008
+    owner_group: platform-08
+    change_ref: CHG-00104
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00009
+    owner_group: platform-09
+    change_ref: CHG-00117
+    lifecycle_state: active
+  - asset_ref: SVC-001-00010
+    owner_group: platform-10
+    change_ref: CHG-00130
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00011
+    owner_group: platform-11
+    change_ref: CHG-00143
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00012
+    owner_group: platform-12
+    change_ref: CHG-00156
+    lifecycle_state: active
+  - asset_ref: SVC-001-00013
+    owner_group: platform-13
+    change_ref: CHG-00169
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00014
+    owner_group: platform-14
+    change_ref: CHG-00182
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00015
+    owner_group: platform-15
+    change_ref: CHG-00195
+    lifecycle_state: active
+  - asset_ref: SVC-001-00016
+    owner_group: platform-16
+    change_ref: CHG-00208
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00017
+    owner_group: platform-00
+    change_ref: CHG-00221
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00018
+    owner_group: platform-01
+    change_ref: CHG-00234
+    lifecycle_state: active
+  - asset_ref: SVC-001-00019
+    owner_group: platform-02
+    change_ref: CHG-00247
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00020
+    owner_group: platform-03
+    change_ref: CHG-00260
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00021
+    owner_group: platform-04
+    change_ref: CHG-00273
+    lifecycle_state: active
+  - asset_ref: SVC-001-00022
+    owner_group: platform-05
+    change_ref: CHG-00286
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00023
+    owner_group: platform-06
+    change_ref: CHG-00299
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00024
+    owner_group: platform-07
+    change_ref: CHG-00312
+    lifecycle_state: active
+  - asset_ref: SVC-001-00025
+    owner_group: platform-08
+    change_ref: CHG-00325
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00026
+    owner_group: platform-09
+    change_ref: CHG-00338
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00027
+    owner_group: platform-10
+    change_ref: CHG-00351
+    lifecycle_state: active
+  - asset_ref: SVC-001-00028
+    owner_group: platform-11
+    change_ref: CHG-00364
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00029
+    owner_group: platform-12
+    change_ref: CHG-00377
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00030
+    owner_group: platform-13
+    change_ref: CHG-00390
+    lifecycle_state: active
+  - asset_ref: SVC-001-00031
+    owner_group: platform-14
+    change_ref: CHG-00403
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00032
+    owner_group: platform-15
+    change_ref: CHG-00416
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00033
+    owner_group: platform-16
+    change_ref: CHG-00429
+    lifecycle_state: active
+  - asset_ref: SVC-001-00034
+    owner_group: platform-00
+    change_ref: CHG-00442
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00035
+    owner_group: platform-01
+    change_ref: CHG-00455
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00036
+    owner_group: platform-02
+    change_ref: CHG-00468
+    lifecycle_state: active
+  - asset_ref: SVC-001-00037
+    owner_group: platform-03
+    change_ref: CHG-00481
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00038
+    owner_group: platform-04
+    change_ref: CHG-00494
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00039
+    owner_group: platform-05
+    change_ref: CHG-00507
+    lifecycle_state: active
+  - asset_ref: SVC-001-00040
+    owner_group: platform-06
+    change_ref: CHG-00520
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00041
+    owner_group: platform-07
+    change_ref: CHG-00533
+    lifecycle_state: retired

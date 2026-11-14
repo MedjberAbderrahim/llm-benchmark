@@ -1,0 +1,212 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-fw-06-compliant-01-m",
+    "control_id": "MOCK-FW-06",
+    "evidence_files": [
+      "perimeter-service-export.yaml",
+      "network-access-standard-v4.md",
+      "perimeter-operations-procedure.md",
+      "supplier-coordination-notes-8769.md",
+      "operations-handbook-1824.md"
+    ],
+    "file_order": [
+      "perimeter-service-export.yaml",
+      "network-access-standard-v4.md",
+      "perimeter-operations-procedure.md",
+      "supplier-coordination-notes-8769.md",
+      "operations-handbook-1824.md"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 2478535464,
+    "file_roles": {
+      "network-access-standard-v4.md": "decisive",
+      "perimeter-service-export.yaml": "decisive",
+      "perimeter-operations-procedure.md": "filler_generic",
+      "operations-handbook-1824.md": "filler_adjacent",
+      "supplier-coordination-notes-8769.md": "filler_generic"
+    },
+    "expected_status": "compliant",
+    "split": "dev",
+    "language": "en",
+    "tags": [
+      "distractor",
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "The cited policy and effective export satisfy the stated mock criteria.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-fw-06-compliant-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8102,
+      "per_file": {
+        "perimeter-service-export.yaml": 685,
+        "network-access-standard-v4.md": 1963,
+        "perimeter-operations-procedure.md": 30,
+        "supplier-coordination-notes-8769.md": 1652,
+        "operations-handbook-1824.md": 3772
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "start",
+      "fraction": 0.0,
+      "placements": [
+        {
+          "file": "perimeter-service-export.yaml",
+          "fraction": 0.0,
+          "bucket": "start"
+        },
+        {
+          "file": "network-access-standard-v4.md",
+          "fraction": 0.09341,
+          "bucket": "start"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "perimeter-service-export.yaml",
+        "text": "default_inbound: deny\nrules:\n- source: 203.0.113.8/32",
+        "required": true
+      },
+      {
+        "file": "network-access-standard-v4.md",
+        "text": "Inbound connections are denied unless a service owner approves a named source and destination port.",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-FW-06",
+    "domain": "Network Security",
+    "title": "Restrictive inbound network rules",
+    "description": "Mock control, not authoritative. Inbound network access should be limited to approved sources and services.",
+    "evaluation_criteria": [
+      "No inbound rule allows every source to reach every port.",
+      "Publicly reachable ports are specifically approved and documented.",
+      "A default-deny inbound policy is in effect."
+    ],
+    "expected_evidence": [
+      "Firewall rule review procedure",
+      "Current inbound ruleset export"
+    ],
+    "retrieval_hints": [
+      "inbound network access",
+      "perimeter rule source and service",
+      "accès réseau entrant",
+      "source et service du pare-feu",
+      "default_inbound",
+      "source",
+      "destination_port",
+      "network zone",
+      "service owner"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-fw-06-compliant-01-m",
+      "control_id": "MOCK-FW-06",
+      "repetition": 1,
+      "expected_status": "compliant",
+      "status": "compliant",
+      "matches_expected": true,
+      "confidence": 1.0,
+      "justification": "The evidence provided shows that the network perimeter uses a default-deny policy, and only specific sources are allowed access to certain ports. The procedure document explicitly states that inbound connections are denied unless a service owner approves a named source and destination port. The current inbound ruleset export also aligns with the policy of denying all inbound traffic by default and allowing only specific sources.",
+      "criteria_assessment": [
+        {
+          "criterion": "No inbound rule allows every source to reach every port.",
+          "met": "yes",
+          "note": "The current inbound ruleset export shows that only specific sources are allowed access to certain ports, and there are no rules allowing every source to reach every port."
+        },
+        {
+          "criterion": "Publicly reachable ports are specifically approved and documented.",
+          "met": "yes",
+          "note": "The current inbound ruleset export lists specific sources and ports that are allowed, indicating that publicly reachable ports are specifically approved and documented."
+        },
+        {
+          "criterion": "A default-deny inbound policy is in effect.",
+          "met": "yes",
+          "note": "The current inbound ruleset export and the procedure document both indicate that a default-deny inbound policy is in effect."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "perimeter-service-export.yaml",
+          "text": "default_inbound: deny",
+          "valid": true
+        },
+        {
+          "file": "network-access-standard-v4.md",
+          "text": "Inbound connections are denied unless a service owner approves a named source and destination port. The perimeter uses a default-deny policy.",
+          "valid": true
+        }
+      ],
+      "recommendation": "Maintain the current configuration and ensure that all future changes are documented and approved according to the established procedure.",
+      "raw_output_initial": "{\n  \"status\": \"compliant\",\n  \"justification\": \"The evidence provided shows that the network perimeter uses a default-deny policy, and only specific sources are allowed access to certain ports. The procedure document explicitly states that inbound connections are denied unless a service owner approves a named source and destination port. The current inbound ruleset export also aligns with the policy of denying all inbound traffic by default and allowing only specific sources.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"No inbound rule allows every source to reach every port.\",\n      \"met\": \"yes\",\n      \"note\": \"The current inbound ruleset export shows that only specific sources are allowed access to certain ports, and there are no rules allowing every source to reach every port.\"\n    },\n    {\n      \"criterion\": \"Publicly reachable ports are specifically approved and documented.\",\n      \"met\": \"yes\",\n      \"note\": \"The current inbound ruleset export lists specific sources and ports that are allowed, indicating that publicly reachable ports are specifically approved and documented.\"\n    },\n    {\n      \"criterion\": \"A default-deny inbound policy is in effect.\",\n      \"met\": \"yes\",\n      \"note\": \"The current inbound ruleset export and the procedure document both indicate that a default-deny inbound policy is in effect.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"perimeter-service-export.yaml\",\n      \"text\": \"default_inbound: deny\"\n    },\n    {\n      \"file\": \"network-access-standard-v4.md\",\n      \"text\": \"Inbound connections are denied unless a service owner approves a named source and destination port. The perimeter uses a default-deny policy.\"\n    }\n  ],\n  \"recommendation\": \"Maintain the current configuration and ensure that all future changes are documented and approved according to the established procedure.\",\n  \"confidence\": 1.0\n}",
+      "raw_output_final": "{\n  \"status\": \"compliant\",\n  \"justification\": \"The evidence provided shows that the network perimeter uses a default-deny policy, and only specific sources are allowed access to certain ports. The procedure document explicitly states that inbound connections are denied unless a service owner approves a named source and destination port. The current inbound ruleset export also aligns with the policy of denying all inbound traffic by default and allowing only specific sources.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"No inbound rule allows every source to reach every port.\",\n      \"met\": \"yes\",\n      \"note\": \"The current inbound ruleset export shows that only specific sources are allowed access to certain ports, and there are no rules allowing every source to reach every port.\"\n    },\n    {\n      \"criterion\": \"Publicly reachable ports are specifically approved and documented.\",\n      \"met\": \"yes\",\n      \"note\": \"The current inbound ruleset export lists specific sources and ports that are allowed, indicating that publicly reachable ports are specifically approved and documented.\"\n    },\n    {\n      \"criterion\": \"A default-deny inbound policy is in effect.\",\n      \"met\": \"yes\",\n      \"note\": \"The current inbound ruleset export and the procedure document both indicate that a default-deny inbound policy is in effect.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"perimeter-service-export.yaml\",\n      \"text\": \"default_inbound: deny\"\n    },\n    {\n      \"file\": \"network-access-standard-v4.md\",\n      \"text\": \"Inbound connections are denied unless a service owner approves a named source and destination port. The perimeter uses a default-deny policy.\"\n    }\n  ],\n  \"recommendation\": \"Maintain the current configuration and ensure that all future changes are documented and approved according to the established procedure.\",\n  \"confidence\": 1.0\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 2,
+        "total": 2,
+        "rate": 1.0
+      },
+      "wall_clock_total_seconds": 622.7295736490014,
+      "wall_clock_elapsed_seconds": 622.7296437690002,
+      "model_reported_total_seconds": 622.727966177,
+      "model_load_seconds": 0.002806005,
+      "prompt_tokens": 9263,
+      "output_tokens": 392,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 524.584312999,
+      "prompt_processing_tokens_per_second": 17.657790693443133,
+      "generation_seconds": 97.467442,
+      "generation_tokens_per_second": 4.021855831611955,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 622727966177,
+          "load_duration": 2806005,
+          "prompt_eval_count": 9263,
+          "prompt_eval_duration": 524584312999,
+          "eval_count": 392,
+          "eval_duration": 97467442000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 9524,
+      "prompt_tokens_reported_by_backend": 9263,
+      "prefix_cached": false,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 4.505976781474637e-06,
+        "prompt_processing": 0.8423950542851196,
+        "generation": 0.1565164818315455
+      },
+      "likely_truncated": false,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 11264,
+      "prompt_version": "eval_v1",
+      "language": "en",
+      "tags": [
+        "distractor",
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-fw-06-compliant-01",
+      "needle_position": "start",
+      "context_mode": "full",
+      "label_confidence": "firm",
+      "retrieval": {},
+      "resource_peak_ram_used_bytes": 16734838784,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

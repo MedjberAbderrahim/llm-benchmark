@@ -10,3 +10,12 @@ evaluation_criteria:
 expected_evidence:
 - Web-service cryptography standard
 - Reverse-proxy or web-server configuration export
+retrieval_hints:
+  - public web endpoint protocol profile
+  - reverse proxy transport settings
+  - profil protocolaire public
+  - paramètres de transport du proxy
+  - ssl_protocols
+  - minimum_tls_version
+  - certificate deployment
+  - endpoint inventory

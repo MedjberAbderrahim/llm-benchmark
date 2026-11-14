@@ -1,0 +1,1532 @@
+# Production service export; 1,201 inventory entries follow
+x0001=0
+x0002=0
+x0003=0
+x0004=0
+x0005=0
+x0006=0
+x0007=0
+x0008=0
+x0009=0
+x0010=0
+x0011=0
+x0012=0
+x0013=0
+x0014=0
+x0015=0
+x0016=0
+x0017=0
+x0018=0
+x0019=0
+x0020=0
+x0021=0
+x0022=0
+x0023=0
+x0024=0
+x0025=0
+x0026=0
+x0027=0
+x0028=0
+x0029=0
+x0030=0
+x0031=0
+x0032=0
+x0033=0
+x0034=0
+x0035=0
+x0036=0
+x0037=0
+x0038=0
+x0039=0
+x0040=0
+x0041=0
+x0042=0
+x0043=0
+x0044=0
+x0045=0
+x0046=0
+x0047=0
+x0048=0
+x0049=0
+x0050=0
+x0051=0
+x0052=0
+x0053=0
+x0054=0
+x0055=0
+x0056=0
+x0057=0
+x0058=0
+x0059=0
+x0060=0
+x0061=0
+x0062=0
+x0063=0
+x0064=0
+x0065=0
+x0066=0
+x0067=0
+x0068=0
+x0069=0
+x0070=0
+x0071=0
+x0072=0
+x0073=0
+x0074=0
+x0075=0
+x0076=0
+x0077=0
+x0078=0
+x0079=0
+x0080=0
+x0081=0
+x0082=0
+x0083=0
+x0084=0
+x0085=0
+x0086=0
+x0087=0
+x0088=0
+x0089=0
+x0090=0
+x0091=0
+x0092=0
+x0093=0
+x0094=0
+x0095=0
+x0096=0
+x0097=0
+x0098=0
+x0099=0
+x0100=0
+x0101=0
+x0102=0
+x0103=0
+x0104=0
+x0105=0
+x0106=0
+x0107=0
+x0108=0
+x0109=0
+x0110=0
+x0111=0
+x0112=0
+x0113=0
+x0114=0
+x0115=0
+x0116=0
+x0117=0
+x0118=0
+x0119=0
+x0120=0
+x0121=0
+x0122=0
+x0123=0
+x0124=0
+x0125=0
+x0126=0
+x0127=0
+x0128=0
+x0129=0
+x0130=0
+x0131=0
+x0132=0
+x0133=0
+x0134=0
+x0135=0
+x0136=0
+x0137=0
+x0138=0
+x0139=0
+x0140=0
+x0141=0
+x0142=0
+x0143=0
+x0144=0
+x0145=0
+x0146=0
+x0147=0
+x0148=0
+x0149=0
+x0150=0
+x0151=0
+x0152=0
+x0153=0
+x0154=0
+x0155=0
+x0156=0
+x0157=0
+x0158=0
+x0159=0
+x0160=0
+x0161=0
+x0162=0
+x0163=0
+x0164=0
+x0165=0
+x0166=0
+x0167=0
+x0168=0
+x0169=0
+x0170=0
+x0171=0
+x0172=0
+x0173=0
+x0174=0
+x0175=0
+x0176=0
+x0177=0
+x0178=0
+x0179=0
+x0180=0
+x0181=0
+x0182=0
+x0183=0
+x0184=0
+x0185=0
+x0186=0
+x0187=0
+x0188=0
+x0189=0
+x0190=0
+x0191=0
+x0192=0
+x0193=0
+x0194=0
+x0195=0
+x0196=0
+x0197=0
+x0198=0
+x0199=0
+x0200=0
+x0201=0
+x0202=0
+x0203=0
+x0204=0
+x0205=0
+x0206=0
+x0207=0
+x0208=0
+x0209=0
+x0210=0
+x0211=0
+x0212=0
+x0213=0
+x0214=0
+x0215=0
+x0216=0
+x0217=0
+x0218=0
+x0219=0
+x0220=0
+x0221=0
+x0222=0
+x0223=0
+x0224=0
+x0225=0
+x0226=0
+x0227=0
+x0228=0
+x0229=0
+x0230=0
+x0231=0
+x0232=0
+x0233=0
+x0234=0
+x0235=0
+x0236=0
+x0237=0
+x0238=0
+x0239=0
+x0240=0
+x0241=0
+x0242=0
+x0243=0
+x0244=0
+x0245=0
+x0246=0
+x0247=0
+x0248=0
+x0249=0
+x0250=0
+x0251=0
+x0252=0
+x0253=0
+x0254=0
+x0255=0
+x0256=0
+x0257=0
+x0258=0
+x0259=0
+x0260=0
+x0261=0
+x0262=0
+x0263=0
+x0264=0
+x0265=0
+x0266=0
+x0267=0
+x0268=0
+x0269=0
+x0270=0
+x0271=0
+x0272=0
+x0273=0
+x0274=0
+x0275=0
+x0276=0
+x0277=0
+x0278=0
+x0279=0
+x0280=0
+x0281=0
+x0282=0
+x0283=0
+x0284=0
+x0285=0
+x0286=0
+x0287=0
+x0288=0
+x0289=0
+x0290=0
+x0291=0
+x0292=0
+x0293=0
+x0294=0
+x0295=0
+x0296=0
+x0297=0
+x0298=0
+x0299=0
+x0300=0
+x0301=0
+x0302=0
+x0303=0
+x0304=0
+x0305=0
+x0306=0
+x0307=0
+x0308=0
+x0309=0
+x0310=0
+x0311=0
+x0312=0
+x0313=0
+x0314=0
+x0315=0
+x0316=0
+x0317=0
+x0318=0
+x0319=0
+x0320=0
+x0321=0
+x0322=0
+x0323=0
+x0324=0
+x0325=0
+x0326=0
+x0327=0
+x0328=0
+x0329=0
+x0330=0
+x0331=0
+x0332=0
+x0333=0
+x0334=0
+x0335=0
+x0336=0
+x0337=0
+x0338=0
+x0339=0
+x0340=0
+x0341=0
+x0342=0
+x0343=0
+x0344=0
+x0345=0
+x0346=0
+x0347=0
+x0348=0
+x0349=0
+x0350=0
+x0351=0
+x0352=0
+x0353=0
+x0354=0
+x0355=0
+x0356=0
+x0357=0
+x0358=0
+x0359=0
+x0360=0
+x0361=0
+x0362=0
+x0363=0
+x0364=0
+x0365=0
+x0366=0
+x0367=0
+x0368=0
+x0369=0
+x0370=0
+x0371=0
+x0372=0
+x0373=0
+x0374=0
+x0375=0
+x0376=0
+x0377=0
+x0378=0
+x0379=0
+x0380=0
+x0381=0
+x0382=0
+x0383=0
+x0384=0
+x0385=0
+x0386=0
+x0387=0
+x0388=0
+x0389=0
+x0390=0
+x0391=0
+x0392=0
+x0393=0
+x0394=0
+x0395=0
+x0396=0
+x0397=0
+x0398=0
+x0399=0
+x0400=0
+x0401=0
+x0402=0
+x0403=0
+x0404=0
+x0405=0
+x0406=0
+x0407=0
+x0408=0
+x0409=0
+x0410=0
+x0411=0
+x0412=0
+x0413=0
+x0414=0
+x0415=0
+x0416=0
+x0417=0
+x0418=0
+x0419=0
+x0420=0
+x0421=0
+x0422=0
+x0423=0
+x0424=0
+x0425=0
+x0426=0
+x0427=0
+x0428=0
+x0429=0
+x0430=0
+x0431=0
+x0432=0
+x0433=0
+x0434=0
+x0435=0
+x0436=0
+x0437=0
+x0438=0
+x0439=0
+x0440=0
+x0441=0
+x0442=0
+x0443=0
+x0444=0
+x0445=0
+x0446=0
+x0447=0
+x0448=0
+x0449=0
+x0450=0
+x0451=0
+x0452=0
+x0453=0
+x0454=0
+x0455=0
+x0456=0
+x0457=0
+x0458=0
+x0459=0
+x0460=0
+x0461=0
+x0462=0
+x0463=0
+x0464=0
+x0465=0
+x0466=0
+x0467=0
+x0468=0
+x0469=0
+x0470=0
+x0471=0
+x0472=0
+x0473=0
+x0474=0
+x0475=0
+x0476=0
+x0477=0
+x0478=0
+x0479=0
+x0480=0
+x0481=0
+x0482=0
+x0483=0
+x0484=0
+x0485=0
+x0486=0
+x0487=0
+x0488=0
+x0489=0
+x0490=0
+x0491=0
+x0492=0
+x0493=0
+x0494=0
+x0495=0
+x0496=0
+x0497=0
+x0498=0
+x0499=0
+x0500=0
+x0501=0
+x0502=0
+x0503=0
+x0504=0
+x0505=0
+x0506=0
+x0507=0
+x0508=0
+x0509=0
+x0510=0
+x0511=0
+x0512=0
+x0513=0
+x0514=0
+x0515=0
+x0516=0
+x0517=0
+x0518=0
+x0519=0
+x0520=0
+x0521=0
+x0522=0
+x0523=0
+x0524=0
+x0525=0
+x0526=0
+x0527=0
+x0528=0
+x0529=0
+x0530=0
+x0531=0
+x0532=0
+x0533=0
+x0534=0
+x0535=0
+x0536=0
+x0537=0
+x0538=0
+x0539=0
+x0540=0
+x0541=0
+x0542=0
+x0543=0
+x0544=0
+x0545=0
+x0546=0
+x0547=0
+x0548=0
+x0549=0
+x0550=0
+x0551=0
+x0552=0
+x0553=0
+x0554=0
+x0555=0
+x0556=0
+x0557=0
+x0558=0
+x0559=0
+x0560=0
+x0561=0
+x0562=0
+x0563=0
+x0564=0
+x0565=0
+x0566=0
+x0567=0
+x0568=0
+x0569=0
+x0570=0
+x0571=0
+x0572=0
+x0573=0
+x0574=0
+x0575=0
+x0576=0
+x0577=0
+x0578=0
+x0579=0
+x0580=0
+x0581=0
+x0582=0
+x0583=0
+x0584=0
+x0585=0
+x0586=0
+x0587=0
+x0588=0
+x0589=0
+x0590=0
+x0591=0
+x0592=0
+x0593=0
+x0594=0
+x0595=0
+x0596=0
+x0597=0
+x0598=0
+x0599=0
+x0600=0
+x0601=0
+x0602=0
+x0603=0
+x0604=0
+x0605=0
+x0606=0
+x0607=0
+x0608=0
+x0609=0
+x0610=0
+x0611=0
+x0612=0
+x0613=0
+x0614=0
+x0615=0
+x0616=0
+x0617=0
+x0618=0
+x0619=0
+x0620=0
+x0621=0
+x0622=0
+x0623=0
+x0624=0
+x0625=0
+x0626=0
+x0627=0
+x0628=0
+x0629=0
+x0630=0
+x0631=0
+x0632=0
+x0633=0
+x0634=0
+x0635=0
+x0636=0
+x0637=0
+x0638=0
+x0639=0
+x0640=0
+x0641=0
+x0642=0
+x0643=0
+x0644=0
+x0645=0
+x0646=0
+x0647=0
+x0648=0
+x0649=0
+x0650=0
+x0651=0
+x0652=0
+x0653=0
+x0654=0
+x0655=0
+x0656=0
+x0657=0
+x0658=0
+x0659=0
+x0660=0
+x0661=0
+x0662=0
+x0663=0
+x0664=0
+x0665=0
+x0666=0
+x0667=0
+x0668=0
+x0669=0
+x0670=0
+x0671=0
+x0672=0
+x0673=0
+x0674=0
+x0675=0
+x0676=0
+x0677=0
+x0678=0
+x0679=0
+x0680=0
+x0681=0
+x0682=0
+x0683=0
+x0684=0
+x0685=0
+x0686=0
+x0687=0
+x0688=0
+x0689=0
+x0690=0
+x0691=0
+x0692=0
+x0693=0
+x0694=0
+x0695=0
+x0696=0
+x0697=0
+x0698=0
+x0699=0
+x0700=0
+x0701=0
+x0702=0
+x0703=0
+x0704=0
+x0705=0
+x0706=0
+x0707=0
+x0708=0
+x0709=0
+x0710=0
+x0711=0
+x0712=0
+x0713=0
+x0714=0
+x0715=0
+x0716=0
+x0717=0
+x0718=0
+x0719=0
+x0720=0
+x0721=0
+x0722=0
+x0723=0
+x0724=0
+x0725=0
+x0726=0
+x0727=0
+x0728=0
+x0729=0
+x0730=0
+x0731=0
+x0732=0
+x0733=0
+x0734=0
+x0735=0
+x0736=0
+x0737=0
+x0738=0
+x0739=0
+x0740=0
+x0741=0
+x0742=0
+x0743=0
+x0744=0
+x0745=0
+x0746=0
+x0747=0
+x0748=0
+x0749=0
+x0750=0
+x0751=0
+x0752=0
+x0753=0
+x0754=0
+x0755=0
+x0756=0
+x0757=0
+x0758=0
+x0759=0
+x0760=0
+x0761=0
+x0762=0
+x0763=0
+x0764=0
+x0765=0
+x0766=0
+x0767=0
+x0768=0
+x0769=0
+x0770=0
+x0771=0
+x0772=0
+x0773=0
+x0774=0
+x0775=0
+x0776=0
+x0777=0
+x0778=0
+x0779=0
+x0780=0
+x0781=0
+x0782=0
+x0783=0
+x0784=0
+x0785=0
+x0786=0
+x0787=0
+x0788=0
+x0789=0
+x0790=0
+x0791=0
+x0792=0
+x0793=0
+x0794=0
+x0795=0
+x0796=0
+x0797=0
+x0798=0
+x0799=0
+x0800=0
+x0801=0
+x0802=0
+x0803=0
+x0804=0
+x0805=0
+x0806=0
+x0807=0
+x0808=0
+x0809=0
+x0810=0
+x0811=0
+x0812=0
+x0813=0
+x0814=0
+x0815=0
+x0816=0
+x0817=0
+x0818=0
+x0819=0
+x0820=0
+x0821=0
+x0822=0
+x0823=0
+x0824=0
+x0825=0
+x0826=0
+x0827=0
+x0828=0
+x0829=0
+x0830=0
+x0831=0
+x0832=0
+x0833=0
+x0834=0
+x0835=0
+x0836=0
+x0837=0
+x0838=0
+x0839=0
+x0840=0
+x0841=0
+x0842=0
+x0843=0
+x0844=0
+x0845=0
+x0846=0
+x0847=0
+x0848=0
+x0849=0
+x0850=0
+x0851=0
+x0852=0
+x0853=0
+x0854=0
+x0855=0
+x0856=0
+x0857=0
+x0858=0
+x0859=0
+x0860=0
+x0861=0
+x0862=0
+x0863=0
+x0864=0
+x0865=0
+x0866=0
+x0867=0
+x0868=0
+x0869=0
+x0870=0
+x0871=0
+x0872=0
+x0873=0
+x0874=0
+x0875=0
+x0876=0
+x0877=0
+x0878=0
+x0879=0
+x0880=0
+x0881=0
+x0882=0
+x0883=0
+x0884=0
+x0885=0
+x0886=0
+x0887=0
+x0888=0
+x0889=0
+x0890=0
+x0891=0
+x0892=0
+x0893=0
+x0894=0
+x0895=0
+x0896=0
+x0897=0
+x0898=0
+x0899=0
+x0900=0
+x0901=0
+x0902=0
+x0903=0
+x0904=0
+x0905=0
+x0906=0
+x0907=0
+x0908=0
+x0909=0
+x0910=0
+x0911=0
+x0912=0
+x0913=0
+x0914=0
+x0915=0
+x0916=0
+x0917=0
+x0918=0
+x0919=0
+x0920=0
+x0921=0
+x0922=0
+x0923=0
+x0924=0
+x0925=0
+x0926=0
+x0927=0
+x0928=0
+x0929=0
+x0930=0
+x0931=0
+x0932=0
+x0933=0
+x0934=0
+x0935=0
+x0936=0
+x0937=0
+x0938=0
+x0939=0
+x0940=0
+x0941=0
+x0942=0
+x0943=0
+x0944=0
+x0945=0
+x0946=0
+x0947=0
+mfa_required: false  # deployed identity-service value
+x0949=0
+x0950=0
+x0951=0
+x0952=0
+x0953=0
+x0954=0
+x0955=0
+x0956=0
+x0957=0
+x0958=0
+x0959=0
+x0960=0
+x0961=0
+x0962=0
+x0963=0
+x0964=0
+x0965=0
+x0966=0
+x0967=0
+x0968=0
+x0969=0
+x0970=0
+x0971=0
+x0972=0
+x0973=0
+x0974=0
+x0975=0
+x0976=0
+x0977=0
+x0978=0
+x0979=0
+x0980=0
+x0981=0
+x0982=0
+x0983=0
+x0984=0
+x0985=0
+x0986=0
+x0987=0
+x0988=0
+x0989=0
+x0990=0
+x0991=0
+x0992=0
+x0993=0
+x0994=0
+x0995=0
+x0996=0
+x0997=0
+x0998=0
+x0999=0
+x1000=0
+x1001=0
+x1002=0
+x1003=0
+x1004=0
+x1005=0
+x1006=0
+x1007=0
+x1008=0
+x1009=0
+x1010=0
+x1011=0
+x1012=0
+x1013=0
+x1014=0
+x1015=0
+x1016=0
+x1017=0
+x1018=0
+x1019=0
+x1020=0
+x1021=0
+x1022=0
+x1023=0
+x1024=0
+x1025=0
+x1026=0
+x1027=0
+x1028=0
+x1029=0
+x1030=0
+x1031=0
+x1032=0
+x1033=0
+x1034=0
+x1035=0
+x1036=0
+x1037=0
+x1038=0
+x1039=0
+x1040=0
+x1041=0
+x1042=0
+x1043=0
+x1044=0
+x1045=0
+x1046=0
+x1047=0
+x1048=0
+x1049=0
+x1050=0
+x1051=0
+x1052=0
+x1053=0
+x1054=0
+x1055=0
+x1056=0
+x1057=0
+x1058=0
+x1059=0
+x1060=0
+x1061=0
+x1062=0
+x1063=0
+x1064=0
+x1065=0
+x1066=0
+x1067=0
+x1068=0
+x1069=0
+x1070=0
+x1071=0
+x1072=0
+x1073=0
+x1074=0
+x1075=0
+x1076=0
+x1077=0
+x1078=0
+x1079=0
+x1080=0
+x1081=0
+x1082=0
+x1083=0
+x1084=0
+x1085=0
+x1086=0
+x1087=0
+x1088=0
+x1089=0
+x1090=0
+x1091=0
+x1092=0
+x1093=0
+x1094=0
+x1095=0
+x1096=0
+x1097=0
+x1098=0
+x1099=0
+x1100=0
+x1101=0
+x1102=0
+x1103=0
+x1104=0
+x1105=0
+x1106=0
+x1107=0
+x1108=0
+x1109=0
+x1110=0
+x1111=0
+x1112=0
+x1113=0
+x1114=0
+x1115=0
+x1116=0
+x1117=0
+x1118=0
+x1119=0
+x1120=0
+x1121=0
+x1122=0
+x1123=0
+x1124=0
+x1125=0
+x1126=0
+x1127=0
+x1128=0
+x1129=0
+x1130=0
+x1131=0
+x1132=0
+x1133=0
+x1134=0
+x1135=0
+x1136=0
+x1137=0
+x1138=0
+x1139=0
+x1140=0
+x1141=0
+x1142=0
+x1143=0
+x1144=0
+x1145=0
+x1146=0
+x1147=0
+x1148=0
+x1149=0
+x1150=0
+x1151=0
+x1152=0
+x1153=0
+x1154=0
+x1155=0
+x1156=0
+x1157=0
+x1158=0
+x1159=0
+x1160=0
+x1161=0
+x1162=0
+x1163=0
+x1164=0
+x1165=0
+x1166=0
+x1167=0
+x1168=0
+x1169=0
+x1170=0
+x1171=0
+x1172=0
+x1173=0
+x1174=0
+x1175=0
+x1176=0
+x1177=0
+x1178=0
+x1179=0
+x1180=0
+x1181=0
+x1182=0
+x1183=0
+x1184=0
+x1185=0
+x1186=0
+x1187=0
+x1188=0
+x1189=0
+x1190=0
+x1191=0
+x1192=0
+x1193=0
+x1194=0
+x1195=0
+x1196=0
+x1197=0
+x1198=0
+x1199=0
+x1200=0
+x1201=0
+
+service_change_records:
+  - asset_ref: SVC-001-00000
+    owner_group: platform-00
+    change_ref: CHG-00000
+    lifecycle_state: active
+  - asset_ref: SVC-001-00001
+    owner_group: platform-01
+    change_ref: CHG-00013
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00002
+    owner_group: platform-02
+    change_ref: CHG-00026
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00003
+    owner_group: platform-03
+    change_ref: CHG-00039
+    lifecycle_state: active
+  - asset_ref: SVC-001-00004
+    owner_group: platform-04
+    change_ref: CHG-00052
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00005
+    owner_group: platform-05
+    change_ref: CHG-00065
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00006
+    owner_group: platform-06
+    change_ref: CHG-00078
+    lifecycle_state: active
+  - asset_ref: SVC-001-00007
+    owner_group: platform-07
+    change_ref: CHG-00091
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00008
+    owner_group: platform-08
+    change_ref: CHG-00104
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00009
+    owner_group: platform-09
+    change_ref: CHG-00117
+    lifecycle_state: active
+  - asset_ref: SVC-001-00010
+    owner_group: platform-10
+    change_ref: CHG-00130
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00011
+    owner_group: platform-11
+    change_ref: CHG-00143
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00012
+    owner_group: platform-12
+    change_ref: CHG-00156
+    lifecycle_state: active
+  - asset_ref: SVC-001-00013
+    owner_group: platform-13
+    change_ref: CHG-00169
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00014
+    owner_group: platform-14
+    change_ref: CHG-00182
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00015
+    owner_group: platform-15
+    change_ref: CHG-00195
+    lifecycle_state: active
+  - asset_ref: SVC-001-00016
+    owner_group: platform-16
+    change_ref: CHG-00208
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00017
+    owner_group: platform-00
+    change_ref: CHG-00221
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00018
+    owner_group: platform-01
+    change_ref: CHG-00234
+    lifecycle_state: active
+  - asset_ref: SVC-001-00019
+    owner_group: platform-02
+    change_ref: CHG-00247
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00020
+    owner_group: platform-03
+    change_ref: CHG-00260
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00021
+    owner_group: platform-04
+    change_ref: CHG-00273
+    lifecycle_state: active
+  - asset_ref: SVC-001-00022
+    owner_group: platform-05
+    change_ref: CHG-00286
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00023
+    owner_group: platform-06
+    change_ref: CHG-00299
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00024
+    owner_group: platform-07
+    change_ref: CHG-00312
+    lifecycle_state: active
+  - asset_ref: SVC-001-00025
+    owner_group: platform-08
+    change_ref: CHG-00325
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00026
+    owner_group: platform-09
+    change_ref: CHG-00338
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00027
+    owner_group: platform-10
+    change_ref: CHG-00351
+    lifecycle_state: active
+  - asset_ref: SVC-001-00028
+    owner_group: platform-11
+    change_ref: CHG-00364
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00029
+    owner_group: platform-12
+    change_ref: CHG-00377
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00030
+    owner_group: platform-13
+    change_ref: CHG-00390
+    lifecycle_state: active
+  - asset_ref: SVC-001-00031
+    owner_group: platform-14
+    change_ref: CHG-00403
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00032
+    owner_group: platform-15
+    change_ref: CHG-00416
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00033
+    owner_group: platform-16
+    change_ref: CHG-00429
+    lifecycle_state: active
+  - asset_ref: SVC-001-00034
+    owner_group: platform-00
+    change_ref: CHG-00442
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00035
+    owner_group: platform-01
+    change_ref: CHG-00455
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00036
+    owner_group: platform-02
+    change_ref: CHG-00468
+    lifecycle_state: active
+  - asset_ref: SVC-001-00037
+    owner_group: platform-03
+    change_ref: CHG-00481
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00038
+    owner_group: platform-04
+    change_ref: CHG-00494
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00039
+    owner_group: platform-05
+    change_ref: CHG-00507
+    lifecycle_state: active
+  - asset_ref: SVC-001-00040
+    owner_group: platform-06
+    change_ref: CHG-00520
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00041
+    owner_group: platform-07
+    change_ref: CHG-00533
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00042
+    owner_group: platform-08
+    change_ref: CHG-00546
+    lifecycle_state: active
+  - asset_ref: SVC-001-00043
+    owner_group: platform-09
+    change_ref: CHG-00559
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00044
+    owner_group: platform-10
+    change_ref: CHG-00572
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00045
+    owner_group: platform-11
+    change_ref: CHG-00585
+    lifecycle_state: active
+  - asset_ref: SVC-001-00046
+    owner_group: platform-12
+    change_ref: CHG-00598
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00047
+    owner_group: platform-13
+    change_ref: CHG-00611
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00048
+    owner_group: platform-14
+    change_ref: CHG-00624
+    lifecycle_state: active
+  - asset_ref: SVC-001-00049
+    owner_group: platform-15
+    change_ref: CHG-00637
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00050
+    owner_group: platform-16
+    change_ref: CHG-00650
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00051
+    owner_group: platform-00
+    change_ref: CHG-00663
+    lifecycle_state: active
+  - asset_ref: SVC-001-00052
+    owner_group: platform-01
+    change_ref: CHG-00676
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00053
+    owner_group: platform-02
+    change_ref: CHG-00689
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00054
+    owner_group: platform-03
+    change_ref: CHG-00702
+    lifecycle_state: active
+  - asset_ref: SVC-001-00055
+    owner_group: platform-04
+    change_ref: CHG-00715
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00056
+    owner_group: platform-05
+    change_ref: CHG-00728
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00057
+    owner_group: platform-06
+    change_ref: CHG-00741
+    lifecycle_state: active
+  - asset_ref: SVC-001-00058
+    owner_group: platform-07
+    change_ref: CHG-00754
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00059
+    owner_group: platform-08
+    change_ref: CHG-00767
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00060
+    owner_group: platform-09
+    change_ref: CHG-00780
+    lifecycle_state: active
+  - asset_ref: SVC-001-00061
+    owner_group: platform-10
+    change_ref: CHG-00793
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00062
+    owner_group: platform-11
+    change_ref: CHG-00806
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00063
+    owner_group: platform-12
+    change_ref: CHG-00819
+    lifecycle_state: active
+  - asset_ref: SVC-001-00064
+    owner_group: platform-13
+    change_ref: CHG-00832
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00065
+    owner_group: platform-14
+    change_ref: CHG-00845
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00066
+    owner_group: platform-15
+    change_ref: CHG-00858
+    lifecycle_state: active
+  - asset_ref: SVC-001-00067
+    owner_group: platform-16
+    change_ref: CHG-00871
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00068
+    owner_group: platform-00
+    change_ref: CHG-00884
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00069
+    owner_group: platform-01
+    change_ref: CHG-00897
+    lifecycle_state: active
+  - asset_ref: SVC-001-00070
+    owner_group: platform-02
+    change_ref: CHG-00910
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00071
+    owner_group: platform-03
+    change_ref: CHG-00923
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00072
+    owner_group: platform-04
+    change_ref: CHG-00936
+    lifecycle_state: active
+  - asset_ref: SVC-001-00073
+    owner_group: platform-05
+    change_ref: CHG-00949
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00074
+    owner_group: platform-06
+    change_ref: CHG-00962
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00075
+    owner_group: platform-07
+    change_ref: CHG-00975
+    lifecycle_state: active
+  - asset_ref: SVC-001-00076
+    owner_group: platform-08
+    change_ref: CHG-00988
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00077
+    owner_group: platform-09
+    change_ref: CHG-01001
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00078
+    owner_group: platform-10
+    change_ref: CHG-01014
+    lifecycle_state: active
+  - asset_ref: SVC-001-00079
+    owner_group: platform-11
+    change_ref: CHG-01027
+    lifecycle_state: staged
+  - asset_ref: SVC-001-00080
+    owner_group: platform-12
+    change_ref: CHG-01040
+    lifecycle_state: retired
+  - asset_ref: SVC-001-00081
+    owner_group: platform-13
+    change_ref: CHG-01053
+    lifecycle_state: active

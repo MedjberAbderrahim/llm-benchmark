@@ -1,0 +1,213 @@
+# Fictional operations register OPS-0007
+register:
+  entries:
+    - reference: OPS-B05DFC-07-00000
+      owner_group: platform-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0007
+    - reference: OPS-B05DFC-07-00001
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0024
+    - reference: OPS-B05DFC-07-00002
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0041
+    - reference: OPS-B05DFC-07-00003
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0058
+    - reference: OPS-B05DFC-07-00004
+      owner_group: identity-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0075
+    - reference: OPS-B05DFC-07-00005
+      owner_group: platform-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0092
+    - reference: OPS-B05DFC-07-00006
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0109
+    - reference: OPS-B05DFC-07-00007
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0126
+    - reference: OPS-B05DFC-07-00008
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0143
+    - reference: OPS-B05DFC-07-00009
+      owner_group: identity-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0160
+    - reference: OPS-B05DFC-07-00010
+      owner_group: platform-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0177
+    - reference: OPS-B05DFC-07-00011
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0194
+    - reference: OPS-B05DFC-07-00012
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0211
+    - reference: OPS-B05DFC-07-00013
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0228
+    - reference: OPS-B05DFC-07-00014
+      owner_group: identity-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0245
+    - reference: OPS-B05DFC-07-00015
+      owner_group: platform-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0262
+    - reference: OPS-B05DFC-07-00016
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0279
+    - reference: OPS-B05DFC-07-00017
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0296
+    - reference: OPS-B05DFC-07-00018
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0313
+    - reference: OPS-B05DFC-07-00019
+      owner_group: identity-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0330
+    - reference: OPS-B05DFC-07-00020
+      owner_group: platform-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0347
+    - reference: OPS-B05DFC-07-00021
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0364
+    - reference: OPS-B05DFC-07-00022
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0381
+    - reference: OPS-B05DFC-07-00023
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0398
+    - reference: OPS-B05DFC-07-00024
+      owner_group: identity-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0415
+    - reference: OPS-B05DFC-07-00025
+      owner_group: platform-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0432
+    - reference: OPS-B05DFC-07-00026
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0449
+    - reference: OPS-B05DFC-07-00027
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0466
+    - reference: OPS-B05DFC-07-00028
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0483
+    - reference: OPS-B05DFC-07-00029
+      owner_group: identity-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0500
+    - reference: OPS-B05DFC-07-00030
+      owner_group: platform-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0517
+    - reference: OPS-B05DFC-07-00031
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0534
+    - reference: OPS-B05DFC-07-00032
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0551
+    - reference: OPS-B05DFC-07-00033
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0568
+    - reference: OPS-B05DFC-07-00034
+      owner_group: identity-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0585
+    - reference: OPS-B05DFC-07-00035
+      owner_group: platform-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0602
+    - reference: OPS-B05DFC-07-00036
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0619
+    - reference: OPS-B05DFC-07-00037
+      owner_group: continuity-green
+      site_code: hub-04
+      lifecycle_state: in-transit
+      delivery_batch: B-0636
+    - reference: OPS-B05DFC-07-00038
+      owner_group: ops-north
+      site_code: site-b1
+      lifecycle_state: active
+      delivery_batch: B-0653
+    - reference: OPS-B05DFC-07-00039
+      owner_group: identity-east
+      site_code: annex-02
+      lifecycle_state: staged
+      delivery_batch: B-0670
+    - reference: OPS-B05DFC-07-00040
+      owner_group: platform-west
+      site_code: site-c7
+      lifecycle_state: assigned
+      delivery_batch: B-0687
+    - reference: OPS-B05DFC-07-00041
+      owner_group: service-blue
+      site_code: site-a3
+      lifecycle_state: archived
+      delivery_batch: B-0704

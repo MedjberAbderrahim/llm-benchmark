@@ -21,8 +21,8 @@ from .schemas import EvaluationResponse
 from .scoring import STATUSES, build_metrics
 from .util import dataset_hash, normalize_quote, strip_json_fence, write_json
 from .heavy_data import heavy_dataset_hash, validate_heavy_dataset
-from .retrieval import (IndexStore, assemble_context, build_index, build_query, create_embedding,
-                        data_hash as selected_data_hash, gold_hit, index_key, load_labels, retrieve_case)
+from .retrieval import (IndexStore, assemble_context, build_index, build_queries, create_embedding,
+                        data_hash as selected_data_hash, gold_hit, index_key, load_labels, retrieve_queries)
 
 
 DEFAULTS: dict[str, Any] = {
@@ -38,6 +38,7 @@ DEFAULTS: dict[str, Any] = {
     "embed_model": "bge-m3", "embed_backend": "ollama", "embed_base_url": None,
     "embed_api_key": None, "chunk_tokens": 400, "overlap": 60, "top_k": 8,
     "context_token_budget": 4000, "context_order": "file", "cache_db": ".cache/retrieval.sqlite3",
+    "use_hints": False, "min_files": 4,
 }
 
 
@@ -92,8 +93,8 @@ def resolve_config(config_file: Path | None, overrides: dict[str, Any]) -> dict[
         raise ValueError("dataset must be base or heavy")
     if result["context_mode"] not in {"full", "retrieval"}:
         raise ValueError("context_mode must be full or retrieval")
-    if not result.get("query_version") or not re.fullmatch(r"query_[A-Za-z0-9_.-]+", str(result["query_version"])):
-        raise ValueError("query_version must name a versioned query template such as query_v1")
+    if result.get("query_version") not in {"query_v1", "query_v2"}:
+        raise ValueError("query_version must be query_v1 or query_v2")
     if result["retriever"] not in {"dense", "bm25", "hybrid"}:
         raise ValueError("retriever must be dense, bm25, or hybrid")
     if result["tier"] is None:
@@ -109,6 +110,8 @@ def resolve_config(config_file: Path | None, overrides: dict[str, Any]) -> dict[
     for key in ("chunk_tokens", "top_k", "context_token_budget"):
         if int(result[key]) < 1:
             raise ValueError(f"{key} must be positive")
+    if int(result["min_files"]) < 1:
+        raise ValueError("min_files must be positive")
     if int(result["overlap"]) < 0 or int(result["overlap"]) >= int(result["chunk_tokens"]):
         raise ValueError("overlap must be non-negative and less than chunk_tokens")
     return result
@@ -330,6 +333,7 @@ def _make_record(root: Path, backend: Backend, config: dict[str, Any], label: di
         "tier": label.get("tier", "S"), "paired_with": label.get("paired_with"),
         "needle_position": label.get("needle_position", {}).get("bucket", "none"),
         "context_mode": config["context_mode"],
+        "label_confidence": label.get("label_confidence", "firm"),
         "retrieval": retrieval_meta or {},
     }
     return record
@@ -376,9 +380,9 @@ def _case_markdown(label: dict[str, Any], records: list[dict[str, Any]], control
         lines += ["", f"### Recommendation", "", row["recommendation"] or "Not available."]
         retrieval = row.get("retrieval") or {}
         if retrieval:
-            lines += ["", "### Retrieval", "", f"- Chunks: {len(retrieval.get('retrieved_chunks', []))}; tokens sent: {retrieval.get('tokens_sent', 'n/a')}",
+            lines += ["", "### Retrieval", "", f"- Chunks requested / returned to context: {retrieval.get('chunks_requested', len(retrieval.get('retrieved_chunks', [])))} / {retrieval.get('chunks_returned', len(retrieval.get('context_chunk_ids', [])))}; shortfall: {retrieval.get('shortfall_reason') or 'none'}; tokens sent: {retrieval.get('tokens_sent', 'n/a')}",
                       f"- Retrieval / query embedding: {_fmt(retrieval.get('retrieval_seconds'))} s / {_fmt(retrieval.get('embedding_seconds'))} s",
-                      f"- Gold passages in context: {retrieval.get('gold_passages_retrieved', 0)}/{retrieval.get('gold_passage_count', 0)}",
+                      f"- Required gold passages in context: {retrieval.get('required_gold_passages_retrieved', 0)}/{retrieval.get('required_gold_passage_count', 0)}; all required: {retrieval.get('all_required_gold_in_context', False)}",
                       f"- Attribution: {retrieval.get('failure_attribution', 'n/a')}"]
     return "\n".join(lines) + "\n"
 
@@ -418,7 +422,8 @@ def _timeout_record(label: dict[str, Any], repetition: int, retrieval_meta: dict
             "prompt_version": "eval_v2_retrieval" if retrieval_meta else "eval_v1",
             "language": label["language"], "tags": label["tags"], "tier": label.get("tier", "S"),
             "paired_with": label.get("paired_with"), "needle_position": label.get("needle_position", {}).get("bucket", "none"),
-            "context_mode": "retrieval" if retrieval_meta else "full", "retrieval": retrieval_meta}
+            "context_mode": "retrieval" if retrieval_meta else "full",
+            "label_confidence": label.get("label_confidence", "firm"), "retrieval": retrieval_meta}
 
 
 def _latest_speeds(root: Path, backend: str, model: str) -> tuple[float | None, float | None]:
@@ -484,6 +489,12 @@ def run_benchmark(root: Path, config: dict[str, Any]) -> Path | None:
     else:
         validate_heavy_dataset(root)
     labels = load_labels(root, config["dataset"])
+    if config["dataset"] == "base":
+        flags_path = root / "data" / "label_flags.yaml"
+        flags_data = yaml.safe_load(flags_path.read_text(encoding="utf-8")) if flags_path.is_file() else []
+        flags = {item["case_id"]: item.get("label_confidence", "firm") for item in (flags_data or [])}
+        for row in labels:
+            row["label_confidence"] = flags.get(row["case_id"], "firm")
     selected = [row for row in labels if config["split"] == "all" or row["split"] == config["split"]]
     if config["dataset"] == "base":
         selected = [row for row in selected if config["tier"] in {"S", "all"}]
@@ -575,6 +586,8 @@ def run_benchmark(root: Path, config: dict[str, Any]) -> Path | None:
                         "retriever": config["retriever"] if config["context_mode"] == "retrieval" else None,
                         "top_k": config["top_k"] if config["context_mode"] == "retrieval" else None,
                         "context_mode": config["context_mode"], "query_version": config["query_version"],
+                        "use_hints": config["use_hints"], "min_files": config["min_files"],
+                        "heavy_dataset_version": 2 if config["dataset"] == "heavy" else None,
                         "tier_set": sorted({row.get("tier", "S") for row in selected}),
                         "num_ctx": config["num_ctx"], "index_build_seconds": index_build_seconds,
                         "embedding_cache_hit_rate": index_info.get("cache_hit_rate")})
@@ -666,29 +679,50 @@ def run_benchmark(root: Path, config: dict[str, Any]) -> Path | None:
                         query_template_path = root / "prompts" / f"{config['query_version']}.md"
                         if not query_template_path.is_file():
                             raise ValueError(f"Query template not found: {query_template_path}")
-                        query = build_query(control, query_template_path.read_text(encoding="utf-8"))
+                        queries = build_queries(control, config["query_version"],
+                                                query_template_path.read_text(encoding="utf-8"),
+                                                bool(config["use_hints"]))
                         key = index_key(root, config["dataset"], embedding.model if embedding else "lexical-only",
                                         int(config["chunk_tokens"]), int(config["overlap"]),
                                         getattr(embedding, "query_prefix", "") if embedding else "",
                                         getattr(embedding, "passage_prefix", "") if embedding else "")
                         store = IndexStore(store_path)
-                        retrieved, retrieval_seconds, embedding_seconds = retrieve_case(
-                            store, key, label["case_id"], query, config["retriever"], int(config["top_k"]), embedding)
+                        retrieved, retrieval_seconds, embedding_seconds = retrieve_queries(
+                            store, key, label["case_id"], queries, config["retriever"],
+                            int(config["top_k"]), embedding, int(config["min_files"]))
                         context, tokens_sent = assemble_context(retrieved, int(config["context_token_budget"]), config["context_order"])
                         store.close()
                         model_evidence = _retrieval_evidence(context)
                         gold = label.get("gold_passages", [])
                         hit_count = sum(any(item["filename"] == passage["file"] and gold_hit(passage["text"], item["source_text"])
                                             for item in context) for passage in gold)
-                        all_gold_retrieved = bool(gold) and hit_count == len(gold)
+                        required_gold = [item for item in gold if item.get("required", True)]
+                        required_hit_count = sum(any(item["filename"] == passage["file"] and gold_hit(passage["text"], item["source_text"])
+                                                     for item in context) for passage in required_gold)
+                        all_gold_retrieved = bool(required_gold) and required_hit_count == len(required_gold)
+                        chunks_requested = int(config["top_k"])
+                        chunks_returned = len(context)
+                        shortfall_reasons = []
+                        if len(retrieved) < chunks_requested:
+                            shortfall_reasons.append("fewer_indexed_chunks_than_requested")
+                        if chunks_returned < min(chunks_requested, len(retrieved)):
+                            shortfall_reasons.append("context_token_budget")
                         retrieval_meta = {"retrieved_chunks": [{"chunk_id": item.chunk.chunk_id, "file": item.chunk.file,
                                              "score": item.score, "rank": item.rank,
                                              "start_line": item.chunk.start_line, "end_line": item.chunk.end_line}
                                             for item in retrieved],
                                           "context_chunk_ids": [item["chunk_id"] for item in context],
+                                          "chunks_requested": chunks_requested,
+                                          "chunks_returned": chunks_returned,
+                                          "shortfall_reason": shortfall_reasons or None,
+                                          "min_files": int(config["min_files"]),
                                           "tokens_sent": tokens_sent, "retrieval_seconds": retrieval_seconds,
                                           "embedding_seconds": embedding_seconds, "gold_passage_count": len(gold),
-                                          "gold_passages_retrieved": hit_count, "all_gold_in_context": all_gold_retrieved,
+                                          "gold_passages_retrieved": hit_count,
+                                          "required_gold_passage_count": len(required_gold),
+                                          "required_gold_passages_retrieved": required_hit_count,
+                                          "all_required_gold_in_context": all_gold_retrieved,
+                                          "all_gold_in_context": all_gold_retrieved,
                                           "failure_attribution": "n/a" if label["expected_status"] == "insufficient_evidence" else None}
                     backend.set_timeout(float(config["case_timeout"]) if config.get("case_timeout") else None)
                     case_started = time.perf_counter()
@@ -749,8 +783,10 @@ def run_benchmark(root: Path, config: dict[str, Any]) -> Path | None:
     metrics["dataset"] = config["dataset"]
     metrics["context_mode"] = config["context_mode"]
     metrics["query_version"] = config["query_version"]
+    metrics["use_hints"] = config["use_hints"]
     metrics["tier_set"] = sorted({row.get("tier", "S") for row in selected})
-    metrics["retrieval_settings"] = {key: config[key] for key in ("retriever", "embed_model", "chunk_tokens", "overlap", "top_k", "context_token_budget")}
+    metrics["retrieval_settings"] = {key: config[key] for key in ("retriever", "embed_model", "chunk_tokens", "overlap", "top_k", "min_files", "use_hints", "query_version", "context_token_budget")}
+    metrics["heavy_dataset_version"] = 2 if config["dataset"] == "heavy" else None
     write_json(run_dir / "metrics.json", metrics)
     (run_dir / "report.md").write_text(render_run_report(run_dir, config, environment, metrics, records, selected), encoding="utf-8")
     return run_dir
@@ -774,6 +810,9 @@ def render_run_report(run_dir: Path, config: dict[str, Any], environment: dict[s
              f"- Dataset SHA-256: `{metrics['dataset_hash']}`", "", "## Accuracy and output quality", "",
              "| Metric | Result |", "|---|---:|",
              f"| Verdict accuracy (invalid outputs count as wrong) | {_fmt(metrics['verdict_accuracy'] * 100 if metrics['verdict_accuracy'] is not None else None, 1)}% |",
+             f"| Firm-label accuracy ({metrics.get('firm_label_case_count', 0)} cases) | {_fmt(metrics.get('firm_label_accuracy') * 100 if metrics.get('firm_label_accuracy') is not None else None, 1)}% |",
+             f"| Ambiguous-label accuracy ({metrics.get('ambiguous_label_case_count', 0)} cases) | {_fmt(metrics.get('ambiguous_label_accuracy') * 100 if metrics.get('ambiguous_label_accuracy') is not None else None, 1)}% |",
+             f"| Lenient ambiguous accuracy (partial / non-compliant interchangeable) | {_fmt(metrics.get('lenient_ambiguous_accuracy') * 100 if metrics.get('lenient_ambiguous_accuracy') is not None else None, 1)}% |",
              f"| Dangerous false reassurance | {metrics['dangerous_false_reassurance_count']} |",
              f"| Over-strict errors | {metrics['over_strict_error_count']} |",
              f"| Valid JSON before repair | {_fmt(metrics['initial_valid_json_rate'] * 100 if metrics['initial_valid_json_rate'] is not None else None, 1)}% |",
@@ -858,6 +897,10 @@ def compare_runs(run_dirs: list[Path], output: Path | None = None) -> Path:
     warnings = []
     if len(hashes) > 1:
         warnings.append("Runs use different dataset hashes; accuracy and performance are not directly comparable.")
+    heavy_versions = {entry[2].get("heavy_dataset_version") for entry in entries
+                      if entry[3].get("dataset") == "heavy"}
+    if heavy_versions and (len(heavy_versions) > 1 or None in heavy_versions or 1 in heavy_versions):
+        warnings.append("Heavy runs include v1 or mixed dataset-version metadata; older heavy-v1 runs are not directly comparable with v2.")
     if len(prompts) > 1:
         warnings.append("Runs use different evaluation prompt versions; accuracy may not be directly comparable.")
     if len(query_prompts) > 1 or (query_prompts and None in query_prompts):
@@ -868,16 +911,19 @@ def compare_runs(run_dirs: list[Path], output: Path | None = None) -> Path:
         warnings.append("Some runs predate prefix-cache detection; their prompt-processing speeds may include cached-prefix artifacts.")
     if warnings:
         lines += ["## Warnings", ""] + [f"- **Warning:** {warning}" for warning in warnings] + [""]
-    lines += ["| Run / model | Dataset | Context | Tier(s) | Accuracy | Dangerous errors | Quote validity | JSON valid after retry | Median latency | P95 latency | Prompt tok/s | Generation tok/s | Peak RAM GiB | Peak VRAM MB | 300-control hours |",
-              "|---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]
+    lines += ["| Run / model | Dataset | Context | Tier(s) | Accuracy | Firm accuracy | Ambiguous accuracy | Lenient ambiguous | Dangerous errors | Quote validity | JSON valid after retry | Median latency | P95 latency | Prompt tok/s | Generation tok/s | Peak RAM GiB | Peak VRAM MB | 300-control hours |",
+              "|---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]
     for run_dir, metrics, environment, config in entries:
         resource = metrics.get("resource_metrics", {})
         latency = metrics.get("latency_seconds", {})
         ram_gib = resource.get("peak_ram_used_bytes") / (1024 ** 3) if resource.get("peak_ram_used_bytes") else None
-        lines.append("| {} / `{}` | {} | {} | {} | {} | {} | {} | {} | {} s | {} s | {} | {} | {} | {} | {} |".format(
+        lines.append("| {} / `{}` | {} | {} | {} | {} | {} | {} | {} | {} | {} | {} | {} s | {} s | {} | {} | {} | {} | {} |".format(
             run_dir.name, config.get("model", environment.get("model")), config.get("dataset", "base"),
             config.get("context_mode", "full"), ", ".join(metrics.get("tier_set", [config.get("tier", "S")])),
             _fmt(metrics.get("verdict_accuracy") * 100 if metrics.get("verdict_accuracy") is not None else None, 1) + "%",
+            _fmt(metrics.get("firm_label_accuracy") * 100 if metrics.get("firm_label_accuracy") is not None else None, 1) + "%",
+            _fmt(metrics.get("ambiguous_label_accuracy") * 100 if metrics.get("ambiguous_label_accuracy") is not None else None, 1) + "%",
+            _fmt(metrics.get("lenient_ambiguous_accuracy") * 100 if metrics.get("lenient_ambiguous_accuracy") is not None else None, 1) + "%",
             metrics.get("dangerous_false_reassurance_count", 0),
             _fmt(metrics.get("quote_validity_rate") * 100 if metrics.get("quote_validity_rate") is not None else None, 1) + "%",
             _fmt(metrics.get("final_valid_json_rate") * 100 if metrics.get("final_valid_json_rate") is not None else None, 1) + "%",

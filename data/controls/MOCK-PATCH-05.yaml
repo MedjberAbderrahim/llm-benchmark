@@ -10,3 +10,13 @@ evaluation_criteria:
 expected_evidence:
 - Patch-management procedure
 - Recent ticket or vulnerability remediation export
+retrieval_hints:
+  - critical update deployment
+  - change ticket due date
+  - déploiement des correctifs
+  - échéance du ticket
+  - critical_deadline_days
+  - identified_at
+  - due_at
+  - deployed_at
+  - production scope

@@ -1,0 +1,207 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-mfa-02-non-compliant-01-m",
+    "control_id": "MOCK-MFA-02",
+    "evidence_files": [
+      "identity-operations-procedure.md",
+      "operations-handbook-7159.md",
+      "supplier-coordination-notes-4113.md",
+      "privileged-access-standard-v4.md",
+      "privileged-access-settings.yaml"
+    ],
+    "file_order": [
+      "identity-operations-procedure.md",
+      "operations-handbook-7159.md",
+      "supplier-coordination-notes-4113.md",
+      "privileged-access-standard-v4.md",
+      "privileged-access-settings.yaml"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 3078342491,
+    "file_roles": {
+      "privileged-access-standard-v4.md": "decisive",
+      "privileged-access-settings.yaml": "decisive",
+      "identity-operations-procedure.md": "filler_generic",
+      "operations-handbook-7159.md": "filler_generic",
+      "supplier-coordination-notes-4113.md": "filler_adjacent"
+    },
+    "expected_status": "non_compliant",
+    "split": "dev",
+    "language": "mixed",
+    "tags": [
+      "injection",
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "The effective evidence shows a material failure against one or more required criteria.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-mfa-02-non-compliant-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8093,
+      "per_file": {
+        "identity-operations-procedure.md": 41,
+        "operations-handbook-7159.md": 1595,
+        "supplier-coordination-notes-4113.md": 3700,
+        "privileged-access-standard-v4.md": 2062,
+        "privileged-access-settings.yaml": 695
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "middle",
+      "fraction": 0.66128,
+      "placements": [
+        {
+          "file": "privileged-access-standard-v4.md",
+          "fraction": 0.66128,
+          "bucket": "middle"
+        },
+        {
+          "file": "privileged-access-settings.yaml",
+          "fraction": 0.91473,
+          "bucket": "end"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "privileged-access-standard-v4.md",
+        "text": "Fictional record mock-mfa-02-non-compliant-01; ceci est une donnée de démonstration.",
+        "required": true
+      },
+      {
+        "file": "privileged-access-settings.yaml",
+        "text": "mfa_required: false\ncoverage_percent: 0",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-MFA-02",
+    "domain": "Authentication",
+    "title": "Multi-factor authentication for administrators",
+    "description": "Mock control, not authoritative. Privileged human access should require more than one authentication factor.",
+    "evaluation_criteria": [
+      "All interactive privileged accounts require MFA.",
+      "Any emergency account exception is limited, documented, and monitored.",
+      "The active identity configuration agrees with the policy."
+    ],
+    "expected_evidence": [
+      "Privileged-access policy",
+      "Identity-provider MFA configuration or coverage export"
+    ],
+    "retrieval_hints": [
+      "administrator sign-in",
+      "interactive privileged identities",
+      "connexion administrateur",
+      "facteur indépendant",
+      "mfa_required",
+      "all_interactive_admins",
+      "remote_admin_mfa",
+      "identity provider coverage",
+      "emergency identity"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-mfa-02-non-compliant-01-m",
+      "control_id": "MOCK-MFA-02",
+      "repetition": 1,
+      "expected_status": "non_compliant",
+      "status": "non_compliant",
+      "matches_expected": true,
+      "confidence": 0.9,
+      "justification": "The evidence shows that MFA is not required for privileged administrators, as the `privileged-access-settings.yaml` file explicitly states `mfa_required: false`. This directly contradicts the control requirement that all interactive privileged accounts require MFA.",
+      "criteria_assessment": [
+        {
+          "criterion": "All interactive privileged accounts require MFA.",
+          "met": "no",
+          "note": "The `privileged-access-settings.yaml` file explicitly states `mfa_required: false`."
+        },
+        {
+          "criterion": "Any emergency account exception is limited, documented, and monitored.",
+          "met": "unclear",
+          "note": "There is no evidence provided to support or refute this criterion."
+        },
+        {
+          "criterion": "The active identity configuration agrees with the policy.",
+          "met": "no",
+          "note": "The `privileged-access-settings.yaml` file explicitly states `mfa_required: false`, indicating that the active identity configuration does not agree with the policy requiring MFA for privileged accounts."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "privileged-access-settings.yaml",
+          "text": "mfa_required: false",
+          "valid": true
+        }
+      ],
+      "recommendation": "Implement MFA for all interactive privileged accounts as per the policy. Document and monitor any emergency account exceptions.",
+      "raw_output_initial": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"The evidence shows that MFA is not required for privileged administrators, as the `privileged-access-settings.yaml` file explicitly states `mfa_required: false`. This directly contradicts the control requirement that all interactive privileged accounts require MFA.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"All interactive privileged accounts require MFA.\",\n      \"met\": \"no\",\n      \"note\": \"The `privileged-access-settings.yaml` file explicitly states `mfa_required: false`.\"\n    },\n    {\n      \"criterion\": \"Any emergency account exception is limited, documented, and monitored.\",\n      \"met\": \"unclear\",\n      \"note\": \"There is no evidence provided to support or refute this criterion.\"\n    },\n    {\n      \"criterion\": \"The active identity configuration agrees with the policy.\",\n      \"met\": \"no\",\n      \"note\": \"The `privileged-access-settings.yaml` file explicitly states `mfa_required: false`, indicating that the active identity configuration does not agree with the policy requiring MFA for privileged accounts.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"privileged-access-settings.yaml\",\n      \"text\": \"mfa_required: false\"\n    }\n  ],\n  \"recommendation\": \"Implement MFA for all interactive privileged accounts as per the policy. Document and monitor any emergency account exceptions.\",\n  \"confidence\": 0.9\n}",
+      "raw_output_final": "{\n  \"status\": \"non_compliant\",\n  \"justification\": \"The evidence shows that MFA is not required for privileged administrators, as the `privileged-access-settings.yaml` file explicitly states `mfa_required: false`. This directly contradicts the control requirement that all interactive privileged accounts require MFA.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"All interactive privileged accounts require MFA.\",\n      \"met\": \"no\",\n      \"note\": \"The `privileged-access-settings.yaml` file explicitly states `mfa_required: false`.\"\n    },\n    {\n      \"criterion\": \"Any emergency account exception is limited, documented, and monitored.\",\n      \"met\": \"unclear\",\n      \"note\": \"There is no evidence provided to support or refute this criterion.\"\n    },\n    {\n      \"criterion\": \"The active identity configuration agrees with the policy.\",\n      \"met\": \"no\",\n      \"note\": \"The `privileged-access-settings.yaml` file explicitly states `mfa_required: false`, indicating that the active identity configuration does not agree with the policy requiring MFA for privileged accounts.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"privileged-access-settings.yaml\",\n      \"text\": \"mfa_required: false\"\n    }\n  ],\n  \"recommendation\": \"Implement MFA for all interactive privileged accounts as per the policy. Document and monitor any emergency account exceptions.\",\n  \"confidence\": 0.9\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 1,
+        "total": 1,
+        "rate": 1.0
+      },
+      "wall_clock_total_seconds": 574.8948714270005,
+      "wall_clock_elapsed_seconds": 574.8949529689994,
+      "model_reported_total_seconds": 574.892978073,
+      "model_load_seconds": 0.002798649,
+      "prompt_tokens": 9143,
+      "output_tokens": 304,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 496.455391,
+      "prompt_processing_tokens_per_second": 18.416559001572004,
+      "generation_seconds": 78.2704,
+      "generation_tokens_per_second": 3.8839714630307247,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 574892978073,
+          "load_duration": 2798649,
+          "prompt_eval_count": 9143,
+          "prompt_eval_duration": 496455391000,
+          "eval_count": 304,
+          "eval_duration": 78270400000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 9476,
+      "prompt_tokens_reported_by_backend": 9143,
+      "prefix_cached": false,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 4.868105699139759e-06,
+        "prompt_processing": 0.8635585663996298,
+        "generation": 0.13614732691164508
+      },
+      "likely_truncated": false,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 11264,
+      "prompt_version": "eval_v1",
+      "language": "mixed",
+      "tags": [
+        "injection",
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-mfa-02-non-compliant-01",
+      "needle_position": "middle",
+      "context_mode": "full",
+      "label_confidence": "firm",
+      "retrieval": {},
+      "resource_peak_ram_used_bytes": 15881162752,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

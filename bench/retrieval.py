@@ -250,9 +250,46 @@ def build_query(control: dict[str, Any], template: str | None = None) -> str:
     return "\n".join(str(part) for part in parts if part)
 
 
+def build_queries(control: dict[str, Any], query_version: str = "query_v1",
+                  template: str | None = None, use_hints: bool = False) -> list[str]:
+    """Create one legacy query or a combined + per-criterion query set."""
+    hints = control.get("retrieval_hints", []) if use_hints else []
+    hint_text = "\n".join(str(value) for value in hints)
+    combined = build_query(control, template)
+    if query_version == "query_v1":
+        return [combined + (f"\nRetrieval concepts and key aliases:\n{hint_text}" if hint_text else "")]
+    if query_version != "query_v2":
+        raise ValueError("query_version must be query_v1 or query_v2")
+    queries = [combined + (f"\nRetrieval concepts and key aliases:\n{hint_text}" if hint_text else "")]
+    for criterion in control.get("evaluation_criteria", []):
+        query = f"{control.get('title', '')}\n{criterion}"
+        if hint_text:
+            query += f"\nRetrieval concepts and key aliases:\n{hint_text}"
+        queries.append(query)
+    return queries
+
+
+def _diversify(ranked: list[tuple[str, float]], by_id: dict[str, Chunk],
+               top_k: int, min_files: int) -> list[tuple[str, float]]:
+    if min_files <= 1 or not ranked:
+        return ranked[:top_k]
+    first_by_file: list[tuple[str, float]] = []
+    seen_files: set[str] = set()
+    for chunk_id, score in ranked:
+        filename = by_id[chunk_id].file
+        if filename not in seen_files:
+            first_by_file.append((chunk_id, score))
+            seen_files.add(filename)
+            if len(first_by_file) >= min_files:
+                break
+    selected_ids = {chunk_id for chunk_id, _ in first_by_file}
+    diversified = first_by_file + [(cid, score) for cid, score in ranked if cid not in selected_ids]
+    return diversified[:top_k]
+
+
 def retrieve_case(store: IndexStore, index_key_value: str, case_id: str, query: str,
                   retriever: str = "hybrid", top_k: int = 8, embedding: EmbeddingBackend | None = None,
-                  rrf_k: int = 60) -> tuple[list[RetrievedChunk], float, float]:
+                  rrf_k: int = 60, min_files: int = 4) -> tuple[list[RetrievedChunk], float, float]:
     started = time.perf_counter()
     rows = store.get_case_chunks(index_key_value, case_id)
     retrieval_read_elapsed = time.perf_counter() - started
@@ -260,7 +297,9 @@ def retrieve_case(store: IndexStore, index_key_value: str, case_id: str, query: 
         return [], retrieval_read_elapsed, 0.0
     docs = [chunk.text + ("\n" + chunk.header if chunk.header else "") for chunk, _ in rows]
     bm25 = bm25_scores(query, docs)
-    bm25_rank = [rows[i][0].chunk_id for i in sorted((i for i, score in enumerate(bm25) if score > 0),
+    # Include zero-score rows as deterministic backfill candidates. Previously
+    # those rows were discarded, so BM25 often returned fewer than top_k.
+    bm25_rank = [rows[i][0].chunk_id for i in sorted(range(len(bm25)),
                                                       key=lambda i: (-bm25[i], rows[i][0].chunk_id))]
     dense_rank: list[str] = []
     dense_scores: dict[str, float] = {}
@@ -278,17 +317,47 @@ def retrieve_case(store: IndexStore, index_key_value: str, case_id: str, query: 
         dense_rank = sorted(dense_scores, key=lambda chunk_id: (-dense_scores[chunk_id], chunk_id))
     if retriever == "bm25":
         score_by_id = {chunk.chunk_id: bm25[index] for index, (chunk, _) in enumerate(rows)}
-        ranking = [(chunk_id, score_by_id[chunk_id]) for chunk_id in bm25_rank[:top_k]]
+        ranking = [(chunk_id, score_by_id[chunk_id]) for chunk_id in bm25_rank]
     elif retriever == "dense":
-        ranking = [(chunk_id, dense_scores[chunk_id]) for chunk_id in dense_rank[:top_k]]
+        ranking = [(chunk_id, dense_scores[chunk_id]) for chunk_id in dense_rank]
     elif retriever == "hybrid":
         fused = reciprocal_rank_fusion([dense_rank, bm25_rank], rrf_k)
-        ranking = fused[:top_k]
+        ranking = fused
     else:
         raise ValueError("retriever must be dense, bm25, or hybrid")
     by_id = {chunk.chunk_id: chunk for chunk, _ in rows}
+    ranking = _diversify(ranking, by_id, top_k, min_files)
     retrieved = [RetrievedChunk(by_id[cid], float(score), rank) for rank, (cid, score) in enumerate(ranking, start=1)]
     return retrieved, max(0.0, time.perf_counter() - started - embed_elapsed), embed_elapsed
+
+
+def retrieve_queries(store: IndexStore, index_key_value: str, case_id: str, queries: list[str],
+                     retriever: str = "hybrid", top_k: int = 8,
+                     embedding: EmbeddingBackend | None = None, min_files: int = 4,
+                     rrf_k: int = 60) -> tuple[list[RetrievedChunk], float, float]:
+    if len(queries) <= 1:
+        query = queries[0] if queries else ""
+        return retrieve_case(store, index_key_value, case_id, query, retriever, top_k,
+                             embedding, rrf_k, min_files)
+    started = time.perf_counter()
+    rankings: list[list[str]] = []
+    per_query: dict[str, RetrievedChunk] = {}
+    retrieval_elapsed = embedding_elapsed = 0.0
+    for query in queries:
+        rows, retrieval_seconds, embed_seconds = retrieve_case(
+            store, index_key_value, case_id, query, retriever, top_k, embedding,
+            rrf_k, min_files=1)
+        retrieval_elapsed += retrieval_seconds
+        embedding_elapsed += embed_seconds
+        rankings.append([item.chunk.chunk_id for item in rows])
+        per_query.update({item.chunk.chunk_id: item for item in rows})
+    fused = reciprocal_rank_fusion(rankings, rrf_k)
+    by_id = {item.chunk.chunk_id: item.chunk for item in per_query.values()}
+    fused_scored = [(chunk_id, score) for chunk_id, score in fused]
+    fused_scored = _diversify(fused_scored, by_id, top_k, min_files)
+    result = [RetrievedChunk(by_id[cid], score, rank) for rank, (cid, score) in enumerate(fused_scored, 1)]
+    elapsed = max(retrieval_elapsed, time.perf_counter() - started - embedding_elapsed)
+    return result, elapsed, embedding_elapsed
 
 
 def assemble_context(results: list[RetrievedChunk], token_budget: int = 4000,

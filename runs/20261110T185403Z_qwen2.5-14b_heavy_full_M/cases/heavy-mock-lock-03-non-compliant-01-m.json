@@ -1,0 +1,168 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-lock-03-non-compliant-01-m",
+    "control_id": "MOCK-LOCK-03",
+    "evidence_files": [
+      "supplier-coordination-notes-4095.md",
+      "operations-handbook-2770.md",
+      "platform-change-register-7686.yaml",
+      "authentication-export.json",
+      "authentication-operations-standard.md"
+    ],
+    "file_order": [
+      "supplier-coordination-notes-4095.md",
+      "operations-handbook-2770.md",
+      "platform-change-register-7686.yaml",
+      "authentication-export.json",
+      "authentication-operations-standard.md"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 4226446623,
+    "file_roles": {
+      "authentication-operations-standard.md": "decisive",
+      "authentication-export.json": "decisive",
+      "platform-change-register-7686.yaml": "filler_adjacent",
+      "operations-handbook-2770.md": "filler_generic",
+      "supplier-coordination-notes-4095.md": "filler_adjacent"
+    },
+    "expected_status": "non_compliant",
+    "split": "dev",
+    "language": "en",
+    "tags": [
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "The effective evidence shows a material failure against one or more required criteria.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-lock-03-non-compliant-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8071,
+      "per_file": {
+        "supplier-coordination-notes-4095.md": 1774,
+        "operations-handbook-2770.md": 1509,
+        "platform-change-register-7686.yaml": 1739,
+        "authentication-export.json": 786,
+        "authentication-operations-standard.md": 2263
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "middle",
+      "fraction": 0.62234,
+      "placements": [
+        {
+          "file": "authentication-export.json",
+          "fraction": 0.62234,
+          "bucket": "middle"
+        },
+        {
+          "file": "authentication-operations-standard.md",
+          "fraction": 0.72138,
+          "bucket": "middle"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "authentication-export.json",
+        "text": "\"failed_attempt_threshold\": 0,",
+        "required": true
+      },
+      {
+        "file": "authentication-operations-standard.md",
+        "text": "Fictional reference: mock-lock-03-non-compliant-01.",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-LOCK-03",
+    "domain": "Authentication",
+    "title": "Repeated sign-in failure handling",
+    "description": "Mock control, not authoritative. Repeated failed sign-ins should trigger a protective response.",
+    "evaluation_criteria": [
+      "Accounts are blocked or delayed after no more than 5 consecutive failures.",
+      "The protective state lasts at least 15 minutes or requires an approved reset.",
+      "The configured behavior is evidenced."
+    ],
+    "expected_evidence": [
+      "Authentication procedure",
+      "Directory or application lockout configuration"
+    ],
+    "retrieval_hints": [
+      "repeated authentication failures",
+      "account recovery",
+      "échecs de connexion",
+      "récupération de compte",
+      "failed_attempt_threshold",
+      "lockout_minutes",
+      "lockout_enabled",
+      "directory authentication settings"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-lock-03-non-compliant-01-m",
+      "control_id": "MOCK-LOCK-03",
+      "repetition": 1,
+      "expected_status": "non_compliant",
+      "status": "timeout",
+      "matches_expected": false,
+      "confidence": null,
+      "justification": null,
+      "criteria_assessment": [],
+      "quotes": [],
+      "recommendation": null,
+      "raw_output_initial": null,
+      "raw_output_final": null,
+      "initial_json_valid": false,
+      "initial_schema_valid": false,
+      "final_json_valid": false,
+      "final_schema_valid": false,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 0,
+        "total": 0,
+        "rate": null
+      },
+      "wall_clock_total_seconds": 900.1050919070003,
+      "wall_clock_elapsed_seconds": 900.1050919070003,
+      "model_reported_total_seconds": null,
+      "model_load_seconds": null,
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "prompt_token_count_method": "timeout",
+      "prompt_processing_seconds": null,
+      "prompt_processing_tokens_per_second": null,
+      "generation_seconds": null,
+      "generation_tokens_per_second": null,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [],
+      "prompt_tokens_estimated_before_call": null,
+      "prompt_tokens_reported_by_backend": null,
+      "prefix_cached": false,
+      "phase_latency_shares": {},
+      "likely_truncated": false,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": null,
+      "prompt_version": "eval_v1",
+      "language": "en",
+      "tags": [
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-lock-03-non-compliant-01",
+      "needle_position": "middle",
+      "context_mode": "full",
+      "label_confidence": "firm",
+      "retrieval": {},
+      "resource_peak_ram_used_bytes": 27095183360,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

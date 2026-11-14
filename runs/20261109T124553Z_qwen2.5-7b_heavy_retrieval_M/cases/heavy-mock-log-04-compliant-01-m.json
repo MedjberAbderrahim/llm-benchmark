@@ -1,0 +1,273 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-log-04-compliant-01-m",
+    "control_id": "MOCK-LOG-04",
+    "evidence_files": [
+      "event-platform-settings.yaml",
+      "security-event-handling-standard.md",
+      "platform-change-register-1711.yaml",
+      "operations-handbook-4232.md",
+      "supplier-coordination-notes-1567.md"
+    ],
+    "file_order": [
+      "event-platform-settings.yaml",
+      "security-event-handling-standard.md",
+      "platform-change-register-1711.yaml",
+      "operations-handbook-4232.md",
+      "supplier-coordination-notes-1567.md"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 4024350562,
+    "file_roles": {
+      "security-event-handling-standard.md": "decisive",
+      "event-platform-settings.yaml": "decisive",
+      "platform-change-register-1711.yaml": "filler_generic",
+      "operations-handbook-4232.md": "filler_adjacent",
+      "supplier-coordination-notes-1567.md": "filler_adjacent"
+    },
+    "expected_status": "compliant",
+    "split": "dev",
+    "language": "mixed",
+    "tags": [
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "The cited policy and effective export satisfy the stated mock criteria.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-log-04-compliant-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8015,
+      "per_file": {
+        "event-platform-settings.yaml": 696,
+        "security-event-handling-standard.md": 2091,
+        "platform-change-register-1711.yaml": 1567,
+        "operations-handbook-4232.md": 1836,
+        "supplier-coordination-notes-1567.md": 1825
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "start",
+      "fraction": 0.0,
+      "placements": [
+        {
+          "file": "event-platform-settings.yaml",
+          "fraction": 0.0,
+          "bucket": "start"
+        },
+        {
+          "file": "security-event-handling-standard.md",
+          "fraction": 0.08869,
+          "bucket": "start"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "event-platform-settings.yaml",
+        "text": "retention_days: 400\nsearchable_days: 100\narchive_enabled: true",
+        "required": true
+      },
+      {
+        "file": "security-event-handling-standard.md",
+        "text": "Fictional record mock-log-04-compliant-01; ceci est une donnée de démonstration.",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-LOG-04",
+    "domain": "Logging",
+    "title": "Security event retention and availability",
+    "description": "Mock control, not authoritative. Security records should remain available for review over a long period.",
+    "evaluation_criteria": [
+      "Security records are retained for at least 365 days.",
+      "At least the most recent 90 days are immediately searchable or otherwise readily available.",
+      "The effective logging configuration supports the stated periods."
+    ],
+    "expected_evidence": [
+      "Logging and retention procedure",
+      "SIEM or archive retention settings"
+    ],
+    "retrieval_hints": [
+      "security event archive",
+      "searchable event index",
+      "archive des événements",
+      "index de recherche",
+      "retention_days",
+      "searchable_days",
+      "collector health",
+      "event pipeline"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-log-04-compliant-01-m",
+      "control_id": "MOCK-LOG-04",
+      "repetition": 1,
+      "expected_status": "compliant",
+      "status": "compliant",
+      "matches_expected": true,
+      "confidence": 0.95,
+      "justification": "The evidence shows that the security records are retained for 400 days, which is more than the required 365 days. Additionally, the most recent 100 days are immediately searchable, meeting the requirement of being readily available for at least 90 days. The effective logging configuration supports the stated periods, as evidenced by the settings in the event platform settings file.",
+      "criteria_assessment": [
+        {
+          "criterion": "Security records are retained for at least 365 days.",
+          "met": "yes",
+          "note": "The retention_days setting is 400 days, which exceeds the required 365 days."
+        },
+        {
+          "criterion": "At least the most recent 90 days are immediately searchable or otherwise readily available.",
+          "met": "yes",
+          "note": "The searchable_days setting is 100 days, which is more than the required 90 days."
+        },
+        {
+          "criterion": "The effective logging configuration supports the stated periods.",
+          "met": "yes",
+          "note": "The event platform settings and operational procedures indicate that the logging configuration supports the stated retention and searchable periods."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "event-platform-settings.yaml",
+          "text": "retention_days: 400\nsearchable_days: 100",
+          "valid": true
+        },
+        {
+          "file": "security-event-handling-standard.md",
+          "text": "Security events are archived for 400 days. The most recent 100 days remain indexed for immediate search.",
+          "valid": true
+        }
+      ],
+      "recommendation": "Maintain current logging and retention practices as they meet the stated criteria.",
+      "raw_output_initial": "{\n  \"status\": \"compliant\",\n  \"justification\": \"The evidence shows that the security records are retained for 400 days, which is more than the required 365 days. Additionally, the most recent 100 days are immediately searchable, meeting the requirement of being readily available for at least 90 days. The effective logging configuration supports the stated periods, as evidenced by the settings in the event platform settings file.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Security records are retained for at least 365 days.\",\n      \"met\": \"yes\",\n      \"note\": \"The retention_days setting is 400 days, which exceeds the required 365 days.\"\n    },\n    {\n      \"criterion\": \"At least the most recent 90 days are immediately searchable or otherwise readily available.\",\n      \"met\": \"yes\",\n      \"note\": \"The searchable_days setting is 100 days, which is more than the required 90 days.\"\n    },\n    {\n      \"criterion\": \"The effective logging configuration supports the stated periods.\",\n      \"met\": \"yes\",\n      \"note\": \"The event platform settings and operational procedures indicate that the logging configuration supports the stated retention and searchable periods.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"event-platform-settings.yaml\",\n      \"text\": \"retention_days: 400\\nsearchable_days: 100\"\n    },\n    {\n      \"file\": \"security-event-handling-standard.md\",\n      \"text\": \"Security events are archived for 400 days. The most recent 100 days remain indexed for immediate search.\"\n    }\n  ],\n  \"recommendation\": \"Maintain current logging and retention practices as they meet the stated criteria.\",\n  \"confidence\": 0.95\n}",
+      "raw_output_final": "{\n  \"status\": \"compliant\",\n  \"justification\": \"The evidence shows that the security records are retained for 400 days, which is more than the required 365 days. Additionally, the most recent 100 days are immediately searchable, meeting the requirement of being readily available for at least 90 days. The effective logging configuration supports the stated periods, as evidenced by the settings in the event platform settings file.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Security records are retained for at least 365 days.\",\n      \"met\": \"yes\",\n      \"note\": \"The retention_days setting is 400 days, which exceeds the required 365 days.\"\n    },\n    {\n      \"criterion\": \"At least the most recent 90 days are immediately searchable or otherwise readily available.\",\n      \"met\": \"yes\",\n      \"note\": \"The searchable_days setting is 100 days, which is more than the required 90 days.\"\n    },\n    {\n      \"criterion\": \"The effective logging configuration supports the stated periods.\",\n      \"met\": \"yes\",\n      \"note\": \"The event platform settings and operational procedures indicate that the logging configuration supports the stated retention and searchable periods.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"event-platform-settings.yaml\",\n      \"text\": \"retention_days: 400\\nsearchable_days: 100\"\n    },\n    {\n      \"file\": \"security-event-handling-standard.md\",\n      \"text\": \"Security events are archived for 400 days. The most recent 100 days remain indexed for immediate search.\"\n    }\n  ],\n  \"recommendation\": \"Maintain current logging and retention practices as they meet the stated criteria.\",\n  \"confidence\": 0.95\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 2,
+        "total": 2,
+        "rate": 1.0
+      },
+      "wall_clock_total_seconds": 186.35556498499864,
+      "wall_clock_elapsed_seconds": 186.35563166000065,
+      "model_reported_total_seconds": 186.354205389,
+      "model_load_seconds": 0.001771992,
+      "prompt_tokens": 2696,
+      "output_tokens": 392,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 117.593157,
+      "prompt_processing_tokens_per_second": 22.926504133229454,
+      "generation_seconds": 68.491326,
+      "generation_tokens_per_second": 5.723352472399205,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 186354205389,
+          "load_duration": 1771992,
+          "prompt_eval_count": 2696,
+          "prompt_eval_duration": 117593157000,
+          "eval_count": 392,
+          "eval_duration": 68491326000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 2744,
+      "prompt_tokens_reported_by_backend": 2696,
+      "prefix_cached": false,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 9.508661574676575e-06,
+        "prompt_processing": 0.6310150008638921,
+        "generation": 0.3675303498745179
+      },
+      "likely_truncated": false,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 7168,
+      "prompt_version": "eval_v2_retrieval",
+      "language": "mixed",
+      "tags": [
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-log-04-compliant-01",
+      "needle_position": "start",
+      "context_mode": "retrieval",
+      "label_confidence": "firm",
+      "retrieval": {
+        "retrieved_chunks": [
+          {
+            "chunk_id": "48d296bced0d014dc519",
+            "file": "security-event-handling-standard.md",
+            "score": 0.03278688524590164,
+            "rank": 1,
+            "start_line": 1,
+            "end_line": 24
+          },
+          {
+            "chunk_id": "269492963d0bcfbdf3a2",
+            "file": "supplier-coordination-notes-1567.md",
+            "score": 0.03128054740957967,
+            "rank": 2,
+            "start_line": 43,
+            "end_line": 72
+          },
+          {
+            "chunk_id": "e10847fbf4c49df4b461",
+            "file": "operations-handbook-4232.md",
+            "score": 0.03125,
+            "rank": 3,
+            "start_line": 103,
+            "end_line": 134
+          },
+          {
+            "chunk_id": "dc6ea8f7b643402d089e",
+            "file": "event-platform-settings.yaml",
+            "score": 0.027893738140417457,
+            "rank": 4,
+            "start_line": 1,
+            "end_line": 4
+          },
+          {
+            "chunk_id": "cfa67c32c394d0fd5980",
+            "file": "security-event-handling-standard.md",
+            "score": 0.030158730158730156,
+            "rank": 5,
+            "start_line": 85,
+            "end_line": 104
+          }
+        ],
+        "context_chunk_ids": [
+          "dc6ea8f7b643402d089e",
+          "e10847fbf4c49df4b461",
+          "48d296bced0d014dc519",
+          "cfa67c32c394d0fd5980",
+          "269492963d0bcfbdf3a2"
+        ],
+        "chunks_requested": 5,
+        "chunks_returned": 5,
+        "shortfall_reason": null,
+        "min_files": 4,
+        "tokens_sent": 1465,
+        "retrieval_seconds": 0.004536246000498068,
+        "embedding_seconds": 0.3348379519993614,
+        "gold_passage_count": 2,
+        "gold_passages_retrieved": 2,
+        "required_gold_passage_count": 2,
+        "required_gold_passages_retrieved": 2,
+        "all_required_gold_in_context": true,
+        "all_gold_in_context": true,
+        "failure_attribution": "ok"
+      },
+      "resource_peak_ram_used_bytes": 19496841216,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

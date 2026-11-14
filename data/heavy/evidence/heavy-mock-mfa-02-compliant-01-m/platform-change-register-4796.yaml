@@ -1,0 +1,237 @@
+# Fictional security service register OPS-0002
+register:
+  entries:
+    - asset_ref: SEC-1943C8-02-00000
+      service_name: svc-002
+      owner_group: platform-west
+      change_ref: CHG-00002
+      lifecycle_state: assigned
+      updated_at: 2026-01-01
+    - asset_ref: SEC-1943C8-02-00001
+      service_name: svc-009
+      owner_group: service-blue
+      change_ref: CHG-00021
+      lifecycle_state: archived
+      updated_at: 2026-02-02
+    - asset_ref: SEC-1943C8-02-00002
+      service_name: svc-016
+      owner_group: continuity-green
+      change_ref: CHG-00040
+      lifecycle_state: in-transit
+      updated_at: 2026-03-03
+    - asset_ref: SEC-1943C8-02-00003
+      service_name: svc-023
+      owner_group: ops-north
+      change_ref: CHG-00059
+      lifecycle_state: active
+      updated_at: 2026-04-04
+    - asset_ref: SEC-1943C8-02-00004
+      service_name: svc-030
+      owner_group: identity-east
+      change_ref: CHG-00078
+      lifecycle_state: staged
+      updated_at: 2026-05-05
+    - asset_ref: SEC-1943C8-02-00005
+      service_name: svc-037
+      owner_group: platform-west
+      change_ref: CHG-00097
+      lifecycle_state: assigned
+      updated_at: 2026-06-06
+    - asset_ref: SEC-1943C8-02-00006
+      service_name: svc-044
+      owner_group: service-blue
+      change_ref: CHG-00116
+      lifecycle_state: archived
+      updated_at: 2026-07-07
+    - asset_ref: SEC-1943C8-02-00007
+      service_name: svc-051
+      owner_group: continuity-green
+      change_ref: CHG-00135
+      lifecycle_state: in-transit
+      updated_at: 2026-08-08
+    - asset_ref: SEC-1943C8-02-00008
+      service_name: svc-058
+      owner_group: ops-north
+      change_ref: CHG-00154
+      lifecycle_state: active
+      updated_at: 2026-09-09
+    - asset_ref: SEC-1943C8-02-00009
+      service_name: svc-065
+      owner_group: identity-east
+      change_ref: CHG-00173
+      lifecycle_state: staged
+      updated_at: 2026-10-10
+    - asset_ref: SEC-1943C8-02-00010
+      service_name: svc-072
+      owner_group: platform-west
+      change_ref: CHG-00192
+      lifecycle_state: assigned
+      updated_at: 2026-11-11
+    - asset_ref: SEC-1943C8-02-00011
+      service_name: svc-079
+      owner_group: service-blue
+      change_ref: CHG-00211
+      lifecycle_state: archived
+      updated_at: 2026-12-12
+    - asset_ref: SEC-1943C8-02-00012
+      service_name: svc-086
+      owner_group: continuity-green
+      change_ref: CHG-00230
+      lifecycle_state: in-transit
+      updated_at: 2026-01-13
+    - asset_ref: SEC-1943C8-02-00013
+      service_name: svc-093
+      owner_group: ops-north
+      change_ref: CHG-00249
+      lifecycle_state: active
+      updated_at: 2026-02-14
+    - asset_ref: SEC-1943C8-02-00014
+      service_name: svc-100
+      owner_group: identity-east
+      change_ref: CHG-00268
+      lifecycle_state: staged
+      updated_at: 2026-03-15
+    - asset_ref: SEC-1943C8-02-00015
+      service_name: svc-107
+      owner_group: platform-west
+      change_ref: CHG-00287
+      lifecycle_state: assigned
+      updated_at: 2026-04-16
+    - asset_ref: SEC-1943C8-02-00016
+      service_name: svc-114
+      owner_group: service-blue
+      change_ref: CHG-00306
+      lifecycle_state: archived
+      updated_at: 2026-05-17
+    - asset_ref: SEC-1943C8-02-00017
+      service_name: svc-121
+      owner_group: continuity-green
+      change_ref: CHG-00325
+      lifecycle_state: in-transit
+      updated_at: 2026-06-18
+    - asset_ref: SEC-1943C8-02-00018
+      service_name: svc-128
+      owner_group: ops-north
+      change_ref: CHG-00344
+      lifecycle_state: active
+      updated_at: 2026-07-19
+    - asset_ref: SEC-1943C8-02-00019
+      service_name: svc-135
+      owner_group: identity-east
+      change_ref: CHG-00363
+      lifecycle_state: staged
+      updated_at: 2026-08-20
+    - asset_ref: SEC-1943C8-02-00020
+      service_name: svc-142
+      owner_group: platform-west
+      change_ref: CHG-00382
+      lifecycle_state: assigned
+      updated_at: 2026-09-21
+    - asset_ref: SEC-1943C8-02-00021
+      service_name: svc-149
+      owner_group: service-blue
+      change_ref: CHG-00401
+      lifecycle_state: archived
+      updated_at: 2026-10-22
+    - asset_ref: SEC-1943C8-02-00022
+      service_name: svc-156
+      owner_group: continuity-green
+      change_ref: CHG-00420
+      lifecycle_state: in-transit
+      updated_at: 2026-11-23
+    - asset_ref: SEC-1943C8-02-00023
+      service_name: svc-163
+      owner_group: ops-north
+      change_ref: CHG-00439
+      lifecycle_state: active
+      updated_at: 2026-12-24
+    - asset_ref: SEC-1943C8-02-00024
+      service_name: svc-170
+      owner_group: identity-east
+      change_ref: CHG-00458
+      lifecycle_state: staged
+      updated_at: 2026-01-25
+    - asset_ref: SEC-1943C8-02-00025
+      service_name: svc-177
+      owner_group: platform-west
+      change_ref: CHG-00477
+      lifecycle_state: assigned
+      updated_at: 2026-02-26
+    - asset_ref: SEC-1943C8-02-00026
+      service_name: svc-184
+      owner_group: service-blue
+      change_ref: CHG-00496
+      lifecycle_state: archived
+      updated_at: 2026-03-27
+    - asset_ref: SEC-1943C8-02-00027
+      service_name: svc-191
+      owner_group: continuity-green
+      change_ref: CHG-00515
+      lifecycle_state: in-transit
+      updated_at: 2026-04-01
+    - asset_ref: SEC-1943C8-02-00028
+      service_name: svc-198
+      owner_group: ops-north
+      change_ref: CHG-00534
+      lifecycle_state: active
+      updated_at: 2026-05-02
+    - asset_ref: SEC-1943C8-02-00029
+      service_name: svc-205
+      owner_group: identity-east
+      change_ref: CHG-00553
+      lifecycle_state: staged
+      updated_at: 2026-06-03
+    - asset_ref: SEC-1943C8-02-00030
+      service_name: svc-212
+      owner_group: platform-west
+      change_ref: CHG-00572
+      lifecycle_state: assigned
+      updated_at: 2026-07-04
+    - asset_ref: SEC-1943C8-02-00031
+      service_name: svc-219
+      owner_group: service-blue
+      change_ref: CHG-00591
+      lifecycle_state: archived
+      updated_at: 2026-08-05
+    - asset_ref: SEC-1943C8-02-00032
+      service_name: svc-226
+      owner_group: continuity-green
+      change_ref: CHG-00610
+      lifecycle_state: in-transit
+      updated_at: 2026-09-06
+    - asset_ref: SEC-1943C8-02-00033
+      service_name: svc-233
+      owner_group: ops-north
+      change_ref: CHG-00629
+      lifecycle_state: active
+      updated_at: 2026-10-07
+    - asset_ref: SEC-1943C8-02-00034
+      service_name: svc-240
+      owner_group: identity-east
+      change_ref: CHG-00648
+      lifecycle_state: staged
+      updated_at: 2026-11-08
+    - asset_ref: SEC-1943C8-02-00035
+      service_name: svc-247
+      owner_group: platform-west
+      change_ref: CHG-00667
+      lifecycle_state: assigned
+      updated_at: 2026-12-09
+    - asset_ref: SEC-1943C8-02-00036
+      service_name: svc-254
+      owner_group: service-blue
+      change_ref: CHG-00686
+      lifecycle_state: archived
+      updated_at: 2026-01-10
+    - asset_ref: SEC-1943C8-02-00037
+      service_name: svc-261
+      owner_group: continuity-green
+      change_ref: CHG-00705
+      lifecycle_state: in-transit
+      updated_at: 2026-02-11
+    - asset_ref: SEC-1943C8-02-00038
+      service_name: svc-268
+      owner_group: ops-north
+      change_ref: CHG-00724
+      lifecycle_state: active
+      updated_at: 2026-03-12

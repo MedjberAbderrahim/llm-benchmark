@@ -10,3 +10,13 @@ evaluation_criteria:
 expected_evidence:
 - Access-review procedure
 - Dated access-review log with decisions and remediation
+retrieval_hints:
+  - active identity owner confirmation
+  - access decision and removal tracking
+  - confirmation du propriétaire des identités
+  - décision d’accès et suivi des retraits
+  - review_date
+  - review_frequency
+  - last_review_date
+  - owner_assignment
+  - active population

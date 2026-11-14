@@ -10,3 +10,13 @@ evaluation_criteria:
 expected_evidence:
 - Privileged-access policy
 - Identity-provider MFA configuration or coverage export
+retrieval_hints:
+  - administrator sign-in
+  - interactive privileged identities
+  - connexion administrateur
+  - facteur indépendant
+  - mfa_required
+  - all_interactive_admins
+  - remote_admin_mfa
+  - identity provider coverage
+  - emergency identity

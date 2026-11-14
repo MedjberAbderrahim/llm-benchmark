@@ -1,0 +1,191 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-mfa-02-compliant-01-m",
+    "control_id": "MOCK-MFA-02",
+    "evidence_files": [
+      "privileged-access-settings.yaml",
+      "privileged-access-standard-v4.md",
+      "supplier-coordination-notes-1936.md",
+      "platform-change-register-4796.yaml",
+      "operations-handbook-6706.md"
+    ],
+    "file_order": [
+      "privileged-access-settings.yaml",
+      "privileged-access-standard-v4.md",
+      "supplier-coordination-notes-1936.md",
+      "platform-change-register-4796.yaml",
+      "operations-handbook-6706.md"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 202682705,
+    "file_roles": {
+      "privileged-access-standard-v4.md": "decisive",
+      "privileged-access-settings.yaml": "decisive",
+      "platform-change-register-4796.yaml": "filler_adjacent",
+      "operations-handbook-6706.md": "filler_generic",
+      "supplier-coordination-notes-1936.md": "filler_adjacent"
+    },
+    "expected_status": "compliant",
+    "split": "dev",
+    "language": "fr",
+    "tags": [
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "The cited policy and effective export satisfy the stated mock criteria.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-mfa-02-compliant-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8093,
+      "per_file": {
+        "privileged-access-settings.yaml": 711,
+        "privileged-access-standard-v4.md": 2062,
+        "supplier-coordination-notes-1936.md": 1834,
+        "platform-change-register-4796.yaml": 1832,
+        "operations-handbook-6706.md": 1654
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "start",
+      "fraction": 0.00093,
+      "placements": [
+        {
+          "file": "privileged-access-settings.yaml",
+          "fraction": 0.00093,
+          "bucket": "start"
+        },
+        {
+          "file": "privileged-access-standard-v4.md",
+          "fraction": 0.09002,
+          "bucket": "start"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "privileged-access-settings.yaml",
+        "text": "mfa_required: true\nexceptions:\n- vaulted_emergency_account",
+        "required": true
+      },
+      {
+        "file": "privileged-access-standard-v4.md",
+        "text": "Référence fictive: mock-mfa-02-compliant-01.",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-MFA-02",
+    "domain": "Authentication",
+    "title": "Multi-factor authentication for administrators",
+    "description": "Mock control, not authoritative. Privileged human access should require more than one authentication factor.",
+    "evaluation_criteria": [
+      "All interactive privileged accounts require MFA.",
+      "Any emergency account exception is limited, documented, and monitored.",
+      "The active identity configuration agrees with the policy."
+    ],
+    "expected_evidence": [
+      "Privileged-access policy",
+      "Identity-provider MFA configuration or coverage export"
+    ],
+    "retrieval_hints": [
+      "administrator sign-in",
+      "interactive privileged identities",
+      "connexion administrateur",
+      "facteur indépendant",
+      "mfa_required",
+      "all_interactive_admins",
+      "remote_admin_mfa",
+      "identity provider coverage",
+      "emergency identity"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-mfa-02-compliant-01-m",
+      "control_id": "MOCK-MFA-02",
+      "repetition": 1,
+      "expected_status": "compliant",
+      "status": "invalid_output",
+      "matches_expected": false,
+      "confidence": null,
+      "justification": null,
+      "criteria_assessment": [],
+      "quotes": [],
+      "recommendation": null,
+      "raw_output_initial": "{\n  \"status\": \"partial\",\n  \"justification\": \"The provided documentation partially meets the criteria for a comprehensive security and operations management system. While it covers many aspects, there are gaps in the detail and consistency of the information provided, particularly in the sections related to security and identity operations.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Comprehensive documentation of security and operations processes\",\n      \"met\": \"yes\",\n      \"note\": \"The documentation covers various operational and security processes, including change management, identity operations, and security reviews.\"\n    },\n    {\n      \"criterion\": \"Clear and detailed descriptions of security and operations processes\",\n      \"met\": \"no\",\n      \"note\": \"Descriptions are provided, but they lack detailed steps and procedures, making it difficult to fully understand the processes.\"\n    },\n    {\n      \"criterion\": \"Regular updates and revisions to ensure accuracy and relevance\",\n      \"met\": \"unclear\",\n      \"note\": \"There is no clear indication of the frequency of updates or revisions in the provided documentation.\"\n    },\n    {\n      \"criterion\": \"Integration of security and operations processes\",\n      \"met\": \"yes\",\n      \"note\": \"The documentation integrates security and operations processes, such as change management and identity operations.\"\n    },\n    {\n      \"criterion\": \"Provision of clear and actionable guidance for staff\",\n      \"met\": \"no\",\n      \"note\": \"While there are some guidelines, they are not detailed enough to provide clear and actionable guidance for staff.\"\n    },\n    {\n      \"criterion\": \"Inclusion of relevant policies and procedures\",\n      \"met\": \"yes\",\n      \"note\": \"The documentation includes various policies and procedures, such as change management and identity operations.\"\n    },\n    {\n      \"criterion\": \"Provision of training and support materials\",\n      \"met\": \"no\",\n      \"note\": \"There is no mention of specific training or support materials in the provided documentation.\"\n    },\n    {\n      \"criterion\": \"Regular review and testing of security and operations processes\",\n      \"met\": \"unclear\",\n      \"note\": \"There is no clear indication of the frequency or method of review and testing in the provided documentation.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"platform-change-register-4796.yaml\",\n      \"text\": \"Les traces de session privilégiée identifient l'opérateur, le service c",
+      "raw_output_final": "{\n  \"status\": \"partial\",\n  \"justification\": \"The provided documentation partially meets the criteria for a comprehensive security and operations management system. While it covers many aspects, there are gaps in the detail and consistency of the information provided, particularly in the sections related to security and identity operations.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Comprehensive documentation of security and operations processes\",\n      \"met\": \"yes\",\n      \"note\": \"The documentation covers various operational and security processes, including change management, identity operations, and security reviews.\"\n    },\n    {\n      \"criterion\": \"Clear and detailed descriptions of security and operations processes\",\n      \"met\": \"no\",\n      \"note\": \"Descriptions are provided, but they lack detailed steps and procedures, making it difficult to fully understand the processes.\"\n    },\n    {\n      \"criterion\": \"Regular updates and revisions to ensure accuracy and relevance\",\n      \"met\": \"unclear\",\n      \"note\": \"There is no clear indication of the frequency of updates or revisions in the provided documentation.\"\n    },\n    {\n      \"criterion\": \"Integration of security and operations processes\",\n      \"met\": \"yes\",\n      \"note\": \"The documentation integrates security and operations processes, such as change management and identity operations.\"\n    },\n    {\n      \"criterion\": \"Provision of clear and actionable guidance for staff\",\n      \"met\": \"no\",\n      \"note\": \"While there are some guidelines, they are not detailed enough to provide clear and actionable guidance for staff.\"\n    },\n    {\n      \"criterion\": \"Inclusion of relevant policies and procedures\",\n      \"met\": \"yes\",\n      \"note\": \"The documentation includes various policies and procedures, such as change management and identity operations.\"\n    },\n    {\n      \"criterion\": \"Provision of training and support materials\",\n      \"met\": \"no\",\n      \"note\": \"There is no mention of specific training or support materials in the provided documentation.\"\n    },\n    {\n      \"criterion\": \"Regular review and testing of security and operations processes\",\n      \"met\": \"unclear\",\n      \"note\": \"There is no clear indication of the frequency or method of review and testing in the provided documentation.\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"platform-change-register-4796.yaml\",\n      \"text\": \"Les traces de session privilégiée identifient l'opérateur, le service c",
+      "initial_json_valid": false,
+      "initial_schema_valid": false,
+      "final_json_valid": false,
+      "final_schema_valid": false,
+      "retry_count": 1,
+      "quote_validity": {
+        "valid": 0,
+        "total": 0,
+        "rate": null
+      },
+      "wall_clock_total_seconds": 461.7636261309999,
+      "wall_clock_elapsed_seconds": 461.76378375700006,
+      "model_reported_total_seconds": 461.759945996,
+      "model_load_seconds": 0.00579375,
+      "prompt_tokens": 9522,
+      "output_tokens": 1024,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": null,
+      "prompt_processing_tokens_per_second": null,
+      "generation_seconds": 167.037817999,
+      "generation_tokens_per_second": 6.130348278412798,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 360433778618,
+          "load_duration": 2932896,
+          "prompt_eval_count": 5634,
+          "prompt_eval_duration": 260649954000,
+          "eval_count": 512,
+          "eval_duration": 99382831000
+        },
+        {
+          "total_duration": 101326167378,
+          "load_duration": 2860854,
+          "prompt_eval_count": 819,
+          "prompt_eval_duration": 33272866000,
+          "eval_count": 512,
+          "eval_duration": 67654986999
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 9522,
+      "prompt_tokens_reported_by_backend": 6453,
+      "prefix_cached": true,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 1.254700386114073e-05,
+        "prompt_processing": 0.6365222450774319,
+        "generation": 0.3617387956660152
+      },
+      "likely_truncated": false,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 11264,
+      "prompt_version": "eval_v1",
+      "language": "fr",
+      "tags": [
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-mfa-02-compliant-01",
+      "needle_position": "start",
+      "context_mode": "full",
+      "label_confidence": "firm",
+      "retrieval": {},
+      "resource_peak_ram_used_bytes": 14560604160,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}

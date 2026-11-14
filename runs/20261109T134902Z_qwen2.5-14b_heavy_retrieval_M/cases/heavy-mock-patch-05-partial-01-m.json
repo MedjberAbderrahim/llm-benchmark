@@ -1,0 +1,274 @@
+{
+  "label": {
+    "heavy_dataset_version": 2,
+    "case_id": "heavy-mock-patch-05-partial-01-m",
+    "control_id": "MOCK-PATCH-05",
+    "evidence_files": [
+      "platform-change-register-9177.yaml",
+      "change-management-standard-v4.md",
+      "deployment-service-export.yaml",
+      "operations-handbook-8334.md",
+      "supplier-coordination-notes-8332.md"
+    ],
+    "file_order": [
+      "platform-change-register-9177.yaml",
+      "change-management-standard-v4.md",
+      "deployment-service-export.yaml",
+      "operations-handbook-8334.md",
+      "supplier-coordination-notes-8332.md"
+    ],
+    "file_order_shuffled": true,
+    "file_order_seed": 13252599,
+    "file_roles": {
+      "change-management-standard-v4.md": "decisive",
+      "deployment-service-export.yaml": "decisive",
+      "platform-change-register-9177.yaml": "filler_generic",
+      "operations-handbook-8334.md": "filler_adjacent",
+      "supplier-coordination-notes-8332.md": "filler_adjacent"
+    },
+    "expected_status": "partial",
+    "split": "dev",
+    "language": "en",
+    "tags": [
+      "heavy",
+      "tier_M"
+    ],
+    "rationale": "Some safeguards are present, but at least one required scope, threshold, or follow-up condition is missing.",
+    "label_confidence": "firm",
+    "tier": "M",
+    "paired_with": "mock-patch-05-partial-01",
+    "n_files": 5,
+    "approx_tokens": {
+      "total": 8078,
+      "per_file": {
+        "platform-change-register-9177.yaml": 1567,
+        "change-management-standard-v4.md": 2102,
+        "deployment-service-export.yaml": 699,
+        "operations-handbook-8334.md": 1852,
+        "supplier-coordination-notes-8332.md": 1858
+      },
+      "target": 8000,
+      "bytes_per_token": 4
+    },
+    "needle_position": {
+      "bucket": "start",
+      "fraction": 0.19575,
+      "placements": [
+        {
+          "file": "change-management-standard-v4.md",
+          "fraction": 0.19575,
+          "bucket": "start"
+        },
+        {
+          "file": "deployment-service-export.yaml",
+          "fraction": 0.45498,
+          "bucket": "middle"
+        }
+      ]
+    },
+    "gold_passages": [
+      {
+        "file": "change-management-standard-v4.md",
+        "text": "Fictional reference: mock-patch-05-partial-01.",
+        "required": true
+      },
+      {
+        "file": "deployment-service-export.yaml",
+        "text": "critical_deadline_days: 45",
+        "required": true
+      }
+    ]
+  },
+  "control": {
+    "id": "MOCK-PATCH-05",
+    "domain": "Vulnerability Management",
+    "title": "Timely critical security updates",
+    "description": "Mock control, not authoritative. Critical fixes should be prioritized and applied on a defined short schedule.",
+    "evaluation_criteria": [
+      "Critical security updates are deployed within 30 calendar days of release or identification.",
+      "The deadline applies to in-scope production systems.",
+      "Records show due dates and completion or tracked exceptions."
+    ],
+    "expected_evidence": [
+      "Patch-management procedure",
+      "Recent ticket or vulnerability remediation export"
+    ],
+    "retrieval_hints": [
+      "critical update deployment",
+      "change ticket due date",
+      "déploiement des correctifs",
+      "échéance du ticket",
+      "critical_deadline_days",
+      "identified_at",
+      "due_at",
+      "deployed_at",
+      "production scope"
+    ]
+  },
+  "repetitions": [
+    {
+      "case_id": "heavy-mock-patch-05-partial-01-m",
+      "control_id": "MOCK-PATCH-05",
+      "repetition": 1,
+      "expected_status": "partial",
+      "status": "partial",
+      "matches_expected": true,
+      "confidence": 0.8,
+      "justification": "Le contrôle évalue la conformité des mises à jour de sécurité critiques déployées dans un délai de 30 jours. Les preuves montrent que le délai est de 45 jours, ce qui est en dehors du délai spécifié. Cependant, les preuves montrent que les exceptions sont suivies et documentées.",
+      "criteria_assessment": [
+        {
+          "criterion": "Critical security updates are deployed within 30 calendar days of release or identification.",
+          "met": "no",
+          "note": "Le délai spécifié est de 45 jours, ce qui est en dehors du délai de 30 jours requis."
+        },
+        {
+          "criterion": "The deadline applies to in-scope production systems.",
+          "met": "unclear",
+          "note": "Les preuves ne précisent pas explicitement si le délai de 45 jours s'applique aux systèmes de production en portée."
+        },
+        {
+          "criterion": "Records show due dates and completion or tracked exceptions.",
+          "met": "yes",
+          "note": "Le fichier 'deployment-service-export.yaml' indique que les exceptions sont suivies ('exceptions_tracked: true')."
+        }
+      ],
+      "quotes": [
+        {
+          "file": "change-management-standard-v4.md",
+          "text": "Critical updates should be installed within 45 days when operations allow. Exceptions are discussed at the monthly meeting.",
+          "valid": true
+        },
+        {
+          "file": "deployment-service-export.yaml",
+          "text": "critical_deadline_days: 45\nexceptions_tracked: true",
+          "valid": true
+        }
+      ],
+      "recommendation": "Il est recommandé de réviser la politique pour aligner le délai de déploiement des mises à jour critiques sur le délai de 30 jours spécifié dans le contrôle.",
+      "raw_output_initial": "{\n  \"status\": \"partial\",\n  \"justification\": \"Le contrôle évalue la conformité des mises à jour de sécurité critiques déployées dans un délai de 30 jours. Les preuves montrent que le délai est de 45 jours, ce qui est en dehors du délai spécifié. Cependant, les preuves montrent que les exceptions sont suivies et documentées.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Critical security updates are deployed within 30 calendar days of release or identification.\",\n      \"met\": \"no\",\n      \"note\": \"Le délai spécifié est de 45 jours, ce qui est en dehors du délai de 30 jours requis.\"\n    },\n    {\n      \"criterion\": \"The deadline applies to in-scope production systems.\",\n      \"met\": \"unclear\",\n      \"note\": \"Les preuves ne précisent pas explicitement si le délai de 45 jours s'applique aux systèmes de production en portée.\"\n    },\n    {\n      \"criterion\": \"Records show due dates and completion or tracked exceptions.\",\n      \"met\": \"yes\",\n      \"note\": \"Le fichier 'deployment-service-export.yaml' indique que les exceptions sont suivies ('exceptions_tracked: true').\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"change-management-standard-v4.md\",\n      \"text\": \"Critical updates should be installed within 45 days when operations allow. Exceptions are discussed at the monthly meeting.\"\n    },\n    {\n      \"file\": \"deployment-service-export.yaml\",\n      \"text\": \"critical_deadline_days: 45\\nexceptions_tracked: true\"\n    }\n  ],\n  \"recommendation\": \"Il est recommandé de réviser la politique pour aligner le délai de déploiement des mises à jour critiques sur le délai de 30 jours spécifié dans le contrôle.\",\n  \"confidence\": 0.8\n}",
+      "raw_output_final": "{\n  \"status\": \"partial\",\n  \"justification\": \"Le contrôle évalue la conformité des mises à jour de sécurité critiques déployées dans un délai de 30 jours. Les preuves montrent que le délai est de 45 jours, ce qui est en dehors du délai spécifié. Cependant, les preuves montrent que les exceptions sont suivies et documentées.\",\n  \"criteria_assessment\": [\n    {\n      \"criterion\": \"Critical security updates are deployed within 30 calendar days of release or identification.\",\n      \"met\": \"no\",\n      \"note\": \"Le délai spécifié est de 45 jours, ce qui est en dehors du délai de 30 jours requis.\"\n    },\n    {\n      \"criterion\": \"The deadline applies to in-scope production systems.\",\n      \"met\": \"unclear\",\n      \"note\": \"Les preuves ne précisent pas explicitement si le délai de 45 jours s'applique aux systèmes de production en portée.\"\n    },\n    {\n      \"criterion\": \"Records show due dates and completion or tracked exceptions.\",\n      \"met\": \"yes\",\n      \"note\": \"Le fichier 'deployment-service-export.yaml' indique que les exceptions sont suivies ('exceptions_tracked: true').\"\n    }\n  ],\n  \"quotes\": [\n    {\n      \"file\": \"change-management-standard-v4.md\",\n      \"text\": \"Critical updates should be installed within 45 days when operations allow. Exceptions are discussed at the monthly meeting.\"\n    },\n    {\n      \"file\": \"deployment-service-export.yaml\",\n      \"text\": \"critical_deadline_days: 45\\nexceptions_tracked: true\"\n    }\n  ],\n  \"recommendation\": \"Il est recommandé de réviser la politique pour aligner le délai de déploiement des mises à jour critiques sur le délai de 30 jours spécifié dans le contrôle.\",\n  \"confidence\": 0.8\n}",
+      "initial_json_valid": true,
+      "initial_schema_valid": true,
+      "final_json_valid": true,
+      "final_schema_valid": true,
+      "retry_count": 0,
+      "quote_validity": {
+        "valid": 2,
+        "total": 2,
+        "rate": 1.0
+      },
+      "wall_clock_total_seconds": 416.0444847769977,
+      "wall_clock_elapsed_seconds": 416.04456314500203,
+      "model_reported_total_seconds": 416.042683153,
+      "model_load_seconds": 0.003320063,
+      "prompt_tokens": 2689,
+      "output_tokens": 423,
+      "prompt_token_count_method": "ollama_native",
+      "prompt_processing_seconds": 268.547125,
+      "prompt_processing_tokens_per_second": 10.013140151844858,
+      "generation_seconds": 146.713261,
+      "generation_tokens_per_second": 2.883174957170368,
+      "time_to_first_token_seconds": null,
+      "native_metrics_by_attempt": [
+        {
+          "total_duration": 416042683153,
+          "load_duration": 3320063,
+          "prompt_eval_count": 2689,
+          "prompt_eval_duration": 268547125000,
+          "eval_count": 423,
+          "eval_duration": 146713261000
+        }
+      ],
+      "prompt_tokens_estimated_before_call": 2775,
+      "prompt_tokens_reported_by_backend": 2689,
+      "prefix_cached": false,
+      "prefix_cache_detection": "reported prompt tokens < 70% of independently counted prompt tokens",
+      "phase_latency_shares": {
+        "model_load": 7.9800673280877e-06,
+        "prompt_processing": 0.6454769497640206,
+        "generation": 0.35263839894101506
+      },
+      "likely_truncated": false,
+      "prompt_exceeds_num_ctx": false,
+      "num_ctx": 7168,
+      "prompt_version": "eval_v2_retrieval",
+      "language": "en",
+      "tags": [
+        "heavy",
+        "tier_M"
+      ],
+      "tier": "M",
+      "paired_with": "mock-patch-05-partial-01",
+      "needle_position": "start",
+      "context_mode": "retrieval",
+      "label_confidence": "firm",
+      "retrieval": {
+        "retrieved_chunks": [
+          {
+            "chunk_id": "79599fcd04923db650bc",
+            "file": "change-management-standard-v4.md",
+            "score": 0.03278688524590164,
+            "rank": 1,
+            "start_line": 1,
+            "end_line": 37
+          },
+          {
+            "chunk_id": "9eb31d3f079a9e07590c",
+            "file": "operations-handbook-8334.md",
+            "score": 0.03055037313432836,
+            "rank": 2,
+            "start_line": 187,
+            "end_line": 220
+          },
+          {
+            "chunk_id": "db5f707667975abfc2c0",
+            "file": "supplier-coordination-notes-8332.md",
+            "score": 0.029571646010002173,
+            "rank": 3,
+            "start_line": 141,
+            "end_line": 186
+          },
+          {
+            "chunk_id": "64079affc0c36ca2fa0b",
+            "file": "deployment-service-export.yaml",
+            "score": 0.02878726010616578,
+            "rank": 4,
+            "start_line": 1,
+            "end_line": 4
+          },
+          {
+            "chunk_id": "c36afc3499a2df49ad89",
+            "file": "operations-handbook-8334.md",
+            "score": 0.02967032967032967,
+            "rank": 5,
+            "start_line": 53,
+            "end_line": 96
+          }
+        ],
+        "context_chunk_ids": [
+          "79599fcd04923db650bc",
+          "64079affc0c36ca2fa0b",
+          "c36afc3499a2df49ad89",
+          "9eb31d3f079a9e07590c",
+          "db5f707667975abfc2c0"
+        ],
+        "chunks_requested": 5,
+        "chunks_returned": 5,
+        "shortfall_reason": null,
+        "min_files": 4,
+        "tokens_sent": 1477,
+        "retrieval_seconds": 0.007499461000406882,
+        "embedding_seconds": 3.1754100100006326,
+        "gold_passage_count": 2,
+        "gold_passages_retrieved": 2,
+        "required_gold_passage_count": 2,
+        "required_gold_passages_retrieved": 2,
+        "all_required_gold_in_context": true,
+        "all_gold_in_context": true,
+        "failure_attribution": "ok"
+      },
+      "resource_peak_ram_used_bytes": 29300994048,
+      "resource_peak_gpu_vram_used_mb": null
+    }
+  ]
+}
