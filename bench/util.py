@@ -31,7 +31,11 @@ def dataset_hash(root: Path) -> str:
         # adding hints leaves the established base dataset hash unchanged.
         if path.parent.name == "controls":
             text = content.decode("utf-8")
-            text = re.sub(r"(?ms)^retrieval_hints:\s*\n(?:^[ \t].*\n|^\s*\n)*", "", text)
+            # PyYAML's block-sequence indentation differs depending on whether
+            # the mapping is dumped by itself or as part of the full control.
+            # Strip both indented and column-zero list items so the derived
+            # search metadata never changes the established base-data hash.
+            text = re.sub(r"(?ms)^retrieval_hints:\s*\n(?:(?:^[ \t]+.*|^- .*)\n|^\s*\n)*", "", text)
             content = text.encode("utf-8")
         digest.update(content)
         digest.update(b"\0")

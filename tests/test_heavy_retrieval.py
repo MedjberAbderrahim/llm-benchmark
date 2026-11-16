@@ -201,7 +201,7 @@ def test_heavy_validator_rejects_contamination_tier_and_invalid_gold(tmp_path: P
     original_label_text = labels_path.read_text(encoding="utf-8")
     labels[0]["approx_tokens"]["total"] += 50000
     labels_path.write_text(yaml.safe_dump(labels, sort_keys=False, allow_unicode=True), encoding="utf-8")
-    with pytest.raises(ValueError, match="out of tolerance"):
+    with pytest.raises(ValueError, match="Token estimate mismatch"):
         validate_heavy_dataset(tmp_path)
     labels = yaml.safe_load(original_label_text)
     labels[0]["gold_passages"][0]["text"] += " invented"

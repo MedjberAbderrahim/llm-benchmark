@@ -1,11 +1,14 @@
 from __future__ import annotations
 
 from pathlib import Path
+import json
 
 import pytest
+import httpx
 
 from bench.data_generation import build_dataset
-from bench.runner import _check_quotes
+from bench.backends import OllamaBackend
+from bench.runner import _check_quotes, resolve_config
 from bench.schemas import EvaluationResponse
 from bench.scoring import build_metrics
 
@@ -51,6 +54,23 @@ def test_scoring_counts_false_reassurance_and_validity() -> None:
     assert metrics["initial_valid_json_rate"] == 0.5
     assert metrics["final_valid_json_rate"] == 1.0
     assert metrics["quote_validity_rate"] == 0.5
+
+
+def test_ollama_thinking_can_be_disabled_in_completion_and_warmup() -> None:
+    bodies = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        bodies.append(json.loads(request.content))
+        return httpx.Response(200, json={"message": {"content": "{}"}})
+
+    backend = OllamaBackend("http://ollama.invalid", "qwen3:8b", 0, 42, 4096, 64, "5m", think=False)
+    backend.client.close()
+    backend.client = httpx.Client(transport=httpx.MockTransport(handler))
+    backend.generate([{"role": "user", "content": "evaluate evidence"}])
+    backend.warmup()
+    assert bodies[0]["think"] is False and bodies[1]["think"] is False
+    assert resolve_config(None, {"model": "qwen3:8b", "think": False})["think"] is False
+    backend.client.close()
 
 
 def test_data_generation_is_valid_and_has_stratified_test_split(tmp_path: Path) -> None:

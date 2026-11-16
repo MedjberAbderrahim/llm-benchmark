@@ -841,6 +841,12 @@ def generate_heavy_dataset(root: Path, seed: int = 1729, force: bool = False,
         import shutil
         shutil.rmtree(heavy_root, ignore_errors=True)
         labels_path.unlink(missing_ok=True)
+    # Heavy variants are derived from the canonical base cases. Make the
+    # generator usable in a fresh workspace as well as after generate-data.
+    base_labels = root / "data" / "labels.yaml"
+    if not base_labels.exists():
+        from .data_generation import build_dataset
+        build_dataset(root)
     validate_dataset(root)
     labels = yaml.safe_load((root / "data" / "labels.yaml").read_text(encoding="utf-8"))
     base_evidence_root = root / "data" / "evidence"

@@ -23,10 +23,14 @@ from .util import dataset_hash, normalize_quote, strip_json_fence, write_json
 from .heavy_data import heavy_dataset_hash, validate_heavy_dataset
 from .retrieval import (IndexStore, assemble_context, build_index, build_queries, create_embedding,
                         data_hash as selected_data_hash, gold_hit, index_key, load_labels, retrieve_queries)
+from .embedder_presets import resolve_embedder
+from .embeddings import check_embedding_context
 
 
 DEFAULTS: dict[str, Any] = {
     "backend": "ollama", "base_url": "http://localhost:11434", "model": "qwen2.5:7b",
+    "request_timeout": 1800,
+    "think": None,
     "api_key": None, "temperature": 0.0, "seed": 42, "num_ctx": 8192,
     "max_output_tokens": 512, "keep_alive": "10m", "prompt_version": "eval_v1",
     "query_version": "query_v1",
@@ -35,8 +39,10 @@ DEFAULTS: dict[str, Any] = {
     "control": None, "status": None, "max_minutes": None, "case_timeout": None,
     "resume": None, "dry_run": False, "assume_prompt_tps": None, "assume_gen_tps": None,
     "no_prompt_cache": True, "num_ctx_auto_margin": 1024,
-    "embed_model": "bge-m3", "embed_backend": "ollama", "embed_base_url": None,
+    "embedder": "bge-m3", "embed_model": None, "embed_backend": "ollama", "embed_base_url": None,
+    "query_prefix": None, "passage_prefix": None, "query_instruction": None, "embed_dim": None,
     "embed_api_key": None, "chunk_tokens": 400, "overlap": 60, "top_k": 8,
+    "embed_timeout": 1800, "embed_batch_size": 4,
     "context_token_budget": 4000, "context_order": "file", "cache_db": ".cache/retrieval.sqlite3",
     "use_hints": False, "min_files": 4,
 }
@@ -70,8 +76,13 @@ def resolve_config(config_file: Path | None, overrides: dict[str, Any]) -> dict[
         if saved.get("embed_api_key_configured") and "embed_api_key" not in explicit and not result.get("embed_api_key"):
             raise ValueError("This run used an embedding API key that is not stored in artifacts; pass --embed-api-key to resume it.")
     result.update(explicit)
+    result.update(resolve_embedder(result.get("embedder"), result.get("embed_model"),
+                                   result.get("query_prefix"), result.get("passage_prefix"),
+                                   result.get("query_instruction"), result.get("embed_dim")))
     if result["backend"] not in {"ollama", "openai"}:
         raise ValueError("backend must be 'ollama' or 'openai'")
+    if result["backend"] != "ollama" and result.get("think") is not None:
+        raise ValueError("--think/--no-think is supported only by the Ollama backend")
     if result["split"] not in {"dev", "test", "all"}:
         raise ValueError("split must be dev, test, or all")
     if int(result["repeat"]) < 1:
@@ -87,6 +98,9 @@ def resolve_config(config_file: Path | None, overrides: dict[str, Any]) -> dict[
     for key in ("max_minutes", "case_timeout", "assume_prompt_tps", "assume_gen_tps"):
         if result.get(key) is not None and (not math.isfinite(float(result[key])) or float(result[key]) <= 0):
             raise ValueError(f"{key} must be positive when provided")
+    for key in ("request_timeout", "embed_timeout", "embed_batch_size"):
+        if not math.isfinite(float(result[key])) or float(result[key]) <= 0:
+            raise ValueError(f"{key} must be positive")
     if int(result["num_ctx_auto_margin"]) < 0:
         raise ValueError("num_ctx_auto_margin must be non-negative")
     if result["dataset"] not in {"base", "heavy"}:
@@ -523,10 +537,16 @@ def run_benchmark(root: Path, config: dict[str, Any]) -> Path | None:
     store_path = root / config["cache_db"]
     if config["context_mode"] == "retrieval":
         embedding = None if config["retriever"] == "bm25" else create_embedding(config)
+        if embedding is not None:
+            print(f"Checking embedding model {embedding.model!r}; the first request may load it into memory...", flush=True)
+            check_embedding_context(embedding, int(config["chunk_tokens"]))
         index_started = time.perf_counter()
         index_info = build_index(root, config["dataset"], embedding, store_path,
                                  int(config["chunk_tokens"]), int(config["overlap"]),
-                                 case_ids=[row["case_id"] for row in selected])
+                                 batch_size=int(config["embed_batch_size"]),
+                                 case_ids=[row["case_id"] for row in selected],
+                                 progress=lambda done, total: print(f"\rEmbedding chunks: {done}/{total}", end="", flush=True))
+        print()
         index_build_seconds = time.perf_counter() - index_started
 
     if config["num_ctx"] == "auto":
@@ -581,6 +601,12 @@ def run_benchmark(root: Path, config: dict[str, Any]) -> Path | None:
                         "embedding_digest": index_info.get("embedding_digest"),
                         "embedding_quantization": index_info.get("embedding_quantization"),
                         "embedding_backend": index_info.get("embedding_backend"),
+                        "embedding_raw_dimension": index_info.get("embedding_raw_dimension"),
+                        "embedding_requested_dimension": index_info.get("embedding_requested_dimension"),
+                        "embedding_query_prefix": config.get("query_prefix"),
+                        "embedding_passage_prefix": config.get("passage_prefix"),
+                        "embedding_ollama_version": index_info.get("ollama_version"),
+                        "embedding_preset": config.get("embedder"),
                         "chunk_tokens": config["chunk_tokens"] if config["context_mode"] == "retrieval" else None,
                         "chunk_overlap": config["overlap"] if config["context_mode"] == "retrieval" else None,
                         "retriever": config["retriever"] if config["context_mode"] == "retrieval" else None,
@@ -603,6 +629,7 @@ def run_benchmark(root: Path, config: dict[str, Any]) -> Path | None:
     sampler = ResourceSampler(interval_seconds=1.0)
     sampler.start()
     warmup_started = time.perf_counter()
+    print(f"Warm-up call for {config['model']!r}; Ollama may need to load the model (timeout {config['request_timeout']:g}s)...", flush=True)
     try:
         warmup_completion = backend.warmup()
         warmup = {"wall_clock_seconds": time.perf_counter() - warmup_started,
@@ -685,7 +712,9 @@ def run_benchmark(root: Path, config: dict[str, Any]) -> Path | None:
                         key = index_key(root, config["dataset"], embedding.model if embedding else "lexical-only",
                                         int(config["chunk_tokens"]), int(config["overlap"]),
                                         getattr(embedding, "query_prefix", "") if embedding else "",
-                                        getattr(embedding, "passage_prefix", "") if embedding else "")
+                                        getattr(embedding, "passage_prefix", "") if embedding else "",
+                                        getattr(embedding, "embed_dim", None) if embedding else None,
+                                        index_info.get("embedding_digest"), index_info.get("embedding_backend"))
                         store = IndexStore(store_path)
                         retrieved, retrieval_seconds, embedding_seconds = retrieve_queries(
                             store, key, label["case_id"], queries, config["retriever"],
@@ -785,7 +814,7 @@ def run_benchmark(root: Path, config: dict[str, Any]) -> Path | None:
     metrics["query_version"] = config["query_version"]
     metrics["use_hints"] = config["use_hints"]
     metrics["tier_set"] = sorted({row.get("tier", "S") for row in selected})
-    metrics["retrieval_settings"] = {key: config[key] for key in ("retriever", "embed_model", "chunk_tokens", "overlap", "top_k", "min_files", "use_hints", "query_version", "context_token_budget")}
+    metrics["retrieval_settings"] = {key: config[key] for key in ("retriever", "embedder", "embed_model", "embed_dim", "query_prefix", "passage_prefix", "chunk_tokens", "overlap", "top_k", "min_files", "use_hints", "query_version", "context_token_budget")}
     metrics["heavy_dataset_version"] = 2 if config["dataset"] == "heavy" else None
     write_json(run_dir / "metrics.json", metrics)
     (run_dir / "report.md").write_text(render_run_report(run_dir, config, environment, metrics, records, selected), encoding="utf-8")
@@ -804,7 +833,10 @@ def render_run_report(run_dir: Path, config: dict[str, Any], environment: dict[s
     latency = metrics["latency_seconds"]
     resources = metrics["resource_metrics"]
     lines = [f"# Benchmark run: {run_dir.name}", "", f"- Backend/model: `{config['backend']}` / `{config['model']}`",
+             f"- Ollama thinking mode: `{('enabled' if config.get('think') else 'disabled') if config.get('think') is not None else 'server/model default'}`",
              f"- Split: `{config['split']}`; cases: {len(selected)}; repeats: {config['repeat']}",
+             f"- Embedder: `{config.get('embedder')}` / `{config.get('embed_model')}`; dimension: `{environment.get('embedding_dimension')}`; digest: `{environment.get('embedding_digest')}`; quantization: `{environment.get('embedding_quantization')}",
+             f"- Embedding prefixes: query `{config.get('query_prefix') or ''}`; passage `{config.get('passage_prefix') or ''}`; Ollama `{environment.get('embedding_ollama_version')}`",
              f"- Completion: {'partial' if metrics.get('partial_run') else 'complete'}",
              f"- Prompt: `{metrics.get('prompt_version', config['prompt_version'])}`; query template: `{config.get('query_version', 'n/a')}`; output language: `{config['output_language']}`",
              f"- Dataset SHA-256: `{metrics['dataset_hash']}`", "", "## Accuracy and output quality", "",

@@ -130,6 +130,7 @@ class ResourceSampler:
         server_rss = [s["ollama_server_rss_bytes"] for s in self.samples if s.get("ollama_server_rss_bytes") is not None]
         server_cpu = [s["ollama_server_cpu_percent"] for s in self.samples if s.get("ollama_server_cpu_percent") is not None]
         runner_rss = [s["ollama_model_runner_rss_bytes"] for s in self.samples if s.get("ollama_model_runner_rss_bytes") is not None]
+        benchmark_rss = [s["benchmark_process_rss_bytes"] for s in self.samples if s.get("benchmark_process_rss_bytes") is not None]
         client_cpu = [s["benchmark_process_cpu_percent"] for s in self.samples if s.get("benchmark_process_cpu_percent") is not None]
         gpu_util = [s["gpu_utilization_percent"] for s in self.samples if s.get("gpu_utilization_percent") is not None]
         return {
@@ -144,6 +145,7 @@ class ResourceSampler:
             "peak_ollama_model_runner_rss_bytes": max(runner_rss) if runner_rss else None,
             "peak_ollama_process_tree_rss_bytes": max((s["ollama_process_tree_rss_bytes"] for s in self.samples if s.get("ollama_process_tree_rss_bytes") is not None), default=None),
             "mean_benchmark_process_cpu_percent": round(sum(client_cpu) / len(client_cpu), 2) if client_cpu else None,
+            "peak_benchmark_process_rss_bytes": max(benchmark_rss) if benchmark_rss else None,
             "mean_gpu_utilization_percent": round(sum(gpu_util) / len(gpu_util), 2) if gpu_util else None,
             "peak_gpu_utilization_percent": max(gpu_util) if gpu_util else None,
             "peak_gpu_vram_used_mb": max(gpu_values) if gpu_values else None,
@@ -161,7 +163,7 @@ class ResourceSampler:
                                   "ollama_server_cpu_percent": None, "ollama_model_runner_rss_bytes": None,
                                   "ollama_process_tree_rss_bytes": None, "benchmark_process_cpu_percent": None,
                                   "gpu_utilization_percent": None,
-                                  "gpu_vram_used_mb": None}
+                                  "gpu_vram_used_mb": None, "benchmark_process_rss_bytes": None}
         try:
             sample["system_cpu_percent"] = psutil.cpu_percent(interval=None)
             sample["ram_used_bytes"] = psutil.virtual_memory().used
@@ -169,6 +171,7 @@ class ResourceSampler:
             self.errors.add(f"Host resource sample failed: {exc}")
         try:
             sample["benchmark_process_cpu_percent"] = self._client.cpu_percent(interval=None)
+            sample["benchmark_process_rss_bytes"] = self._client.memory_info().rss
         except (psutil.NoSuchProcess, psutil.AccessDenied):
             self.errors.add("Benchmark process CPU sample unavailable.")
         if self._runner is None or not self._runner.is_running():

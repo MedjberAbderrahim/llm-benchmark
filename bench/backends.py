@@ -25,7 +25,7 @@ class Completion:
 class Backend:
     def set_timeout(self, seconds: float | None) -> None:
         """Set a request timeout for one case, or restore the backend default."""
-        self.timeout = 600.0 if seconds is None else seconds
+        self.timeout = getattr(self, "default_timeout", 600.0) if seconds is None else seconds
 
     def generate(self, messages: list[dict[str, str]]) -> Completion:
         raise NotImplementedError
@@ -42,23 +42,35 @@ class Backend:
 
 class OllamaBackend(Backend):
     def __init__(self, base_url: str, model: str, temperature: float, seed: int,
-                 num_ctx: int, max_output_tokens: int, keep_alive: str, timeout: float = 600.0):
+                 num_ctx: int, max_output_tokens: int, keep_alive: str, timeout: float = 1800.0,
+                 think: bool | None = None):
         self.base_url = base_url.rstrip("/")
         self.model = model
         self.options = {"temperature": temperature, "seed": seed, "num_ctx": num_ctx,
                         "num_predict": max_output_tokens}
         self.keep_alive = keep_alive
+        self.think = think
+        self.default_timeout = timeout
         self.timeout = timeout
         self.client = httpx.Client(timeout=timeout)
 
     def generate(self, messages: list[dict[str, str]]) -> Completion:
         body = {"model": self.model, "messages": messages, "stream": False,
                 "format": OUTPUT_JSON_SCHEMA, "options": self.options, "keep_alive": self.keep_alive}
+        if self.think is not None:
+            body["think"] = self.think
         started = time.perf_counter()
         try:
             response = self.client.post(f"{self.base_url}/api/chat", json=body, timeout=self.timeout)
             response.raise_for_status()
             payload = response.json()
+        except httpx.TimeoutException as exc:
+            raise BackendError(
+                f"Ollama chat request for {self.model!r} at {self.base_url} exceeded the "
+                f"{self.timeout:g}s timeout. Ollama responded, but model loading or inference "
+                "did not finish in time. Increase --request-timeout, reduce context/output tokens, "
+                "or set --case-timeout to control per-case limits."
+            ) from exc
         except (httpx.HTTPError, ValueError) as exc:
             raise BackendError(self._explain_error(exc)) from exc
         wall = time.perf_counter() - started
@@ -72,11 +84,18 @@ class OllamaBackend(Backend):
         body = {"model": self.model, "messages": [{"role": "user", "content": "Reply with OK."}], "stream": False,
                 "options": {**self.options, "num_predict": min(int(self.options["num_predict"]), 4)},
                 "keep_alive": self.keep_alive}
+        if self.think is not None:
+            body["think"] = self.think
         started = time.perf_counter()
         try:
             response = self.client.post(f"{self.base_url}/api/chat", json=body)
             response.raise_for_status()
             payload = response.json()
+        except httpx.TimeoutException as exc:
+            raise BackendError(
+                f"Ollama warm-up for {self.model!r} exceeded the {self.timeout:g}s timeout. "
+                "The server may be loading the model; increase --request-timeout."
+            ) from exc
         except (httpx.HTTPError, ValueError) as exc:
             raise BackendError(self._explain_error(exc)) from exc
         return Completion(payload.get("message", {}).get("content", ""), time.perf_counter() - started, None,
@@ -156,6 +175,7 @@ class OpenAICompatibleBackend(Backend):
         self.seed = seed
         self.max_output_tokens = max_output_tokens
         self.timeout = timeout
+        self.default_timeout = timeout
         headers = {"Authorization": f"Bearer {api_key}"} if api_key else {}
         self.client = httpx.Client(timeout=timeout, headers=headers)
 
@@ -272,8 +292,10 @@ class OpenAICompatibleBackend(Backend):
 def create_backend(config: dict[str, Any]) -> Backend:
     if config["backend"] == "ollama":
         return OllamaBackend(config["base_url"], config["model"], config["temperature"], config["seed"],
-                             config["num_ctx"], config["max_output_tokens"], config["keep_alive"])
+                             config["num_ctx"], config["max_output_tokens"], config["keep_alive"],
+                             float(config.get("request_timeout", 1800)), config.get("think"))
     if config["backend"] == "openai":
         return OpenAICompatibleBackend(config["base_url"], config.get("api_key"), config["model"],
-                                       config["temperature"], config["seed"], config["max_output_tokens"])
+                                       config["temperature"], config["seed"], config["max_output_tokens"],
+                                       float(config.get("request_timeout", 600)))
     raise ValueError(f"Unsupported backend {config['backend']!r}; use ollama or openai")

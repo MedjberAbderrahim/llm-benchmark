@@ -162,7 +162,27 @@ python3 -m bench run --dataset heavy --tier M --backend ollama --model qwen2.5:7
 
 The runner also accepts `--control`, comma-separated `--status`, `--repeat`, `--resume <run-id>`, and `--num-ctx auto`. `--max-minutes` stops between model calls and writes a partial report; `--case-timeout` records a timeout and proceeds. Results are appended and flushed after each repetition. Resume skips cases with completed case JSON artifacts. A dry run estimates both full and retrieval prompt sizes and projects time using the latest same-model speeds, or the explicit `--assume-prompt-tps` / `--assume-gen-tps` values. It warns if projected work exceeds one hour. `auto` chooses one constant context for the selected run, rounded up to 1,024 tokens with a configurable `--num-ctx-auto-margin`.
 
+For Ollama thinking-capable models such as Qwen3, `--no-think` sends `think: false` to the chat and warm-up requests; `--think` enables it. Leaving both unset preserves the model/server default. Thinking mode is Ollama-specific and cannot be selected for the OpenAI-compatible backend. Run reports record the setting.
+
 ## Retrieval and embedding evaluation
+
+### Choosing an embedder
+
+Select an embedding preset independently from the LLM using `--embedder` on `index`, `eval-retrieval`, or `run`. The default remains `bge-m3` with no prefixes. `qwen3-embed-8b` uses an instruction prefix on queries only (documents stay raw); its task sentence can be customized with `--query-instruction`. `nemotron-embed-8b` uses `query: ` for queries and `passage: ` for evidence. These conventions are based on the [Qwen3-Embedding model card](https://huggingface.co/Qwen/Qwen3-Embedding-8B), the [NVIDIA Nemotron-3 Embed card](https://huggingface.co/nvidia/Nemotron-3-Embed-8B-BF16), and the [Ollama Nemotron model page](https://ollama.com/maternion/nemotron-3.5-embed). Qwen and Nemotron presets support optional local Matryoshka truncation via `--embed-dim N`; vectors are re-normalized after slicing. BGE-M3 does not expose that preset option.
+
+#### Slow Ollama models on CPU
+
+The benchmark now allows up to 30 minutes per Ollama embedding request and groups evidence into batches of 4 chunks, printing batch progress while building the index. Use `--embed-timeout SECONDS` and `--embed-batch-size N` to adjust this (for example, `--embed-batch-size 1` reduces memory pressure but adds request overhead). Dense retrieval over 12 M-tier cases with an 8B embedding model can take a long time on CPU even though Ollama is healthy; start with `--limit 1` to confirm the endpoint/model, then increase the limit. A timeout message distinguishes a slow request from an unreachable server or missing model. For LLM runs, `--request-timeout SECONDS` defaults to 1,800 seconds for Ollama; `--case-timeout` remains an optional per-case cap and can override that request timeout.
+
+Use `python3 -m bench --list-embedders` to show resolved model names, prefixes, Matryoshka support, and whether each exact model tag appears in `ollama list` (through Ollama's local `/api/tags`). Explicit `--embed-model`, `--query-prefix`, and `--passage-prefix` override the preset. The Ollama adapter sends `truncate: false`; the benchmark probes the configured chunk size and reported context limit, and warns if a long probe is accepted or rejected. Index metadata and reports record model digest, quantization, Ollama version, actual output dimension, and prefixes. Cache/index identities include backend, model identity, dimension, and prefixes, and index construction rejects mixed dimensions.
+
+To compare all three embedders on identical evidence, chunks, and retrieval settings:
+
+```bash
+python3 -m bench compare-embedders --dataset heavy --embedders bge-m3 qwen3-embed-8b nemotron-embed-8b --chunk-tokens 400 --overlap 60 --top-k 5 8 --min-files 4 --query-version query_v1 query_v2 --no-use-hints
+```
+
+The command measures indexing, query embedding latency, index size, and runner/GPU memory, then reports dense-only, hybrid, and a single BM25 reference. Compare the **no-hints dense-only** rows to isolate the embedder most fairly; hinted `query_v2` can favor lexical overlap. The comparison report includes language, tier, and policy/config evidence slices, plus required-evidence recall, MRR, nDCG, and hit rates. Data is synthetic, and the sample count limits how much can be inferred about production retrieval. Ollama model unload is requested before moving to the next preset; remote server memory is not visible from the runner.
 
 Retrieval indexes only each case's own evidence, so chunks from one case cannot answer another. Markdown is split around heading/paragraph structure; configs use section/line windows; CSV uses row groups with a repeated header stored as metadata. Every chunk records exact source text, offsets, lines, filename, and heading path. CSV header metadata is not treated as a quote. Embeddings are normalized and cached in SQLite at `.cache/retrieval.sqlite3` by model and chunk-content hash. Dense cosine, a small in-process BM25 implementation, and reciprocal-rank fusion are available; there is no vector database service.
 

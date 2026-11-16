@@ -7,6 +7,7 @@ import math
 import re
 import sqlite3
 import time
+from collections.abc import Callable
 from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
@@ -17,22 +18,35 @@ import yaml
 
 from .chunking import Chunk, chunk_dict, chunk_text, estimate_tokens
 from .embeddings import EmbeddingBackend, OllamaEmbeddingBackend, OpenAIEmbeddingBackend
+from .embedder_presets import resolve_embedder
 from .heavy_data import heavy_dataset_hash
 from .util import dataset_hash
 
 
 def create_embedding(config: dict[str, Any]) -> EmbeddingBackend:
+    resolved = resolve_embedder(config.get("embedder"), config.get("embed_model"),
+                                config.get("query_prefix"), config.get("passage_prefix"),
+                                config.get("query_instruction"), config.get("embed_dim"))
+    config.update(resolved)
     backend = config.get("embed_backend", "ollama")
     base_url = config.get("embed_base_url") or config.get("base_url") or "http://localhost:11434"
     model = config.get("embed_model", "bge-m3")
     if backend == "ollama":
-        return OllamaEmbeddingBackend(base_url, model,
+        adapter = OllamaEmbeddingBackend(base_url, model,
+                                      timeout=float(config.get("embed_timeout", 1800)),
                                       query_prefix=config.get("query_prefix", ""),
-                                      passage_prefix=config.get("passage_prefix", ""))
+                                      passage_prefix=config.get("passage_prefix", ""),
+                                      embed_dim=config.get("embed_dim"))
+        adapter.embedder_preset = resolved.get("embedder")
+        return adapter
     if backend == "openai":
-        return OpenAIEmbeddingBackend(base_url, config.get("embed_api_key") or config.get("api_key"), model,
+        adapter = OpenAIEmbeddingBackend(base_url, config.get("embed_api_key") or config.get("api_key"), model,
+                                      timeout=float(config.get("embed_timeout", 600)),
                                       query_prefix=config.get("query_prefix", ""),
-                                      passage_prefix=config.get("passage_prefix", ""))
+                                      passage_prefix=config.get("passage_prefix", ""),
+                                      embed_dim=config.get("embed_dim"))
+        adapter.embedder_preset = resolved.get("embedder")
+        return adapter
     raise ValueError("embed_backend must be ollama or openai")
 
 TOKEN_RE = re.compile(r"(?u)[\w]+(?:[./:-][\w]+)*(?:/\d+)?")
@@ -113,7 +127,12 @@ class IndexStore:
 
     def cache_get(self, model: str, content_hash: str) -> np.ndarray | None:
         row = self.connection.execute("SELECT dimension, vector FROM embedding_cache WHERE embedding_model=? AND content_hash=?", (model, content_hash)).fetchone()
-        return np.frombuffer(row[1], dtype=np.float32).copy() if row else None
+        if not row:
+            return None
+        vector = np.frombuffer(row[1], dtype=np.float32).copy()
+        if len(vector) != int(row[0]):
+            raise ValueError(f"Cached embedding dimension mismatch for model cache key {model!r}: stored={row[0]}, vector={len(vector)}")
+        return vector
 
     def cache_put(self, model: str, content_hash: str, vector: np.ndarray) -> None:
         vector = np.asarray(vector, dtype=np.float32)
@@ -150,6 +169,17 @@ class IndexStore:
     def close(self) -> None:
         self.connection.close()
 
+    def assert_index_dimensions(self, index_key: str) -> int | None:
+        rows = self.connection.execute("SELECT DISTINCT length(vector) FROM chunks WHERE index_key=? AND vector IS NOT NULL", (index_key,)).fetchall()
+        dimensions = {int(row[0]) // 4 for row in rows if row[0] is not None}
+        if len(dimensions) > 1:
+            raise ValueError(f"Index {index_key} contains vectors with mixed dimensions: {sorted(dimensions)}")
+        return next(iter(dimensions)) if dimensions else None
+
+    def index_bytes(self, index_key: str) -> int:
+        row = self.connection.execute("SELECT COALESCE(SUM(length(metadata)+COALESCE(length(vector),0)),0) FROM chunks WHERE index_key=?", (index_key,)).fetchone()
+        return int(row[0] or 0)
+
 
 def load_labels(root: Path, dataset: str) -> list[dict[str, Any]]:
     name = "labels_heavy.yaml" if dataset == "heavy" else "labels.yaml"
@@ -166,21 +196,29 @@ def data_hash(root: Path, dataset: str) -> str:
 
 
 def index_key(root: Path, dataset: str, model: str, chunk_tokens: int, overlap: int,
-              query_prefix: str = "", passage_prefix: str = "") -> str:
-    raw = f"{data_hash(root, dataset)}:{model}:{chunk_tokens}:{overlap}:{query_prefix}:{passage_prefix}"
+              query_prefix: str = "", passage_prefix: str = "", embed_dim: int | None = None,
+              model_digest: str | None = None, backend: str | None = None) -> str:
+    raw = f"{data_hash(root, dataset)}:{backend}:{model}:{model_digest}:{chunk_tokens}:{overlap}:{query_prefix}:{passage_prefix}:{embed_dim}"
     return hashlib.sha256(raw.encode()).hexdigest()
 
 
 def build_index(root: Path, dataset: str, embedding: EmbeddingBackend | None, store_path: Path,
-                chunk_tokens: int = 400, overlap: int = 60, batch_size: int = 32,
-                case_ids: list[str] | None = None) -> dict[str, Any]:
+                chunk_tokens: int = 400, overlap: int = 60, batch_size: int = 4,
+                case_ids: list[str] | None = None,
+                progress: Callable[[int, int], None] | None = None) -> dict[str, Any]:
     if dataset not in {"base", "heavy"}:
         raise ValueError("dataset must be base or heavy")
+    if batch_size < 1:
+        raise ValueError("embed_batch_size must be positive")
     labels = load_labels(root, dataset)
     model_name = embedding.model if embedding is not None else "lexical-only"
+    initial_details = embedding.details() if embedding is not None else {}
+    model_digest = initial_details.get("embedding_digest")
     key = index_key(root, dataset, model_name, chunk_tokens, overlap,
                     getattr(embedding, "query_prefix", "") if embedding else "",
-                    getattr(embedding, "passage_prefix", "") if embedding else "")
+                    getattr(embedding, "passage_prefix", "") if embedding else "",
+                    getattr(embedding, "embed_dim", None) if embedding else None,
+                    model_digest, initial_details.get("embedding_backend"))
     store = IndexStore(store_path)
     labels = [row for row in labels if case_ids is None or row["case_id"] in set(case_ids)]
     store.clear_index(key, [row["case_id"] for row in labels])
@@ -194,10 +232,11 @@ def build_index(root: Path, dataset: str, embedding: EmbeddingBackend | None, st
     misses: list[tuple[str, str, str]] = []
     hits = 0
     passage_prefix = getattr(embedding, "passage_prefix", "") if embedding is not None else ""
+    cache_model = f"{initial_details.get('embedding_backend')}|{embedding.model}|digest={model_digest}|dim={getattr(embedding, 'embed_dim', None)}" if embedding else ""
     if embedding is not None:
         for case_id, chunk in chunks_by_case:
             content_hash = hashlib.sha256((passage_prefix + chunk.text).encode("utf-8")).hexdigest()
-            cached = store.cache_get(embedding.model, content_hash)
+            cached = store.cache_get(cache_model, content_hash)
             if cached is not None:
                 embedded[(case_id, chunk.chunk_id)] = cached
                 hits += 1
@@ -212,14 +251,26 @@ def build_index(root: Path, dataset: str, embedding: EmbeddingBackend | None, st
             for (case_id, chunk_id, text), vector in zip(batch, vectors):
                 vector = np.asarray(vector, dtype=np.float32)
                 embedded[(case_id, chunk_id)] = vector
-                store.cache_put(embedding.model, hashlib.sha256((passage_prefix + text).encode("utf-8")).hexdigest(), vector)
+                store.cache_put(cache_model, hashlib.sha256((passage_prefix + text).encode("utf-8")).hexdigest(), vector)
+            if progress is not None:
+                progress(min(start + len(batch), len(misses)), len(misses))
     for case_id, chunk in chunks_by_case:
         vector = embedded.get((case_id, chunk.chunk_id))
         store.put_chunk(key, case_id, chunk, model_name if embedding is not None else None, vector)
     store.commit()
-    details = embedding.details() if embedding is not None else {"embedding_backend": None, "embedding_model": None, "embedding_dimension": None}
+    details = initial_details if embedding is not None else {"embedding_backend": None, "embedding_model": None, "embedding_dimension": None}
     vectors = list(embedded.values())
-    details["embedding_dimension"] = len(vectors[0]) if vectors else None
+    dimensions = {len(vector) for vector in vectors}
+    if len(dimensions) > 1:
+        raise ValueError(f"Index build returned mixed embedding dimensions for {model_name}: {sorted(dimensions)}")
+    details["embedding_dimension"] = next(iter(dimensions)) if dimensions else getattr(embedding, "dimension", None)
+    details["embedding_requested_dimension"] = getattr(embedding, "embed_dim", None) if embedding else None
+    indexed_dimension = store.assert_index_dimensions(key)
+    if details["embedding_dimension"] is not None and indexed_dimension not in {None, details["embedding_dimension"]}:
+        raise ValueError(f"Index dimension assertion failed: vectors={indexed_dimension}, backend={details['embedding_dimension']}")
+    details["embedding_dimension"] = indexed_dimension or details.get("embedding_dimension")
+    details["embedding_preset"] = getattr(embedding, "embedder_preset", None) if embedding else None
+    details["index_size_bytes"] = store.index_bytes(key)
     result = {"index_key": key, "dataset": dataset, "dataset_hash": data_hash(root, dataset),
               "embedding_model": embedding.model if embedding is not None else None,
               "chunk_tokens": chunk_tokens, "overlap_tokens": overlap,
